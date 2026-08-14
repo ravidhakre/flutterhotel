@@ -9,23 +9,31 @@
       ]
     },
     {
-      "collectionGroup": "bookings",
+      "collectionGroup": "offers",
       "queryScope": "COLLECTION",
       "fields": [
-        { "fieldPath": "userId", "order": "ASCENDING" },
-        { "fieldPath": "createdAt", "order": "DESCENDING" }
+        { "fieldPath": "status", "order": "ASCENDING" },
+        { "fieldPath": "priority", "order": "ASCENDING" }
       ]
     },
     {
-      "collectionGroup": "bookings",
+      "collectionGroup": "coupons",
       "queryScope": "COLLECTION",
       "fields": [
-        { "fieldPath": "propertyId", "order": "ASCENDING" },
-        { "fieldPath": "bookingStatus", "order": "ASCENDING" }
+        { "fieldPath": "code", "order": "ASCENDING" },
+        { "fieldPath": "status", "order": "ASCENDING" }
       ]
     },
     {
-      "collectionGroup": "rooms",
+      "collectionGroup": "couponUsages",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "couponId", "order": "ASCENDING" },
+        { "fieldPath": "userId", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "packages",
       "queryScope": "COLLECTION",
       "fields": [
         { "fieldPath": "propertyId", "order": "ASCENDING" },
@@ -33,7 +41,7 @@
       ]
     },
     {
-      "collectionGroup": "roomTypes",
+      "collectionGroup": "addons",
       "queryScope": "COLLECTION",
       "fields": [
         { "fieldPath": "propertyId", "order": "ASCENDING" },
@@ -41,43 +49,11 @@
       ]
     },
     {
-      "collectionGroup": "roomInventory",
+      "collectionGroup": "pricingRules",
       "queryScope": "COLLECTION",
       "fields": [
         { "fieldPath": "propertyId", "order": "ASCENDING" },
-        { "fieldPath": "date", "order": "ASCENDING" }
-      ]
-    },
-    {
-      "collectionGroup": "reservationAllocations",
-      "queryScope": "COLLECTION",
-      "fields": [
-        { "fieldPath": "bookingId", "order": "ASCENDING" },
-        { "fieldPath": "status", "order": "ASCENDING" }
-      ]
-    },
-    {
-      "collectionGroup": "bookingCharges",
-      "queryScope": "COLLECTION",
-      "fields": [
-        { "fieldPath": "bookingId", "order": "ASCENDING" },
-        { "fieldPath": "createdAt", "order": "DESCENDING" }
-      ]
-    },
-    {
-      "collectionGroup": "payments",
-      "queryScope": "COLLECTION",
-      "fields": [
-        { "fieldPath": "bookingId", "order": "ASCENDING" },
-        { "fieldPath": "createdAt", "order": "DESCENDING" }
-      ]
-    },
-    {
-      "collectionGroup": "invoices",
-      "queryScope": "COLLECTION",
-      "fields": [
-        { "fieldPath": "bookingId", "order": "ASCENDING" },
-        { "fieldPath": "issuedAt", "order": "DESCENDING" }
+        { "fieldPath": "priority", "order": "ASCENDING" }
       ]
     }
   ],

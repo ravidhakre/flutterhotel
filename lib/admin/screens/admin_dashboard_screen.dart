@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import '../../models/admin_model.dart';
 import 'bookings/admin_bookings_list_screen.dart';
 import 'bookings/admin_new_booking_screen.dart';
+import 'commercial/admin_addons_screen.dart';
+import 'commercial/admin_coupons_screen.dart';
+import 'commercial/admin_offers_screen.dart';
+import 'commercial/admin_packages_screen.dart';
+import 'commercial/admin_pricing_simulator_screen.dart';
 import 'front_desk/admin_front_desk_screen.dart';
 import 'guests/admin_guests_list_screen.dart';
 import 'inventory/admin_availability_calendar_screen.dart';
@@ -19,7 +24,7 @@ class AdminDashboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Executive Operations — ${admin.role.toUpperCase()}'),
+        title: Text('Executive Control Portal — ${admin.role.toUpperCase()}'),
         backgroundColor: const Color(0xFF162234),
         actions: [
           IconButton(
@@ -47,7 +52,7 @@ class AdminDashboardScreen extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             const Text(
-              'Phase 4 — Front Desk Operations & Booking Management Portal',
+              'Phase 5 — Commercial Pricing & Promotion Engine Portal',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
@@ -66,13 +71,6 @@ class AdminDashboardScreen extends StatelessWidget {
                   ),
                   _buildDashboardCard(
                     context,
-                    '+ New Walk-in / Booking',
-                    Icons.add_business,
-                    Colors.green.shade800,
-                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminNewBookingScreen(admin: admin))),
-                  ),
-                  _buildDashboardCard(
-                    context,
                     'Reservations Center',
                     Icons.book_online,
                     Colors.green,
@@ -80,10 +78,38 @@ class AdminDashboardScreen extends StatelessWidget {
                   ),
                   _buildDashboardCard(
                     context,
-                    'Guest CRM Directory',
-                    Icons.people_alt,
+                    'Promotional Offers',
+                    Icons.local_offer,
+                    Colors.pink,
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminOffersScreen(admin: admin))),
+                  ),
+                  _buildDashboardCard(
+                    context,
+                    'Discount Coupons',
+                    Icons.confirmation_number,
                     Colors.purple,
-                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminGuestsListScreen(admin: admin))),
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminCouponsScreen(admin: admin))),
+                  ),
+                  _buildDashboardCard(
+                    context,
+                    'Vacation Packages',
+                    Icons.card_giftcard,
+                    Colors.teal,
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminPackagesScreen(admin: admin))),
+                  ),
+                  _buildDashboardCard(
+                    context,
+                    'Add-on Services',
+                    Icons.room_service,
+                    Colors.indigo,
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminAddonsScreen(admin: admin))),
+                  ),
+                  _buildDashboardCard(
+                    context,
+                    'Pricing Simulator',
+                    Icons.calculate,
+                    Colors.deepOrange,
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminPricingSimulatorScreen(admin: admin))),
                   ),
                   _buildDashboardCard(
                     context,
@@ -91,27 +117,6 @@ class AdminDashboardScreen extends StatelessWidget {
                     Icons.business,
                     Colors.blue,
                     () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminPropertyListScreen(admin: admin))),
-                  ),
-                  _buildDashboardCard(
-                    context,
-                    'Room Types Catalog',
-                    Icons.king_bed,
-                    Colors.indigo,
-                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminRoomTypesListScreen(admin: admin))),
-                  ),
-                  _buildDashboardCard(
-                    context,
-                    'Availability Matrix',
-                    Icons.calendar_month,
-                    Colors.teal,
-                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminAvailabilityCalendarScreen(admin: admin))),
-                  ),
-                  _buildDashboardCard(
-                    context,
-                    'Maintenance Blocks',
-                    Icons.block,
-                    Colors.red.shade800,
-                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminMaintenanceScreen(admin: admin))),
                   ),
                 ],
               ),
