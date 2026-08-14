@@ -131,10 +131,12 @@ ul {
 .navbar-brand-logo {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .brand-logo-img {
-  height: 56px;
+  height: 50px;
+  max-height: 52px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -147,20 +149,22 @@ ul {
 
 .nav-links {
   display: flex;
-  gap: 22px;
+  gap: 16px;
   align-items: center;
+  flex-wrap: nowrap;
 }
 
 .nav-item-link {
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 600;
   color: #334155;
-  padding: 8px 0;
+  padding: 6px 0;
   position: relative;
   text-transform: uppercase;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.5px;
   display: inline-flex;
   align-items: center;
+  white-space: nowrap;
 }
 
 .nav-item-link::after {
