@@ -1,0 +1,47 @@
+[
+  {
+    "id": "HTX-8091",
+    "roomId": "room-101",
+    "roomName": "Super Deluxe Room",
+    "guestName": "Rahul Sharma",
+    "email": "rahul.sharma@example.com",
+    "phone": "+91 98765 43210",
+    "checkIn": "2026-08-20",
+    "checkOut": "2026-08-23",
+    "guests": 2,
+    "totalPrice": 360,
+    "status": "Confirmed",
+    "createdAt": "2026-08-10T14:30:00.000Z",
+    "paymentMethod": "Credit Card"
+  },
+  {
+    "id": "HTX-8092",
+    "roomId": "room-102",
+    "roomName": "Junior Suite",
+    "guestName": "Sarah Jenkins",
+    "email": "sarah.j@example.com",
+    "phone": "+1 555 234 5678",
+    "checkIn": "2026-08-25",
+    "checkOut": "2026-08-28",
+    "guests": 2,
+    "totalPrice": 540,
+    "status": "Pending",
+    "createdAt": "2026-08-12T09:15:00.000Z",
+    "paymentMethod": "Pay at Hotel"
+  },
+  {
+    "id": "HTX-8093",
+    "roomId": "room-104",
+    "roomName": "Presidential Royal Suite",
+    "guestName": "Alexander Vance",
+    "email": "vance@luxury.com",
+    "phone": "+44 20 7946 0912",
+    "checkIn": "2026-09-01",
+    "checkOut": "2026-09-05",
+    "guests": 3,
+    "totalPrice": 1800,
+    "status": "Confirmed",
+    "createdAt": "2026-08-13T11:45:00.000Z",
+    "paymentMethod": "Bank Transfer"
+  }
+]

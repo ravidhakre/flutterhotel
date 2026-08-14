@@ -1,0 +1,84 @@
+<%- include('partials/header') %>
+
+<!-- Page Header Banner -->
+<div style="background: linear-gradient(rgba(20, 27, 43, 0.7), rgba(20, 27, 43, 0.7)), url('/images/hero-banner.jpg') center/cover; padding: 70px 0; text-align: center; color: #fff;">
+  <div class="container">
+    <h1 style="font-size: 42px; margin-bottom: 10px;">Our Rooms & Suites</h1>
+    <p style="color: var(--primary-gold); letter-spacing: 2px; text-transform: uppercase;">Discover Your Perfect Sanctuary</p>
+  </div>
+</div>
+
+<section class="section-padding">
+  <div class="container">
+    <!-- Filter Bar -->
+    <div style="background: var(--light-bg); padding: 25px; border-radius: 8px; margin-bottom: 40px; border: 1px solid #e2e8f0;">
+      <form action="/rooms" method="GET" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) 140px; gap: 15px; align-items: end;">
+        <div>
+          <label style="font-size: 13px; font-weight: 600;">Category</label>
+          <select name="category" class="form-control-custom">
+            <option value="All" <%= (query.category === 'All' || !query.category) ? 'selected' : '' %>>All Rooms</option>
+            <option value="Deluxe" <%= query.category === 'Deluxe' ? 'selected' : '' %>>Deluxe</option>
+            <option value="Suite" <%= query.category === 'Suite' ? 'selected' : '' %>>Suite</option>
+            <option value="Presidential" <%= query.category === 'Presidential' ? 'selected' : '' %>>Presidential</option>
+            <option value="Villa" <%= query.category === 'Villa' ? 'selected' : '' %>>Villa</option>
+          </select>
+        </div>
+
+        <div>
+          <label style="font-size: 13px; font-weight: 600;">Max Guests</label>
+          <select name="guests" class="form-control-custom">
+            <option value="">Any Capacity</option>
+            <option value="2" <%= query.guests === '2' ? 'selected' : '' %>>2 Guests</option>
+            <option value="4" <%= query.guests === '4' ? 'selected' : '' %>>4 Guests</option>
+            <option value="6" <%= query.guests === '6' ? 'selected' : '' %>>6+ Guests</option>
+          </select>
+        </div>
+
+        <div>
+          <label style="font-size: 13px; font-weight: 600;">Max Price ($)</label>
+          <input type="number" name="maxPrice" value="<%= query.maxPrice || '' %>" placeholder="e.g. 300" class="form-control-custom">
+        </div>
+
+        <div>
+          <button type="submit" class="btn-gold" style="width: 100%; border: none; padding: 12px;"><i class="fas fa-filter"></i> Filter</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Rooms Catalog Grid -->
+    <div class="rooms-grid">
+      <% if (rooms.length === 0) { %>
+        <div style="grid-column: 1 / -1; text-align: center; padding: 50px;">
+          <i class="fas fa-search-minus" style="font-size: 48px; color: var(--primary-gold); margin-bottom: 15px;"></i>
+          <h3>No rooms match your filter criteria</h3>
+          <p style="color: var(--text-muted);">Try adjusting your search criteria or explore our full collection.</p>
+          <a href="/rooms" class="btn-gold" style="margin-top: 15px;">View All Rooms</a>
+        </div>
+      <% } else { %>
+        <% rooms.forEach(room => { %>
+          <div class="room-card">
+            <div class="room-img-wrap">
+              <img src="<%= room.image %>" alt="<%= room.name %>">
+              <div class="room-price-badge">$<%= room.price %> <span style="font-size: 12px; font-family: var(--font-sans);">/ Night</span></div>
+            </div>
+            <div class="room-card-body">
+              <h3 class="room-title"><%= room.name %></h3>
+              <div class="room-specs">
+                <span><i class="fas fa-bed"></i> <%= room.bed %></span>
+                <span><i class="fas fa-users"></i> Up to <%= room.capacity %> Guests</span>
+                <span><i class="fas fa-ruler-combined"></i> <%= room.size %></span>
+              </div>
+              <p class="room-desc"><%= room.description %></p>
+              <div class="room-card-footer">
+                <a href="/rooms/<%= room.id %>" class="btn-outline-gold" style="padding: 8px 18px; font-size: 13px;">View Details</a>
+                <a href="/rooms/<%= room.id %>" class="btn-gold" style="padding: 8px 18px; font-size: 13px;">Book Now</a>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      <% } %>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

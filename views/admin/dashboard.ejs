@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title || 'Admin Dashboard | Hotux Hotel' %></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="admin-body">
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <i class="fas fa-hotel"></i> HOTUX ADMIN
+    </div>
+    <ul class="sidebar-menu">
+      <li><a href="/admin" class="active"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+      <li><a href="/admin/bookings"><i class="fas fa-calendar-check"></i> Bookings (<%= stats.totalBookings %>)</a></li>
+      <li><a href="/admin/rooms"><i class="fas fa-bed"></i> Room Inventory (<%= stats.totalRooms %>)</a></li>
+      <li><a href="/admin/inquiries"><i class="fas fa-envelope"></i> Customer Messages (<%= stats.unreadInquiries %>)</a></li>
+      <li style="margin-top: 40px;"><a href="/"><i class="fas fa-external-link-alt"></i> View Main Website</a></li>
+      <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="admin-main">
+    <!-- Top Bar -->
+    <header class="admin-topbar">
+      <h2 style="margin: 0; font-size: 22px;">Hotel Executive Management</h2>
+      <div class="topbar-user">
+        <div style="text-align: right;">
+          <strong style="display: block; font-size: 14px;">Manager Admin</strong>
+          <span style="font-size: 12px; color: #888;">General Director</span>
+        </div>
+        <div style="width: 40px; height: 40px; background: var(--admin-primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+          AD
+        </div>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <!-- KPI Stats Grid -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-icon"><i class="fas fa-dollar-sign"></i></div>
+          <div class="kpi-details">
+            <h3>$<%= stats.totalRevenue.toLocaleString() %></h3>
+            <p>Total Revenue</p>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon"><i class="fas fa-bookmark"></i></div>
+          <div class="kpi-details">
+            <h3><%= stats.totalBookings %></h3>
+            <p>Total Reservations</p>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon"><i class="fas fa-clock"></i></div>
+          <div class="kpi-details">
+            <h3 style="color: #b06000;"><%= stats.pendingBookings %></h3>
+            <p>Pending Requests</p>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon"><i class="fas fa-door-open"></i></div>
+          <div class="kpi-details">
+            <h3><%= stats.totalRooms %></h3>
+            <p>Active Rooms</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Reservations Table -->
+      <div class="admin-card-table">
+        <div class="card-header-flex">
+          <h3 style="margin: 0; font-size: 18px;"><i class="fas fa-list" style="color: var(--admin-primary);"></i> Recent Guest Reservations</h3>
+          <a href="/admin/bookings" class="btn-admin btn-admin-outline">View All Bookings</a>
+        </div>
+
+        <table class="table-custom">
+          <thead>
+            <tr>
+              <th>Booking Ref</th>
+              <th>Guest Name</th>
+              <th>Suite</th>
+              <th>Check-in / Out</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% recentBookings.forEach(booking => { %>
+              <tr>
+                <td><strong style="color: var(--admin-primary);"><%= booking.id %></strong></td>
+                <td><%= booking.guestName %><br><span style="font-size: 11px; color: #888;"><%= booking.email %></span></td>
+                <td><%= booking.roomName %></td>
+                <td><%= booking.checkIn %> to <%= booking.checkOut %></td>
+                <td><strong>$<%= booking.totalPrice %></strong></td>
+                <td>
+                  <span class="badge-status badge-<%= booking.status.toLowerCase() %>">
+                    <%= booking.status %>
+                  </span>
+                </td>
+                <td>
+                  <button onclick="updateBookingStatus('<%= booking.id %>', 'Confirmed')" class="btn-admin btn-admin-success" style="padding: 4px 8px; font-size: 11px;" title="Confirm"><i class="fas fa-check"></i></button>
+                  <button onclick="updateBookingStatus('<%= booking.id %>', 'Cancelled')" class="btn-admin btn-admin-danger" style="padding: 4px 8px; font-size: 11px;" title="Cancel"><i class="fas fa-times"></i></button>
+                </td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>

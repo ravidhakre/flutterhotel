@@ -1,0 +1,22 @@
+[
+  {
+    "id": "INQ-101",
+    "name": "Amit Kapoor",
+    "email": "amit.kapoor@example.com",
+    "phone": "+91 91234 56789",
+    "subject": "Wedding Event & Suite Reservation",
+    "message": "Hello Hotux team, we are planning a wedding celebration in October and would like to reserve 15 deluxe rooms and the main banquet hall. Please send details.",
+    "status": "Unread",
+    "date": "2026-08-12T16:20:00.000Z"
+  },
+  {
+    "id": "INQ-102",
+    "name": "Elena Rostova",
+    "email": "elena.r@example.org",
+    "phone": "+33 1 42 68 55 00",
+    "subject": "Airport Transfer Query",
+    "message": "Does the Presidential Suite include complementary airport pickup from international terminal?",
+    "status": "Read",
+    "date": "2026-08-11T10:05:00.000Z"
+  }
+]

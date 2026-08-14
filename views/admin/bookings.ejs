@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title || 'Manage Bookings | Hotux Admin' %></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="admin-body">
+
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <i class="fas fa-hotel"></i> HOTUX ADMIN
+    </div>
+    <ul class="sidebar-menu">
+      <li><a href="/admin"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+      <li><a href="/admin/bookings" class="active"><i class="fas fa-calendar-check"></i> Bookings (<%= bookings.length %>)</a></li>
+      <li><a href="/admin/rooms"><i class="fas fa-bed"></i> Room Inventory</a></li>
+      <li><a href="/admin/inquiries"><i class="fas fa-envelope"></i> Customer Messages</a></li>
+      <li style="margin-top: 40px;"><a href="/"><i class="fas fa-external-link-alt"></i> View Main Website</a></li>
+      <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <h2 style="margin: 0; font-size: 22px;">Reservation & Booking Manager</h2>
+      <a href="/" target="_blank" class="btn-admin btn-admin-primary"><i class="fas fa-plus"></i> New Public Booking</a>
+    </header>
+
+    <div class="admin-content">
+      <div class="admin-card-table">
+        <div class="card-header-flex">
+          <h3 style="margin: 0; font-size: 18px;"><i class="fas fa-book" style="color: var(--admin-primary);"></i> All Customer Reservations</h3>
+        </div>
+
+        <table class="table-custom">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Guest Info</th>
+              <th>Suite Reserved</th>
+              <th>Check-In</th>
+              <th>Check-Out</th>
+              <th>Guests</th>
+              <th>Total ($)</th>
+              <th>Payment</th>
+              <th>Status</th>
+              <th>Manage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% bookings.forEach(b => { %>
+              <tr>
+                <td><strong style="color: var(--admin-primary);"><%= b.id %></strong></td>
+                <td>
+                  <strong><%= b.guestName %></strong><br>
+                  <span style="font-size: 12px; color: #666;"><%= b.email %></span><br>
+                  <span style="font-size: 11px; color: #888;"><%= b.phone %></span>
+                </td>
+                <td><%= b.roomName %></td>
+                <td><%= b.checkIn %></td>
+                <td><%= b.checkOut %></td>
+                <td><%= b.guests %></td>
+                <td><strong style="color: var(--dark-bg);">$<%= b.totalPrice %></strong></td>
+                <td><span style="font-size: 12px; color: #555;"><%= b.paymentMethod %></span></td>
+                <td>
+                  <span class="badge-status badge-<%= b.status.toLowerCase() %>">
+                    <%= b.status %>
+                  </span>
+                </td>
+                <td>
+                  <div style="display: flex; gap: 4px;">
+                    <button onclick="updateBookingStatus('<%= b.id %>', 'Confirmed')" class="btn-admin btn-admin-success" style="padding: 5px 8px; font-size: 11px;" title="Approve & Confirm"><i class="fas fa-check"></i></button>
+                    <button onclick="updateBookingStatus('<%= b.id %>', 'Cancelled')" class="btn-admin btn-admin-danger" style="padding: 5px 8px; font-size: 11px;" title="Cancel Reservation"><i class="fas fa-times"></i></button>
+                    <button onclick="deleteBooking('<%= b.id %>')" class="btn-admin btn-admin-outline" style="padding: 5px 8px; font-size: 11px; color: #ef4444;" title="Delete Record"><i class="fas fa-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>

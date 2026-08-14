@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title || 'Room Inventory | Hotux Admin' %></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="admin-body">
+
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <i class="fas fa-hotel"></i> HOTUX ADMIN
+    </div>
+    <ul class="sidebar-menu">
+      <li><a href="/admin"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+      <li><a href="/admin/bookings"><i class="fas fa-calendar-check"></i> Bookings</a></li>
+      <li><a href="/admin/rooms" class="active"><i class="fas fa-bed"></i> Room Inventory (<%= rooms.length %>)</a></li>
+      <li><a href="/admin/inquiries"><i class="fas fa-envelope"></i> Customer Messages</a></li>
+      <li style="margin-top: 40px;"><a href="/"><i class="fas fa-external-link-alt"></i> View Main Website</a></li>
+      <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <h2 style="margin: 0; font-size: 22px;">Room Inventory Management</h2>
+      <button onclick="document.getElementById('addRoomModal').style.display='flex'" class="btn-admin btn-admin-primary"><i class="fas fa-plus"></i> Add New Room</button>
+    </header>
+
+    <div class="admin-content">
+      <div class="admin-card-table">
+        <div class="card-header-flex">
+          <h3 style="margin: 0; font-size: 18px;"><i class="fas fa-door-open" style="color: var(--admin-primary);"></i> Active Hotel Suites (<%= rooms.length %>)</h3>
+        </div>
+
+        <table class="table-custom">
+          <thead>
+            <tr>
+              <th>Preview</th>
+              <th>Suite Name</th>
+              <th>Category</th>
+              <th>Nightly Rate ($)</th>
+              <th>Bed</th>
+              <th>Capacity</th>
+              <th>Featured</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% rooms.forEach(room => { %>
+              <tr>
+                <td><img src="<%= room.image %>" alt="<%= room.name %>" style="width: 60px; height: 45px; object-fit: cover; border-radius: 4px;"></td>
+                <td><strong><%= room.name %></strong></td>
+                <td><span style="font-size: 12px; background: #e0e7ff; color: #3730a3; padding: 2px 8px; border-radius: 12px;"><%= room.category %></span></td>
+                <td><strong style="color: var(--admin-primary); font-size: 16px;">$<%= room.price %></strong></td>
+                <td><%= room.bed %></td>
+                <td><%= room.capacity %> Persons</td>
+                <td><%= room.featured ? '⭐ Yes' : 'No' %></td>
+                <td>
+                  <button onclick="deleteRoom('<%= room.id %>')" class="btn-admin btn-admin-danger" style="padding: 5px 10px; font-size: 12px;"><i class="fas fa-trash"></i> Delete</button>
+                </td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- Add Room Modal Dialog -->
+  <div id="addRoomModal" style="display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index:2000; align-items:center; justify-content:center;">
+    <div style="background: #fff; width: 550px; padding: 30px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); max-height: 90vh; overflow-y: auto;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+        <h3 style="margin:0;">Add New Hotel Room</h3>
+        <button onclick="document.getElementById('addRoomModal').style.display='none'" style="border:none; background:none; font-size:20px; cursor:pointer;">&times;</button>
+      </div>
+
+      <form id="addRoomForm">
+        <div class="form-group-custom" style="margin-bottom: 15px;">
+          <label>Room Name *</label>
+          <input type="text" name="name" required placeholder="e.g. Royal Ocean Suite" class="form-control-custom">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+          <div>
+            <label>Category *</label>
+            <select name="category" class="form-control-custom">
+              <option value="Deluxe">Deluxe</option>
+              <option value="Suite">Suite</option>
+              <option value="Presidential">Presidential</option>
+              <option value="Villa">Villa</option>
+            </select>
+          </div>
+          <div>
+            <label>Price ($ per Night) *</label>
+            <input type="number" name="price" required placeholder="250" class="form-control-custom">
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+          <div>
+            <label>Bed Configuration</label>
+            <input type="text" name="bed" placeholder="1 King Bed" class="form-control-custom">
+          </div>
+          <div>
+            <label>Max Guest Capacity</label>
+            <input type="number" name="capacity" value="2" class="form-control-custom">
+          </div>
+        </div>
+
+        <div class="form-group-custom" style="margin-bottom: 15px;">
+          <label>Image URL</label>
+          <input type="text" name="image" value="/images/room-1.jpg" class="form-control-custom">
+        </div>
+
+        <div class="form-group-custom" style="margin-bottom: 15px;">
+          <label>Description</label>
+          <textarea name="description" rows="3" class="form-control-custom" placeholder="Room details & highlights"></textarea>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer;">
+            <input type="checkbox" name="featured" value="true"> Feature on Homepage
+          </label>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 10px;">
+          <button type="button" onclick="document.getElementById('addRoomModal').style.display='none'" class="btn-admin btn-admin-outline">Cancel</button>
+          <button type="submit" class="btn-admin btn-admin-primary">Save & Publish Room</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>

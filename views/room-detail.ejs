@@ -1,0 +1,123 @@
+<%- include('partials/header') %>
+
+<div style="background: var(--dark-bg); color: #fff; padding: 50px 0;">
+  <div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+      <div>
+        <span style="color: var(--primary-gold); text-transform: uppercase; letter-spacing: 2px; font-weight: 600;"><%= room.category %> Room</span>
+        <h1 style="font-size: 40px; margin-top: 5px;"><%= room.name %></h1>
+      </div>
+      <div>
+        <span style="font-size: 36px; font-family: var(--font-serif); color: var(--primary-gold); font-weight: bold;">$<%= room.price %></span>
+        <span style="font-size: 14px; color: #aaa;">/ Night</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section-padding">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;">
+      
+      <!-- Main Content -->
+      <div>
+        <img src="<%= room.image %>" alt="<%= room.name %>" style="width: 100%; height: 420px; object-fit: cover; border-radius: 8px; margin-bottom: 30px; box-shadow: var(--shadow-sm);">
+
+        <h3 style="font-size: 26px; margin-bottom: 15px;">Room Overview</h3>
+        <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 30px; line-height: 1.8;">
+          <%= room.description %>
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; background: var(--light-bg); padding: 25px; border-radius: 8px; margin-bottom: 40px;">
+          <div>
+            <span style="display: block; font-size: 12px; color: #888; text-transform: uppercase;">Bed Type</span>
+            <strong style="font-size: 15px;"><i class="fas fa-bed" style="color: var(--primary-gold);"></i> <%= room.bed %></strong>
+          </div>
+          <div>
+            <span style="display: block; font-size: 12px; color: #888; text-transform: uppercase;">Capacity</span>
+            <strong style="font-size: 15px;"><i class="fas fa-users" style="color: var(--primary-gold);"></i> Up to <%= room.capacity %> Guests</strong>
+          </div>
+          <div>
+            <span style="display: block; font-size: 12px; color: #888; text-transform: uppercase;">Room Size</span>
+            <strong style="font-size: 15px;"><i class="fas fa-ruler-combined" style="color: var(--primary-gold);"></i> <%= room.size %></strong>
+          </div>
+          <div>
+            <span style="display: block; font-size: 12px; color: #888; text-transform: uppercase;">View</span>
+            <strong style="font-size: 15px;"><i class="fas fa-mountain" style="color: var(--primary-gold);"></i> <%= room.view %></strong>
+          </div>
+        </div>
+
+        <h3 style="font-size: 26px; margin-bottom: 20px;">Room Amenities & Features</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 40px;">
+          <% room.amenities.forEach(amenity => { %>
+            <div style="display: flex; align-items: center; gap: 10px; font-size: 15px;">
+              <i class="fas fa-check-circle" style="color: var(--primary-gold);"></i>
+              <span><%= amenity %></span>
+            </div>
+          <% }); %>
+        </div>
+      </div>
+
+      <!-- Instant Booking Form Sidebar -->
+      <div>
+        <div style="background: #ffffff; padding: 30px; border-radius: 8px; border: 1px solid var(--primary-gold); box-shadow: var(--shadow-lg); position: sticky; top: 100px;">
+          <h3 style="font-size: 22px; margin-bottom: 20px; text-align: center; border-bottom: 2px solid var(--primary-gold); padding-bottom: 10px;">Reserve This Room</h3>
+
+          <form id="roomBookingForm">
+            <input type="hidden" name="roomId" value="<%= room.id %>">
+            
+            <div class="form-group-custom" style="margin-bottom: 15px;">
+              <label><i class="fas fa-user"></i> Full Name *</label>
+              <input type="text" name="guestName" required placeholder="e.g. John Doe" class="form-control-custom">
+            </div>
+
+            <div class="form-group-custom" style="margin-bottom: 15px;">
+              <label><i class="fas fa-envelope"></i> Email Address *</label>
+              <input type="email" name="email" required placeholder="e.g. john@example.com" class="form-control-custom">
+            </div>
+
+            <div class="form-group-custom" style="margin-bottom: 15px;">
+              <label><i class="fas fa-phone"></i> Phone Number</label>
+              <input type="tel" name="phone" placeholder="+1 234 567 890" class="form-control-custom">
+            </div>
+
+            <div class="form-group-custom" style="margin-bottom: 15px;">
+              <label><i class="far fa-calendar-alt"></i> Check-In Date *</label>
+              <input type="date" id="checkIn" name="checkIn" required class="form-control-custom">
+            </div>
+
+            <div class="form-group-custom" style="margin-bottom: 15px;">
+              <label><i class="far fa-calendar-alt"></i> Check-Out Date *</label>
+              <input type="date" id="checkOut" name="checkOut" required class="form-control-custom">
+            </div>
+
+            <div class="form-group-custom" style="margin-bottom: 20px;">
+              <label><i class="fas fa-users"></i> Guests *</label>
+              <select name="guests" class="form-control-custom">
+                <% for(let i=1; i<=room.capacity; i++) { %>
+                  <option value="<%= i %>"><%= i %> Guest<%= i > 1 ? 's' : '' %></option>
+                <% } %>
+              </select>
+            </div>
+
+            <div class="form-group-custom" style="margin-bottom: 20px;">
+              <label><i class="fas fa-credit-card"></i> Payment Method</label>
+              <select name="paymentMethod" class="form-control-custom">
+                <option value="Pay at Hotel">Pay at Hotel Check-in</option>
+                <option value="Credit Card">Credit / Debit Card</option>
+                <option value="Bank Transfer">Direct Bank Transfer</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn-gold" style="width: 100%; padding: 14px; font-size: 16px; border: none; cursor: pointer;">
+              Confirm Instant Reservation
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title || 'Hotux | Luxury Hotel & Resort' %></title>
+  
+  <!-- FontAwesome & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Top Header Bar -->
+  <div class="top-header">
+    <div class="container">
+      <div class="top-header-info">
+        <span><i class="fas fa-envelope"></i> info@hotuxhotel.com</span>
+        <span><i class="fas fa-phone"></i> +977 222-333-444</span>
+        <span><i class="fas fa-location-dot"></i> 445 Mount Eden Road, Chakrapath</span>
+      </div>
+      <div class="top-header-links">
+        <% if (user) { %>
+          <span><i class="fas fa-user-circle"></i> Welcome, <strong><%= user.name %></strong></span>
+          <% if (user.isAdmin) { %>
+            <a href="/admin" style="color: var(--primary-gold); font-weight: bold;"><i class="fas fa-chart-line"></i> Admin Panel</a>
+          <% } %>
+          <a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        <% } else { %>
+          <a href="/login"><i class="fas fa-user"></i> Login / Register</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <nav class="main-navbar">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="/" class="navbar-brand-logo">
+        <i class="fas fa-hotel"></i> HOTUX
+      </a>
+      <div class="nav-links">
+        <a href="/" class="<%= (typeof title !== 'undefined' && title.includes('Hotux | Luxury')) ? 'active' : '' %>">Home</a>
+        <a href="/rooms" class="<%= (typeof title !== 'undefined' && title.includes('Rooms')) ? 'active' : '' %>">Rooms & Suites</a>
+        <a href="/contact" class="<%= (typeof title !== 'undefined' && title.includes('Contact')) ? 'active' : '' %>">Contact Us</a>
+        <% if (isAdmin) { %>
+          <a href="/admin" style="color: var(--primary-gold);"><i class="fas fa-crown"></i> Admin Portal</a>
+        <% } %>
+        <a href="/rooms" class="btn-gold">Book Now</a>
+      </div>
+    </div>
+  </nav>

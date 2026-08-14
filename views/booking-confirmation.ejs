@@ -1,0 +1,62 @@
+<%- include('partials/header') %>
+
+<section class="section-padding" style="background: var(--light-bg); min-height: 70vh; display: flex; align-items: center;">
+  <div class="container" style="max-width: 750px;">
+    <div style="background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: var(--shadow-lg); border-top: 6px solid var(--primary-gold); text-align: center;">
+      
+      <div style="width: 80px; height: 80px; background: #e6f4ea; color: #137333; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 40px; margin: 0 auto 20px;">
+        <i class="fas fa-check"></i>
+      </div>
+
+      <h1 style="font-size: 32px; color: var(--dark-bg); margin-bottom: 10px;">Booking Confirmed!</h1>
+      <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 30px;">
+        Thank you for choosing Hotux Hotel & Resort. Your reservation has been successfully registered.
+      </p>
+
+      <div style="background: var(--light-bg); padding: 25px; border-radius: 8px; text-align: left; margin-bottom: 30px; border: 1px solid #e0e0e0;">
+        <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed #ccc; padding-bottom: 12px; margin-bottom: 12px;">
+          <span style="color: #666;">Booking ID Reference:</span>
+          <strong style="color: var(--primary-gold); font-size: 18px;"><%= booking.id %></strong>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+          <span style="color: #666;">Guest Name:</span>
+          <strong><%= booking.guestName %></strong>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+          <span style="color: #666;">Reserved Suite:</span>
+          <strong><%= booking.roomName %></strong>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+          <span style="color: #666;">Check-In Date:</span>
+          <strong><%= booking.checkIn %></strong>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+          <span style="color: #666;">Check-Out Date:</span>
+          <strong><%= booking.checkOut %></strong>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+          <span style="color: #666;">Number of Guests:</span>
+          <strong><%= booking.guests %> Guest(s)</strong>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; border-top: 1px solid #ddd; padding-top: 12px; margin-top: 12px;">
+          <span style="font-size: 18px; font-weight: bold;">Total Amount:</span>
+          <span style="font-size: 22px; font-weight: bold; color: var(--dark-bg);">$<%= booking.totalPrice %></span>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 15px; justify-content: center;">
+        <a href="/" class="btn-outline-gold"><i class="fas fa-home"></i> Back to Homepage</a>
+        <a href="javascript:window.print()" class="btn-gold"><i class="fas fa-print"></i> Print Receipt</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
