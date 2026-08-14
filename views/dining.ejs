@@ -1,0 +1,69 @@
+<%- include('partials/header') %>
+
+<!-- Page Header Banner -->
+<div style="background: linear-gradient(rgba(26, 38, 56, 0.75), rgba(26, 38, 56, 0.75)), url('/images/hotel-img-11.jpeg') center/cover; padding: 70px 0; text-align: center; color: #fff;">
+  <div class="container">
+    <h1 style="font-size: 42px; margin-bottom: 10px; color: #ffffff;">Multi-Cuisine Dining at Flutter Hotels & Resorts</h1>
+    <p style="color: var(--primary-blue); letter-spacing: 2px; text-transform: uppercase; font-weight: 600;">
+      A meal to match the view — our in-house restaurant serves multi-cuisine breakfast, lunch and dinner.
+    </p>
+  </div>
+</div>
+
+<section class="section-padding">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; margin-bottom: 60px;">
+      <div>
+        <span class="section-subtitle" style="text-align: left;">In-House Restaurant</span>
+        <h2 class="section-title" style="text-align: left; font-size: 36px;">Fresh Multi-Cuisine Flavors in the Hills</h2>
+        <p style="color: var(--text-muted); margin-bottom: 25px; font-size: 15px; line-height: 1.8;">
+          Our on-site restaurant serves fresh multi-cuisine food throughout your stay, and doubles as the catering partner for our banquet hall and outdoor lawn events. Pair your stay with our current dining offers below.
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px;">
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <i class="fas fa-utensils" style="color: var(--primary-blue); font-size: 20px;"></i>
+            <span style="font-size: 15px; font-weight: 500;">On-site multi-cuisine restaurant serving Indian, Garhwali & Continental dishes</span>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <i class="fas fa-glass-cheers" style="color: var(--primary-blue); font-size: 20px;"></i>
+            <span style="font-size: 15px; font-weight: 500;">In-house catering for banquet hall & lawn events up to 200 guests</span>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <i class="fas fa-fire" style="color: var(--primary-blue); font-size: 20px;"></i>
+            <span style="font-size: 15px; font-weight: 500;">Bonfire & DJ evenings held on the outdoor lawns</span>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <i class="fas fa-concierge-bell" style="color: var(--primary-blue); font-size: 20px;"></i>
+            <span style="font-size: 15px; font-weight: 500;">Free dinner included with our 2N/3D Midweek Offer</span>
+          </div>
+        </div>
+
+        <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I’d%20like%20to%20reserve%20a%20table%20at%20the%20restaurant." target="_blank" class="btn-blue"><i class="fab fa-whatsapp"></i> Reserve a Table</a>
+      </div>
+
+      <div>
+        <img src="/images/hotel-img-12.jpeg" alt="Flutter Restaurant Dining" style="width: 100%; border-radius: 12px; box-shadow: var(--shadow-lg);">
+      </div>
+    </div>
+
+    <!-- F&B Offers -->
+    <div style="background: var(--light-bg); padding: 40px; border-radius: 12px; border: 1.5px solid #e2e8f0; text-align: center;">
+      <h3 style="font-size: 26px; margin-bottom: 20px; color: var(--dark-bg);">Current F&B Offers</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 30px;">
+        <div style="background: #ffffff; padding: 25px; border-radius: 10px; border: 1px solid #e2e8f0;">
+          <h4 style="font-size: 18px; color: var(--primary-blue); margin-bottom: 8px;">Flat 10% Off F&B</h4>
+          <p style="font-size: 14px; color: var(--text-muted);">Enjoy flat 10% discount on food and beverage bills for all in-house guests.</p>
+        </div>
+        <div style="background: #ffffff; padding: 25px; border-radius: 10px; border: 1px solid #e2e8f0;">
+          <h4 style="font-size: 18px; color: var(--primary-blue); margin-bottom: 8px;">Member Special Discount</h4>
+          <p style="font-size: 14px; color: var(--text-muted);">Flat 10% off for Flutter Members booking direct through phone or website.</p>
+        </div>
+      </div>
+      <a href="/offers" class="btn-outline-blue"><i class="fas fa-tags"></i> View All Stay & Dining Packages</a>
+    </div>
+
+  </div>
+</section>
+
+<%- include('partials/footer') %>

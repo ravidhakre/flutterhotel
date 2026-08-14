@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title || 'Manage Bookings | Hotux Admin' %></title>
+  <title><%= title || 'Manage Bookings | Flutter Hotels Admin' %></title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="/css/admin.css">
   <link rel="stylesheet" href="/css/style.css">
@@ -11,14 +11,14 @@
 <body class="admin-body">
 
   <aside class="admin-sidebar">
-    <div class="sidebar-header">
-      <i class="fas fa-hotel"></i> HOTUX ADMIN
+    <div class="sidebar-header" style="display: flex; align-items: center; gap: 10px;">
+      <img src="/images/logo.avif" alt="Logo" style="height: 35px; background: #fff; padding: 2px; border-radius: 4px;"> FLUTTER ADMIN
     </div>
     <ul class="sidebar-menu">
       <li><a href="/admin"><i class="fas fa-chart-line"></i> Dashboard</a></li>
       <li><a href="/admin/bookings" class="active"><i class="fas fa-calendar-check"></i> Bookings (<%= bookings.length %>)</a></li>
       <li><a href="/admin/rooms"><i class="fas fa-bed"></i> Room Inventory</a></li>
-      <li><a href="/admin/inquiries"><i class="fas fa-envelope"></i> Customer Messages</a></li>
+      <li><a href="/admin/inquiries"><i class="fas fa-envelope"></i> Customer Enquiries</a></li>
       <li style="margin-top: 40px;"><a href="/"><i class="fas fa-external-link-alt"></i> View Main Website</a></li>
       <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
     </ul>
@@ -27,7 +27,7 @@
   <main class="admin-main">
     <header class="admin-topbar">
       <h2 style="margin: 0; font-size: 22px;">Reservation & Booking Manager</h2>
-      <a href="/" target="_blank" class="btn-admin btn-admin-primary"><i class="fas fa-plus"></i> New Public Booking</a>
+      <a href="/" target="_blank" class="btn-admin btn-admin-primary"><i class="fas fa-plus"></i> New Reservation</a>
     </header>
 
     <div class="admin-content">
@@ -45,7 +45,7 @@
               <th>Check-In</th>
               <th>Check-Out</th>
               <th>Guests</th>
-              <th>Total ($)</th>
+              <th>Total (₹)</th>
               <th>Payment</th>
               <th>Status</th>
               <th>Manage</th>
@@ -64,7 +64,7 @@
                 <td><%= b.checkIn %></td>
                 <td><%= b.checkOut %></td>
                 <td><%= b.guests %></td>
-                <td><strong style="color: var(--dark-bg);">$<%= b.totalPrice %></strong></td>
+                <td><strong style="color: var(--dark-bg);">₹<%= b.totalPrice.toLocaleString() %></strong></td>
                 <td><span style="font-size: 12px; color: #555;"><%= b.paymentMethod %></span></td>
                 <td>
                   <span class="badge-status badge-<%= b.status.toLowerCase() %>">

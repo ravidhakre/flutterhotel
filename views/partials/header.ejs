@@ -3,12 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title || 'Hotux | Luxury Hotel & Resort' %></title>
+  <title><%= title || 'Flutter Hotels & Resorts | Hill Resort in Lansdowne' %></title>
+  <% if (typeof metaDesc !== 'undefined') { %>
+    <meta name="description" content="<%= metaDesc %>">
+  <% } %>
   
   <!-- FontAwesome & Google Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <!-- Custom Stylesheets -->
+  <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -17,19 +20,19 @@
   <div class="top-header">
     <div class="container">
       <div class="top-header-info">
-        <span><i class="fas fa-envelope"></i> info@hotuxhotel.com</span>
-        <span><i class="fas fa-phone"></i> +977 222-333-444</span>
-        <span><i class="fas fa-location-dot"></i> 445 Mount Eden Road, Chakrapath</span>
+        <span><i class="fas fa-location-dot"></i> Palkot–Lansdowne, Pauri Garhwal, Uttarakhand</span>
+        <span><i class="fas fa-phone"></i> Call Us: <a href="tel:<%= phoneMain.replace(/\s+/g, '') %>" style="color: #ffffff; font-weight: bold;"><%= phoneMain %></a></span>
+        <span><i class="fas fa-envelope"></i> <%= emailMain %></span>
       </div>
       <div class="top-header-links">
         <% if (user) { %>
-          <span><i class="fas fa-user-circle"></i> Welcome, <strong><%= user.name %></strong></span>
+          <span><i class="fas fa-user-circle"></i> Hi, <strong><%= user.name %></strong></span>
           <% if (user.isAdmin) { %>
             <a href="/admin" style="color: var(--primary-blue); font-weight: bold;"><i class="fas fa-chart-line"></i> Admin Panel</a>
           <% } %>
           <a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
         <% } else { %>
-          <a href="/login"><i class="fas fa-user"></i> Login / Register</a>
+          <a href="/login"><i class="fas fa-user"></i> Guest / Admin Login</a>
         <% } %>
       </div>
     </div>
@@ -37,18 +40,28 @@
 
   <!-- Main Navigation Bar -->
   <nav class="main-navbar">
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 20px;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
       <a href="/" class="navbar-brand-logo">
-        <i class="fas fa-hotel"></i> HOTUX
+        <img src="/images/logo.avif" alt="Flutter Hotels & Resorts Logo" style="height: 48px; object-fit: contain;">
+        <span style="font-size: 22px; font-family: var(--font-serif); font-weight: 700; color: var(--dark-bg); letter-spacing: 0.5px;">Flutter <span style="font-size: 14px; font-family: var(--font-sans); color: var(--primary-blue); display: block; font-weight: 500; text-transform: uppercase; letter-spacing: 2px;">Hotels & Resorts</span></span>
       </a>
       <div class="nav-links">
-        <a href="/" class="<%= (typeof title !== 'undefined' && title.includes('Hotux | Luxury')) ? 'active' : '' %>">Home</a>
-        <a href="/rooms" class="<%= (typeof title !== 'undefined' && title.includes('Rooms')) ? 'active' : '' %>">Rooms & Suites</a>
+        <a href="/" class="<%= (typeof title !== 'undefined' && title.includes('Flutter Hotels & Resorts | Hill Resort')) ? 'active' : '' %>">Home</a>
+        <a href="/rooms" class="<%= (typeof title !== 'undefined' && title.includes('Rooms')) ? 'active' : '' %>">Rooms</a>
+        <a href="/offers" class="<%= (typeof title !== 'undefined' && title.includes('Offers')) ? 'active' : '' %>">Offers & Packages</a>
+        <a href="/things-to-do" class="<%= (typeof title !== 'undefined' && title.includes('Things To Do')) ? 'active' : '' %>">Things To Do</a>
+        <a href="/dining" class="<%= (typeof title !== 'undefined' && title.includes('Dining')) ? 'active' : '' %>">Dining</a>
+        <a href="/gallery" class="<%= (typeof title !== 'undefined' && title.includes('Gallery')) ? 'active' : '' %>">Gallery</a>
         <a href="/contact" class="<%= (typeof title !== 'undefined' && title.includes('Contact')) ? 'active' : '' %>">Contact Us</a>
         <% if (isAdmin) { %>
-          <a href="/admin" style="color: var(--primary-blue);"><i class="fas fa-crown"></i> Admin Portal</a>
+          <a href="/admin" style="color: var(--primary-blue); font-weight: bold;"><i class="fas fa-crown"></i> Admin</a>
         <% } %>
         <a href="/rooms" class="btn-blue header-booking-btn">Book Now</a>
       </div>
     </div>
   </nav>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I’d%20like%20to%20know%20more%20about%20Flutter%20Hotels%20%26%20Resorts." target="_blank" class="whatsapp-float-btn" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>

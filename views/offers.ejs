@@ -1,0 +1,47 @@
+<%- include('partials/header') %>
+
+<!-- Page Header Banner -->
+<div style="background: linear-gradient(rgba(26, 38, 56, 0.75), rgba(26, 38, 56, 0.75)), url('/images/hotel-img-5.jpeg') center/cover; padding: 70px 0; text-align: center; color: #fff;">
+  <div class="container">
+    <h1 style="font-size: 42px; margin-bottom: 10px; color: #ffffff;">Offers & Packages</h1>
+    <p style="color: var(--primary-blue); letter-spacing: 2px; text-transform: uppercase; font-weight: 600;">
+      Whatever brings you to Lansdowne — a quiet midweek break, a weekend with friends, a group trip from Delhi, or a celebration — there’s a package built for it.
+    </p>
+  </div>
+</div>
+
+<section class="section-padding">
+  <div class="container">
+    
+    <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 40px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
+      Book direct with Flutter Hotels & Resorts to access every offer below at its full value — no third-party booking fees. Browse the current packages and pick the one that fits your trip.
+    </p>
+
+    <!-- Packages Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px;">
+      <% offers.forEach(offer => { %>
+        <div style="background: #ffffff; border-radius: 12px; overflow: hidden; border: 1.5px solid #e2e8f0; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
+          <div style="position: relative; height: 220px;">
+            <img src="<%= offer.image %>" alt="<%= offer.title %>" style="width: 100%; height: 100%; object-fit: cover;">
+            <span style="position: absolute; top: 15px; left: 15px; background: var(--dark-bg); color: var(--primary-blue); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase;">
+              <%= offer.tag %>
+            </span>
+          </div>
+
+          <div style="padding: 25px; display: flex; flex-direction: column; flex-grow: 1;">
+            <h3 style="font-size: 20px; color: var(--dark-bg); margin-bottom: 10px;"><%= offer.title %></h3>
+            <div style="color: var(--primary-blue); font-weight: bold; font-size: 18px; margin-bottom: 15px;"><%= offer.price %></div>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px; flex-grow: 1;"><%= offer.shortDesc %></p>
+
+            <div style="border-top: 1px solid #f1f5f9; padding-top: 15px;">
+              <a href="/offers/<%= offer.slug %>" class="btn-blue" style="width: 100%; text-align: center;"><i class="fas fa-info-circle"></i> View Offer Details</a>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+
+  </div>
+</section>
+
+<%- include('partials/footer') %>

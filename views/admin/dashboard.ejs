@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title || 'Admin Dashboard | Hotux Hotel' %></title>
+  <title><%= title || 'Admin Dashboard | Flutter Hotels & Resorts' %></title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="/css/admin.css">
   <link rel="stylesheet" href="/css/style.css">
@@ -12,14 +12,14 @@
 
   <!-- Sidebar -->
   <aside class="admin-sidebar">
-    <div class="sidebar-header">
-      <i class="fas fa-hotel"></i> HOTUX ADMIN
+    <div class="sidebar-header" style="display: flex; align-items: center; gap: 10px;">
+      <img src="/images/logo.avif" alt="Logo" style="height: 35px; background: #fff; padding: 2px; border-radius: 4px;"> FLUTTER ADMIN
     </div>
     <ul class="sidebar-menu">
       <li><a href="/admin" class="active"><i class="fas fa-chart-line"></i> Dashboard</a></li>
       <li><a href="/admin/bookings"><i class="fas fa-calendar-check"></i> Bookings (<%= stats.totalBookings %>)</a></li>
       <li><a href="/admin/rooms"><i class="fas fa-bed"></i> Room Inventory (<%= stats.totalRooms %>)</a></li>
-      <li><a href="/admin/inquiries"><i class="fas fa-envelope"></i> Customer Messages (<%= stats.unreadInquiries %>)</a></li>
+      <li><a href="/admin/inquiries"><i class="fas fa-envelope"></i> Customer Enquiries (<%= stats.unreadInquiries %>)</a></li>
       <li style="margin-top: 40px;"><a href="/"><i class="fas fa-external-link-alt"></i> View Main Website</a></li>
       <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
     </ul>
@@ -29,14 +29,14 @@
   <main class="admin-main">
     <!-- Top Bar -->
     <header class="admin-topbar">
-      <h2 style="margin: 0; font-size: 22px;">Hotel Executive Management</h2>
+      <h2 style="margin: 0; font-size: 22px;">Flutter Hotels & Resorts — Executive Management</h2>
       <div class="topbar-user">
         <div style="text-align: right;">
-          <strong style="display: block; font-size: 14px;">Manager Admin</strong>
-          <span style="font-size: 12px; color: #888;">General Director</span>
+          <strong style="display: block; font-size: 14px;">General Director</strong>
+          <span style="font-size: 12px; color: #888;">Lansdowne Resort</span>
         </div>
         <div style="width: 40px; height: 40px; background: var(--admin-primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">
-          AD
+          FH
         </div>
       </div>
     </header>
@@ -45,10 +45,10 @@
       <!-- KPI Stats Grid -->
       <div class="kpi-grid">
         <div class="kpi-card">
-          <div class="kpi-icon"><i class="fas fa-dollar-sign"></i></div>
+          <div class="kpi-icon"><i class="fas fa-indian-rupee-sign"></i></div>
           <div class="kpi-details">
-            <h3>$<%= stats.totalRevenue.toLocaleString() %></h3>
-            <p>Total Revenue</p>
+            <h3>₹<%= stats.totalRevenue.toLocaleString() %></h3>
+            <p>Total Booking Revenue</p>
           </div>
         </div>
 
@@ -63,7 +63,7 @@
         <div class="kpi-card">
           <div class="kpi-icon"><i class="fas fa-clock"></i></div>
           <div class="kpi-details">
-            <h3 style="color: #b06000;"><%= stats.pendingBookings %></h3>
+            <h3 style="color: #d97706;"><%= stats.pendingBookings %></h3>
             <p>Pending Requests</p>
           </div>
         </div>
@@ -72,7 +72,7 @@
           <div class="kpi-icon"><i class="fas fa-door-open"></i></div>
           <div class="kpi-details">
             <h3><%= stats.totalRooms %></h3>
-            <p>Active Rooms</p>
+            <p>Active Room Suites</p>
           </div>
         </div>
       </div>
@@ -89,9 +89,9 @@
             <tr>
               <th>Booking Ref</th>
               <th>Guest Name</th>
-              <th>Suite</th>
+              <th>Room Reserved</th>
               <th>Check-in / Out</th>
-              <th>Total</th>
+              <th>Total (₹)</th>
               <th>Status</th>
               <th>Actions</th>
             </tr>
@@ -103,7 +103,7 @@
                 <td><%= booking.guestName %><br><span style="font-size: 11px; color: #888;"><%= booking.email %></span></td>
                 <td><%= booking.roomName %></td>
                 <td><%= booking.checkIn %> to <%= booking.checkOut %></td>
-                <td><strong>$<%= booking.totalPrice %></strong></td>
+                <td><strong>₹<%= booking.totalPrice.toLocaleString() %></strong></td>
                 <td>
                   <span class="badge-status badge-<%= booking.status.toLowerCase() %>">
                     <%= booking.status %>

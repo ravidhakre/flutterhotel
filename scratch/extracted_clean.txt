@@ -1,0 +1,489 @@
+
+Flutter Hotels &amp; Resorts
+Website Content
+Prepared for: Web Development Handoff
+Lansdowne, Uttarakhand, India
+Note to Developer
+This document contains final, ready-to-use marketing copy for every page of the new Flutter Hotels &amp; Resorts website, organised to map 1:1 onto the site’s menu structure. Each Heading 1 section below corresponds to a top-level navigation item; sub-pages are nested underneath as Heading 2 sections. Every page includes an SEO meta title and description, full body copy broken into the sections that should appear on that page, and clearly labelled call-to-action (CTA) button text with a Developer Notes callout describing placement and behaviour. Copy is final — no placeholders remain except where explicitly marked "SAMPLE — TO BE REPLACED" (guest review quotes, since the property currently has very few live reviews).
+
+Menu / Sitemap Outline (for quick reference)
+Home
+Rooms (overview) → Super Deluxe – Valley View | Super Deluxe – Garden View | Classic – Valley
+Offers &amp; Packages (overview) → Weekday Offer | Weekend Offer | 2N/3D Group Departure | Honeymoon Package | Corporate/MICE Package | Wedding &amp; Celebration Package
+Things To Do In Lansdowne
+Dining
+Gallery
+Contact Us
+Persistent elements on every page: sticky "Book Now" button, click-to-call phone number, floating WhatsApp chat button
+
+
+HOME
+SEO Meta Title
+Flutter Hotels &amp; Resorts | Hill Resort in Lansdowne  (51 chars)
+Meta Description
+Book direct at Flutter Hotels &amp; Resorts, Lansdowne — valley-view rooms, bonfire evenings &amp; multi-cuisine dining in the Garhwal Himalayas.  (137 chars)
+
+Sticky Header / Global CTA
+A sticky header bar appears on every page of the site containing the property logo, primary navigation, and the elements below.
+CTA BUTTON: Book Now
+Developer Notes: Sticky in the header on all pages, always visible on scroll. Links to the booking engine / reservation form. On mobile, collapses into a fixed bottom bar alongside click-to-call and WhatsApp icons.
+Click-to-call number: +91 89 2923 2740
+CTA BUTTON: Call Now (+91 89 2923 2740)
+Developer Notes: Header icon on all pages; on mobile taps directly dial the number. Alternate number +91 13 8629 9133 can be listed on the Contact Us page.
+CTA BUTTON: WhatsApp Chat (floating icon)
+Developer Notes: Floating button, bottom-right corner, visible on all pages including mobile. Opens a WhatsApp chat pre-filled with a greeting such as "Hi, I’d like to know more about Flutter Hotels &amp; Resorts."
+Hero Section
+Headline (H1):
+Your Himalayan Escape in Lansdowne, Uttarakhand
+Subheadline:
+Wake up to valley views, bonfire evenings and warm Garhwali hospitality — just a scenic drive from Delhi NCR, Dehradun and Muradabad. Book directly with us for the best available rates.
+CTA BUTTON: Check Availability
+Developer Notes: Primary hero CTA button, placed directly below the subheadline. Scrolls to / opens the Check Availability widget described next.
+Check Availability Widget
+Positioned immediately below the hero image, matching the direct, simple-tone booking pattern used by other top-rated Lansdowne properties.
+Widget field labels (exact on-screen text):
+Check-In (default note beside field: "Check-in from 12:00 PM")
+Check-Out (default note beside field: "Check-out by 10:00 AM")
+Guests (Rooms / Adults / Children)
+Promo Code (optional)
+CTA BUTTON: Check Availability
+Developer Notes: Submit button for the widget. Opens the booking engine pre-filled with the selected dates and guest count. Widget should remain usable on mobile as a stacked form.
+Trust Strip
+A row of short, factual bullet points placed just below the availability widget — concrete details rather than star ratings, since the property is newly established with limited reviews so far.
+32,400 sq. ft. hillside property in the Garhwal Himalayas
+Independently owned and run — established 15 April 2023
+Multi-cuisine restaurant, banquet hall for up to 200 guests, and bonfire &amp; DJ evenings on-site
+Easy access from Delhi NCR, Dehradun, Muradabad and Bijnor
+Free Wi-Fi and private balcony in every room
+Why Choose Flutter
+A hillside stay built around real comforts, not empty promises. Here’s exactly what you get when you book with Flutter Hotels &amp; Resorts:
+Private balconies in every room, most with valley views over the Garhwal hills
+On-site multi-cuisine restaurant serving breakfast, lunch and dinner
+Bonfire &amp; DJ evenings and outdoor lawns strung with fairy lights — ideal for groups and celebrations
+Banquet hall for up to 200 guests, suited to weddings, corporate offsites and family functions
+Indoor games and a kids’ play zone for family stays
+Doctor-on-call and cab-on-request for peace of mind during your trip
+Direct booking means no third-party mark-up and the option to speak to our team on WhatsApp or phone before you pay
+Rooms Teaser
+A short introduction followed by three room blurbs, each linking through to its own detail page.
+Super Deluxe – Valley View
+180 sq. ft. of comfort with a king bed, private balcony and uninterrupted valley views — our most requested room for couples and honeymooners.
+Super Deluxe – Garden View
+180 sq. ft., king bed and a private balcony overlooking the resort’s green lawns — a calm, quiet base for families and longer stays.
+Classic – Valley
+A cosy 120 sq. ft. room with a king bed, valley-facing private balcony and every essential you need — great value without compromising on the view.
+CTA BUTTON: View All Rooms
+Developer Notes: Placed below the three room blurbs. Links to the Rooms overview page.
+Guest Reviews
+Flutter Hotels &amp; Resorts opened in April 2023, and we’re still early in our guest review journey — here’s what a few of our first guests have said. Real testimonials will be added here as they come in; see our Tripadvisor listing for the latest verified reviews.
+SAMPLE — TO BE REPLACED WITH REAL REVIEWS
+“The valley view from our balcony was worth the trip alone. The bonfire evening with the staff was a lovely surprise.”
+— Sample guest, placeholder name (2N stay)
+“Good food at the restaurant and the kids loved the play zone. Staff arranged a cab for us with no hassle.”
+— Sample guest, placeholder name (family stay)
+CTA BUTTON: Read More Reviews on Tripadvisor
+Developer Notes: Links out to the property’s Tripadvisor listing. Replace the two sample quotes above with real guest reviews as soon as they are available — do not launch with sample quotes still live.
+Offers &amp; Packages Teaser Banner
+Save on your stay with our current offers.
+From 20% off weekday stays with a free dinner included, to our ₹4,999/person 2N/3D group departure from Delhi — there’s a package for every kind of trip to Lansdowne.
+CTA BUTTON: View All Offers &amp; Packages
+Developer Notes: Banner CTA, links to the Offers &amp; Packages overview page.
+Things To Do Teaser
+More than just a place to stay.
+Step outside and explore Tarkeshwar Mahadev Temple, watch sunrise from Tip-in-Top Point, or spend an afternoon boating on Bhulla Tal Lake — all within easy reach of the resort.
+CTA BUTTON: Explore Things To Do
+Developer Notes: Links to the Things To Do In Lansdowne page.
+Celebrations / Events Teaser
+Celebrate with us.
+Our banquet hall seats up to 200 guests, and our outdoor lawns with fairy lights set the scene for weddings, birthdays, anniversaries and reunions — with catering handled in-house by our multi-cuisine restaurant.
+CTA BUTTON: Plan Your Celebration
+Developer Notes: Links to the Wedding &amp; Celebration Package page.
+Footer
+Flutter Hotels &amp; Resorts — a Himalayan hillside stay in Lansdowne, Uttarakhand.
+Address: Palkot–Lansdowne, Pauri Garhwal, Uttarakhand – 246155, India
+Email: sales@flutterhotel.com
+Phone: +91 89 2923 2740 / +91 13 8629 9133
+Check-in / Check-out: 12:00 PM / 10:00 AM
+Follow us: Facebook (FlutterHotelsAndResortPvtLtd) · Instagram (flutterhotelsandresort) · X (@flutterhotels) · LinkedIn · Tripadvisor
+CTA BUTTON: Book Now
+Developer Notes: Repeated footer CTA linking to the booking engine, consistent with the sticky header button.
+
+ROOMS
+SEO Meta Title
+Rooms at Flutter Hotels &amp; Resorts, Lansdowne  (44 chars)
+Meta Description
+Explore Super Deluxe Valley View, Garden View and Classic rooms at Flutter Hotels &amp; Resorts — king beds, private balconies, free Wi-Fi.  (135 chars)
+
+Page Headline (H1):
+Rooms Built Around the View
+Hero Subheadline:
+Three room types, one thing in common: a private balcony and a king bed waiting at the end of a Himalayan day.
+Every room at Flutter Hotels &amp; Resorts comes with the essentials you actually need — free Wi-Fi, a 32-inch TV, a tea/coffee maker, mineral water, a wardrobe and your own private balcony. Choose the view and the space that suits your trip below.
+All Rooms Include
+Free Wi-Fi
+32-inch TV
+Tea/coffee maker
+Mineral water bottle
+Wardrobe
+Private balcony
+CTA BUTTON: Check Room Availability
+Developer Notes: Placed below the shared amenities list on the Rooms overview page. Opens the Check Availability widget / booking engine.
+Super Deluxe – Valley View
+SEO Meta Title
+Super Deluxe Valley View Room | Flutter Hotels  (46 chars)
+Meta Description
+Book the Super Deluxe Valley View room at Flutter Hotels &amp; Resorts, Lansdowne — 180 sq. ft., king bed, private balcony, valley views.  (133 chars)
+
+
+Page Headline (H1):
+Super Deluxe – Valley View
+Hero Subheadline:
+Open the balcony doors to the Garhwal valley stretching out below — our most requested room for couples and honeymooners.
+At 180 sq. ft., the Super Deluxe – Valley View room pairs a comfortable king bed with a private balcony looking straight out over the valley. It’s the room our guests ask for by name when they want to wake up to the view.
+Room Features
+180 sq. ft. room size
+King bed
+Valley view
+Private balcony
+Free Wi-Fi
+32-inch TV
+Tea/coffee maker
+Mineral water bottle
+Wardrobe
+FAQs
+What is the room size? 180 sq. ft.
+What view does this room have? A valley view from a private balcony.
+What are check-in and check-out times? Check-in is from 12:00 PM and check-out is by 10:00 AM.
+CTA BUTTON: Book This Room
+Developer Notes: Room-specific CTA on the Super Deluxe – Valley View detail page. Links to the booking engine with this room type pre-selected.
+Super Deluxe – Garden View
+SEO Meta Title
+Super Deluxe Garden View Room | Flutter Hotels  (46 chars)
+Meta Description
+Book the Super Deluxe Garden View room at Flutter Hotels &amp; Resorts, Lansdowne — 180 sq. ft., king bed, private balcony over the lawns.  (134 chars)
+
+
+
+Page Headline (H1):
+Super Deluxe – Garden View
+Hero Subheadline:
+A quiet balcony over green lawns — a calm base for families and longer stays.
+Also 180 sq. ft. with a king bed and private balcony, the Garden View room looks out over the resort’s lawns rather than the valley — a slightly quieter, more sheltered outlook that suits families and guests who want a settled, restful stay.
+Room Features
+180 sq. ft. room size
+King bed
+Garden view
+Private balcony
+Free Wi-Fi
+32-inch TV
+Tea/coffee maker
+Mineral water bottle
+Wardrobe
+FAQs
+What is the room size? 180 sq. ft.
+What view does this room have? A garden view over the resort’s lawns, from a private balcony.
+Is this room suitable for families? Yes — its quiet outlook and generous size make it a popular choice for families staying at the resort.
+CTA BUTTON: Book This Room
+Developer Notes: Room-specific CTA on the Super Deluxe – Garden View detail page. Links to the booking engine with this room type pre-selected.
+Classic – Valley
+SEO Meta Title
+Classic Valley Room | Flutter Hotels &amp; Resorts  (46 chars)
+Meta Description
+Book the Classic Valley room at Flutter Hotels &amp; Resorts, Lansdowne — 120 sq. ft., king bed, private balcony, valley view, great value.  (135 chars)
+
+
+
+
+Page Headline (H1):
+Classic – Valley
+Hero Subheadline:
+A cosy room with a valley view and every essential — without paying for extra space you don’t need.
+The Classic – Valley room is 120 sq. ft. — compact by design — but still gives you a king bed and a private, valley-facing balcony. It’s the room to pick if you’d rather spend your budget on an extra night or one of our packages.
+Room Features
+120 sq. ft. room size
+King bed
+Valley view
+Private balcony
+Free Wi-Fi
+32-inch TV
+Tea/coffee maker
+Mineral water bottle
+Wardrobe
+FAQs
+What is the room size? 120 sq. ft.
+How is this different from the Super Deluxe rooms? It’s a smaller footprint (120 sq. ft. vs. 180 sq. ft.) at a more accessible rate, while still including a king bed, private balcony and valley view.
+CTA BUTTON: Book This Room
+Developer Notes: Room-specific CTA on the Classic – Valley detail page. Links to the booking engine with this room type pre-selected.
+
+OFFERS &amp; PACKAGES
+SEO Meta Title
+Offers &amp; Packages | Flutter Hotels &amp; Resorts  (44 chars)
+Meta Description
+Weekday &amp; weekend discounts, group departures, honeymoon and celebration packages at Flutter Hotels &amp; Resorts, Lansdowne. Book direct &amp; save.  (141 chars)
+
+Page Headline (H1):
+Offers &amp; Packages
+Hero Subheadline:
+Whatever brings you to Lansdowne — a quiet midweek break, a weekend with friends, a group trip from Delhi, or a celebration — there’s a package built for it.
+Book direct with Flutter Hotels &amp; Resorts to access every offer below at its full value — no third-party booking fees. Browse the six current packages and pick the one that fits your trip.
+At a Glance
+Weekday Offer — up to 20% off + free dinner, rates from ₹2,400
+Weekend Offer — 20% off, from ₹3,200/person, includes free breakfast
+2N/3D Group Departure — ₹4,999/person, Delhi pickup included
+Honeymoon Package — romantic valley-view stay with candlelight dinner add-on
+Corporate/MICE Package — banquet hall + conference setup for groups
+Wedding &amp; Celebration Package — banquet hall + lawns for your big day
+CTA BUTTON: View Offer Details
+Developer Notes: Repeated below each offer card on the overview page. Links through to that offer’s individual detail page.
+Weekday Offer
+SEO Meta Title
+Weekday Offer — Up to 20% Off | Flutter Hotels  (46 chars)
+Meta Description
+Stay Monday to Thursday at Flutter Hotels &amp; Resorts and get up to 20% off plus a free dinner. Rates from ₹2,400. Book direct.  (125 chars)
+
+
+
+Page Headline (H1):
+The Weekday Offer: Up to 20% Off + Free Dinner
+Hero Subheadline:
+Take your break midweek and get more for less — a free dinner included, every time.
+Book a 2 Night / 3 Day midweek stay (Monday to Thursday) and save up to 20% off our rates, with a free dinner included for the duration of your stay. Rates start from ₹2,400. Planning a shorter trip? A single-night weekday stay still gets you 15% off.
+Package Details
+Up to 20% off + free dinner on 2 Night / 3 Day stays, Monday to Thursday
+Rates from ₹2,400
+15% off for single-night weekday stays
+Valid for stays booked directly with Flutter Hotels &amp; Resorts
+FAQs
+Which days does this offer apply to? Monday to Thursday.
+Is dinner included? Yes, a free dinner is included with the 2N/3D weekday stay.
+Can I book just one night? Yes — single-night weekday stays get 15% off.
+CTA BUTTON: Book the Weekday Offer
+Developer Notes: Links to the booking engine with the Weekday Offer rate plan pre-selected.
+Weekend Offer
+SEO Meta Title
+Weekend Offer — 20% Off | Flutter Hotels &amp; Resorts  (50 chars)
+Meta Description
+Get 20% off and a free breakfast on weekend stays at Flutter Hotels &amp; Resorts, Lansdowne. From ₹3,200/person. Book direct today.  (128 chars)
+
+Page Headline (H1):
+The Weekend Offer: 20% Off, Breakfast Included
+Hero Subheadline:
+Make the most of your weekend in Lansdowne — 20% off, breakfast on us.
+Our Weekend Offer gives you 20% off stays from ₹3,200 per person, with a free breakfast included every morning. It’s our most popular offer for short getaways from Delhi NCR, Dehradun and Muradabad.
+
+
+Package Details
+20% off weekend rates
+From ₹3,200 per person
+Free breakfast included
+FAQs
+What’s included in the price? The room rate at 20% off, plus a complimentary breakfast for the duration of your stay.
+How is pricing calculated? Rates start from ₹3,200 per person; final pricing depends on room type and number of guests.
+CTA BUTTON: Book the Weekend Offer
+Developer Notes: Links to the booking engine with the Weekend Offer rate plan pre-selected.
+2N/3D Group Departure
+SEO Meta Title
+2N/3D Group Departure from Delhi | Flutter Hotels  (49 chars)
+Meta Description
+Join our 2N/3D group departure to Lansdowne — ₹4,999/person, Delhi pickup from Akshardham Metro, full itinerary with bonfire &amp; DJ night.  (136 chars)
+
+Page Headline (H1):
+2N/3D Group Departure — ₹4,999 Per Person, Pickup From Delhi
+Hero Subheadline:
+One price, no planning — we handle the pickup, the stay and the evening entertainment.
+Our 2 Night / 3 Day Group Departure is built for groups of friends, families or colleagues who want a fully planned trip to Lansdowne without the logistics. At ₹4,999 per person, it includes pickup from Akshardham Metro Station in Delhi, your stay at the resort, and a full itinerary — including a bonfire and DJ evening.
+Package Details
+₹4,999 per person
+2 Nights / 3 Days
+Pickup from Akshardham Metro Station, Delhi
+Full itinerary included
+Bonfire &amp; DJ evening included
+
+
+FAQs
+Where does the group departure start from? Pickup is from Akshardham Metro Station in Delhi.
+What does the itinerary include? Transport, your 2N/3D stay at the resort, and a bonfire &amp; DJ evening, as part of a full planned itinerary.
+Is this suitable for large groups? Yes — this departure is designed for group travel; contact our team on WhatsApp or phone to confirm availability for your group size.
+CTA BUTTON: Reserve Your Group Spot
+Developer Notes: Links to the booking engine or a WhatsApp chat pre-filled with a group departure enquiry, given the coordination involved (pickup point, group size, dates).
+Honeymoon Package
+SEO Meta Title
+Honeymoon Package | Flutter Hotels &amp; Resorts  (44 chars)
+Meta Description
+Celebrate your honeymoon with a valley-view stay and candlelight dinner add-on at Flutter Hotels &amp; Resorts, Lansdowne. Enquire for rates.  (137 chars)
+
+Page Headline (H1):
+A Honeymoon Stay With the Valley as Your Backdrop
+Hero Subheadline:
+A private balcony, a valley view, and a candlelight dinner arranged just for the two of you.
+Begin your life together with a quiet stay in the Garhwal hills. Our Honeymoon Package is built around a valley-view room — we recommend the Super Deluxe – Valley View room — with the option to add a candlelight dinner arranged by our multi-cuisine restaurant. Pricing is tailored to your dates and chosen add-ons; contact our team for a starting-from quote.
+Package Highlights
+Valley-view room stay (Super Deluxe – Valley View recommended)
+Private balcony overlooking the Garhwal hills
+Candlelight dinner add-on available
+Rates starting from — contact us for current pricing based on your dates
+
+
+
+
+FAQs
+Which room is recommended for honeymoon stays? The Super Deluxe – Valley View room, for its private balcony and valley outlook.
+Can I add a candlelight dinner? Yes, a candlelight dinner can be added on as part of this package — speak to our team to arrange it for your stay.
+What does this package cost? Pricing starts from a base rate and varies with your dates and chosen add-ons — contact us directly for a quote.
+CTA BUTTON: Enquire About Honeymoon Rates
+Developer Notes: Since no fixed price exists for this package, this CTA should open a WhatsApp chat or enquiry form rather than the booking engine directly, so the team can quote based on dates and add-ons.
+Corporate/MICE Package
+SEO Meta Title
+Corporate &amp; MICE Packages | Flutter Hotels &amp; Resorts  (52 chars)
+Meta Description
+Host conferences and offsites at Flutter Hotels &amp; Resorts, Lansdowne — banquet hall for 200, conference setup, group stay rates.  (128 chars)
+
+Page Headline (H1):
+Corporate Offsites &amp; MICE Events in the Hills
+Hero Subheadline:
+A change of scenery for your next conference, offsite or team retreat — with the infrastructure to back it up.
+Our banquet hall accommodates up to 200 guests and can be set up for conferences, meetings and corporate events, backed by group stay rates for your team. Whether it’s a board offsite or a full company retreat, our team will work with you on setup, catering and accommodation. Contact us with your group size and dates for a tailored quote.
+Facilities &amp; Inclusions
+Banquet hall for up to 200 guests
+Conference setup available
+Group stay rates for corporate bookings
+On-site multi-cuisine restaurant for catering
+Indoor games and outdoor lawns available for team activities
+
+
+FAQs
+What is the maximum capacity for events? The banquet hall accommodates up to approximately 200 guests.
+Can you arrange a conference setup? Yes, conference setup is available in the banquet hall — share your requirements and our team will configure it accordingly.
+Do you offer group rates? Yes, group stay rates apply for corporate bookings — contact us with your dates and group size for a quote.
+CTA BUTTON: Request a Corporate Quote
+Developer Notes: Opens an enquiry form or WhatsApp chat, since pricing depends on group size, dates and setup requirements rather than a fixed rate.
+Wedding &amp; Celebration Package
+SEO Meta Title
+Weddings &amp; Celebrations | Flutter Hotels &amp; Resorts  (50 chars)
+Meta Description
+Host weddings, birthdays, anniversaries and reunions at Flutter Hotels &amp; Resorts, Lansdowne — banquet hall, lawns, catering. Enquire now.  (137 chars)
+
+Page Headline (H1):
+Weddings &amp; Celebrations Against the Garhwal Hills
+Hero Subheadline:
+Our banquet hall and lawns, ready for your wedding, birthday, anniversary or reunion.
+From an intimate anniversary dinner to a full wedding, our banquet hall and outdoor lawns — strung with fairy lights — are set up to host celebrations of every size, for up to around 200 guests. Catering is handled in-house by our multi-cuisine restaurant, and our team can help arrange a bonfire and DJ evening as part of your event. Contact us with your date and guest count for a tailored quote.
+What’s Included
+Banquet hall for up to 200 guests
+Outdoor lawns with fairy lights
+In-house multi-cuisine catering
+Bonfire &amp; DJ evening option
+Suitable for weddings, birthdays, anniversaries and reunions
+
+
+
+FAQs
+What types of events can you host? Weddings, birthdays, anniversaries and reunions, among other celebrations.
+What is the guest capacity? The banquet hall and lawns together can accommodate up to approximately 200 guests.
+Is catering included? Yes, catering is handled in-house by our multi-cuisine restaurant.
+CTA BUTTON: Enquire About Your Celebration
+Developer Notes: Opens an enquiry form or WhatsApp chat for the team to quote based on event date, guest count and requirements.
+
+THINGS TO DO IN LANSDOWNE
+SEO Meta Title
+Things To Do in Lansdowne | Flutter Hotels  (42 chars)
+Meta Description
+Temples, viewpoints, a war memorial and boating near Flutter Hotels &amp; Resorts, Lansdowne. Plan your sightseeing from our hillside stay.  (135 chars)
+
+Page Headline (H1):
+Things To Do In Lansdowne
+Hero Subheadline:
+A quiet hill station with a handful of unmissable stops — all within easy reach of the resort.
+Lansdowne rewards slow travel. Beyond the resort, you’ll find temples, viewpoints, a colonial-era church, a war memorial, a waterfall and a lake — each an easy trip from Flutter Hotels &amp; Resorts. Here’s what to add to your itinerary.
+Tarkeshwar Mahadev Temple
+A revered Shiva temple set among the hills — a peaceful stop for morning darshan or a quiet walk.
+Tip-in-Top Point (Tiffin Top)
+Lansdowne’s well-known viewpoint for sunrise and sunset, with sweeping views over the surrounding Garhwal hills.
+St. Mary’s Church
+Built in 1895, this colonial-era church is one of Lansdowne’s oldest landmarks — worth a visit for its history and architecture.
+Garhwal Rifles Regimental War Memorial
+A memorial honouring the Garhwal Rifles regiment — a meaningful stop for anyone interested in military history.
+Bhalugarh Waterfalls
+A scenic waterfall on the outskirts of town, a good half-day trip for those who enjoy a short trek.
+Bhulla Tal Lake
+A small lake in the heart of Lansdowne offering boating — a relaxed way to spend an afternoon with family.
+Getting Here
+Nearest airport: Dehradun (Jolly Grant Airport)
+Nearest railway station: Kotdwara
+CTA BUTTON: Plan Your Stay
+Developer Notes: Placed at the bottom of the Things To Do page. Links to the Check Availability widget / booking engine so visitors researching the area can book directly afterward.
+DINING
+SEO Meta Title
+Multi-Cuisine Restaurant | Flutter Hotels &amp; Resorts  (51 chars)
+Meta Description
+Enjoy multi-cuisine dining at Flutter Hotels &amp; Resorts, Lansdowne — in-house restaurant, free dinner &amp; F&amp;B offers available. Book direct.  (137 chars)
+
+Page Headline (H1):
+Multi-Cuisine Dining at Flutter Hotels &amp; Resorts
+Hero Subheadline:
+A meal to match the view — our in-house restaurant serves multi-cuisine breakfast, lunch and dinner.
+Our on-site restaurant serves multi-cuisine food throughout your stay, and doubles as the catering partner for our banquet hall and lawn events. Pair your stay with our current dining offers below.
+Dining Highlights
+On-site multi-cuisine restaurant
+In-house catering for banquet hall &amp; lawn events
+Bonfire &amp; DJ evenings held on the outdoor lawns
+Free dinner included with our Weekday Offer (2N/3D, Mon–Thu)
+Free breakfast included with our Weekend Offer
+Current F&amp;B Offers
+Flat 10% Discount on Food &amp; Beverage
+Flat 10% off for Members (Members Only Discount)
+CTA BUTTON: Reserve a Table
+Developer Notes: Links to a table-reservation form or WhatsApp chat for in-house diners and walk-ins, separate from the room booking engine.
+CTA BUTTON: View Offers &amp; Packages
+Developer Notes: Cross-links to the Offers &amp; Packages page for guests wanting to combine dining discounts with a room booking.
+GALLERY
+SEO Meta Title
+Photo Gallery | Flutter Hotels &amp; Resorts, Lansdowne  (51 chars)
+Meta Description
+Browse photos of rooms, valley views, lawns and bonfire evenings at Flutter Hotels &amp; Resorts, Lansdowne, Uttarakhand.  (117 chars)
+
+Page Headline (H1):
+See Flutter Hotels &amp; Resorts for Yourself
+Hero Subheadline:
+Rooms, views, lawns and evenings by the bonfire — a look at what’s waiting for you in Lansdowne.
+Browse photos of our rooms, valley and garden views, the banquet hall, outdoor lawns and bonfire evenings. (Developer note: populate this page with actual property photography organised into the categories below — no stock or placeholder images should go live.)
+Suggested Gallery Categories
+Rooms &amp; Balconies
+Valley &amp; Garden Views
+Restaurant &amp; Dining
+Banquet Hall &amp; Events
+Outdoor Lawns &amp; Bonfire Evenings
+Property Exterior
+CTA BUTTON: Book Your Stay
+Developer Notes: Placed at the bottom of the Gallery page. Links to the Check Availability widget / booking engine.
+CONTACT US
+SEO Meta Title
+Contact Us | Flutter Hotels &amp; Resorts, Lansdowne  (48 chars)
+Meta Description
+Get in touch with Flutter Hotels &amp; Resorts in Lansdowne, Uttarakhand — call, WhatsApp or email us to book or ask a question.  (124 chars)
+
+
+Page Headline (H1):
+Get in Touch With Flutter Hotels &amp; Resorts
+Hero Subheadline:
+Questions about your stay, a group trip, or an event? We usually respond fastest on WhatsApp or by phone.
+Reach us directly using the details below, or fill in the enquiry form and our team will get back to you.
+Contact Details
+Address: Palkot–Lansdowne, Pauri Garhwal, Uttarakhand – 246155, India
+Phone: +91 89 2923 2740 / +91 13 8629 9133
+Email: sales@flutterhotel.com
+Check-in / Check-out: 12:00 PM / 10:00 AM
+Follow us: Facebook (FlutterHotelsAndResortPvtLtd) · Instagram (flutterhotelsandresort) · X (@flutterhotels) · LinkedIn · Tripadvisor
+Enquiry Form (suggested fields)
+Name
+Phone Number
+Email Address
+Check-in / Check-out Dates
+Number of Guests
+Message / Purpose of Enquiry (e.g. room booking, group departure, wedding, corporate event)
+CTA BUTTON: Send Enquiry
+Developer Notes: Form submit button. Sends the enquiry to sales@flutterhotel.com and/or the reservations team.
+CTA BUTTON: Chat on WhatsApp
+Developer Notes: Opens a WhatsApp chat with the number above — positioned as the fastest way to reach the team, consistent with the floating WhatsApp button used site-wide.
+CTA BUTTON: Call Now
+Developer Notes: Click-to-call link for +91 89 2923 2740, with +91 13 8629 9133 listed as an alternate number.

@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
-  secret: 'hotux_luxury_secret_key_2026',
+  secret: 'flutter_hotels_resorts_secret_2026',
   resave: false,
   saveUninitialized: false,
   cookie: { maxAge: 24 * 60 * 60 * 1000 } // 24 hours
@@ -51,6 +51,10 @@ function saveData(file, data) {
 app.use((req, res, next) => {
   res.locals.user = req.session.user || null;
   res.locals.isAdmin = req.session.user && req.session.user.isAdmin;
+  res.locals.phoneMain = "+91 89 2923 2740";
+  res.locals.phoneAlt = "+91 13 8629 9133";
+  res.locals.emailMain = "sales@flutterhotel.com";
+  res.locals.whatsappNum = "918929232740";
   next();
 });
 
@@ -64,26 +68,28 @@ function requireAdmin(req, res, next) {
 
 // --- PUBLIC ROUTES ---
 
-// Homepage
+// 1. Homepage
 app.get('/', (req, res) => {
   const rooms = readData('rooms.json');
   const reviews = readData('reviews.json');
-  const featuredRooms = rooms.filter(r => r.featured);
+  const offers = readData('offers.json');
+  
   res.render('index', {
-    title: 'Hotux | Luxury Hotel & Resort',
+    title: 'Flutter Hotels & Resorts | Hill Resort in Lansdowne',
+    metaDesc: 'Book direct at Flutter Hotels & Resorts, Lansdowne — valley-view rooms, bonfire evenings & multi-cuisine dining in the Garhwal Himalayas.',
     rooms: rooms,
-    featuredRooms: featuredRooms,
-    reviews: reviews
+    reviews: reviews,
+    offers: offers
   });
 });
 
-// Rooms Catalog
+// 2. Rooms Catalog Overview
 app.get('/rooms', (req, res) => {
   let rooms = readData('rooms.json');
   const { category, minPrice, maxPrice, guests } = req.query;
 
   if (category && category !== 'All') {
-    rooms = rooms.filter(r => r.category.toLowerCase() === category.toLowerCase());
+    rooms = rooms.filter(r => r.category.toLowerCase().includes(category.toLowerCase()));
   }
   if (guests) {
     rooms = rooms.filter(r => r.capacity >= parseInt(guests));
@@ -96,25 +102,115 @@ app.get('/rooms', (req, res) => {
   }
 
   res.render('rooms', {
-    title: 'Explore Rooms | Hotux Hotel',
+    title: 'Rooms at Flutter Hotels & Resorts, Lansdowne',
+    metaDesc: 'Explore Super Deluxe Valley View, Garden View and Classic rooms at Flutter Hotels & Resorts — king beds, private balconies, free Wi-Fi.',
     rooms: rooms,
     query: req.query
   });
 });
 
-// Single Room Detail Page
+// 3. Single Room Detail Page
 app.get('/rooms/:id', (req, res) => {
   const rooms = readData('rooms.json');
   const room = rooms.find(r => r.id === req.params.id);
   if (!room) {
-    return res.status(404).render('404', { title: 'Room Not Found' });
+    return res.status(404).render('404', { title: 'Room Not Found | Flutter Hotels' });
   }
-  const relatedRooms = rooms.filter(r => r.id !== room.id).slice(0, 3);
+  const relatedRooms = rooms.filter(r => r.id !== room.id);
   res.render('room-detail', {
-    title: `${room.name} | Hotux Hotel`,
+    title: `${room.name} | Flutter Hotels & Resorts`,
+    metaDesc: `Book the ${room.name} at Flutter Hotels & Resorts, Lansdowne — ${room.size}, ${room.bed}, private balcony, ${room.view}.`,
     room: room,
     relatedRooms: relatedRooms
   });
+});
+
+// 4. Offers & Packages Overview
+app.get('/offers', (req, res) => {
+  const offers = readData('offers.json');
+  res.render('offers', {
+    title: 'Offers & Packages | Flutter Hotels & Resorts',
+    metaDesc: 'Weekday & weekend discounts, group departures, honeymoon and celebration packages at Flutter Hotels & Resorts, Lansdowne. Book direct & save.',
+    offers: offers
+  });
+});
+
+// 5. Single Offer Detail Page
+app.get('/offers/:slug', (req, res) => {
+  const offers = readData('offers.json');
+  const offer = offers.find(o => o.slug === req.params.slug);
+  if (!offer) {
+    return res.redirect('/offers');
+  }
+  res.render('offer-detail', {
+    title: `${offer.metaTitle || offer.title}`,
+    metaDesc: offer.metaDescription,
+    offer: offer
+  });
+});
+
+// 6. Things To Do In Lansdowne
+app.get('/things-to-do', (req, res) => {
+  res.render('things-to-do', {
+    title: 'Things To Do in Lansdowne | Flutter Hotels',
+    metaDesc: 'Temples, viewpoints, a war memorial and boating near Flutter Hotels & Resorts, Lansdowne. Plan your sightseeing from our hillside stay.'
+  });
+});
+
+// 7. Dining Page
+app.get('/dining', (req, res) => {
+  res.render('dining', {
+    title: 'Multi-Cuisine Restaurant | Flutter Hotels & Resorts',
+    metaDesc: 'Enjoy multi-cuisine dining at Flutter Hotels & Resorts, Lansdowne — in-house restaurant, free dinner & F&B offers available. Book direct.'
+  });
+});
+
+// 8. Gallery Page
+app.get('/gallery', (req, res) => {
+  res.render('gallery', {
+    title: 'Photo Gallery | Flutter Hotels & Resorts, Lansdowne',
+    metaDesc: 'Browse photos of rooms, valley views, lawns and bonfire evenings at Flutter Hotels & Resorts, Lansdowne, Uttarakhand.'
+  });
+});
+
+// 9. Contact Us Page
+app.get('/contact', (req, res) => {
+  res.render('contact', {
+    title: 'Contact Us | Flutter Hotels & Resorts, Lansdowne',
+    metaDesc: 'Get in touch with Flutter Hotels & Resorts in Lansdowne, Uttarakhand — call, WhatsApp or email us to book or ask a question.',
+    success: req.query.success || null
+  });
+});
+
+// Contact Form Handler
+app.post('/contact', (req, res) => {
+  const { name, email, phone, dates, guests, subject, message } = req.body;
+  if (!name || !email || (!phone && !message)) {
+    return res.render('contact', {
+      title: 'Contact Us | Flutter Hotels & Resorts',
+      metaDesc: 'Get in touch with Flutter Hotels & Resorts.',
+      error: 'Please fill in all required contact fields.'
+    });
+  }
+
+  const inquiries = readData('inquiries.json');
+  const newInquiry = {
+    id: 'FLT-INQ-' + Math.floor(100 + Math.random() * 900),
+    name,
+    email,
+    phone: phone || '',
+    dates: dates || 'Not specified',
+    guests: guests || 'Not specified',
+    subject: subject || 'General / Room Inquiry',
+    message: message || 'Booking enquiry submitted.',
+    status: 'Unread',
+    date: new Date().toISOString()
+  };
+
+  inquiries.unshift(newInquiry);
+  saveData('inquiries.json', inquiries);
+
+  res.redirect('/contact?success=Thank+you!+Your+enquiry+has+been+received.+Our+reservations+team+will+contact+you+on+phone%2FWhatsApp+shortly.');
 });
 
 // Booking Confirmation Page
@@ -128,54 +224,17 @@ app.get('/booking/confirm/:id', (req, res) => {
   const room = rooms.find(r => r.id === booking.roomId);
 
   res.render('booking-confirmation', {
-    title: 'Booking Confirmed | Hotux Hotel',
+    title: 'Booking Confirmed | Flutter Hotels & Resorts',
     booking: booking,
     room: room
   });
 });
 
-// Contact Page
-app.get('/contact', (req, res) => {
-  res.render('contact', {
-    title: 'Contact Us | Hotux Hotel',
-    success: req.query.success || null
-  });
-});
-
-// Contact Form Handler
-app.post('/contact', (req, res) => {
-  const { name, email, phone, subject, message } = req.body;
-  if (!name || !email || !message) {
-    return res.render('contact', {
-      title: 'Contact Us | Hotux Hotel',
-      error: 'Please fill in all required fields.'
-    });
-  }
-
-  const inquiries = readData('inquiries.json');
-  const newInquiry = {
-    id: 'INQ-' + Math.floor(100 + Math.random() * 900),
-    name,
-    email,
-    phone: phone || '',
-    subject: subject || 'General Inquiry',
-    message,
-    status: 'Unread',
-    date: new Date().toISOString()
-  };
-
-  inquiries.unshift(newInquiry);
-  saveData('inquiries.json', inquiries);
-
-  res.redirect('/contact?success=Thank+you!+Your+message+has+been+received.+We+will+get+back+to+you+shortly.');
-});
-
 // Login Page
 app.get('/login', (req, res) => {
   res.render('login', {
-    title: 'Login & Register | Hotux Hotel',
-    error: req.query.error || null,
-    message: req.query.message || null
+    title: 'Guest Login & Admin Portal | Flutter Hotels',
+    error: req.query.error || null
   });
 });
 
@@ -184,17 +243,17 @@ app.post('/login', (req, res) => {
   const { username, password } = req.body;
 
   // Admin authentication (Default: admin / admin123)
-  if ((username === 'admin' || username === 'admin@hotux.com') && password === 'admin123') {
+  if ((username === 'admin' || username === 'sales@flutterhotel.com') && password === 'admin123') {
     req.session.user = {
       id: 'admin-1',
-      name: 'Manager Admin',
+      name: 'Flutter General Director',
       username: 'admin',
       isAdmin: true
     };
     return res.redirect('/admin');
   }
 
-  // Demo customer user
+  // Demo guest user
   if (username && password) {
     req.session.user = {
       id: 'user-' + Date.now(),
@@ -206,7 +265,7 @@ app.post('/login', (req, res) => {
   }
 
   return res.render('login', {
-    title: 'Login & Register | Hotux Hotel',
+    title: 'Guest Login & Admin Portal | Flutter Hotels',
     error: 'Invalid username or password.'
   });
 });
@@ -230,7 +289,7 @@ app.post('/api/check-availability', (req, res) => {
     availableRooms = availableRooms.filter(r => r.capacity >= parseInt(guests));
   }
   if (roomType && roomType !== 'All') {
-    availableRooms = availableRooms.filter(r => r.category.toLowerCase() === roomType.toLowerCase());
+    availableRooms = availableRooms.filter(r => r.category.toLowerCase().includes(roomType.toLowerCase()));
   }
 
   return res.json({
@@ -263,7 +322,7 @@ app.post('/api/bookings', (req, res) => {
 
   const bookings = readData('bookings.json');
   const newBooking = {
-    id: 'HTX-' + Math.floor(1000 + Math.random() * 9000),
+    id: 'FLT-' + Math.floor(1000 + Math.random() * 9000),
     roomId: room.id,
     roomName: room.name,
     guestName,
@@ -275,7 +334,7 @@ app.post('/api/bookings', (req, res) => {
     totalPrice,
     status: 'Confirmed',
     createdAt: new Date().toISOString(),
-    paymentMethod: paymentMethod || 'Pay at Hotel'
+    paymentMethod: paymentMethod || 'Pay at Hotel Check-in'
   };
 
   bookings.unshift(newBooking);
@@ -305,7 +364,7 @@ app.get('/admin', requireAdmin, (req, res) => {
   const unreadInquiries = inquiries.filter(i => i.status === 'Unread').length;
 
   res.render('admin/dashboard', {
-    title: 'Admin Dashboard | Hotux Hotel',
+    title: 'Admin Dashboard | Flutter Hotels & Resorts',
     stats: {
       totalBookings: bookings.length,
       totalRooms: rooms.length,
@@ -322,7 +381,7 @@ app.get('/admin', requireAdmin, (req, res) => {
 app.get('/admin/bookings', requireAdmin, (req, res) => {
   const bookings = readData('bookings.json');
   res.render('admin/bookings', {
-    title: 'Manage Bookings | Hotux Admin',
+    title: 'Manage Bookings | Flutter Hotels Admin',
     bookings: bookings
   });
 });
@@ -354,14 +413,14 @@ app.delete('/api/admin/bookings/:id', requireAdmin, (req, res) => {
 app.get('/admin/rooms', requireAdmin, (req, res) => {
   const rooms = readData('rooms.json');
   res.render('admin/rooms', {
-    title: 'Manage Rooms | Hotux Admin',
+    title: 'Manage Rooms | Flutter Hotels Admin',
     rooms: rooms
   });
 });
 
 // Add Room API
 app.post('/api/admin/rooms', requireAdmin, (req, res) => {
-  const { name, category, price, bed, capacity, size, view, image, description, featured } = req.body;
+  const { name, category, price, bed, capacity, size, view, image, description } = req.body;
   if (!name || !price || !category) {
     return res.status(400).json({ success: false, message: 'Name, Category, and Price are required.' });
   }
@@ -375,39 +434,19 @@ app.post('/api/admin/rooms', requireAdmin, (req, res) => {
     rating: 5,
     bed: bed || '1 King Bed',
     capacity: parseInt(capacity) || 2,
-    size: size || '45 sq.m',
+    size: size || '180 sq. ft.',
     wifi: true,
     breakfast: true,
-    view: view || 'Garden View',
-    image: image || '/images/room-1.jpg',
-    featured: featured === 'true' || featured === true,
-    description: description || 'Luxurious accommodations with premium amenities.',
-    amenities: ["Free High-speed Wi-Fi", "Air Conditioning", "Flat Screen TV", "Mini Bar", "24/7 Room Service"]
+    view: view || 'Valley View',
+    image: image || '/images/hotel-img-1.jpg',
+    featured: true,
+    description: description || 'Luxurious hillside suite with private balcony.',
+    amenities: ["Free Wi-Fi", "Private Balcony", "32-inch TV", "Tea/Coffee Maker", "Mineral Water", "Wardrobe"]
   };
 
   rooms.push(newRoom);
   saveData('rooms.json', rooms);
   return res.json({ success: true, message: 'Room added successfully!', room: newRoom });
-});
-
-// Update Room API
-app.put('/api/admin/rooms/:id', requireAdmin, (req, res) => {
-  const rooms = readData('rooms.json');
-  const index = rooms.findIndex(r => r.id === req.params.id);
-  if (index === -1) {
-    return res.status(404).json({ success: false, message: 'Room not found.' });
-  }
-
-  const updatedRoom = {
-    ...rooms[index],
-    ...req.body,
-    price: parseFloat(req.body.price || rooms[index].price),
-    capacity: parseInt(req.body.capacity || rooms[index].capacity)
-  };
-
-  rooms[index] = updatedRoom;
-  saveData('rooms.json', rooms);
-  return res.json({ success: true, message: 'Room updated successfully!' });
 });
 
 // Delete Room API
@@ -422,35 +461,21 @@ app.delete('/api/admin/rooms/:id', requireAdmin, (req, res) => {
 app.get('/admin/inquiries', requireAdmin, (req, res) => {
   const inquiries = readData('inquiries.json');
   res.render('admin/inquiries', {
-    title: 'Customer Inquiries | Hotux Admin',
+    title: 'Customer Inquiries | Flutter Hotels Admin',
     inquiries: inquiries
   });
 });
 
-// Update Inquiry Status API
-app.patch('/api/admin/inquiries/:id/status', requireAdmin, (req, res) => {
-  const { status } = req.body;
-  const inquiries = readData('inquiries.json');
-  const inquiry = inquiries.find(i => i.id === req.params.id);
-  if (inquiry) {
-    inquiry.status = status;
-    saveData('inquiries.json', inquiries);
-    return res.json({ success: true });
-  }
-  return res.status(404).json({ success: false });
-});
-
-// 404 Page Route
+// 404 Route
 app.use((req, res) => {
-  res.status(404).render('404', { title: 'Page Not Found | Hotux Hotel' });
+  res.status(404).render('404', { title: 'Page Not Found | Flutter Hotels & Resorts' });
 });
 
 // Start Server
 app.listen(PORT, () => {
-  console.log(`================================================`);
-  console.log(`  HOTUX LUXURY HOTEL SERVER IS RUNNING ONLINE!  `);
-  console.log(`  Public Web:  http://localhost:${PORT}          `);
-  console.log(`  Admin Panel: http://localhost:${PORT}/admin    `);
-  console.log(`  Admin Creds: Username: admin / Password: admin123`);
-  console.log(`================================================`);
+  console.log(`====================================================`);
+  console.log(`  FLUTTER HOTELS & RESORTS SERVER RUNNING ONLINE!   `);
+  console.log(`  Public Web:  http://localhost:${PORT}             `);
+  console.log(`  Admin Panel: http://localhost:${PORT}/admin       `);
+  console.log(`====================================================`);
 });

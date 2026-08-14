@@ -4,11 +4,11 @@
   <div class="container">
     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
       <div>
-        <span style="color: var(--primary-blue); text-transform: uppercase; letter-spacing: 2px; font-weight: 600;"><%= room.category %> Room</span>
+        <span style="color: var(--primary-blue); text-transform: uppercase; letter-spacing: 2px; font-weight: 600;"><%= room.category %> Accommodations</span>
         <h1 style="font-size: 40px; margin-top: 5px; color: #ffffff;"><%= room.name %></h1>
       </div>
       <div>
-        <span style="font-size: 36px; font-family: var(--font-serif); color: var(--primary-blue); font-weight: bold;">$<%= room.price %></span>
+        <span style="font-size: 36px; font-family: var(--font-serif); color: var(--primary-blue); font-weight: bold;">₹<%= room.price.toLocaleString() %></span>
         <span style="font-size: 14px; color: #aaa;">/ Night</span>
       </div>
     </div>
@@ -30,24 +30,24 @@
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; background: var(--light-bg); padding: 25px; border-radius: 10px; margin-bottom: 40px; border: 1.5px solid #e2e8f0;">
           <div>
-            <span style="display: block; font-size: 12px; color: #888; text-transform: uppercase;">Bed Type</span>
+            <span style="display: block; font-size: 12px; color: #888; text-transform: uppercase;">Room Footprint</span>
+            <strong style="font-size: 15px;"><i class="fas fa-vector-square" style="color: var(--primary-blue);"></i> <%= room.size %></strong>
+          </div>
+          <div>
+            <span style="display: block; font-size: 12px; color: #888; text-transform: uppercase;">Bed Configuration</span>
             <strong style="font-size: 15px;"><i class="fas fa-bed" style="color: var(--primary-blue);"></i> <%= room.bed %></strong>
           </div>
           <div>
-            <span style="display: block; font-size: 12px; color: #888; text-transform: uppercase;">Capacity</span>
+            <span style="display: block; font-size: 12px; color: #888; text-transform: uppercase;">Guest Capacity</span>
             <strong style="font-size: 15px;"><i class="fas fa-users" style="color: var(--primary-blue);"></i> Up to <%= room.capacity %> Guests</strong>
           </div>
           <div>
-            <span style="display: block; font-size: 12px; color: #888; text-transform: uppercase;">Room Size</span>
-            <strong style="font-size: 15px;"><i class="fas fa-ruler-combined" style="color: var(--primary-blue);"></i> <%= room.size %></strong>
-          </div>
-          <div>
-            <span style="display: block; font-size: 12px; color: #888; text-transform: uppercase;">View</span>
+            <span style="display: block; font-size: 12px; color: #888; text-transform: uppercase;">Outlook & View</span>
             <strong style="font-size: 15px;"><i class="fas fa-mountain" style="color: var(--primary-blue);"></i> <%= room.view %></strong>
           </div>
         </div>
 
-        <h3 style="font-size: 26px; margin-bottom: 20px;">Room Amenities & Features</h3>
+        <h3 style="font-size: 26px; margin-bottom: 20px;">Included Room Amenities</h3>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 40px;">
           <% room.amenities.forEach(amenity => { %>
             <div style="display: flex; align-items: center; gap: 10px; font-size: 15px;">
@@ -56,29 +56,45 @@
             </div>
           <% }); %>
         </div>
+
+        <h3 style="font-size: 24px; margin-bottom: 20px;">Frequently Asked Questions</h3>
+        <div style="background: var(--light-bg); padding: 25px; border-radius: 10px; border: 1px solid #e2e8f0; margin-bottom: 40px;">
+          <div style="margin-bottom: 15px;">
+            <strong style="font-size: 16px; color: var(--dark-bg); display: block;">Q: What are the check-in and check-out timings?</strong>
+            <p style="color: var(--text-muted); margin-top: 4px;">Check-in is from 12:00 PM and check-out is by 10:00 AM.</p>
+          </div>
+          <div style="margin-bottom: 15px;">
+            <strong style="font-size: 16px; color: var(--dark-bg); display: block;">Q: Is private balcony available in this room?</strong>
+            <p style="color: var(--text-muted); margin-top: 4px;">Yes, every room at Flutter Hotels & Resorts features its own private balcony.</p>
+          </div>
+          <div>
+            <strong style="font-size: 16px; color: var(--dark-bg); display: block;">Q: What is included in the room price?</strong>
+            <p style="color: var(--text-muted); margin-top: 4px;">Room stay, free high-speed Wi-Fi, 32-inch Smart TV, tea/coffee maker, mineral water, and balcony access.</p>
+          </div>
+        </div>
       </div>
 
       <!-- Instant Booking Form Sidebar -->
       <div>
         <div style="background: #ffffff; padding: 30px; border-radius: 10px; border: 2px solid var(--primary-blue); box-shadow: var(--shadow-lg); position: sticky; top: 100px;">
-          <h3 style="font-size: 22px; margin-bottom: 20px; text-align: center; border-bottom: 2px solid var(--primary-blue); padding-bottom: 10px; color: var(--dark-bg);">Reserve This Room</h3>
+          <h3 style="font-size: 22px; margin-bottom: 20px; text-align: center; border-bottom: 2px solid var(--primary-blue); padding-bottom: 10px; color: var(--dark-bg);">Book <%= room.name %></h3>
 
           <form id="roomBookingForm">
             <input type="hidden" name="roomId" value="<%= room.id %>">
             
             <div class="form-group-custom" style="margin-bottom: 15px;">
               <label><i class="fas fa-user"></i> Full Name *</label>
-              <input type="text" name="guestName" required placeholder="e.g. John Doe" class="form-control-custom">
+              <input type="text" name="guestName" required placeholder="John Doe" class="form-control-custom">
             </div>
 
             <div class="form-group-custom" style="margin-bottom: 15px;">
               <label><i class="fas fa-envelope"></i> Email Address *</label>
-              <input type="email" name="email" required placeholder="e.g. john@example.com" class="form-control-custom">
+              <input type="email" name="email" required placeholder="john@example.com" class="form-control-custom">
             </div>
 
             <div class="form-group-custom" style="margin-bottom: 15px;">
-              <label><i class="fas fa-phone"></i> Phone Number</label>
-              <input type="tel" name="phone" placeholder="+1 234 567 890" class="form-control-custom">
+              <label><i class="fas fa-phone"></i> Phone Number *</label>
+              <input type="tel" name="phone" required placeholder="+91 98765 43210" class="form-control-custom">
             </div>
 
             <div class="form-group-custom" style="margin-bottom: 15px;">
@@ -100,19 +116,16 @@
               </select>
             </div>
 
-            <div class="form-group-custom" style="margin-bottom: 20px;">
-              <label><i class="fas fa-credit-card"></i> Payment Method</label>
-              <select name="paymentMethod" class="form-control-custom">
-                <option value="Pay at Hotel">Pay at Hotel Check-in</option>
-                <option value="Credit Card">Credit / Debit Card</option>
-                <option value="Bank Transfer">Direct Bank Transfer</option>
-              </select>
-            </div>
-
             <button type="submit" class="btn-blue" style="width: 100%; padding: 14px; font-size: 16px; border: none; cursor: pointer;">
-              Confirm Instant Reservation
+              Confirm Direct Reservation
             </button>
           </form>
+
+          <div style="margin-top: 15px; text-align: center;">
+            <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20book%20the%20<%= encodeURIComponent(room.name) %>." target="_blank" style="color: #25d366; font-weight: 600; font-size: 13px;">
+              <i class="fab fa-whatsapp"></i> Chat on WhatsApp to Book
+            </a>
+          </div>
         </div>
       </div>
 

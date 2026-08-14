@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title || 'Customer Inquiries | Hotux Admin' %></title>
+  <title><%= title || 'Customer Inquiries | Flutter Hotels Admin' %></title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="/css/admin.css">
   <link rel="stylesheet" href="/css/style.css">
@@ -11,14 +11,14 @@
 <body class="admin-body">
 
   <aside class="admin-sidebar">
-    <div class="sidebar-header">
-      <i class="fas fa-hotel"></i> HOTUX ADMIN
+    <div class="sidebar-header" style="display: flex; align-items: center; gap: 10px;">
+      <img src="/images/logo.avif" alt="Logo" style="height: 35px; background: #fff; padding: 2px; border-radius: 4px;"> FLUTTER ADMIN
     </div>
     <ul class="sidebar-menu">
       <li><a href="/admin"><i class="fas fa-chart-line"></i> Dashboard</a></li>
       <li><a href="/admin/bookings"><i class="fas fa-calendar-check"></i> Bookings</a></li>
       <li><a href="/admin/rooms"><i class="fas fa-bed"></i> Room Inventory</a></li>
-      <li><a href="/admin/inquiries" class="active"><i class="fas fa-envelope"></i> Customer Messages (<%= inquiries.length %>)</a></li>
+      <li><a href="/admin/inquiries" class="active"><i class="fas fa-envelope"></i> Customer Enquiries (<%= inquiries.length %>)</a></li>
       <li style="margin-top: 40px;"><a href="/"><i class="fas fa-external-link-alt"></i> View Main Website</a></li>
       <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
     </ul>
@@ -26,13 +26,13 @@
 
   <main class="admin-main">
     <header class="admin-topbar">
-      <h2 style="margin: 0; font-size: 22px;">Customer Inquiries & Messages</h2>
+      <h2 style="margin: 0; font-size: 22px;">Customer Enquiries Inbox</h2>
     </header>
 
     <div class="admin-content">
       <div class="admin-card-table">
         <div class="card-header-flex">
-          <h3 style="margin: 0; font-size: 18px;"><i class="fas fa-inbox" style="color: var(--admin-primary);"></i> Contact Form Inbox</h3>
+          <h3 style="margin: 0; font-size: 18px;"><i class="fas fa-inbox" style="color: var(--admin-primary);"></i> Contact & Enquiry Inbox</h3>
         </div>
 
         <table class="table-custom">
@@ -40,8 +40,8 @@
             <tr>
               <th>Date</th>
               <th>Customer</th>
-              <th>Subject</th>
-              <th>Message</th>
+              <th>Enquiry Type</th>
+              <th>Details & Notes</th>
               <th>Status</th>
             </tr>
           </thead>
@@ -55,7 +55,10 @@
                   <span style="font-size: 11px; color: #888;"><%= inq.phone %></span>
                 </td>
                 <td><strong><%= inq.subject %></strong></td>
-                <td style="max-width: 300px;"><p style="font-size: 13px; color: #444; margin: 0;"><%= inq.message %></p></td>
+                <td style="max-width: 300px;">
+                  <p style="font-size: 13px; color: #444; margin: 0;"><%= inq.message %></p>
+                  <% if (inq.dates) { %><span style="font-size: 11px; color: #888;">Dates: <%= inq.dates %></span><% } %>
+                </td>
                 <td>
                   <span class="badge-status <%= inq.status === 'Unread' ? 'badge-pending' : 'badge-confirmed' %>">
                     <%= inq.status %>

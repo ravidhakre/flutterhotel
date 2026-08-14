@@ -1,26 +1,23 @@
 [
   {
     "id": "REV-1",
-    "author": "Micheal Clordy",
-    "location": "London, UK",
+    "author": "Ankit & Priya",
+    "location": "Delhi NCR (2N Stay)",
     "rating": 5,
-    "avatar": "/images/user-1.jpg",
-    "text": "Hotux Hotel exceeded all our expectations! The ocean view from the Super Deluxe room was stunning, and the staff treated us like royalty. Exceptional service!"
+    "text": "The valley view from our private balcony was worth the trip alone. The bonfire evening with the staff was a lovely surprise!"
   },
   {
     "id": "REV-2",
-    "author": "Ketty Perry",
-    "location": "California, USA",
+    "author": "Rohit Malhotra",
+    "location": "Dehradun (Family Stay)",
     "rating": 5,
-    "avatar": "/images/user-2.jpg",
-    "text": "The fine dining restaurant and spa massage facilities were top notch. Check-in was smooth and the room was spotlessly clean. Will definitely return!"
+    "text": "Good multi-cuisine food at the restaurant and the kids loved the play zone. Staff arranged a cab for us to Tarkeshwar temple with no hassle."
   },
   {
     "id": "REV-3",
-    "author": "David Miller",
-    "location": "Sydney, Australia",
+    "author": "Siddharth Rawat",
+    "location": "Moradabad (Group Departure)",
     "rating": 5,
-    "avatar": "/images/user-3.jpg",
-    "text": "Best hotel experience in recent memory. The booking was effortless, and the private pool in the Presidential Suite made our vacation unforgettable."
+    "text": "The 2N/3D group departure package from Delhi was seamless. The fairy lights on the outdoor lawn and DJ evening made our anniversary unforgettable."
   }
 ]
