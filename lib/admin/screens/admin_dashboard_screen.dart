@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import '../../models/admin_model.dart';
+import 'activity/admin_activity_logs_screen.dart';
+import 'analytics/admin_analytics_dashboard_screen.dart';
 import 'bookings/admin_bookings_list_screen.dart';
-import 'bookings/admin_new_booking_screen.dart';
+import 'cms/admin_cms_screen.dart';
 import 'commercial/admin_addons_screen.dart';
 import 'commercial/admin_coupons_screen.dart';
 import 'commercial/admin_offers_screen.dart';
@@ -10,11 +12,12 @@ import 'commercial/admin_pricing_simulator_screen.dart';
 import 'front_desk/admin_front_desk_screen.dart';
 import 'guests/admin_guests_list_screen.dart';
 import 'inventory/admin_availability_calendar_screen.dart';
-import 'inventory/admin_maintenance_screen.dart';
 import 'payments/admin_payments_list_screen.dart';
 import 'payments/admin_reconciliation_screen.dart';
 import 'payments/admin_refunds_screen.dart';
 import 'properties/admin_property_list_screen.dart';
+import 'reports/admin_reports_screen.dart';
+import 'reviews/admin_reviews_screen.dart';
 import 'rooms/admin_room_types_list_screen.dart';
 
 class AdminDashboardScreen extends StatelessWidget {
@@ -55,7 +58,7 @@ class AdminDashboardScreen extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             const Text(
-              'Phase 6 — Complete Payment Gateway, Refunds & Verification System',
+              'Phase 7 — Complete Admin Control Center & Analytics Portal',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
@@ -67,24 +70,38 @@ class AdminDashboardScreen extends StatelessWidget {
                 children: [
                   _buildDashboardCard(
                     context,
-                    'Payment Transactions',
-                    Icons.account_balance_wallet,
+                    'Executive Analytics & KPIs',
+                    Icons.insights,
+                    Colors.indigo,
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminAnalyticsDashboardScreen(admin: admin))),
+                  ),
+                  _buildDashboardCard(
+                    context,
+                    'Reports & CSV Exporter',
+                    Icons.file_download,
                     Colors.teal,
-                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminPaymentsListScreen(admin: admin))),
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminReportsScreen(admin: admin))),
                   ),
                   _buildDashboardCard(
                     context,
-                    'Refunds & Disbursements',
-                    Icons.money_off,
-                    Colors.red.shade800,
-                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminRefundsScreen(admin: admin))),
+                    'Reviews & Moderation',
+                    Icons.star,
+                    Colors.amber.shade900,
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminReviewsScreen(admin: admin))),
                   ),
                   _buildDashboardCard(
                     context,
-                    'Payment Reconciliation',
-                    Icons.fact_check,
-                    Colors.blue.shade900,
-                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminReconciliationScreen(admin: admin))),
+                    'Content Management (CMS)',
+                    Icons.web,
+                    Colors.purple,
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminCMSScreen(admin: admin))),
+                  ),
+                  _buildDashboardCard(
+                    context,
+                    'System Audit Trails',
+                    Icons.security,
+                    Colors.blueGrey,
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminActivityLogsScreen(admin: admin))),
                   ),
                   _buildDashboardCard(
                     context,
@@ -95,31 +112,17 @@ class AdminDashboardScreen extends StatelessWidget {
                   ),
                   _buildDashboardCard(
                     context,
+                    'Payment Transactions',
+                    Icons.account_balance_wallet,
+                    Colors.green,
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminPaymentsListScreen(admin: admin))),
+                  ),
+                  _buildDashboardCard(
+                    context,
                     'Reservations Center',
                     Icons.book_online,
-                    Colors.green,
-                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminBookingsListScreen(admin: admin))),
-                  ),
-                  _buildDashboardCard(
-                    context,
-                    'Promotional Offers',
-                    Icons.local_offer,
-                    Colors.pink,
-                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminOffersScreen(admin: admin))),
-                  ),
-                  _buildDashboardCard(
-                    context,
-                    'Discount Coupons',
-                    Icons.confirmation_number,
-                    Colors.purple,
-                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminCouponsScreen(admin: admin))),
-                  ),
-                  _buildDashboardCard(
-                    context,
-                    'Pricing Simulator',
-                    Icons.calculate,
                     Colors.deepOrange,
-                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminPricingSimulatorScreen(admin: admin))),
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminBookingsListScreen(admin: admin))),
                   ),
                 ],
               ),

@@ -48,13 +48,12 @@ service cloud.firestore {
       allow create, update, delete: if isSuperAdmin();
     }
 
-    // 3. Properties Collection
+    // 3. Properties, Room Types & Rooms Collections
     match /properties/{propertyId} {
       allow read: if true;
       allow create, update, delete: if isSuperAdmin() || isPropertyAdmin(propertyId);
     }
 
-    // 4. Room Types & Rooms Collections
     match /roomTypes/{roomTypeId} {
       allow read: if true;
       allow create, update, delete: if isAdmin();
@@ -65,7 +64,7 @@ service cloud.firestore {
       allow create, update, delete: if isAdmin();
     }
 
-    // 5. Offers, Coupons, Packages & Addons
+    // 4. Commercial Collections
     match /offers/{offerId} {
       allow read: if true;
       allow create, update, delete: if isAdmin();
@@ -91,48 +90,71 @@ service cloud.firestore {
       allow create, update, delete: if isAdmin();
     }
 
-    // 6. Payment Orders & Verification
+    // 5. Payment Collections
     match /paymentOrders/{orderId} {
       allow read: if isAuthenticated();
       allow create: if isAuthenticated();
-      allow update, delete: if isAdmin();
     }
 
-    // 7. Payments Collection (Strict Tamper Protection)
     match /payments/{paymentId} {
       allow read: if isAuthenticated() && (resource.data.userId == request.auth.uid || isAdmin());
       allow create, update, delete: if isAdmin();
     }
 
-    // 8. Refunds Collection
     match /refunds/{refundId} {
       allow read: if isAuthenticated() && (resource.data.userId == request.auth.uid || isAdmin());
       allow create, update, delete: if isAdmin();
     }
 
-    // 9. Payment Webhook Events Collection
     match /paymentEvents/{eventId} {
       allow read, create: if isAuthenticated();
     }
 
-    // 10. Notifications Collection
+    // 6. Reviews Collection
+    match /reviews/{reviewId} {
+      allow read: if true;
+      allow create: if isAuthenticated();
+      allow update, delete: if isAdmin();
+    }
+
+    // 7. CMS Collections (Banners, FAQs, Legal Versioning)
+    match /cmsBanners/{bannerId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /cmsFAQs/{faqId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /cmsLegal/{legalId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    // 8. Notifications & Devices
     match /notifications/{notificationId} {
       allow read: if isAuthenticated();
       allow update: if isAuthenticated() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['read']);
       allow create: if isAuthenticated();
     }
 
-    // 11. User FCM Devices Collection
     match /userDevices/{deviceId} {
       allow read, create, update: if isAuthenticated();
     }
 
-    // 12. Bookings Collection
+    // 9. Bookings & Audit Logs
     match /bookings/{bookingId} {
       allow read: if isAuthenticated() && (resource.data.userId == request.auth.uid || isAdmin());
       allow create: if isAuthenticated();
       allow update: if isAdmin();
       allow delete: if isSuperAdmin();
+    }
+
+    match /auditLogs/{logId} {
+      allow read: if isAdmin();
+      allow create: if isAuthenticated();
     }
 
     // Default deny all other paths
