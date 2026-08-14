@@ -20,9 +20,8 @@
   <div class="top-header">
     <div class="container">
       <div class="top-header-info">
-        <span><i class="fas fa-location-dot"></i> Palkot–Lansdowne, Pauri Garhwal, Uttarakhand</span>
-        <span><i class="fas fa-phone"></i> Call Us: <a href="tel:<%= phoneMain.replace(/\s+/g, '') %>" style="color: #ffffff; font-weight: bold;"><%= phoneMain %></a></span>
-        <span><i class="fas fa-envelope"></i> <%= emailMain %></span>
+        <span><i class="fas fa-location-dot"></i> Palkot–Lansdowne, Uttarakhand</span>
+        <span><i class="fas fa-phone"></i> Call: <a href="tel:<%= phoneMain.replace(/\s+/g, '') %>" style="color: #ffffff; font-weight: bold;"><%= phoneMain %></a></span>
       </div>
       <div class="top-header-links">
         <% if (user) { %>
@@ -40,12 +39,19 @@
 
   <!-- Main Navigation Bar -->
   <nav class="main-navbar">
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+    <div class="container navbar-inner">
+      <!-- Clean Logo (Image Only) -->
       <a href="/" class="navbar-brand-logo">
-        <img src="/images/logo.avif" alt="Flutter Hotels & Resorts Logo" style="height: 48px; object-fit: contain;">
-        <span style="font-size: 22px; font-family: var(--font-serif); font-weight: 700; color: var(--dark-bg); letter-spacing: 0.5px;">Flutter <span style="font-size: 14px; font-family: var(--font-sans); color: var(--primary-blue); display: block; font-weight: 500; text-transform: uppercase; letter-spacing: 2px;">Hotels & Resorts</span></span>
+        <img src="/images/logo.avif" alt="Flutter Hotels & Resorts Logo" class="brand-logo-img">
       </a>
-      <div class="nav-links">
+
+      <!-- Mobile Menu Toggle Button -->
+      <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Nav Links -->
+      <div class="nav-links" id="primaryNavLinks">
         <a href="/" class="<%= (typeof title !== 'undefined' && title.includes('Flutter Hotels & Resorts | Hill Resort')) ? 'active' : '' %>">Home</a>
         <a href="/rooms" class="<%= (typeof title !== 'undefined' && title.includes('Rooms')) ? 'active' : '' %>">Rooms</a>
         <a href="/offers" class="<%= (typeof title !== 'undefined' && title.includes('Offers')) ? 'active' : '' %>">Offers & Packages</a>
@@ -60,6 +66,9 @@
       </div>
     </div>
   </nav>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 
   <!-- Floating WhatsApp Button -->
   <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I’d%20like%20to%20know%20more%20about%20Flutter%20Hotels%20%26%20Resorts." target="_blank" class="whatsapp-float-btn" title="Chat on WhatsApp">

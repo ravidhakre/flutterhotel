@@ -1,19 +1,70 @@
 <%- include('partials/header') %>
 
-<!-- Hero Section -->
-<section class="hero-section">
-  <div>
-    <p class="hero-subtitle">Himalayan Hillside Resort in Lansdowne</p>
-    <h1 class="hero-title">Your Himalayan Escape in Lansdowne, Uttarakhand</h1>
-    <p style="max-width: 780px; margin: 0 auto 30px; font-size: 17px; color: #f1f5f9;">
-      Wake up to valley views, bonfire evenings and warm Garhwali hospitality — just a scenic drive from Delhi NCR, Dehradun and Moradabad. Book directly with us for the best available rates.
-    </p>
-    <a href="/rooms" class="btn-blue" style="font-size: 16px; padding: 14px 36px;"><i class="fas fa-calendar-check"></i> Check Availability</a>
+<!-- Hero 3-Slide Interactive Carousel Slider -->
+<section class="hero-slider-section">
+  <div class="hero-slider-container">
+    
+    <!-- Slide 1 -->
+    <div class="hero-slide active" style="background-image: linear-gradient(rgba(26, 38, 56, 0.55), rgba(26, 38, 56, 0.8)), url('/images/hotel-img-1.jpg');">
+      <div class="hero-slide-content">
+        <span class="hero-subtitle-badge"><i class="fas fa-mountain"></i> Himalayan Hillside Sanctuary</span>
+        <h1 class="hero-title-text">Experience Unmatched Luxury in Lansdowne</h1>
+        <p class="hero-desc-text">
+          Wake up to valley views, private balconies, bonfire evenings and warm Garhwali hospitality — just a scenic drive from Delhi NCR, Dehradun and Moradabad.
+        </p>
+        <div class="hero-cta-group">
+          <a href="/rooms" class="btn-blue hero-btn-main"><i class="fas fa-bed"></i> Explore Our Rooms</a>
+          <a href="#searchWidget" class="btn-outline-white hero-btn-sec"><i class="fas fa-calendar-check"></i> Check Availability</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="hero-slide" style="background-image: linear-gradient(rgba(26, 38, 56, 0.55), rgba(26, 38, 56, 0.8)), url('/images/hotel-img-3.jpg');">
+      <div class="hero-slide-content">
+        <span class="hero-subtitle-badge"><i class="fas fa-fire"></i> Bonfire & Evening Celebrations</span>
+        <h1 class="hero-title-text">Unforgettable Evenings Under Fairy Lights</h1>
+        <p class="hero-desc-text">
+          Relax on our sprawling outdoor lawns, enjoy warm bonfire evenings, DJ nights, and delicious multi-cuisine restaurant dining under Himalayan stars.
+        </p>
+        <div class="hero-cta-group">
+          <a href="/offers" class="btn-blue hero-btn-main"><i class="fas fa-tags"></i> View Offers & Packages</a>
+          <a href="/dining" class="btn-outline-white hero-btn-sec"><i class="fas fa-utensils"></i> Explore Dining</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="hero-slide" style="background-image: linear-gradient(rgba(26, 38, 56, 0.55), rgba(26, 38, 56, 0.8)), url('/images/hotel-img-8.jpg');">
+      <div class="hero-slide-content">
+        <span class="hero-subtitle-badge"><i class="fas fa-glass-cheers"></i> Weddings, Offsites & Group Trips</span>
+        <h1 class="hero-title-text">Host Grand Events & Group Departures</h1>
+        <p class="hero-desc-text">
+          State-of-the-art 200-guest banquet hall, ₹4,999/person Delhi group departures, and fairy-lit wedding lawns in Lansdowne.
+        </p>
+        <div class="hero-cta-group">
+          <a href="/offers/wedding-celebration-package" class="btn-blue hero-btn-main"><i class="fas fa-gem"></i> Plan Your Celebration</a>
+          <a href="/contact" class="btn-outline-white hero-btn-sec"><i class="fas fa-envelope"></i> Contact Concierge</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Slider Controls -->
+  <button class="slider-arrow slider-prev" id="sliderPrevBtn" aria-label="Previous Slide"><i class="fas fa-chevron-left"></i></button>
+  <button class="slider-arrow slider-next" id="sliderNextBtn" aria-label="Next Slide"><i class="fas fa-chevron-right"></i></button>
+
+  <!-- Slider Indicators -->
+  <div class="slider-dots" id="sliderDotsContainer">
+    <span class="dot active" data-slide="0"></span>
+    <span class="dot" data-slide="1"></span>
+    <span class="dot" data-slide="2"></span>
   </div>
 </section>
 
 <!-- Check Availability Widget Bar -->
-<div class="container booking-search-wrapper">
+<div class="container booking-search-wrapper" id="searchWidget">
   <div class="booking-search-card">
     <form action="/rooms" method="GET" class="search-form-grid">
       <div class="form-group-custom">
@@ -75,7 +126,7 @@
 <!-- Why Choose Flutter Section -->
 <section class="section-padding">
   <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+    <div class="responsive-two-col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
       <div>
         <span class="section-subtitle" style="text-align: left;">Why Choose Flutter</span>
         <h2 class="section-title" style="text-align: left; font-size: 36px;">A Hillside Stay Built Around Real Comforts</h2>
@@ -214,7 +265,7 @@
 <!-- Things To Do Teaser -->
 <section class="section-padding" style="background: var(--light-bg);">
   <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+    <div class="responsive-two-col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
       <div>
         <img src="/images/hotel-img-4.jpeg" alt="Lansdowne Sightseeing" style="width: 100%; border-radius: 12px; box-shadow: var(--shadow-lg);">
       </div>
