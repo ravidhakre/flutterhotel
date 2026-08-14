@@ -89,6 +89,7 @@ ul {
   color: var(--primary-blue);
 }
 
+/* --- MAIN NAVBAR --- */
 .main-navbar {
   background: #ffffff;
   position: sticky;
@@ -121,13 +122,15 @@ ul {
 }
 
 .nav-links a {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   color: #334155;
-  padding: 25px 0;
+  padding: 8px 0;
   position: relative;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .nav-links a:hover, .nav-links a.active {
@@ -137,13 +140,51 @@ ul {
 .nav-links a.active::after {
   content: '';
   position: absolute;
-  bottom: 15px;
+  bottom: -4px;
   left: 0;
   width: 100%;
   height: 3px;
   background: var(--primary-blue);
+  border-radius: 2px;
 }
 
+/* --- NAVBAR BOOK NOW BUTTON (FIXED DIMENSIONS & PADDING) --- */
+.nav-links a.header-booking-btn,
+.nav-links a.btn-blue,
+.nav-links a.btn-gold {
+  padding: 10px 24px !important;
+  height: 42px !important;
+  line-height: 1.2 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  color: #ffffff !important;
+  background: var(--primary-blue) !important;
+  border-radius: 6px !important;
+  border: 1px solid var(--primary-blue) !important;
+  box-shadow: 0 4px 12px rgba(95, 134, 193, 0.25) !important;
+  margin-left: 10px;
+}
+
+.nav-links a.header-booking-btn::after,
+.nav-links a.btn-blue::after,
+.nav-links a.btn-gold::after {
+  display: none !important;
+}
+
+.nav-links a.header-booking-btn:hover,
+.nav-links a.btn-blue:hover,
+.nav-links a.btn-gold:hover {
+  background: var(--blue-hover) !important;
+  border-color: var(--blue-hover) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(95, 134, 193, 0.35) !important;
+}
+
+/* --- GLOBAL BUTTON STYLES --- */
 .btn-gold, .btn-blue {
   background: var(--primary-blue);
   color: #ffffff !important;
