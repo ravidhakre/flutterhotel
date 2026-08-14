@@ -1,5 +1,6 @@
 import '../core/errors/failure.dart';
-import '../models/payment_record_model.dart';
+import '../models/payment_model.dart';
+import '../models/payment_order_model.dart';
 import '../services/payment_service.dart';
 
 class PaymentRepository {
@@ -7,17 +8,29 @@ class PaymentRepository {
 
   PaymentRepository({PaymentService? service}) : _service = service ?? PaymentService();
 
-  Future<void> recordPayment(PaymentRecordModel payment) async {
+  Future<PaymentOrderModel> createPaymentOrder(String bookingId) async {
     try {
-      await _service.recordPayment(payment);
+      return await _service.createPaymentOrder(bookingId);
     } catch (e) {
       throw Failure.fromException(e);
     }
   }
 
-  Future<List<PaymentRecordModel>> getBookingPayments(String bookingId) async {
+  Future<PaymentModel> completePayment({
+    required String bookingId,
+    required String gatewayOrderId,
+    required String gatewayPaymentId,
+    required String gatewaySignature,
+    required double amount,
+  }) async {
     try {
-      return await _service.getBookingPayments(bookingId);
+      return await _service.completePayment(
+        bookingId: bookingId,
+        gatewayOrderId: gatewayOrderId,
+        gatewayPaymentId: gatewayPaymentId,
+        gatewaySignature: gatewaySignature,
+        amount: amount,
+      );
     } catch (e) {
       throw Failure.fromException(e);
     }

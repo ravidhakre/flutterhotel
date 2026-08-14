@@ -11,6 +11,9 @@ import 'front_desk/admin_front_desk_screen.dart';
 import 'guests/admin_guests_list_screen.dart';
 import 'inventory/admin_availability_calendar_screen.dart';
 import 'inventory/admin_maintenance_screen.dart';
+import 'payments/admin_payments_list_screen.dart';
+import 'payments/admin_reconciliation_screen.dart';
+import 'payments/admin_refunds_screen.dart';
 import 'properties/admin_property_list_screen.dart';
 import 'rooms/admin_room_types_list_screen.dart';
 
@@ -52,7 +55,7 @@ class AdminDashboardScreen extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             const Text(
-              'Phase 5 — Commercial Pricing & Promotion Engine Portal',
+              'Phase 6 — Complete Payment Gateway, Refunds & Verification System',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
@@ -62,6 +65,27 @@ class AdminDashboardScreen extends StatelessWidget {
                 crossAxisSpacing: 16,
                 mainAxisSpacing: 16,
                 children: [
+                  _buildDashboardCard(
+                    context,
+                    'Payment Transactions',
+                    Icons.account_balance_wallet,
+                    Colors.teal,
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminPaymentsListScreen(admin: admin))),
+                  ),
+                  _buildDashboardCard(
+                    context,
+                    'Refunds & Disbursements',
+                    Icons.money_off,
+                    Colors.red.shade800,
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminRefundsScreen(admin: admin))),
+                  ),
+                  _buildDashboardCard(
+                    context,
+                    'Payment Reconciliation',
+                    Icons.fact_check,
+                    Colors.blue.shade900,
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminReconciliationScreen(admin: admin))),
+                  ),
                   _buildDashboardCard(
                     context,
                     'Front Desk Operations',
@@ -92,31 +116,10 @@ class AdminDashboardScreen extends StatelessWidget {
                   ),
                   _buildDashboardCard(
                     context,
-                    'Vacation Packages',
-                    Icons.card_giftcard,
-                    Colors.teal,
-                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminPackagesScreen(admin: admin))),
-                  ),
-                  _buildDashboardCard(
-                    context,
-                    'Add-on Services',
-                    Icons.room_service,
-                    Colors.indigo,
-                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminAddonsScreen(admin: admin))),
-                  ),
-                  _buildDashboardCard(
-                    context,
                     'Pricing Simulator',
                     Icons.calculate,
                     Colors.deepOrange,
                     () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminPricingSimulatorScreen(admin: admin))),
-                  ),
-                  _buildDashboardCard(
-                    context,
-                    'Property Portfolio',
-                    Icons.business,
-                    Colors.blue,
-                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminPropertyListScreen(admin: admin))),
                   ),
                 ],
               ),
