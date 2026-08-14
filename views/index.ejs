@@ -93,7 +93,7 @@
         </select>
       </div>
       <div>
-        <button type="submit" class="btn-blue" style="width: 100%; text-align: center; border: none; padding: 14px;"><i class="fas fa-search"></i> Check Availability</button>
+        <button type="submit" class="btn-blue search-btn-submit" style="width: 100%; text-align: center; border: none; padding: 14px;"><i class="fas fa-search"></i> Check Availability</button>
       </div>
     </form>
   </div>
@@ -182,42 +182,66 @@
   </div>
 </section>
 
-<!-- Rooms Teaser Section -->
+<!-- Luxury Rooms Teaser Section -->
 <section class="section-padding" style="background: var(--light-bg);">
   <div class="container">
     <div class="section-header">
-      <span class="section-subtitle">Accommodations</span>
-      <h2 class="section-title">Rooms Built Around the View</h2>
-      <p style="color: var(--text-muted);">Three room types, one thing in common: a private balcony and a king bed waiting at the end of a Himalayan day.</p>
+      <span class="section-subtitle">Luxury Accommodations</span>
+      <h2 class="section-title">Suites Built Around Himalayan Views</h2>
+      <p style="color: var(--text-muted);">Three distinct room categories, each offering a private balcony, king bed, and panoramic Garhwal views.</p>
       <div class="title-line-divider" style="margin-top: 15px;"></div>
     </div>
 
-    <div class="rooms-grid">
-      <% rooms.forEach(room => { %>
-        <div class="room-card">
-          <div class="room-img-wrap">
-            <img src="<%= room.image %>" alt="<%= room.name %>">
-            <div class="room-price-badge">₹<%= room.price.toLocaleString() %> <span style="font-size: 12px; font-family: var(--font-sans);">/ Night</span></div>
-          </div>
-          <div class="room-card-body">
-            <h3 class="room-title"><%= room.name %></h3>
-            <div class="room-specs">
-              <span><i class="fas fa-bed"></i> <%= room.bed %></span>
-              <span><i class="fas fa-vector-square"></i> <%= room.size %></span>
-              <span><i class="fas fa-eye"></i> <%= room.view %></span>
+    <div class="luxury-rooms-grid">
+      <% rooms.forEach((room, idx) => { %>
+        <div class="luxury-room-card">
+          <div class="room-img-container">
+            <img src="<%= room.image %>" alt="<%= room.name %>" class="room-img">
+            
+            <!-- Category Tag -->
+            <span class="room-tag-badge">
+              <% if (idx === 0) { %><i class="fas fa-crown"></i> Most Popular<% } else if (idx === 1) { %><i class="fas fa-tree"></i> Resort Lawns<% } else { %><i class="fas fa-gem"></i> Best Value<% } %>
+            </span>
+
+            <!-- Price Tag Overlay -->
+            <div class="room-price-overlay">
+              <span class="price-val">₹<%= room.price.toLocaleString() %></span>
+              <span class="price-unit">/ Night</span>
             </div>
-            <p class="room-desc"><%= room.description %></p>
-            <div class="room-card-footer">
-              <a href="/rooms/<%= room.id %>" class="btn-outline-blue" style="padding: 8px 18px; font-size: 13px;">View Details</a>
-              <a href="/rooms/<%= room.id %>" class="btn-blue" style="padding: 8px 18px; font-size: 13px;">Book This Room</a>
+          </div>
+
+          <div class="room-card-content">
+            <h3 class="luxury-room-title"><%= room.name %></h3>
+
+            <!-- Specs Grid Pills -->
+            <div class="specs-pills-row">
+              <div class="spec-pill"><i class="fas fa-bed"></i> <%= room.bed %></div>
+              <div class="spec-pill"><i class="fas fa-vector-square"></i> <%= room.size %></div>
+              <div class="spec-pill"><i class="fas fa-mountain"></i> <%= room.view %></div>
+            </div>
+
+            <p class="luxury-room-desc"><%= room.description %></p>
+
+            <!-- Amenities Quick Bar -->
+            <div class="amenities-quick-bar">
+              <span><i class="fas fa-wifi"></i> Free Wi-Fi</span>
+              <span><i class="fas fa-mug-hot"></i> Coffee Maker</span>
+              <span><i class="fas fa-tv"></i> 32" TV</span>
+              <span><i class="fas fa-door-open"></i> Private Balcony</span>
+            </div>
+
+            <!-- Card Actions -->
+            <div class="room-action-footer">
+              <a href="/rooms/<%= room.id %>" class="btn-card-outline"><i class="fas fa-circle-info"></i> Specs & FAQs</a>
+              <a href="/rooms/<%= room.id %>" class="btn-card-primary"><i class="fas fa-calendar-check"></i> Book Room</a>
             </div>
           </div>
         </div>
       <% }); %>
     </div>
 
-    <div style="text-align: center; margin-top: 40px;">
-      <a href="/rooms" class="btn-blue" style="padding: 12px 32px;"><i class="fas fa-th-large"></i> View All Rooms & Specs</a>
+    <div style="text-align: center; margin-top: 50px;">
+      <a href="/rooms" class="btn-blue" style="padding: 14px 38px; font-size: 15px;"><i class="fas fa-layer-group"></i> View All Accommodations & Pricing</a>
     </div>
   </div>
 </section>

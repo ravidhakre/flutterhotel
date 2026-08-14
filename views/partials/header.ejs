@@ -10,59 +10,80 @@
   
   <!-- FontAwesome & Google Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
-  <!-- Top Header Bar -->
+  <!-- Top Glass Bar -->
   <div class="top-header">
     <div class="container">
       <div class="top-header-info">
-        <span><i class="fas fa-location-dot"></i> Palkot–Lansdowne, Uttarakhand</span>
-        <span><i class="fas fa-phone"></i> Call: <a href="tel:<%= phoneMain.replace(/\s+/g, '') %>" style="color: #ffffff; font-weight: bold;"><%= phoneMain %></a></span>
+        <span class="top-info-pill"><i class="fas fa-location-dot"></i> Palkot–Lansdowne, Garhwal, Uttarakhand</span>
+        <span class="top-info-pill"><i class="fas fa-phone"></i> Direct: <a href="tel:<%= phoneMain.replace(/\s+/g, '') %>" style="color: #ffffff; font-weight: 700;"><%= phoneMain %></a></span>
+        <span class="top-info-pill desktop-only"><i class="fas fa-envelope"></i> <%= emailMain %></span>
       </div>
       <div class="top-header-links">
         <% if (user) { %>
-          <span><i class="fas fa-user-circle"></i> Hi, <strong><%= user.name %></strong></span>
+          <span class="top-user-pill"><i class="fas fa-user-circle"></i> Hi, <strong><%= user.name %></strong></span>
           <% if (user.isAdmin) { %>
-            <a href="/admin" style="color: var(--primary-blue); font-weight: bold;"><i class="fas fa-chart-line"></i> Admin Panel</a>
+            <a href="/admin" class="top-admin-badge"><i class="fas fa-chart-line"></i> Admin Portal</a>
           <% } %>
-          <a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+          <a href="/logout" class="top-link-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
         <% } else { %>
-          <a href="/login"><i class="fas fa-user"></i> Guest / Admin Login</a>
+          <a href="/login" class="top-link-btn"><i class="fas fa-user"></i> Guest / Admin Login</a>
         <% } %>
       </div>
     </div>
   </div>
 
-  <!-- Main Navigation Bar -->
+  <!-- Luxury Main Navigation Bar -->
   <nav class="main-navbar">
     <div class="container navbar-inner">
-      <!-- Clean Logo (Image Only) -->
-      <a href="/" class="navbar-brand-logo">
-        <img src="/images/logo.avif" alt="Flutter Hotels & Resorts Logo" class="brand-logo-img">
+      <!-- Clean Brand Logo Image Only -->
+      <a href="/" class="navbar-brand-logo" title="Flutter Hotels & Resorts">
+        <img src="/images/logo.avif" alt="Flutter Hotels & Resorts" class="brand-logo-img">
       </a>
 
-      <!-- Mobile Menu Toggle Button -->
+      <!-- Mobile Hamburger Toggle -->
       <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
-        <i class="fas fa-bars"></i>
+        <i class="fas fa-bars-staggered"></i>
       </button>
 
       <!-- Nav Links -->
       <div class="nav-links" id="primaryNavLinks">
-        <a href="/" class="<%= (typeof title !== 'undefined' && title.includes('Flutter Hotels & Resorts | Hill Resort')) ? 'active' : '' %>">Home</a>
-        <a href="/rooms" class="<%= (typeof title !== 'undefined' && title.includes('Rooms')) ? 'active' : '' %>">Rooms</a>
-        <a href="/offers" class="<%= (typeof title !== 'undefined' && title.includes('Offers')) ? 'active' : '' %>">Offers & Packages</a>
-        <a href="/things-to-do" class="<%= (typeof title !== 'undefined' && title.includes('Things To Do')) ? 'active' : '' %>">Things To Do</a>
-        <a href="/dining" class="<%= (typeof title !== 'undefined' && title.includes('Dining')) ? 'active' : '' %>">Dining</a>
-        <a href="/gallery" class="<%= (typeof title !== 'undefined' && title.includes('Gallery')) ? 'active' : '' %>">Gallery</a>
-        <a href="/contact" class="<%= (typeof title !== 'undefined' && title.includes('Contact')) ? 'active' : '' %>">Contact Us</a>
+        <a href="/" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Flutter Hotels & Resorts | Hill Resort')) ? 'active' : '' %>">
+          <span>Home</span>
+        </a>
+        <a href="/rooms" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Rooms')) ? 'active' : '' %>">
+          <span>Rooms & Suites</span>
+        </a>
+        <a href="/offers" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Offers')) ? 'active' : '' %>">
+          <span>Offers & Packages</span>
+        </a>
+        <a href="/things-to-do" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Things To Do')) ? 'active' : '' %>">
+          <span>Things To Do</span>
+        </a>
+        <a href="/dining" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Dining')) ? 'active' : '' %>">
+          <span>Dining</span>
+        </a>
+        <a href="/gallery" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Gallery')) ? 'active' : '' %>">
+          <span>Gallery</span>
+        </a>
+        <a href="/contact" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Contact')) ? 'active' : '' %>">
+          <span>Contact Us</span>
+        </a>
         <% if (isAdmin) { %>
-          <a href="/admin" style="color: var(--primary-blue); font-weight: bold;"><i class="fas fa-crown"></i> Admin</a>
+          <a href="/admin" class="nav-item-link admin-nav-link"><i class="fas fa-crown"></i> Admin</a>
         <% } %>
-        <a href="/rooms" class="btn-blue header-booking-btn">Book Now</a>
+
+        <a href="/rooms" class="header-booking-btn pulsing-btn">
+          <i class="fas fa-calendar-check"></i> <span>BOOK NOW</span>
+        </a>
       </div>
     </div>
   </nav>
