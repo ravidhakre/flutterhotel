@@ -1,0 +1,89 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isUser(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function getAdminData() {
+      return get(/databases/$(database)/documents/admins/$(request.auth.uid)).data;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() && 
+             exists(/databases/$(database)/documents/admins/$(request.auth.uid)) &&
+             getAdminData().status == "active";
+    }
+
+    function isSuperAdmin() {
+      return isAdmin() && getAdminData().role == "superAdmin";
+    }
+
+    function isPropertyAdmin(propertyId) {
+      return isAdmin() && (
+        getAdminData().role == "superAdmin" ||
+        (getAdminData().role == "propertyAdmin" && propertyId in getAdminData().propertyIds)
+      );
+    }
+
+    // 1. Users Collection
+    match /users/{userId} {
+      allow read: if isUser(userId) || isAdmin();
+      // Allow user creation on sign-up if role is forced to guest
+      allow create: if isUser(userId) && request.resource.data.role == "guest";
+      // Allow user profile update, but prevent changing role
+      allow update: if isUser(userId) && 
+                       request.resource.data.role == resource.data.role || 
+                       isSuperAdmin();
+      allow delete: if isSuperAdmin();
+    }
+
+    // 2. Admins Collection (Strict Protection)
+    match /admins/{adminId} {
+      allow read: if isUser(adminId) || isSuperAdmin();
+      allow create, update, delete: if isSuperAdmin();
+    }
+
+    // 3. Properties Collection
+    match /properties/{propertyId} {
+      allow read: if true; // Public property listings
+      allow create, update, delete: if isSuperAdmin() || isPropertyAdmin(propertyId);
+    }
+
+    // 4. Room Types Collection
+    match /roomTypes/{roomTypeId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    // 5. Rooms Collection
+    match /rooms/{roomId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    // 6. Bookings Collection
+    match /bookings/{bookingId} {
+      // Guests can read only their own bookings
+      allow read: if isAuthenticated() && (resource.data.userId == request.auth.uid || isAdmin());
+      // Guest can create booking with pending status
+      allow create: if isAuthenticated() && 
+                       request.resource.data.userId == request.auth.uid &&
+                       request.resource.data.bookingStatus == "pending";
+      // Guests cannot update payment status or confirm bookings directly
+      allow update: if isAdmin();
+      allow delete: if isSuperAdmin();
+    }
+
+    // Default deny all other paths
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
