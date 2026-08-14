@@ -4,11 +4,11 @@
   <div class="container">
     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
       <div>
-        <span style="color: var(--primary-gold); text-transform: uppercase; letter-spacing: 2px; font-weight: 600;"><%= room.category %> Room</span>
-        <h1 style="font-size: 40px; margin-top: 5px;"><%= room.name %></h1>
+        <span style="color: var(--primary-blue); text-transform: uppercase; letter-spacing: 2px; font-weight: 600;"><%= room.category %> Room</span>
+        <h1 style="font-size: 40px; margin-top: 5px; color: #ffffff;"><%= room.name %></h1>
       </div>
       <div>
-        <span style="font-size: 36px; font-family: var(--font-serif); color: var(--primary-gold); font-weight: bold;">$<%= room.price %></span>
+        <span style="font-size: 36px; font-family: var(--font-serif); color: var(--primary-blue); font-weight: bold;">$<%= room.price %></span>
         <span style="font-size: 14px; color: #aaa;">/ Night</span>
       </div>
     </div>
@@ -21,29 +21,29 @@
       
       <!-- Main Content -->
       <div>
-        <img src="<%= room.image %>" alt="<%= room.name %>" style="width: 100%; height: 420px; object-fit: cover; border-radius: 8px; margin-bottom: 30px; box-shadow: var(--shadow-sm);">
+        <img src="<%= room.image %>" alt="<%= room.name %>" style="width: 100%; height: 420px; object-fit: cover; border-radius: 10px; margin-bottom: 30px; box-shadow: var(--shadow-sm);">
 
         <h3 style="font-size: 26px; margin-bottom: 15px;">Room Overview</h3>
         <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 30px; line-height: 1.8;">
           <%= room.description %>
         </p>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; background: var(--light-bg); padding: 25px; border-radius: 8px; margin-bottom: 40px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; background: var(--light-bg); padding: 25px; border-radius: 10px; margin-bottom: 40px; border: 1.5px solid #e2e8f0;">
           <div>
             <span style="display: block; font-size: 12px; color: #888; text-transform: uppercase;">Bed Type</span>
-            <strong style="font-size: 15px;"><i class="fas fa-bed" style="color: var(--primary-gold);"></i> <%= room.bed %></strong>
+            <strong style="font-size: 15px;"><i class="fas fa-bed" style="color: var(--primary-blue);"></i> <%= room.bed %></strong>
           </div>
           <div>
             <span style="display: block; font-size: 12px; color: #888; text-transform: uppercase;">Capacity</span>
-            <strong style="font-size: 15px;"><i class="fas fa-users" style="color: var(--primary-gold);"></i> Up to <%= room.capacity %> Guests</strong>
+            <strong style="font-size: 15px;"><i class="fas fa-users" style="color: var(--primary-blue);"></i> Up to <%= room.capacity %> Guests</strong>
           </div>
           <div>
             <span style="display: block; font-size: 12px; color: #888; text-transform: uppercase;">Room Size</span>
-            <strong style="font-size: 15px;"><i class="fas fa-ruler-combined" style="color: var(--primary-gold);"></i> <%= room.size %></strong>
+            <strong style="font-size: 15px;"><i class="fas fa-ruler-combined" style="color: var(--primary-blue);"></i> <%= room.size %></strong>
           </div>
           <div>
             <span style="display: block; font-size: 12px; color: #888; text-transform: uppercase;">View</span>
-            <strong style="font-size: 15px;"><i class="fas fa-mountain" style="color: var(--primary-gold);"></i> <%= room.view %></strong>
+            <strong style="font-size: 15px;"><i class="fas fa-mountain" style="color: var(--primary-blue);"></i> <%= room.view %></strong>
           </div>
         </div>
 
@@ -51,7 +51,7 @@
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 40px;">
           <% room.amenities.forEach(amenity => { %>
             <div style="display: flex; align-items: center; gap: 10px; font-size: 15px;">
-              <i class="fas fa-check-circle" style="color: var(--primary-gold);"></i>
+              <i class="fas fa-check-circle" style="color: var(--primary-blue);"></i>
               <span><%= amenity %></span>
             </div>
           <% }); %>
@@ -60,8 +60,8 @@
 
       <!-- Instant Booking Form Sidebar -->
       <div>
-        <div style="background: #ffffff; padding: 30px; border-radius: 8px; border: 1px solid var(--primary-gold); box-shadow: var(--shadow-lg); position: sticky; top: 100px;">
-          <h3 style="font-size: 22px; margin-bottom: 20px; text-align: center; border-bottom: 2px solid var(--primary-gold); padding-bottom: 10px;">Reserve This Room</h3>
+        <div style="background: #ffffff; padding: 30px; border-radius: 10px; border: 2px solid var(--primary-blue); box-shadow: var(--shadow-lg); position: sticky; top: 100px;">
+          <h3 style="font-size: 22px; margin-bottom: 20px; text-align: center; border-bottom: 2px solid var(--primary-blue); padding-bottom: 10px; color: var(--dark-bg);">Reserve This Room</h3>
 
           <form id="roomBookingForm">
             <input type="hidden" name="roomId" value="<%= room.id %>">
@@ -109,7 +109,7 @@
               </select>
             </div>
 
-            <button type="submit" class="btn-gold" style="width: 100%; padding: 14px; font-size: 16px; border: none; cursor: pointer;">
+            <button type="submit" class="btn-blue" style="width: 100%; padding: 14px; font-size: 16px; border: none; cursor: pointer;">
               Confirm Instant Reservation
             </button>
           </form>

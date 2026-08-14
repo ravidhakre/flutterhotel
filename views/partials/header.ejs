@@ -25,7 +25,7 @@
         <% if (user) { %>
           <span><i class="fas fa-user-circle"></i> Welcome, <strong><%= user.name %></strong></span>
           <% if (user.isAdmin) { %>
-            <a href="/admin" style="color: var(--primary-gold); font-weight: bold;"><i class="fas fa-chart-line"></i> Admin Panel</a>
+            <a href="/admin" style="color: var(--primary-blue); font-weight: bold;"><i class="fas fa-chart-line"></i> Admin Panel</a>
           <% } %>
           <a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
         <% } else { %>
@@ -46,9 +46,9 @@
         <a href="/rooms" class="<%= (typeof title !== 'undefined' && title.includes('Rooms')) ? 'active' : '' %>">Rooms & Suites</a>
         <a href="/contact" class="<%= (typeof title !== 'undefined' && title.includes('Contact')) ? 'active' : '' %>">Contact Us</a>
         <% if (isAdmin) { %>
-          <a href="/admin" style="color: var(--primary-gold);"><i class="fas fa-crown"></i> Admin Portal</a>
+          <a href="/admin" style="color: var(--primary-blue);"><i class="fas fa-crown"></i> Admin Portal</a>
         <% } %>
-        <a href="/rooms" class="btn-gold">Book Now</a>
+        <a href="/rooms" class="btn-blue">Book Now</a>
       </div>
     </div>
   </nav>

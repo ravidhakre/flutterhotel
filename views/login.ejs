@@ -2,16 +2,16 @@
 
 <section class="section-padding" style="background: var(--light-bg); min-height: 75vh; display: flex; align-items: center;">
   <div class="container" style="max-width: 480px;">
-    <div style="background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: var(--shadow-lg); border-top: 5px solid var(--primary-gold);">
+    <div style="background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: var(--shadow-lg); border-top: 5px solid var(--primary-blue);">
       
       <div style="text-align: center; margin-bottom: 25px;">
-        <i class="fas fa-hotel" style="font-size: 38px; color: var(--primary-gold); margin-bottom: 10px;"></i>
+        <i class="fas fa-hotel" style="font-size: 38px; color: var(--primary-blue); margin-bottom: 10px;"></i>
         <h2 style="font-size: 26px;">Sign In to Hotux</h2>
         <p style="color: var(--text-muted); font-size: 14px;">Access Guest Services or Hotel Admin Management</p>
       </div>
 
       <% if (error) { %>
-        <div style="background: #fce8e6; color: #c5221f; padding: 12px; border-radius: 6px; margin-bottom: 20px; font-size: 13px; text-align: center;">
+        <div style="background: #fee2e2; color: #dc2626; padding: 12px; border-radius: 6px; margin-bottom: 20px; font-size: 13px; text-align: center;">
           <i class="fas fa-exclamation-circle"></i> <%= error %>
         </div>
       <% } %>
@@ -27,12 +27,12 @@
           <input type="password" name="password" required placeholder="••••••••" class="form-control-custom">
         </div>
 
-        <button type="submit" class="btn-gold" style="width: 100%; padding: 14px; border: none; font-size: 15px; cursor: pointer;">
+        <button type="submit" class="btn-blue" style="width: 100%; padding: 14px; border: none; font-size: 15px; cursor: pointer;">
           Log In
         </button>
       </form>
 
-      <div style="margin-top: 25px; background: #f8fafc; padding: 15px; border-radius: 6px; border: 1px dashed var(--primary-gold); font-size: 12px; color: #555;">
+      <div style="margin-top: 25px; background: #f8fafc; padding: 15px; border-radius: 6px; border: 1px dashed var(--primary-blue); font-size: 12px; color: #555;">
         <strong style="color: var(--dark-bg); display: block; margin-bottom: 4px;"><i class="fas fa-key"></i> Quick Admin Demo Login Credentials:</strong>
         <div>Username: <code>admin</code></div>
         <div>Password: <code>admin123</code></div>
