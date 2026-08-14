@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'nightly_rate_model.dart';
 
 class BookingModel {
   final String bookingId;
@@ -11,8 +12,10 @@ class BookingModel {
   final int nights;
   final int adults;
   final int children;
+  final int rooms;
   final Map<String, dynamic> guestDetails;
   final double roomPrice;
+  final List<NightlyRateModel> nightlyRates;
   final double extraGuestCharges;
   final double addonCharges;
   final double packageCharges;
@@ -25,10 +28,14 @@ class BookingModel {
   final String? offerId;
   final String paymentStatus;
   final String bookingStatus;
+  final String holdStatus;
+  final DateTime? holdExpiresAt;
   final String? cancellationStatus;
   final String source;
   final DateTime createdAt;
   final DateTime updatedAt;
+  final DateTime? confirmedAt;
+  final DateTime? cancelledAt;
 
   BookingModel({
     required this.bookingId,
@@ -41,8 +48,10 @@ class BookingModel {
     required this.nights,
     this.adults = 2,
     this.children = 0,
+    this.rooms = 1,
     this.guestDetails = const {},
     required this.roomPrice,
+    this.nightlyRates = const [],
     this.extraGuestCharges = 0.0,
     this.addonCharges = 0.0,
     this.packageCharges = 0.0,
@@ -55,19 +64,26 @@ class BookingModel {
     this.offerId,
     this.paymentStatus = 'pending',
     this.bookingStatus = 'pending',
+    this.holdStatus = 'active',
+    this.holdExpiresAt,
     this.cancellationStatus,
-    this.source = 'mobile_app',
+    this.source = 'website',
     DateTime? createdAt,
     DateTime? updatedAt,
+    this.confirmedAt,
+    this.cancelledAt,
   })  : createdAt = createdAt ?? DateTime.now(),
         updatedAt = updatedAt ?? DateTime.now();
 
   factory BookingModel.fromMap(Map<String, dynamic> map, String docId) {
-    DateTime parseTimestamp(dynamic val) {
+    DateTime? parseDate(dynamic val) {
       if (val is Timestamp) return val.toDate();
-      if (val is String) return DateTime.tryParse(val) ?? DateTime.now();
-      return DateTime.now();
+      if (val is String) return DateTime.tryParse(val);
+      return null;
     }
+
+    final rawRates = map['nightlyRates'] as List<dynamic>? ?? [];
+    final rates = rawRates.map((r) => NightlyRateModel.fromMap(Map<String, dynamic>.from(r))).toList();
 
     return BookingModel(
       bookingId: docId.isNotEmpty ? docId : (map['bookingId'] ?? ''),
@@ -75,13 +91,15 @@ class BookingModel {
       propertyId: map['propertyId'] ?? '',
       roomTypeId: map['roomTypeId'] ?? '',
       roomId: map['roomId'],
-      checkIn: parseTimestamp(map['checkIn']),
-      checkOut: parseTimestamp(map['checkOut']),
+      checkIn: parseDate(map['checkIn']) ?? DateTime.now(),
+      checkOut: parseDate(map['checkOut']) ?? DateTime.now(),
       nights: (map['nights'] as num?)?.toInt() ?? 1,
       adults: (map['adults'] as num?)?.toInt() ?? 2,
       children: (map['children'] as num?)?.toInt() ?? 0,
+      rooms: (map['rooms'] as num?)?.toInt() ?? 1,
       guestDetails: Map<String, dynamic>.from(map['guestDetails'] ?? {}),
       roomPrice: (map['roomPrice'] as num?)?.toDouble() ?? 0.0,
+      nightlyRates: rates,
       extraGuestCharges: (map['extraGuestCharges'] as num?)?.toDouble() ?? 0.0,
       addonCharges: (map['addonCharges'] as num?)?.toDouble() ?? 0.0,
       packageCharges: (map['packageCharges'] as num?)?.toDouble() ?? 0.0,
@@ -94,10 +112,14 @@ class BookingModel {
       offerId: map['offerId'],
       paymentStatus: map['paymentStatus'] ?? 'pending',
       bookingStatus: map['bookingStatus'] ?? 'pending',
+      holdStatus: map['holdStatus'] ?? 'active',
+      holdExpiresAt: parseDate(map['holdExpiresAt']),
       cancellationStatus: map['cancellationStatus'],
-      source: map['source'] ?? 'mobile_app',
-      createdAt: parseTimestamp(map['createdAt']),
-      updatedAt: parseTimestamp(map['updatedAt']),
+      source: map['source'] ?? 'website',
+      createdAt: parseDate(map['createdAt']) ?? DateTime.now(),
+      updatedAt: parseDate(map['updatedAt']) ?? DateTime.now(),
+      confirmedAt: parseDate(map['confirmedAt']),
+      cancelledAt: parseDate(map['cancelledAt']),
     );
   }
 
@@ -113,8 +135,10 @@ class BookingModel {
       'nights': nights,
       'adults': adults,
       'children': children,
+      'rooms': rooms,
       'guestDetails': guestDetails,
       'roomPrice': roomPrice,
+      'nightlyRates': nightlyRates.map((r) => r.toMap()).toList(),
       'extraGuestCharges': extraGuestCharges,
       'addonCharges': addonCharges,
       'packageCharges': packageCharges,
@@ -127,10 +151,21 @@ class BookingModel {
       'offerId': offerId,
       'paymentStatus': paymentStatus,
       'bookingStatus': bookingStatus,
+      'holdStatus': holdStatus,
+      'holdExpiresAt': holdExpiresAt != null ? Timestamp.fromDate(holdExpiresAt!) : null,
       'cancellationStatus': cancellationStatus,
       'source': source,
       'createdAt': Timestamp.fromDate(createdAt),
       'updatedAt': FieldValue.serverTimestamp(),
+      'confirmedAt': confirmedAt != null ? Timestamp.fromDate(confirmedAt!) : null,
+      'cancelledAt': cancelledAt != null ? Timestamp.fromDate(cancelledAt!) : null,
     };
+  }
+
+  static String generateBookingId() {
+    final now = DateTime.now();
+    final dateStr = "${now.year}${now.month.toString().padLeft(2, '0')}${now.day.toString().padLeft(2, '0')}";
+    final randomSuffix = (100000 + (now.microsecondsSinceEpoch % 900000)).toString();
+    return "HTL-$dateStr-$randomSuffix";
   }
 }

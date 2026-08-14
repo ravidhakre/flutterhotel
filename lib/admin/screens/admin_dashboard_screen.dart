@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../models/admin_model.dart';
+import 'bookings/admin_bookings_list_screen.dart';
 import 'inventory/admin_availability_calendar_screen.dart';
 import 'inventory/admin_maintenance_screen.dart';
 import 'properties/admin_property_list_screen.dart';
@@ -43,7 +44,7 @@ class AdminDashboardScreen extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             const Text(
-              'Phase 2 — Property, Room Inventory & Availability Management',
+              'Phase 3 — Booking Engine & Real-Time Reservation Management',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
@@ -53,6 +54,13 @@ class AdminDashboardScreen extends StatelessWidget {
                 crossAxisSpacing: 16,
                 mainAxisSpacing: 16,
                 children: [
+                  _buildDashboardCard(
+                    context,
+                    'Reservations & Bookings',
+                    Icons.book_online,
+                    Colors.green,
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminBookingsListScreen(admin: admin))),
+                  ),
                   _buildDashboardCard(
                     context,
                     'Property Portfolio',

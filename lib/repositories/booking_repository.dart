@@ -7,9 +7,45 @@ class BookingRepository {
 
   BookingRepository({BookingService? service}) : _service = service ?? BookingService();
 
-  Future<void> createBooking(BookingModel booking) async {
+  Future<BookingModel> createBookingHold({
+    required String userId,
+    required String propertyId,
+    required String roomTypeId,
+    required DateTime checkIn,
+    required DateTime checkOut,
+    required int adults,
+    required int children,
+    required int rooms,
+    required Map<String, dynamic> guestDetails,
+  }) async {
     try {
-      await _service.createBooking(booking);
+      return await _service.createBookingHoldTransaction(
+        userId: userId,
+        propertyId: propertyId,
+        roomTypeId: roomTypeId,
+        checkIn: checkIn,
+        checkOut: checkOut,
+        adults: adults,
+        children: children,
+        rooms: rooms,
+        guestDetails: guestDetails,
+      );
+    } catch (e) {
+      throw Failure.fromException(e);
+    }
+  }
+
+  Future<void> confirmBooking(String bookingId, {required String paymentId, required String performedBy}) async {
+    try {
+      await _service.confirmBooking(bookingId, paymentId: paymentId, performedBy: performedBy);
+    } catch (e) {
+      throw Failure.fromException(e);
+    }
+  }
+
+  Future<void> assignRoom(String bookingId, String roomId, String assignedBy) async {
+    try {
+      await _service.assignRoomToBooking(bookingId: bookingId, roomId: roomId, assignedBy: assignedBy);
     } catch (e) {
       throw Failure.fromException(e);
     }

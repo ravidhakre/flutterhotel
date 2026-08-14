@@ -17,6 +17,14 @@
       ]
     },
     {
+      "collectionGroup": "bookings",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "propertyId", "order": "ASCENDING" },
+        { "fieldPath": "bookingStatus", "order": "ASCENDING" }
+      ]
+    },
+    {
       "collectionGroup": "rooms",
       "queryScope": "COLLECTION",
       "fields": [
@@ -41,19 +49,27 @@
       ]
     },
     {
-      "collectionGroup": "roomStatusHistory",
+      "collectionGroup": "reservationAllocations",
       "queryScope": "COLLECTION",
       "fields": [
-        { "fieldPath": "roomId", "order": "ASCENDING" },
-        { "fieldPath": "changedAt", "order": "DESCENDING" }
+        { "fieldPath": "bookingId", "order": "ASCENDING" },
+        { "fieldPath": "status", "order": "ASCENDING" }
       ]
     },
     {
-      "collectionGroup": "maintenanceBlocks",
+      "collectionGroup": "reservationAllocations",
       "queryScope": "COLLECTION",
       "fields": [
-        { "fieldPath": "propertyId", "order": "ASCENDING" },
-        { "fieldPath": "startDate", "order": "ASCENDING" }
+        { "fieldPath": "roomTypeId", "order": "ASCENDING" },
+        { "fieldPath": "date", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "bookingEvents",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "bookingId", "order": "ASCENDING" },
+        { "fieldPath": "timestamp", "order": "ASCENDING" }
       ]
     }
   ],
