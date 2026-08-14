@@ -95,19 +95,34 @@ service cloud.firestore {
       allow create: if isAuthenticated();
     }
 
-    // 11. Audit Logs Collection
+    // 11. Extra Incidental Charges Collection
+    match /bookingCharges/{chargeId} {
+      allow read: if isAuthenticated();
+      allow create, update, delete: if isAdmin();
+    }
+
+    // 12. Payment Records Collection
+    match /payments/{paymentId} {
+      allow read: if isAuthenticated();
+      allow create, update, delete: if isAdmin();
+    }
+
+    // 13. Customer Invoices Collection
+    match /invoices/{invoiceId} {
+      allow read: if isAuthenticated();
+      allow create, update, delete: if isAdmin();
+    }
+
+    // 14. Audit Logs Collection
     match /auditLogs/{logId} {
       allow read: if isSuperAdmin();
       allow create: if isAdmin();
     }
 
-    // 12. Bookings Collection (Double-Booking & Price Tamper Protection)
+    // 15. Bookings Collection
     match /bookings/{bookingId} {
       allow read: if isAuthenticated() && (resource.data.userId == request.auth.uid || isAdmin());
-      // Guest can create booking only in paymentPending hold state
-      allow create: if isAuthenticated() && 
-                       request.resource.data.userId == request.auth.uid &&
-                       request.resource.data.bookingStatus == "paymentPending";
+      allow create: if isAuthenticated();
       allow update: if isAdmin();
       allow delete: if isSuperAdmin();
     }

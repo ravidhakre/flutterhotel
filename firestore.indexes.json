@@ -57,19 +57,27 @@
       ]
     },
     {
-      "collectionGroup": "reservationAllocations",
-      "queryScope": "COLLECTION",
-      "fields": [
-        { "fieldPath": "roomTypeId", "order": "ASCENDING" },
-        { "fieldPath": "date", "order": "ASCENDING" }
-      ]
-    },
-    {
-      "collectionGroup": "bookingEvents",
+      "collectionGroup": "bookingCharges",
       "queryScope": "COLLECTION",
       "fields": [
         { "fieldPath": "bookingId", "order": "ASCENDING" },
-        { "fieldPath": "timestamp", "order": "ASCENDING" }
+        { "fieldPath": "createdAt", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "payments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "bookingId", "order": "ASCENDING" },
+        { "fieldPath": "createdAt", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "invoices",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "bookingId", "order": "ASCENDING" },
+        { "fieldPath": "issuedAt", "order": "DESCENDING" }
       ]
     }
   ],

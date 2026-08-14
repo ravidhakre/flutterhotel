@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import '../../models/admin_model.dart';
 import 'bookings/admin_bookings_list_screen.dart';
+import 'bookings/admin_new_booking_screen.dart';
+import 'front_desk/admin_front_desk_screen.dart';
+import 'guests/admin_guests_list_screen.dart';
 import 'inventory/admin_availability_calendar_screen.dart';
 import 'inventory/admin_maintenance_screen.dart';
 import 'properties/admin_property_list_screen.dart';
@@ -16,7 +19,7 @@ class AdminDashboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Executive Dashboard — ${admin.role.toUpperCase()}'),
+        title: Text('Executive Operations — ${admin.role.toUpperCase()}'),
         backgroundColor: const Color(0xFF162234),
         actions: [
           IconButton(
@@ -44,22 +47,43 @@ class AdminDashboardScreen extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             const Text(
-              'Phase 3 — Booking Engine & Real-Time Reservation Management',
+              'Phase 4 — Front Desk Operations & Booking Management Portal',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
             Expanded(
               child: GridView.count(
-                crossAxisCount: MediaQuery.of(context).size.width > 600 ? 3 : 1,
+                crossAxisCount: MediaQuery.of(context).size.width > 600 ? 4 : 1,
                 crossAxisSpacing: 16,
                 mainAxisSpacing: 16,
                 children: [
                   _buildDashboardCard(
                     context,
-                    'Reservations & Bookings',
+                    'Front Desk Operations',
+                    Icons.concierge,
+                    Colors.orange.shade900,
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminFrontDeskScreen(admin: admin))),
+                  ),
+                  _buildDashboardCard(
+                    context,
+                    '+ New Walk-in / Booking',
+                    Icons.add_business,
+                    Colors.green.shade800,
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminNewBookingScreen(admin: admin))),
+                  ),
+                  _buildDashboardCard(
+                    context,
+                    'Reservations Center',
                     Icons.book_online,
                     Colors.green,
                     () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminBookingsListScreen(admin: admin))),
+                  ),
+                  _buildDashboardCard(
+                    context,
+                    'Guest CRM Directory',
+                    Icons.people_alt,
+                    Colors.purple,
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminGuestsListScreen(admin: admin))),
                   ),
                   _buildDashboardCard(
                     context,
@@ -70,23 +94,23 @@ class AdminDashboardScreen extends StatelessWidget {
                   ),
                   _buildDashboardCard(
                     context,
-                    'Room Types & Pricing',
+                    'Room Types Catalog',
                     Icons.king_bed,
                     Colors.indigo,
                     () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminRoomTypesListScreen(admin: admin))),
                   ),
                   _buildDashboardCard(
                     context,
-                    'Availability Matrix Calendar',
+                    'Availability Matrix',
                     Icons.calendar_month,
                     Colors.teal,
                     () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminAvailabilityCalendarScreen(admin: admin))),
                   ),
                   _buildDashboardCard(
                     context,
-                    'Room Maintenance Blocks',
+                    'Maintenance Blocks',
                     Icons.block,
-                    Colors.amber.shade900,
+                    Colors.red.shade800,
                     () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminMaintenanceScreen(admin: admin))),
                   ),
                 ],
@@ -106,16 +130,16 @@ class AdminDashboardScreen extends StatelessWidget {
         onTap: onTap,
         borderRadius: BorderRadius.circular(12),
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(icon, size: 48, color: color),
+              Icon(icon, size: 40, color: color),
               const SizedBox(height: 12),
               Text(
                 title,
                 textAlign: TextAlign.center,
-                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
               ),
             ],
           ),
