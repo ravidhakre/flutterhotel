@@ -35,16 +35,14 @@ service cloud.firestore {
     // 1. Users Collection
     match /users/{userId} {
       allow read: if isUser(userId) || isAdmin();
-      // Allow user creation on sign-up if role is forced to guest
       allow create: if isUser(userId) && request.resource.data.role == "guest";
-      // Allow user profile update, but prevent changing role
       allow update: if isUser(userId) && 
                        request.resource.data.role == resource.data.role || 
                        isSuperAdmin();
       allow delete: if isSuperAdmin();
     }
 
-    // 2. Admins Collection (Strict Protection)
+    // 2. Admins Collection
     match /admins/{adminId} {
       allow read: if isUser(adminId) || isSuperAdmin();
       allow create, update, delete: if isSuperAdmin();
@@ -68,15 +66,35 @@ service cloud.firestore {
       allow create, update, delete: if isAdmin();
     }
 
-    // 6. Bookings Collection
+    // 6. Room Inventory Matrix Collection
+    match /roomInventory/{inventoryId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    // 7. Room Status History Collection
+    match /roomStatusHistory/{historyId} {
+      allow read, create: if isAdmin();
+    }
+
+    // 8. Maintenance Blocks Collection
+    match /maintenanceBlocks/{blockId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    // 9. Audit Logs Collection
+    match /auditLogs/{logId} {
+      allow read: if isSuperAdmin();
+      allow create: if isAdmin();
+    }
+
+    // 10. Bookings Collection
     match /bookings/{bookingId} {
-      // Guests can read only their own bookings
       allow read: if isAuthenticated() && (resource.data.userId == request.auth.uid || isAdmin());
-      // Guest can create booking with pending status
       allow create: if isAuthenticated() && 
                        request.resource.data.userId == request.auth.uid &&
                        request.resource.data.bookingStatus == "pending";
-      // Guests cannot update payment status or confirm bookings directly
       allow update: if isAdmin();
       allow delete: if isSuperAdmin();
     }

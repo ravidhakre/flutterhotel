@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import '../../models/admin_model.dart';
+import 'inventory/admin_availability_calendar_screen.dart';
+import 'inventory/admin_maintenance_screen.dart';
+import 'properties/admin_property_list_screen.dart';
+import 'rooms/admin_room_types_list_screen.dart';
 
 class AdminDashboardScreen extends StatelessWidget {
   static const String routeName = '/admin/dashboard';
@@ -11,7 +15,7 @@ class AdminDashboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Admin Dashboard - ${admin.role.toUpperCase()}'),
+        title: Text('Executive Dashboard — ${admin.role.toUpperCase()}'),
         backgroundColor: const Color(0xFF162234),
         actions: [
           IconButton(
@@ -39,7 +43,7 @@ class AdminDashboardScreen extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             const Text(
-              'Admin Modules & Permissions',
+              'Phase 2 — Property, Room Inventory & Availability Management',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
@@ -49,12 +53,34 @@ class AdminDashboardScreen extends StatelessWidget {
                 crossAxisSpacing: 16,
                 mainAxisSpacing: 16,
                 children: [
-                  _buildDashboardCard('Properties & Inventory', Icons.business, Colors.blue),
-                  _buildDashboardCard('Reservations & Bookings', Icons.book_online, Colors.green),
-                  _buildDashboardCard('Guest Management', Icons.people, Colors.orange),
-                  _buildDashboardCard('Offers & Packages', Icons.local_offer, Colors.purple),
-                  _buildDashboardCard('Financial Reports', Icons.analytics, Colors.teal),
-                  _buildDashboardCard('System Security & Logs', Icons.security, Colors.red),
+                  _buildDashboardCard(
+                    context,
+                    'Property Portfolio',
+                    Icons.business,
+                    Colors.blue,
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminPropertyListScreen(admin: admin))),
+                  ),
+                  _buildDashboardCard(
+                    context,
+                    'Room Types & Pricing',
+                    Icons.king_bed,
+                    Colors.indigo,
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminRoomTypesListScreen(admin: admin))),
+                  ),
+                  _buildDashboardCard(
+                    context,
+                    'Availability Matrix Calendar',
+                    Icons.calendar_month,
+                    Colors.teal,
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminAvailabilityCalendarScreen(admin: admin))),
+                  ),
+                  _buildDashboardCard(
+                    context,
+                    'Room Maintenance Blocks',
+                    Icons.block,
+                    Colors.amber.shade900,
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => AdminMaintenanceScreen(admin: admin))),
+                  ),
                 ],
               ),
             ),
@@ -64,12 +90,12 @@ class AdminDashboardScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildDashboardCard(String title, IconData icon, Color color) {
+  Widget _buildDashboardCard(BuildContext context, String title, IconData icon, Color color, VoidCallback onTap) {
     return Card(
-      elevation: 2,
+      elevation: 3,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: InkWell(
-        onTap: () {},
+        onTap: onTap,
         borderRadius: BorderRadius.circular(12),
         child: Padding(
           padding: const EdgeInsets.all(20.0),
