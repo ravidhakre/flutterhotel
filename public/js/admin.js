@@ -1,4 +1,4 @@
-// HOTUX HOTEL ADMIN DASHBOARD JAVASCRIPT
+// FLUTTER HOTELS & RESORTS ADMIN DASHBOARD JAVASCRIPT
 
 async function updateBookingStatus(bookingId, status) {
   if (!confirm(`Are you sure you want to change booking ${bookingId} status to ${status}?`)) {
