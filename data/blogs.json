@@ -1,0 +1,47 @@
+[
+  {
+    "id": "blog-1",
+    "title": "Top 10 Scenic Places to Visit in Lansdowne, Uttarakhand",
+    "slug": "top-10-places-to-visit-in-lansdowne",
+    "category": "Travel & Sightseeing",
+    "author": "Flutter Editorial Team",
+    "date": "2026-08-15",
+    "image": "/images/hotel-img-1.jpg",
+    "excerpt": "Discover Tip-in-Top viewpoint, Bhulla Lake, St. John Church, and quiet pine forests surrounding Flutter Hotels & Resorts, Lansdowne.",
+    "featured": true,
+    "readTime": "5 min read",
+    "metaTitle": "Top 10 Places to Visit in Lansdowne | Flutter Hotels Blog",
+    "metaDescription": "Explore top attractions near Flutter Hotels & Resorts, Lansdowne — Tip-in-Top, Bhulla Lake, War Memorial & scenic hill views.",
+    "content": "<h2>1. Tip-In-Top (Tiffin Top)</h2><p>Located at the highest point in Lansdowne, Tip-In-Top offers breathtaking panoramic views of the Garhwal Himalayan range. Just a short 10-minute drive from Flutter Hotels & Resorts, it is the best spot for sunrise photography and peaceful pine walks.</p><h2>2. Bhulla Lake</h2><p>A serene man-made lake maintained by the Garhwal Rifles. Visitors can enjoy paddle boating, feed ducks, and relax by the lakeside garden.</p><h2>3. St. John's Church</h2><p>Built in 1936, St. John's Church is a historic Roman Catholic church known for its colonial architecture and peaceful surroundings amidst tall pine trees.</p><h2>4. Garhwal Rifles Regimental Museum</h2><p>A treasure trove of military history showcasing rare weapons, uniforms, and historical artifacts dating back to 1887.</p>"
+  },
+  {
+    "id": "blog-2",
+    "title": "Why Lansdowne is the Ultimate Weekend Break from Delhi NCR",
+    "slug": "lansdowne-ultimate-weekend-break-from-delhi",
+    "category": "Weekend Trips",
+    "author": "Resort Concierge",
+    "date": "2026-08-10",
+    "image": "/images/hotel-img-3.jpg",
+    "excerpt": "Just a 5.5 hour scenic drive from Delhi NCR, Lansdowne offers quiet mountain air, crisp pine breezes, and warm bonfire evenings.",
+    "featured": true,
+    "readTime": "4 min read",
+    "metaTitle": "Delhi to Lansdowne Weekend Road Trip Guide | Flutter Hotels",
+    "metaDescription": "Plan your Delhi to Lansdowne weekend road trip — distance, route, best places to stay & bonfire evenings at Flutter Hotels.",
+    "content": "<h2>The Perfect Distance</h2><p>Lansdowne is one of the closest and most undisturbed hill stations to Delhi NCR (approx 245 km). Unlike commercialized destinations like Mussoorie or Nainital, Lansdowne remains quiet, clean, and free from traffic chaos.</p><h2>What to Expect at Flutter Hotels & Resorts</h2><p>Our valley-view rooms feature private balconies overlooking pine forests, warm bonfire evenings under fairy lights, and delicious multi-cuisine dining.</p>"
+  },
+  {
+    "id": "blog-3",
+    "title": "Planning a Himalayan Destination Wedding in Lansdowne",
+    "slug": "planning-destination-wedding-in-lansdowne",
+    "category": "Weddings & Events",
+    "author": "Events Coordinator",
+    "date": "2026-08-05",
+    "image": "/images/hotel-img-10.jpeg",
+    "excerpt": "Fairy-lit outdoor lawns, banquet hall for 200 guests, and mountain backdrop for your dream wedding at Flutter Hotels & Resorts.",
+    "featured": false,
+    "readTime": "6 min read",
+    "metaTitle": "Himalayan Destination Wedding in Lansdowne | Flutter Hotels",
+    "metaDescription": "Host your dream mountain wedding at Flutter Hotels & Resorts, Lansdowne — 200-guest banquet hall, outdoor lawns, catering & decor.",
+    "content": "<h2>A Romantic Hillside Setting</h2><p>Exchange vows against the serene Garhwal hills. Our resort features a 200-guest banquet hall, spacious outdoor lawns decorated with fairy lights, and specialized catering packages for Mehendi, Sangeet, and Reception ceremonies.</p>"
+  }
+]

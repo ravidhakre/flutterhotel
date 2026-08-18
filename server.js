@@ -425,9 +425,33 @@ app.post('/api/check-availability', (req, res) => {
   });
 });
 
+// 10. Public Blog Catalog
+app.get('/blog', (req, res) => {
+  const blogs = readData('blogs.json');
+  res.render('blog', {
+    title: 'Lansdowne Travel & Resort Stories | Flutter Hotels Blog',
+    metaDesc: 'Explore travel guides, local sightseeing tips, wedding planning advice, and Garhwali culture stories from Flutter Hotels & Resorts.',
+    blogs: blogs
+  });
+});
+
+// 11. Single Blog Article Detail Page
+app.get('/blog/:slug', (req, res) => {
+  const blogs = readData('blogs.json');
+  const article = blogs.find(b => b.slug === req.params.slug);
+  if (!article) {
+    return res.redirect('/blog');
+  }
+  res.render('blog-detail', {
+    title: `${article.metaTitle || article.title}`,
+    metaDesc: article.metaDescription,
+    article: article
+  });
+});
+
 // Create Booking API & Form Handler
 app.post('/api/bookings', (req, res) => {
-  let { roomId, roomName, guestName, email, phone, checkIn, checkOut, guests, paymentMethod } = req.body;
+  let { roomId, roomName, guestName, email, phone, address, city, state, pincode, arrivalTime, notes, addons, checkIn, checkOut, guests, paymentMethod } = req.body;
 
   // Fallback defaults for missing fields
   guestName = guestName || 'Valued Guest';
@@ -456,12 +480,44 @@ app.post('/api/bookings', (req, res) => {
     room = rooms[0]; // Intelligent fallback to first room
   }
 
-  // Calculate nights
+  // Calculate nights & pricing including add-on services
   const start = new Date(checkIn);
   const end = new Date(checkOut);
   const diffTime = Math.abs(end - start);
   const nights = Math.max(1, Math.ceil(diffTime / (1000 * 60 * 60 * 24)));
-  const totalPrice = (room ? room.price : 2400) * nights;
+  
+  let baseRoomRate = 2400;
+  if (room && room.price) {
+    if (typeof room.price === 'number') {
+      baseRoomRate = room.price;
+    } else {
+      const match = String(room.price).replace(/,/g, '').match(/\d+/);
+      if (match) baseRoomRate = parseInt(match[0]);
+    }
+  }
+
+  const roomSubtotal = baseRoomRate * nights;
+
+  // Process Add-on services selection
+  let selectedAddons = [];
+  let addonPriceSum = 0;
+  if (addons) {
+    if (Array.isArray(addons)) {
+      selectedAddons = addons;
+    } else {
+      selectedAddons = [addons];
+    }
+    selectedAddons.forEach(addonStr => {
+      const match = String(addonStr).match(/₹([\d,]+)/);
+      if (match) {
+        addonPriceSum += parseInt(match[1].replace(/,/g, ''));
+      }
+    });
+  }
+
+  const taxableSubtotal = roomSubtotal + addonPriceSum;
+  const taxAmount = Math.round(taxableSubtotal * 0.12);
+  const totalPrice = taxableSubtotal + taxAmount;
 
   const bookings = readData('bookings.json');
   const newBooking = {
@@ -471,10 +527,18 @@ app.post('/api/bookings', (req, res) => {
     guestName,
     email,
     phone: phone || '',
+    address: address || '',
+    city: city || '',
+    state: state || '',
+    pincode: pincode || '',
+    arrivalTime: arrivalTime || '12:00 PM - 2:00 PM',
+    notes: notes || '',
+    addons: selectedAddons,
     checkIn,
     checkOut,
     guests: parseInt(guests) || 1,
-    totalPrice,
+    nights: nights,
+    totalPrice: totalPrice,
     status: 'Confirmed',
     createdAt: new Date().toISOString(),
     paymentMethod: paymentMethod || 'Pay at Hotel Check-in'
@@ -616,6 +680,53 @@ app.get('/admin/inquiries', requireAdmin, (req, res) => {
     title: 'Customer Inquiries | Flutter Hotels Admin',
     inquiries: inquiries
   });
+});
+
+// Admin Manage CMS Blogs Page
+app.get('/admin/blogs', requireAdmin, (req, res) => {
+  const blogs = readData('blogs.json');
+  res.render('admin/blogs', {
+    title: 'CMS Blog Management | Flutter Hotels Admin',
+    blogs: blogs
+  });
+});
+
+// Add New Blog API
+app.post('/api/admin/blogs', requireAdmin, (req, res) => {
+  const { title, category, author, image, readTime, excerpt, content } = req.body;
+  if (!title || !excerpt || !content) {
+    return res.status(400).json({ success: false, message: 'Title, Excerpt, and Content are required.' });
+  }
+
+  const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+  const blogs = readData('blogs.json');
+  const newBlog = {
+    id: 'blog-' + Date.now(),
+    title,
+    slug,
+    category: category || 'Travel & Sightseeing',
+    author: author || 'Flutter Editorial Team',
+    date: new Date().toISOString().split('T')[0],
+    image: image || '/images/hotel-img-1.jpg',
+    excerpt,
+    featured: false,
+    readTime: readTime || '5 min read',
+    metaTitle: `${title} | Flutter Hotels & Resorts`,
+    metaDescription: excerpt,
+    content
+  };
+
+  blogs.unshift(newBlog);
+  saveData('blogs.json', blogs);
+  return res.redirect('/admin/blogs');
+});
+
+// Delete Blog API
+app.delete('/api/admin/blogs/:id', requireAdmin, (req, res) => {
+  let blogs = readData('blogs.json');
+  blogs = blogs.filter(b => b.id !== req.params.id);
+  saveData('blogs.json', blogs);
+  return res.json({ success: true, message: 'Blog deleted successfully.' });
 });
 
 // 404 Route
