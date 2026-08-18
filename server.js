@@ -125,13 +125,37 @@ app.get('/rooms/:id', (req, res) => {
   });
 });
 
-// 4. Offers & Packages Overview
+// 4. Special Offers Landing Page
 app.get('/offers', (req, res) => {
   const offers = readData('offers.json');
   res.render('offers', {
-    title: 'Offers & Packages | Flutter Hotels & Resorts',
-    metaDesc: 'Weekday & weekend discounts, group departures, honeymoon and celebration packages at Flutter Hotels & Resorts, Lansdowne. Book direct & save.',
+    title: 'Special Offers & Discounts | Flutter Hotels & Resorts',
+    metaDesc: 'Weekday & weekend discounts, promotional deals, and season specials at Flutter Hotels & Resorts, Lansdowne. Book direct & save.',
     offers: offers
+  });
+});
+
+// 4b. Packages Catalog Page
+app.get('/packages', (req, res) => {
+  const packages = readData('packages.json');
+  res.render('packages', {
+    title: 'Holiday & Experience Packages | Flutter Hotels & Resorts',
+    metaDesc: 'Honeymoon, weekend getaway, Delhi group departure, corporate MICE and wedding packages at Flutter Hotels & Resorts, Lansdowne.',
+    packages: packages
+  });
+});
+
+// 4c. Single Package Detail Page
+app.get('/packages/:slug', (req, res) => {
+  const packages = readData('packages.json');
+  const packageItem = packages.find(p => p.slug === req.params.slug);
+  if (!packageItem) {
+    return res.redirect('/packages');
+  }
+  res.render('package-detail', {
+    title: `${packageItem.metaTitle || packageItem.title}`,
+    metaDesc: packageItem.metaDescription,
+    packageItem: packageItem
   });
 });
 
@@ -146,6 +170,35 @@ app.get('/offers/:slug', (req, res) => {
     title: `${offer.metaTitle || offer.title}`,
     metaDesc: offer.metaDescription,
     offer: offer
+  });
+});
+
+// Razorpay Compliance Policy Pages
+app.get('/privacy-policy', (req, res) => {
+  res.render('privacy-policy', {
+    title: 'Privacy Policy | Flutter Hotels & Resorts',
+    metaDesc: 'Privacy Policy and data protection terms for Flutter Hotels & Resorts, Lansdowne, Uttarakhand.'
+  });
+});
+
+app.get('/terms-conditions', (req, res) => {
+  res.render('terms-conditions', {
+    title: 'Terms & Conditions | Flutter Hotels & Resorts',
+    metaDesc: 'Terms and Conditions for room reservations and stays at Flutter Hotels & Resorts, Lansdowne.'
+  });
+});
+
+app.get('/cancellation-refund-policy', (req, res) => {
+  res.render('cancellation-refund-policy', {
+    title: 'Cancellation & Refund Policy | Flutter Hotels & Resorts',
+    metaDesc: 'Cancellation windows, refund processing guidelines, and timelines for Flutter Hotels & Resorts.'
+  });
+});
+
+app.get('/booking-policy', (req, res) => {
+  res.render('booking-policy', {
+    title: 'Booking & Delivery Policy | Flutter Hotels & Resorts',
+    metaDesc: 'Reservation confirmation, instant voucher delivery, and stay service fulfillment terms.'
   });
 });
 

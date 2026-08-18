@@ -1,0 +1,94 @@
+<%- include('partials/header') %>
+
+<div style="background: linear-gradient(rgba(26, 38, 56, 0.75), rgba(26, 38, 56, 0.75)), url('<%= packageItem.image %>') center/cover; padding: 70px 0; text-align: center; color: #fff;">
+  <div class="container">
+    <span style="background: var(--primary-blue); color: #fff; padding: 6px 18px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px; display: inline-block; margin-bottom: 15px;">
+      <%= packageItem.tag %>
+    </span>
+    <h1 style="font-size: 38px; margin-bottom: 10px; color: #ffffff;"><%= packageItem.title %></h1>
+    <p style="color: #cbd5e1; font-size: 16px; max-width: 700px; margin: 0 auto;">
+      <%= packageItem.shortDesc %>
+    </p>
+  </div>
+</div>
+
+<section class="section-padding">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;">
+      
+      <!-- Main Content -->
+      <div>
+        <h2 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 20px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px;">
+          <i class="fas fa-check-circle" style="color: var(--primary-blue);"></i> What’s Included in This Package
+        </h2>
+        <ul style="list-style: none; padding: 0; margin-bottom: 40px;">
+          <% packageItem.inclusions.forEach(function(inc) { %>
+            <li style="font-size: 15px; color: #334155; margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; line-height: 1.6;">
+              <i class="fas fa-gem" style="color: var(--primary-blue); margin-top: 4px; flex-shrink: 0;"></i>
+              <span><%= inc %></span>
+            </li>
+          <% }); %>
+        </ul>
+
+        <% if (packageItem.itinerary && packageItem.itinerary.length > 0) { %>
+          <h2 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 20px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px;">
+            <i class="fas fa-route" style="color: var(--primary-blue);"></i> Package Itinerary & Schedule
+          </h2>
+          <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 40px;">
+            <% packageItem.itinerary.forEach(function(it) { %>
+              <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid var(--primary-blue); border: 1px solid #e2e8f0; border-left-width: 4px;">
+                <h4 style="font-size: 17px; color: var(--dark-bg); margin-bottom: 6px;"><%= it.day %>: <%= it.title %></h4>
+                <p style="color: #64748b; font-size: 14px; margin: 0; line-height: 1.6;"><%= it.desc %></p>
+              </div>
+            <% }); %>
+          </div>
+        <% } %>
+
+        <% if (packageItem.faqs && packageItem.faqs.length > 0) { %>
+          <h2 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 20px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px;">
+            <i class="fas fa-question-circle" style="color: var(--primary-blue);"></i> Frequently Asked Questions
+          </h2>
+          <div style="display: flex; flex-direction: column; gap: 15px;">
+            <% packageItem.faqs.forEach(function(faq) { %>
+              <div style="background: #ffffff; padding: 18px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                <h4 style="font-size: 16px; color: var(--dark-bg); margin-bottom: 6px;">Q: <%= faq.q %></h4>
+                <p style="color: #64748b; font-size: 14px; margin: 0; line-height: 1.6;">A: <%= faq.a %></p>
+              </div>
+            <% }); %>
+          </div>
+        <% } %>
+
+      </div>
+
+      <!-- Booking Card Sidebar -->
+      <div>
+        <div style="background: #ffffff; padding: 30px; border-radius: 12px; border: 1.5px solid #e2e8f0; box-shadow: 0 8px 25px rgba(0,0,0,0.06); position: sticky; top: 100px;">
+          <span style="font-size: 12px; text-transform: uppercase; color: #64748b; font-weight: 700;">Package Price</span>
+          <div style="font-size: 26px; font-weight: bold; color: var(--primary-blue); margin-bottom: 15px;"><%= packageItem.price %></div>
+          
+          <p style="font-size: 13px; color: #64748b; margin-bottom: 25px; line-height: 1.6;">
+            Book direct for instant confirmation, lowest rates, and personalized stay arrangements.
+          </p>
+
+          <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I%20want%20to%20book%20the%20<%= encodeURIComponent(packageItem.title) %>" target="_blank" class="btn-blue" style="width: 100%; text-align: center; margin-bottom: 12px; padding: 14px; background: #25d366 !important; border-color: #25d366 !important;">
+            <i class="fab fa-whatsapp"></i> Book via WhatsApp
+          </a>
+
+          <a href="/contact?subject=<%= encodeURIComponent(packageItem.title) %>" class="btn-outline-blue" style="width: 100%; text-align: center; display: block; padding: 12px;">
+            <i class="fas fa-envelope"></i> Send Online Enquiry
+          </a>
+
+          <hr style="margin: 20px 0; border: none; border-top: 1px solid #e2e8f0;">
+
+          <div style="font-size: 13px; color: #64748b; display: flex; flex-direction: column; gap: 8px;">
+            <div><i class="fas fa-phone-alt" style="color: var(--primary-blue);"></i> Direct Call: <strong>+91 89 2923 2740</strong></div>
+            <div><i class="far fa-clock" style="color: var(--primary-blue);"></i> Check-in: 12:00 PM | Check-out: 10:00 AM</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

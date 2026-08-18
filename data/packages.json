@@ -1,0 +1,134 @@
+[
+  {
+    "id": "honeymoon-package",
+    "title": "Honeymoon & Romantic Escape Package",
+    "slug": "honeymoon-package",
+    "price": "₹9,999 / Couple (2N/3D)",
+    "tag": "Romantic Special",
+    "image": "/images/hotel-img-8.jpg",
+    "metaTitle": "Honeymoon Package in Lansdowne | Flutter Hotels & Resorts",
+    "metaDescription": "Celebrate your honeymoon with a valley-view stay, private balcony, candle light dinner and bed decoration at Flutter Hotels & Resorts, Lansdowne.",
+    "shortDesc": "A valley view room, private balcony, romantic candlelight dinner under Himalayan stars, and bed decoration for newlyweds.",
+    "inclusions": [
+      "2 Nights stay in Super Deluxe Valley View Room",
+      "Complimentary Breakfast & Romantic Candlelight Dinner",
+      "Special room bed decoration with fresh flowers",
+      "Welcome cake & non-alcoholic fruit champagne",
+      "15% discount on additional dining & room service"
+    ],
+    "itinerary": [
+      {"day": "Day 1", "title": "Check-in & Candlelight Dinner", "desc": "Check-in at 12:00 PM with welcome drinks. Relax on your private balcony overlooking the Garhwal valley. Enjoy a romantic candlelight dinner in the evening."},
+      {"day": "Day 2", "title": "Local Sightseeing & Bonfire Evening", "desc": "Morning breakfast followed by local sightseeing (Tip In Top, Bhulla Lake). Evening bonfire with music on our lush lawns."},
+      {"day": "Day 3", "title": "Breakfast & Checkout", "desc": "Morning breakfast, memorable photos on the lawn, and check-out by 10:00 AM."}
+    ],
+    "faqs": [
+      {"q": "Can we customize the dinner menu?", "a": "Yes, our chef will customize the candlelight dinner menu according to your dietary preferences."},
+      {"q": "Is late check-out available?", "a": "Late check-out up to 1:00 PM is subject to room availability."}
+    ]
+  },
+  {
+    "id": "2n3d-group-departure",
+    "title": "2N/3D Group Departure Package (Delhi Pickup Included)",
+    "slug": "2n3d-group-departure",
+    "price": "₹4,999 / Person",
+    "tag": "All-Inclusive Tour",
+    "image": "/images/hotel-img-7.jpg",
+    "metaTitle": "2N/3D Delhi Group Departure to Lansdowne | Flutter Hotels",
+    "metaDescription": "Join our 2N/3D group departure to Lansdowne — ₹4,999/person, Delhi pickup from Akshardham Metro, full itinerary with bonfire & DJ night.",
+    "shortDesc": "No driving or trip planning — AC Volvo/Tempo transport from Delhi Akshardham Metro, resort stay, bonfire & DJ evening included.",
+    "inclusions": [
+      "AC Transport from Akshardham Metro Station, Delhi to Lansdowne & return",
+      "2 Nights stay in Deluxe rooms on twin/triple sharing",
+      "All meals (2 Breakfasts, 2 Dinners)",
+      "Bonfire & DJ Night on resort lawns",
+      "Sightseeing tour to Bhulla Lake, St. John Church & Tip-In-Top"
+    ],
+    "itinerary": [
+      {"day": "Day 1", "title": "Delhi Pickup & Resort Check-in", "desc": "Board AC vehicle at 6:00 AM from Akshardham Metro, Delhi. Scenic drive to Lansdowne. Check-in at Flutter Hotels & Resorts. Evening tea & snacks."},
+      {"day": "Day 2", "title": "Lansdowne Sightseeing & DJ Night", "desc": "Visit local viewpoints & army museum. Evening bonfire with DJ music and lavish dinner buffer."},
+      {"day": "Day 3", "title": "Return Journey to Delhi", "desc": "Morning breakfast, checkout and return journey to Delhi by evening."}
+    ],
+    "faqs": [
+      {"q": "Where is the pickup point in Delhi?", "a": "Akshardham Metro Station Gate No. 2 at 6:00 AM."},
+      {"q": "Are meals included during travel?", "a": "Resort meals (Breakfast & Dinner) are included. En-route tea/meals can be purchased directly."}
+    ]
+  },
+  {
+    "id": "weekend-getaway-package",
+    "title": "Weekend Garhwal Hills Getaway Package",
+    "slug": "weekend-getaway-package",
+    "price": "₹6,499 / Couple (2N/3D)",
+    "tag": "Popular Weekend Deal",
+    "image": "/images/hotel-img-6.jpg",
+    "metaTitle": "Weekend Getaway Package | Flutter Hotels & Resorts",
+    "metaDescription": "Unwind in Lansdowne with our weekend getaway package — 2 nights stay, daily breakfast, bonfire & 20% off room service.",
+    "shortDesc": "Unwind in the fresh pine air of Lansdowne — 2 nights room stay, daily breakfast, evening tea with Garhwali snacks, and bonfire.",
+    "inclusions": [
+      "2 Nights stay in Valley View or Garden View Room",
+      "Daily Chef Special Breakfast for 2",
+      "Evening High Tea with local Garhwali snacks",
+      "Access to indoor games & outdoor lawns",
+      "Free high-speed Wi-Fi and ample car parking"
+    ],
+    "itinerary": [
+      {"day": "Day 1", "title": "Friday Arrival", "desc": "Check-in, relax in your room, and enjoy mountain breeze. Evening tea & warm bonfire on lawns."},
+      {"day": "Day 2", "title": "Saturday Mountain Exploration", "desc": "Delicious breakfast, explore Lansdowne pine trails, and enjoy multi-cuisine dinner."},
+      {"day": "Day 3", "title": "Sunday Checkout", "desc": "Hearty breakfast and checkout."}
+    ],
+    "faqs": [
+      {"q": "Is parking available for private cars?", "a": "Yes, we have free secure parking inside the resort premises."},
+      {"q": "Can extra bed be added for children?", "a": "Yes, extra bed is available at ₹800/night."}
+    ]
+  },
+  {
+    "id": "wedding-celebration-package",
+    "title": "Destination Weddings & Grand Celebrations Package",
+    "slug": "wedding-celebration-package",
+    "price": "Custom Event Quotes",
+    "tag": "Weddings & Events",
+    "image": "/images/hotel-img-10.jpeg",
+    "metaTitle": "Weddings & Celebrations | Flutter Hotels & Resorts",
+    "metaDescription": "Host weddings, birthdays, anniversaries and reunions at Flutter Hotels & Resorts, Lansdowne — banquet hall, lawns, catering.",
+    "shortDesc": "Our 200-guest banquet hall and fairy-lit outdoor lawns set the scene for memorable weddings, milestone birthdays, and family reunions.",
+    "inclusions": [
+      "Exclusive access to 200-guest Banquet Hall & Fairy-lit Outdoor Lawns",
+      "Accommodation for up to 60+ guests in resort rooms",
+      "Customized North Indian, Chinese & Garhwali buffet menus",
+      "Stage, mandap, light & sound setup arrangements",
+      "Dedicated event coordinator throughout the function"
+    ],
+    "itinerary": [
+      {"day": "Event Day 1", "title": "Guest Arrival & Mehendi/Sangeet", "desc": "Welcome drinks, check-in, afternoon Mehendi on lawns, and evening Sangeet with DJ & bonfire."},
+      {"day": "Event Day 2", "title": "Haldi & Wedding Ceremony", "desc": "Morning Haldi ceremony, afternoon lunch, evening Barat reception & Mandap ceremony."}
+    ],
+    "faqs": [
+      {"q": "What is the guest capacity for weddings?", "a": "Up to 200 guests across the banquet hall and connected lawns."},
+      {"q": "Do you provide decor and catering?", "a": "Yes, we provide complete in-house catering and decor packages."}
+    ]
+  },
+  {
+    "id": "corporate-mice-package",
+    "title": "Corporate MICE & Team Offsite Package",
+    "slug": "corporate-mice-package",
+    "price": "Custom Corporate Quotes",
+    "tag": "Corporate Offsites",
+    "image": "/images/hotel-img-9.jpeg",
+    "metaTitle": "Corporate MICE Packages | Flutter Hotels & Resorts",
+    "metaDescription": "Host conferences and offsites at Flutter Hotels & Resorts, Lansdowne — banquet hall for 200, conference setup, group stay rates.",
+    "shortDesc": "Banquet hall conference setup, high-speed Wi-Fi, group stay rates, team building activities on lawns, and gala dinner.",
+    "inclusions": [
+      "Conference setup with projector, screen, mic & sound system",
+      "Group room accommodation on twin/triple sharing basis",
+      "Breakfast, Lunch, Evening Tea & Gala Dinner buffet",
+      "Outdoor lawn space for team building activities & sports",
+      "Bonfire evening with music"
+    ],
+    "itinerary": [
+      {"day": "Day 1", "title": "Arrival & Conference Session", "desc": "Check-in, lunch, afternoon strategy meeting in conference hall, evening team bonfire & dinner."},
+      {"day": "Day 2", "title": "Outdoor Activities & Gala Dinner", "desc": "Morning breakfast, outdoor team building activities on lawns, afternoon session, evening Gala Dinner."}
+    ],
+    "faqs": [
+      {"q": "Is GST invoice provided for corporate billing?", "a": "Yes, official GST invoices are issued for company accounts."}
+    ]
+  }
+]
