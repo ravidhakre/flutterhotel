@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const session = require('express-session');
+const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const { sendBookingConfirmationEmail } = require('./services/emailService');
 
@@ -12,12 +13,13 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser('flutter_hotels_resorts_secret_2026'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: 'flutter_hotels_resorts_secret_2026',
-  resave: false,
-  saveUninitialized: false,
-  cookie: { maxAge: 24 * 60 * 60 * 1000 } // 24 hours
+  resave: true,
+  saveUninitialized: true,
+  cookie: { maxAge: 7 * 24 * 60 * 60 * 1000 } // 7 days session
 }));
 
 // Set EJS View Engine
@@ -55,10 +57,21 @@ function saveData(file, data) {
   }
 }
 
-// Global View Variables Middleware
+// Global View Variables & Vercel Session Hydration Middleware
 app.use((req, res, next) => {
+  // Re-hydrate session from HTTP cookie for Vercel serverless multi-instance support
+  if ((!req.session || !req.session.user) && req.cookies && req.cookies.admin_token === 'flutter_admin_authenticated_2026') {
+    req.session = req.session || {};
+    req.session.user = {
+      id: 'admin-1',
+      name: 'Flutter General Director',
+      username: 'admin',
+      isAdmin: true
+    };
+  }
+
   res.locals.user = req.session.user || null;
-  res.locals.isAdmin = req.session.user && req.session.user.isAdmin;
+  res.locals.isAdmin = !!(req.session.user && req.session.user.isAdmin);
   res.locals.phoneMain = "+91 89 2923 2740";
   res.locals.phoneAlt = "+91 13 8629 9133";
   res.locals.emailMain = "sales@flutterhotel.com";
@@ -66,9 +79,22 @@ app.use((req, res, next) => {
   next();
 });
 
-// Admin Protection Middleware
+// Admin Protection Middleware with Vercel Serverless Token Support
 function requireAdmin(req, res, next) {
-  if (req.session.user && req.session.user.isAdmin) {
+  // 1. Check Session Memory
+  if (req.session && req.session.user && req.session.user.isAdmin) {
+    return next();
+  }
+  // 2. Check Persistent HTTP Cookie Token (fixes Vercel serverless session loss)
+  if (req.cookies && req.cookies.admin_token === 'flutter_admin_authenticated_2026') {
+    req.session.user = {
+      id: 'admin-1',
+      name: 'Flutter General Director',
+      username: 'admin',
+      isAdmin: true
+    };
+    res.locals.user = req.session.user;
+    res.locals.isAdmin = true;
     return next();
   }
   return res.redirect('/login?error=Unauthorized.+Please+login+as+Admin.');
@@ -376,6 +402,15 @@ app.post('/login', (req, res) => {
       username: 'admin',
       isAdmin: true
     };
+
+    // Set persistent HTTP cookie for Vercel serverless multi-instance support
+    res.cookie('admin_token', 'flutter_admin_authenticated_2026', {
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+      httpOnly: true,
+      sameSite: 'lax',
+      path: '/'
+    });
+
     return res.redirect('/admin');
   }
 
@@ -396,11 +431,16 @@ app.post('/login', (req, res) => {
   });
 });
 
-// Logout
+// Logout Handler
 app.get('/logout', (req, res) => {
-  req.session.destroy(() => {
-    res.redirect('/');
-  });
+  res.clearCookie('admin_token', { path: '/' });
+  if (req.session) {
+    req.session.destroy(() => {
+      res.redirect('/login');
+    });
+  } else {
+    res.redirect('/login');
+  }
 });
 
 // --- REST API ENDPOINTS ---
