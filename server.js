@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const session = require('express-session');
 const cors = require('cors');
+const { sendBookingConfirmationEmail } = require('./services/emailService');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -392,6 +393,9 @@ app.post('/api/bookings', (req, res) => {
 
   bookings.unshift(newBooking);
   saveData('bookings.json', bookings);
+
+  // Asynchronously dispatch luxury HTML booking confirmation email to customer & admin
+  sendBookingConfirmationEmail(newBooking, room).catch(err => console.error('Async email error:', err));
 
   return res.json({
     success: true,
