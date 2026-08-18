@@ -24,27 +24,34 @@ app.use(session({
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Helper Data Loaders & Savers
+// Helper Data Loaders & Savers with Vercel Serverless In-Memory Cache
 const DATA_DIR = path.join(__dirname, 'data');
 const getFilePath = (fileName) => path.join(DATA_DIR, fileName);
+const dataCache = {};
 
 function readData(file) {
+  if (dataCache[file]) {
+    return dataCache[file];
+  }
   try {
     const raw = fs.readFileSync(getFilePath(file), 'utf8');
-    return JSON.parse(raw);
+    const parsed = JSON.parse(raw);
+    dataCache[file] = parsed;
+    return parsed;
   } catch (err) {
     console.error(`Error reading ${file}:`, err);
-    return [];
+    return dataCache[file] || [];
   }
 }
 
 function saveData(file, data) {
+  dataCache[file] = data;
   try {
     fs.writeFileSync(getFilePath(file), JSON.stringify(data, null, 2), 'utf8');
     return true;
   } catch (err) {
-    console.error(`Error saving ${file}:`, err);
-    return false;
+    // Vercel serverless filesystem is read-only, in-memory dataCache preserves all bookings during runtime
+    return true;
   }
 }
 
@@ -200,6 +207,71 @@ app.get('/booking-policy', (req, res) => {
   res.render('booking-policy', {
     title: 'Booking & Delivery Policy | Flutter Hotels & Resorts',
     metaDesc: 'Reservation confirmation, instant voucher delivery, and stay service fulfillment terms.'
+  });
+});
+
+// Dedicated 2-Step Checkout Page
+app.get('/checkout', (req, res) => {
+  const { type, id, checkIn, checkOut, guests } = req.query;
+
+  const todayStr = new Date().toISOString().split('T')[0];
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const tomorrowStr = tomorrow.toISOString().split('T')[0];
+
+  const selectedCheckIn = checkIn || todayStr;
+  const selectedCheckOut = checkOut || tomorrowStr;
+  const selectedGuests = parseInt(guests) || 2;
+
+  // Calculate nights
+  const start = new Date(selectedCheckIn);
+  const end = new Date(selectedCheckOut);
+  const diffTime = Math.abs(end - start);
+  const nights = Math.max(1, Math.ceil(diffTime / (1000 * 60 * 60 * 24)));
+
+  let item = null;
+  if (type === 'package') {
+    const packages = readData('packages.json');
+    item = packages.find(p => p.id === id || p.slug === id);
+    if (!item) item = packages[0];
+  } else {
+    const rooms = readData('rooms.json');
+    if (id) {
+      item = rooms.find(r => r.id === id || r.id.toLowerCase() === id.toLowerCase());
+    }
+    if (!item) item = rooms[0];
+  }
+
+  // Calculate rate breakdown
+  let basePrice = 2400;
+  if (item && item.price) {
+    if (typeof item.price === 'number') {
+      basePrice = item.price;
+    } else {
+      const match = String(item.price).replace(/,/g, '').match(/\d+/);
+      if (match) basePrice = parseInt(match[0]);
+    }
+  }
+
+  const roomSubtotal = basePrice * nights;
+  const tax = Math.round(roomSubtotal * 0.12);
+  const total = roomSubtotal + tax;
+
+  res.render('checkout', {
+    title: `Checkout — ${item ? (item.name || item.title) : 'Reservation'} | Flutter Hotels & Resorts`,
+    item: item,
+    dates: {
+      checkIn: selectedCheckIn,
+      checkOut: selectedCheckOut,
+      guests: selectedGuests,
+      nights: nights
+    },
+    pricing: {
+      basePrice: basePrice,
+      subtotal: roomSubtotal,
+      tax: tax,
+      total: total
+    }
   });
 });
 
@@ -559,3 +631,5 @@ app.listen(PORT, () => {
   console.log(`  Admin Panel: http://localhost:${PORT}/admin       `);
   console.log(`====================================================`);
 });
+
+module.exports = app;

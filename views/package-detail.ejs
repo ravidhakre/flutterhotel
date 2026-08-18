@@ -70,7 +70,11 @@
             Book direct for instant confirmation, lowest rates, and personalized stay arrangements.
           </p>
 
-          <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I%20want%20to%20book%20the%20<%= encodeURIComponent(packageItem.title) %>" target="_blank" class="btn-blue" style="width: 100%; text-align: center; margin-bottom: 12px; padding: 14px; background: #25d366 !important; border-color: #25d366 !important;">
+          <a href="/checkout?type=package&id=<%= packageItem.id %>" class="btn-blue pulsing-btn" style="width: 100%; text-align: center; margin-bottom: 12px; padding: 14px; display: block; font-weight: bold;">
+            <i class="fas fa-calendar-check"></i> Book Package Online
+          </a>
+
+          <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I%20want%20to%20book%20the%20<%= encodeURIComponent(packageItem.title) %>" target="_blank" class="btn-blue" style="width: 100%; text-align: center; margin-bottom: 12px; padding: 14px; background: #25d366 !important; border-color: #25d366 !important; display: block;">
             <i class="fab fa-whatsapp"></i> Book via WhatsApp
           </a>
 

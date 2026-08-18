@@ -1,0 +1,172 @@
+<%- include('partials/header') %>
+
+<!-- Checkout Page Hero Banner -->
+<div style="background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('/images/hotel-img-1.jpg') center/cover; padding: 50px 0; text-align: center; color: #fff;">
+  <div class="container">
+    <span style="background: rgba(255, 255, 255, 0.15); color: #f59e0b; padding: 4px 16px; border-radius: 20px; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">
+      Direct Booking Guarantee
+    </span>
+    <h1 style="font-size: 34px; margin: 10px 0 5px; color: #ffffff;">Complete Your Stay Reservation</h1>
+    <p style="color: #cbd5e1; font-size: 14px; margin: 0;">
+      Instant Confirmation • No Hidden Fees • Best Rate Guaranteed
+    </p>
+  </div>
+</div>
+
+<section class="section-padding" style="background: #f8fafc; padding: 50px 0;">
+  <div class="container">
+    
+    <form action="/api/bookings" method="POST" id="checkoutForm">
+      <input type="hidden" name="roomId" value="<%= item.id %>">
+      <input type="hidden" name="roomName" value="<%= item.name || item.title %>">
+      <input type="hidden" name="checkIn" value="<%= dates.checkIn %>">
+      <input type="hidden" name="checkOut" value="<%= dates.checkOut %>">
+      <input type="hidden" name="guests" value="<%= dates.guests %>">
+
+      <div style="display: grid; grid-template-columns: 1.6fr 1fr; gap: 40px;" class="responsive-two-col">
+        
+        <!-- Left Column: Guest Info & Payment Selection -->
+        <div>
+          
+          <!-- Step 1: Guest Information -->
+          <div style="background: #ffffff; border-radius: 12px; padding: 30px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04); margin-bottom: 30px;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 25px; border-bottom: 2px solid #f1f5f9; padding-bottom: 15px;">
+              <span style="width: 32px; height: 32px; background: var(--primary-blue); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px;">1</span>
+              <h3 style="font-size: 20px; color: var(--dark-bg); margin: 0;">Guest & Contact Details</h3>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;" class="responsive-two-col">
+              <div>
+                <label style="font-size: 13px; font-weight: 700; color: #334155; display: block; margin-bottom: 8px;">Full Name *</label>
+                <input type="text" name="guestName" required placeholder="Enter full name" value="<%= user ? user.name : '' %>" class="form-control-custom" style="padding: 12px 16px;">
+              </div>
+              <div>
+                <label style="font-size: 13px; font-weight: 700; color: #334155; display: block; margin-bottom: 8px;">Email Address *</label>
+                <input type="email" name="email" required placeholder="name@example.com" class="form-control-custom" style="padding: 12px 16px;">
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;" class="responsive-two-col">
+              <div>
+                <label style="font-size: 13px; font-weight: 700; color: #334155; display: block; margin-bottom: 8px;">Phone Number *</label>
+                <input type="tel" name="phone" required placeholder="+91 89 2923 2740" class="form-control-custom" style="padding: 12px 16px;">
+              </div>
+              <div>
+                <label style="font-size: 13px; font-weight: 700; color: #334155; display: block; margin-bottom: 8px;">Estimated Arrival Time</label>
+                <select name="arrivalTime" class="form-control-custom" style="padding: 12px 16px;">
+                  <option value="12:00 PM - 2:00 PM">12:00 PM - 2:00 PM (Standard Check-in)</option>
+                  <option value="2:00 PM - 5:00 PM">2:00 PM - 5:00 PM</option>
+                  <option value="5:00 PM - 8:00 PM">5:00 PM - 8:00 PM</option>
+                  <option value="Late Evening (After 8 PM)">Late Evening (After 8 PM)</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label style="font-size: 13px; font-weight: 700; color: #334155; display: block; margin-bottom: 8px;">Special Requests / Notes</label>
+              <textarea name="notes" rows="3" placeholder="High floor, flower decoration, extra bedding request, etc." class="form-control-custom" style="padding: 12px 16px;"></textarea>
+            </div>
+          </div>
+
+          <!-- Step 2: Payment Option Selection -->
+          <div style="background: #ffffff; border-radius: 12px; padding: 30px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04); margin-bottom: 30px;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 25px; border-bottom: 2px solid #f1f5f9; padding-bottom: 15px;">
+              <span style="width: 32px; height: 32px; background: var(--primary-blue); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px;">2</span>
+              <h3 style="font-size: 20px; color: var(--dark-bg); margin: 0;">Payment Option</h3>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+              
+              <label style="display: flex; gap: 15px; border: 2px solid var(--primary-blue); padding: 18px; border-radius: 10px; background: #f0f9ff; cursor: pointer; align-items: center;">
+                <input type="radio" name="paymentMethod" value="Pay at Check-in (Hotel Front Desk)" checked style="width: 18px; height: 18px;">
+                <div>
+                  <div style="font-weight: bold; font-size: 15px; color: var(--dark-bg);"><i class="fas fa-hotel" style="color: var(--primary-blue);"></i> Pay at Hotel Check-in (Recommended)</div>
+                  <div style="font-size: 13px; color: #64748b; margin-top: 2px;">Pay via Cash, Credit/Debit Card, or UPI upon physical arrival at hotel front desk.</div>
+                </div>
+              </label>
+
+              <label style="display: flex; gap: 15px; border: 1px solid #e2e8f0; padding: 18px; border-radius: 10px; background: #ffffff; cursor: pointer; align-items: center;">
+                <input type="radio" name="paymentMethod" value="Online Payment Gateway (UPI / Card / NetBanking)" style="width: 18px; height: 18px;">
+                <div>
+                  <div style="font-weight: bold; font-size: 15px; color: var(--dark-bg);"><i class="fas fa-credit-card" style="color: var(--primary-blue);"></i> Online Payment (Razorpay / UPI / NetBanking)</div>
+                  <div style="font-size: 13px; color: #64748b; margin-top: 2px;">Instant online payment with 256-bit SSL encryption.</div>
+                </div>
+              </label>
+
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn-blue pulsing-btn" style="width: 100%; padding: 18px; font-size: 18px; border: none; cursor: pointer; border-radius: 30px; text-align: center; font-weight: bold;">
+            <i class="fas fa-lock"></i> COMPLETE RESERVATION & CONFIRM STAY
+          </button>
+
+          <div style="text-align: center; margin-top: 15px; font-size: 13px; color: #64748b;">
+            <i class="fas fa-shield-alt" style="color: #22c55e;"></i> 256-bit Encrypted Transaction • Instant Email & WhatsApp Confirmation
+          </div>
+
+        </div>
+
+        <!-- Right Column: Order Summary Ticket -->
+        <div>
+          <div style="background: #ffffff; border-radius: 12px; padding: 25px; border: 1.5px solid #e2e8f0; box-shadow: 0 8px 25px rgba(0,0,0,0.06); position: sticky; top: 100px;">
+            
+            <h4 style="font-size: 18px; color: var(--dark-bg); margin-bottom: 20px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px;">
+              Reservation Summary
+            </h4>
+
+            <div style="display: flex; gap: 15px; margin-bottom: 20px; align-items: center;">
+              <img src="<%= item.image || '/images/hotel-img-1.jpg' %>" alt="<%= item.name || item.title %>" style="width: 90px; height: 70px; object-fit: cover; border-radius: 8px;">
+              <div>
+                <h5 style="font-size: 16px; color: var(--dark-bg); margin-bottom: 4px;"><%= item.name || item.title %></h5>
+                <span style="background: #e0f2fe; color: #0284c7; padding: 2px 10px; border-radius: 12px; font-size: 11px; font-weight: bold;">
+                  <%= item.category || item.tag || 'Resort Stay' %>
+                </span>
+              </div>
+            </div>
+
+            <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+              <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 8px;">
+                <span style="color: #64748b;"><i class="fas fa-sign-in-alt" style="color: var(--primary-blue);"></i> Check-in:</span>
+                <strong style="color: var(--dark-bg);"><%= dates.checkIn %> (12:00 PM)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 8px;">
+                <span style="color: #64748b;"><i class="fas fa-sign-out-alt" style="color: var(--primary-blue);"></i> Check-out:</span>
+                <strong style="color: var(--dark-bg);"><%= dates.checkOut %> (10:00 AM)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13px;">
+                <span style="color: #64748b;"><i class="fas fa-moon" style="color: var(--primary-blue);"></i> Duration:</span>
+                <strong style="color: var(--dark-bg);"><%= dates.nights %> Night(s), <%= dates.guests %> Guest(s)</strong>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; font-size: 14px;">
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: #64748b;">Room Rate (<%= dates.nights %> Night):</span>
+                <span>₹<%= (pricing.basePrice * dates.nights).toLocaleString() %></span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: #64748b;">GST & Resort Fees (12%):</span>
+                <span>₹<%= pricing.tax.toLocaleString() %></span>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-top: 2px dashed #e2e8f0; padding-top: 12px; margin-top: 5px; font-size: 18px; font-weight: bold;">
+                <span>Total Amount:</span>
+                <span style="color: var(--primary-blue); font-size: 24px;">₹<%= pricing.total.toLocaleString() %></span>
+              </div>
+            </div>
+
+            <div style="background: #f1f5f9; padding: 12px; border-radius: 6px; font-size: 12px; color: #475569; line-height: 1.5;">
+              <i class="fas fa-check-circle" style="color: #22c55e;"></i> Free cancellation up to 48 hours prior to check-in date.
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </form>
+
+  </div>
+</section>
+
+<%- include('partials/footer') %>
