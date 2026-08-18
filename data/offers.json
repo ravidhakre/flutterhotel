@@ -1,130 +1,35 @@
 [
   {
-    "id": "weekday-offer",
-    "title": "The Weekday Offer: Up to 20% Off + Free Dinner",
-    "slug": "weekday-offer",
-    "price": "From ₹2,400 / Night",
-    "tag": "Midweek Special",
+    "id": "offer-monthly-1",
+    "title": "August Monsoon Special: 25% Off + Complimentary Dinner",
+    "subtitle": "Book your hillside retreat at Flutter Hotels & Resorts this month and enjoy exclusive 25% off room rates plus a free multi-cuisine dinner.",
     "image": "/images/hotel-img-5.jpeg",
-    "metaTitle": "Weekday Offer — Up to 20% Off | Flutter Hotels",
-    "metaDescription": "Stay Monday to Thursday at Flutter Hotels & Resorts and get up to 20% off plus a free dinner. Rates from ₹2,400. Book direct.",
-    "shortDesc": "Take your break midweek and get more for less — a free dinner included on 2N/3D stays (Mon–Thu).",
-    "highlights": [
-      "Up to 20% off + free dinner on 2 Night / 3 Day stays, Monday to Thursday",
-      "Rates from ₹2,400",
-      "15% off for single-night weekday stays",
-      "Valid for stays booked directly with Flutter Hotels & Resorts"
-    ],
-    "faqs": [
-      {"q": "Which days does this offer apply to?", "a": "Monday to Thursday."},
-      {"q": "Is dinner included?", "a": "Yes, a free dinner is included with the 2N/3D weekday stay."},
-      {"q": "Can I book just one night?", "a": "Yes — single-night weekday stays get 15% off."}
-    ]
+    "btnText": "Claim August Offer",
+    "btnLink": "/checkout?type=room",
+    "validity": "Valid till 31st August 2026",
+    "status": "Active",
+    "createdAt": "2026-08-01"
   },
   {
-    "id": "weekend-offer",
-    "title": "The Weekend Offer: 20% Off, Breakfast Included",
-    "slug": "weekend-offer",
-    "price": "From ₹3,200 / Person",
-    "tag": "Popular Weekend Break",
-    "image": "/images/hotel-img-6.jpg",
-    "metaTitle": "Weekend Offer — 20% Off | Flutter Hotels & Resorts",
-    "metaDescription": "Get 20% off and a free breakfast on weekend stays at Flutter Hotels & Resorts, Lansdowne. From ₹3,200/person. Book direct today.",
-    "shortDesc": "Make the most of your weekend in Lansdowne — 20% off, free breakfast included every morning.",
-    "highlights": [
-      "20% off weekend rates",
-      "From ₹3,200 per person",
-      "Free breakfast included every morning",
-      "Popular for getaways from Delhi NCR, Dehradun and Moradabad"
-    ],
-    "faqs": [
-      {"q": "What’s included in the price?", "a": "The room rate at 20% off, plus a complimentary breakfast for the duration of your stay."},
-      {"q": "How is pricing calculated?", "a": "Rates start from ₹3,200 per person; final pricing depends on room type and number of guests."}
-    ]
-  },
-  {
-    "id": "group-departure-2n3d",
-    "title": "2N/3D Group Departure — ₹4,999 Per Person, Pickup From Delhi",
-    "slug": "2n3d-group-departure",
-    "price": "₹4,999 / Person",
-    "tag": "All-Inclusive Tour",
+    "id": "offer-monthly-2",
+    "title": "2N/3D Delhi Group Departure — ₹4,999 All-Inclusive",
+    "subtitle": "Includes AC Volvo transfer from Akshardham Metro Delhi, hillside stay, guided sightseeing, and exclusive bonfire & DJ evening.",
     "image": "/images/hotel-img-7.jpg",
-    "metaTitle": "2N/3D Group Departure from Delhi | Flutter Hotels",
-    "metaDescription": "Join our 2N/3D group departure to Lansdowne — ₹4,999/person, Delhi pickup from Akshardham Metro, full itinerary with bonfire & DJ night.",
-    "shortDesc": "One price, no planning — pickup from Akshardham Metro Station Delhi, resort stay, bonfire & DJ evening included.",
-    "highlights": [
-      "₹4,999 per person all-inclusive",
-      "2 Nights / 3 Days hillside stay",
-      "Pickup & drop from Akshardham Metro Station, Delhi",
-      "Full sightseeing itinerary & bonfire & DJ evening included"
-    ],
-    "faqs": [
-      {"q": "Where does the group departure start from?", "a": "Pickup is from Akshardham Metro Station in Delhi."},
-      {"q": "What does the itinerary include?", "a": "Transport, your 2N/3D stay at the resort, and a bonfire & DJ evening, as part of a full planned itinerary."},
-      {"q": "Is this suitable for large groups?", "a": "Yes — this departure is designed for group travel; contact our team on WhatsApp or phone."}
-    ]
+    "btnText": "Book Group Package",
+    "btnLink": "/checkout?type=package&id=2n3d-group-departure",
+    "validity": "Weekly Departures Every Friday",
+    "status": "Active",
+    "createdAt": "2026-08-05"
   },
   {
-    "id": "honeymoon-package",
-    "title": "A Honeymoon Stay With the Valley as Your Backdrop",
-    "slug": "honeymoon-package",
-    "price": "Enquire for Romantic Rates",
-    "tag": "Honeymoon Special",
+    "id": "offer-monthly-3",
+    "title": "Honeymoon & Romantic Escape Package",
+    "subtitle": "Private balcony with Garhwal valley view, candlelit dinner arrangement under the stars, and fresh flower room decoration.",
     "image": "/images/hotel-img-8.jpg",
-    "metaTitle": "Honeymoon Package | Flutter Hotels & Resorts",
-    "metaDescription": "Celebrate your honeymoon with a valley-view stay and candlelight dinner add-on at Flutter Hotels & Resorts, Lansdowne. Enquire for rates.",
-    "shortDesc": "A private balcony, a valley view, and a romantic candlelight dinner arranged just for the two of you.",
-    "highlights": [
-      "Valley-view room stay (Super Deluxe – Valley View recommended)",
-      "Private balcony overlooking the Garhwal hills",
-      "Special romantic candlelight dinner add-on available",
-      "Customized decoration on request"
-    ],
-    "faqs": [
-      {"q": "Which room is recommended for honeymoon stays?", "a": "The Super Deluxe – Valley View room, for its private balcony and valley outlook."},
-      {"q": "Can I add a candlelight dinner?", "a": "Yes, a candlelight dinner can be added on as part of this package — speak to our team."}
-    ]
-  },
-  {
-    "id": "corporate-mice-package",
-    "title": "Corporate Offsites & MICE Events in the Hills",
-    "slug": "corporate-mice-package",
-    "price": "Custom Corporate Quotes",
-    "tag": "Business & Offsites",
-    "image": "/images/hotel-img-9.jpeg",
-    "metaTitle": "Corporate & MICE Packages | Flutter Hotels & Resorts",
-    "metaDescription": "Host conferences and offsites at Flutter Hotels & Resorts, Lansdowne — banquet hall for 200, conference setup, group stay rates.",
-    "shortDesc": "Banquet hall for up to 200 guests, conference setup, group stay rates, and outdoor team activities.",
-    "highlights": [
-      "Banquet hall for up to 200 guests",
-      "Conference audio-visual setup available",
-      "Group stay rates for corporate bookings",
-      "On-site multi-cuisine catering and lawn team activities"
-    ],
-    "faqs": [
-      {"q": "What is the maximum capacity for events?", "a": "The banquet hall accommodates up to approximately 200 guests."},
-      {"q": "Can you arrange a conference setup?", "a": "Yes, conference setup is available in the banquet hall."}
-    ]
-  },
-  {
-    "id": "wedding-celebration-package",
-    "title": "Weddings & Celebrations Against the Garhwal Hills",
-    "slug": "wedding-celebration-package",
-    "price": "Custom Event Quotes",
-    "tag": "Weddings & Banquets",
-    "image": "/images/hotel-img-10.jpeg",
-    "metaTitle": "Weddings & Celebrations | Flutter Hotels & Resorts",
-    "metaDescription": "Host weddings, birthdays, anniversaries and reunions at Flutter Hotels & Resorts, Lansdowne — banquet hall, lawns, catering. Enquire now.",
-    "shortDesc": "Our banquet hall and outdoor lawns with fairy lights set the scene for weddings, birthdays, and reunions.",
-    "highlights": [
-      "Banquet hall & fairy-lit outdoor lawns for up to 200 guests",
-      "In-house multi-cuisine catering",
-      "Bonfire & DJ evening arrangements",
-      "Ideal for weddings, anniversaries, birthdays and family reunions"
-    ],
-    "faqs": [
-      {"q": "What types of events can you host?", "a": "Weddings, birthdays, anniversaries, reunions, and corporate celebrations."},
-      {"q": "What is the guest capacity?", "a": "The banquet hall and lawns together accommodate up to 200 guests."}
-    ]
+    "btnText": "Enquire Romantic Stay",
+    "btnLink": "https://wa.me/918929232740?text=Hi,%20I'd%20like%20to%20know%20more%20about%20the%20Honeymoon%20Package.",
+    "validity": "Valid Throughout 2026",
+    "status": "Active",
+    "createdAt": "2026-08-10"
   }
 ]

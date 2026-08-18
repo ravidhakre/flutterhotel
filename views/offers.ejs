@@ -1,47 +1,149 @@
 <%- include('partials/header') %>
 
-<!-- Page Header Banner -->
-<div style="background: linear-gradient(rgba(26, 38, 56, 0.75), rgba(26, 38, 56, 0.75)), url('/images/hotel-img-5.jpeg') center/cover; padding: 70px 0; text-align: center; color: #fff;">
+<!-- Offers Page Hero Header -->
+<div style="background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('/images/hotel-img-5.jpeg') center/cover; padding: 65px 0; text-align: center; color: #fff;">
   <div class="container">
-    <h1 style="font-size: 42px; margin-bottom: 10px; color: #ffffff;">Offers & Packages</h1>
-    <p style="color: var(--primary-blue); letter-spacing: 2px; text-transform: uppercase; font-weight: 600;">
-      Whatever brings you to Lansdowne — a quiet midweek break, a weekend with friends, a group trip from Delhi, or a celebration — there’s a package built for it.
+    <span style="background: rgba(255, 255, 255, 0.15); color: #f59e0b; padding: 4px 16px; border-radius: 20px; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">
+      Exclusive Promotions
+    </span>
+    <h1 style="font-size: 40px; margin: 10px 0 5px; color: #ffffff;">Monthly Offers & Special Deals</h1>
+    <p style="color: #cbd5e1; font-size: 15px; margin: 0;">
+      Enjoy direct booking discounts, seasonal packages, and complimentary dining inclusions at Flutter Hotels & Resorts.
     </p>
   </div>
 </div>
 
-<section class="section-padding">
+<section class="section-padding" style="background: #f8fafc; padding: 60px 0;">
   <div class="container">
     
-    <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 40px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
-      Book direct with Flutter Hotels & Resorts to access every offer below at its full value — no third-party booking fees. Browse the current packages and pick the one that fits your trip.
-    </p>
+    <% if (offers && offers.length > 0) { %>
 
-    <!-- Packages Grid -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px;">
-      <% offers.forEach(offer => { %>
-        <div style="background: #ffffff; border-radius: 12px; overflow: hidden; border: 1.5px solid #e2e8f0; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
-          <div style="position: relative; height: 220px;">
-            <img src="<%= offer.image %>" alt="<%= offer.title %>" style="width: 100%; height: 100%; object-fit: cover;">
-            <span style="position: absolute; top: 15px; left: 15px; background: var(--dark-bg); color: var(--primary-blue); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase;">
-              <%= offer.tag %>
-            </span>
-          </div>
+      <!-- Interactive Monthly Offer Banner Slider -->
+      <div style="position: relative; max-width: 1000px; margin: 0 auto 60px; border-radius: 16px; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,0.12); border: 2px solid #e2e8f0; background: #0f172a;" id="offerSliderContainer">
+        
+        <div id="offerSliderTrack" style="display: flex; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); width: 100%;">
+          <% offers.forEach(function(offer, idx) { %>
+            <div class="offer-slide-item" style="min-width: 100%; position: relative; height: 480px; display: flex; align-items: flex-end; background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.5) 60%, rgba(15, 23, 42, 0.2) 100%), url('<%= offer.image %>') center/cover;">
+              
+              <div style="padding: 45px 40px; color: #ffffff; max-width: 750px; z-index: 2;">
+                <span style="background: #f59e0b; color: #0f172a; padding: 5px 16px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 12px;">
+                  <i class="fas fa-clock"></i> <%= offer.validity || 'Limited Time Offer' %>
+                </span>
+                
+                <h2 style="font-size: 32px; color: #ffffff; margin-bottom: 12px; font-family: 'Cinzel', serif; line-height: 1.3;"><%= offer.title %></h2>
+                <p style="color: #cbd5e1; font-size: 15px; line-height: 1.6; margin-bottom: 22px;"><%= offer.subtitle || offer.shortDesc %></p>
+                
+                <a href="<%= offer.btnLink || '/checkout?type=room' %>" class="btn-blue pulsing-btn" style="padding: 14px 32px; font-size: 15px; font-weight: bold; border-radius: 30px; display: inline-block;">
+                  <i class="fas fa-gift"></i> <%= offer.btnText || 'Claim Offer Now' %>
+                </a>
+              </div>
 
-          <div style="padding: 25px; display: flex; flex-direction: column; flex-grow: 1;">
-            <h3 style="font-size: 20px; color: var(--dark-bg); margin-bottom: 10px;"><%= offer.title %></h3>
-            <div style="color: var(--primary-blue); font-weight: bold; font-size: 18px; margin-bottom: 15px;"><%= offer.price %></div>
-            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px; flex-grow: 1;"><%= offer.shortDesc %></p>
-
-            <div style="border-top: 1px solid #f1f5f9; padding-top: 15px;">
-              <a href="/offers/<%= offer.slug %>" class="btn-blue" style="width: 100%; text-align: center;"><i class="fas fa-info-circle"></i> View Offer Details</a>
             </div>
-          </div>
+          <% }); %>
         </div>
-      <% }); %>
-    </div>
+
+        <!-- Slider Controls -->
+        <% if (offers.length > 1) { %>
+          <button id="offerPrevBtn" style="position: absolute; top: 50%; left: 20px; transform: translateY(-50%); background: rgba(255,255,255,0.25); color: #fff; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; font-size: 18px; z-index: 10; backdrop-filter: blur(4px); transition: background 0.3s;">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button id="offerNextBtn" style="position: absolute; top: 50%; right: 20px; transform: translateY(-50%); background: rgba(255,255,255,0.25); color: #fff; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; font-size: 18px; z-index: 10; backdrop-filter: blur(4px); transition: background 0.3s;">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        <% } %>
+
+      </div>
+
+      <!-- Offers Grid View -->
+      <div style="text-align: center; margin-bottom: 35px;">
+        <span class="section-subtitle">All Active Deals</span>
+        <h2 class="section-title">Current Monthly Promotions</h2>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+        <% offers.forEach(function(offer) { %>
+          <div style="background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
+            <img src="<%= offer.image %>" alt="<%= offer.title %>" style="width: 100%; height: 200px; object-fit: cover;">
+            
+            <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
+              <span style="color: #0284c7; font-size: 12px; font-weight: bold; text-transform: uppercase; margin-bottom: 8px;">
+                <i class="fas fa-calendar-alt"></i> <%= offer.validity || 'Monthly Deal' %>
+              </span>
+
+              <h3 style="font-size: 19px; color: var(--dark-bg); margin-bottom: 10px; line-height: 1.4;"><%= offer.title %></h3>
+              <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+                <%= offer.subtitle || offer.shortDesc %>
+              </p>
+
+              <a href="<%= offer.btnLink || '/checkout?type=room' %>" class="btn-blue" style="text-align: center; width: 100%; padding: 12px; font-size: 14px; font-weight: bold;">
+                <i class="fas fa-arrow-right"></i> <%= offer.btnText || 'Book This Offer' %>
+              </a>
+            </div>
+
+          </div>
+        <% }); %>
+      </div>
+
+    <% } else { %>
+      <div style="background: #ffffff; padding: 50px; text-align: center; border-radius: 12px; border: 1px solid #e2e8f0;">
+        <i class="fas fa-tags" style="font-size: 40px; color: var(--primary-blue); margin-bottom: 15px;"></i>
+        <h3>No active monthly offers at the moment.</h3>
+        <p style="color: #64748b;">Please check back soon or call our front desk for custom group packages.</p>
+      </div>
+    <% } %>
 
   </div>
 </section>
+
+<!-- Offer Slider JS -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('offerSliderTrack');
+    const prevBtn = document.getElementById('offerPrevBtn');
+    const nextBtn = document.getElementById('offerNextBtn');
+    const slides = document.querySelectorAll('.offer-slide-item');
+    
+    if (slides.length > 1) {
+      let currentIndex = 0;
+      let sliderTimer = null;
+
+      function updateSlide(index) {
+        if (index >= slides.length) currentIndex = 0;
+        else if (index < 0) currentIndex = slides.length - 1;
+        else currentIndex = index;
+        
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+
+      function startAutoPlay() {
+        stopAutoPlay();
+        sliderTimer = setInterval(() => updateSlide(currentIndex + 1), 5000);
+      }
+
+      function stopAutoPlay() {
+        if (sliderTimer) clearInterval(sliderTimer);
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          updateSlide(currentIndex + 1);
+          startAutoPlay();
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          updateSlide(currentIndex - 1);
+          startAutoPlay();
+        });
+      }
+
+      track.addEventListener('mouseenter', stopAutoPlay);
+      track.addEventListener('mouseleave', startAutoPlay);
+
+      startAutoPlay();
+    }
+  });
+</script>
 
 <%- include('partials/footer') %>

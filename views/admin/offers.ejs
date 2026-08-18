@@ -28,9 +28,9 @@
 
   <main class="admin-main">
     <header class="admin-topbar">
-      <h2 style="margin: 0; font-size: 22px;">CMS Special Offers & Deals Manager</h2>
+      <h2 style="margin: 0; font-size: 22px;">Monthly Offer Slider & Promotions Manager</h2>
       <button onclick="document.getElementById('newOfferModal').style.display='flex'" class="btn-admin btn-admin-primary">
-        <i class="fas fa-plus"></i> Create New Special Offer
+        <i class="fas fa-plus"></i> Create New Monthly Offer
       </button>
     </header>
 
@@ -40,10 +40,10 @@
         <table style="width: 100%; border-collapse: collapse; text-align: left;">
           <thead>
             <tr style="background: #f1f5f9; color: #475569; font-size: 13px; text-transform: uppercase;">
-              <th style="padding: 16px 20px;">Image</th>
-              <th style="padding: 16px 20px;">Offer Title & Tag</th>
-              <th style="padding: 16px 20px;">Pricing Tag</th>
-              <th style="padding: 16px 20px;">Short Description</th>
+              <th style="padding: 16px 20px;">Banner Image</th>
+              <th style="padding: 16px 20px;">Offer Title & Subtitle</th>
+              <th style="padding: 16px 20px;">Button Text & Target Link</th>
+              <th style="padding: 16px 20px;">Validity / Expiry</th>
               <th style="padding: 16px 20px;">Actions</th>
             </tr>
           </thead>
@@ -52,19 +52,24 @@
               <% offers.forEach(function(offer) { %>
                 <tr style="border-bottom: 1px solid #f1f5f9; font-size: 14px;">
                   <td style="padding: 15px 20px;">
-                    <img src="<%= offer.image %>" alt="<%= offer.title %>" style="width: 65px; height: 48px; object-fit: cover; border-radius: 6px;">
+                    <img src="<%= offer.image %>" alt="<%= offer.title %>" style="width: 80px; height: 50px; object-fit: cover; border-radius: 6px;">
+                  </td>
+                  <td style="padding: 15px 20px; max-width: 320px;">
+                    <strong style="color: var(--dark-bg); display: block; font-size: 15px; margin-bottom: 4px;"><%= offer.title %></strong>
+                    <span style="font-size: 12px; color: #64748b;"><%= offer.subtitle || offer.shortDesc %></span>
                   </td>
                   <td style="padding: 15px 20px;">
-                    <strong style="color: var(--dark-bg); display: block; font-size: 15px;"><%= offer.title %></strong>
-                    <span style="background: #e0f2fe; color: #0284c7; padding: 2px 10px; border-radius: 12px; font-size: 11px; font-weight: bold; margin-top: 4px; display: inline-block;">
-                      <%= offer.tag || 'Promotional Deal' %>
+                    <span style="background: #e0f2fe; color: #0284c7; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: bold; display: inline-block; margin-bottom: 4px;">
+                      <i class="fas fa-link"></i> <%= offer.btnText || 'Claim Offer' %>
                     </span>
+                    <div style="font-size: 11px; color: #64748b; word-break: break-all;"><%= offer.btnLink || '/checkout' %></div>
                   </td>
-                  <td style="padding: 15px 20px; font-weight: bold; color: var(--primary-blue);"><%= offer.price %></td>
-                  <td style="padding: 15px 20px; color: #475569; max-width: 300px; font-size: 13px;"><%= offer.shortDesc %></td>
+                  <td style="padding: 15px 20px; font-weight: bold; color: #166534; font-size: 13px;">
+                    <i class="fas fa-clock"></i> <%= offer.validity || 'Active' %>
+                  </td>
                   <td style="padding: 15px 20px;">
                     <div style="display: flex; gap: 8px;">
-                      <a href="/offers/<%= offer.slug %>" target="_blank" class="btn-outline-blue" style="padding: 6px 12px; font-size: 12px;" title="View Offer Page"><i class="fas fa-eye"></i> View</a>
+                      <a href="/offers" target="_blank" class="btn-outline-blue" style="padding: 6px 12px; font-size: 12px;" title="View Slider"><i class="fas fa-eye"></i> View</a>
                       <button onclick="deleteOffer('<%= offer.id %>')" class="btn-blue" style="background: #ef4444 !important; border-color: #ef4444 !important; padding: 6px 12px; font-size: 12px;" title="Delete Offer"><i class="fas fa-trash"></i> Delete</button>
                     </div>
                   </td>
@@ -72,7 +77,7 @@
               <% }); %>
             <% } else { %>
               <tr>
-                <td colspan="5" style="padding: 30px; text-align: center; color: #64748b;">No offers created yet. Click 'Create New Special Offer' to create one.</td>
+                <td colspan="5" style="padding: 30px; text-align: center; color: #64748b;">No monthly offers created yet. Click 'Create New Monthly Offer' to create one.</td>
               </tr>
             <% } %>
           </tbody>
@@ -82,51 +87,51 @@
     </div>
   </main>
 
-  <!-- Create New Offer Modal -->
+  <!-- Create New Monthly Offer Modal -->
   <div id="newOfferModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 2000; align-items: center; justify-content: center; backdrop-filter: blur(4px);">
     <div style="background: #ffffff; width: 90%; max-width: 800px; max-height: 90vh; overflow-y: auto; border-radius: 12px; padding: 35px; box-shadow: 0 10px 40px rgba(0,0,0,0.2);">
       
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; border-bottom: 2px solid #f1f5f9; padding-bottom: 15px;">
-        <h3 style="font-size: 22px; color: var(--dark-bg); margin: 0;"><i class="fas fa-tags" style="color: var(--primary-blue);"></i> Create New Special Offer / Deal</h3>
+        <h3 style="font-size: 22px; color: var(--dark-bg); margin: 0;"><i class="fas fa-tags" style="color: var(--primary-blue);"></i> Create New Monthly Offer Slider Banner</h3>
         <button onclick="document.getElementById('newOfferModal').style.display='none'" style="background: none; border: none; font-size: 24px; cursor: pointer; color: #64748b;">&times;</button>
       </div>
 
       <form id="newOfferForm" action="/api/admin/offers" method="POST">
-        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px; margin-bottom: 15px;">
-          <div>
-            <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 6px;">Offer Title *</label>
-            <input type="text" name="title" required placeholder="e.g. Festive Special: 25% Off + Free Breakfast" class="form-control-custom">
-          </div>
-          <div>
-            <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 6px;">Category Tag *</label>
-            <input type="text" name="tag" required placeholder="e.g. Midweek Special / Festive Offer" class="form-control-custom">
-          </div>
+        <div style="margin-bottom: 15px;">
+          <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 6px;">Offer Heading / Title *</label>
+          <input type="text" name="title" required placeholder="e.g. August Special: 25% Off + Complimentary Dinner" class="form-control-custom">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+          <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 6px;">Subtitle / Offer Description *</label>
+          <textarea name="subtitle" rows="2" required placeholder="Brief description of the offer for the slider banner..." class="form-control-custom"></textarea>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 15px;">
           <div>
-            <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 6px;">Price / Pricing Tag *</label>
-            <input type="text" name="price" required placeholder="e.g. From ₹2,800 / Night" class="form-control-custom">
+            <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 6px;">Banner Image URL *</label>
+            <input type="text" name="image" required value="/images/hotel-img-5.jpeg" placeholder="/images/hotel-img-5.jpeg" class="form-control-custom">
           </div>
           <div>
-            <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 6px;">Offer Banner Image URL</label>
-            <input type="text" name="image" value="/images/hotel-img-5.jpeg" class="form-control-custom">
+            <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 6px;">Validity / Expiry Date</label>
+            <input type="text" name="validity" value="Valid till 31st August 2026" placeholder="e.g. Valid till 31st August 2026" class="form-control-custom">
           </div>
         </div>
 
-        <div style="margin-bottom: 15px;">
-          <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 6px;">Short Description *</label>
-          <textarea name="shortDesc" rows="2" required placeholder="Brief 2-line description of what guests get in this offer..." class="form-control-custom"></textarea>
-        </div>
-
-        <div style="margin-bottom: 20px;">
-          <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 6px;">Offer Highlights (Comma separated list)</label>
-          <textarea name="highlights" rows="3" placeholder="Up to 25% off room rates, Free breakfast included, Free bonfire evening setup, Valid till end of month" class="form-control-custom"></textarea>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+          <div>
+            <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 6px;">Button Action Text *</label>
+            <input type="text" name="btnText" required value="Claim Offer Now" placeholder="e.g. Claim Offer Now / Book Special" class="form-control-custom">
+          </div>
+          <div>
+            <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 6px;">Button Target Link *</label>
+            <input type="text" name="btnLink" required value="/checkout?type=room" placeholder="e.g. /checkout?type=room or WhatsApp link" class="form-control-custom">
+          </div>
         </div>
 
         <div style="display: flex; gap: 15px; justify-content: flex-end;">
           <button type="button" onclick="document.getElementById('newOfferModal').style.display='none'" class="btn-outline-blue">Cancel</button>
-          <button type="submit" class="btn-blue"><i class="fas fa-save"></i> Publish Special Offer</button>
+          <button type="submit" class="btn-blue"><i class="fas fa-save"></i> Publish Offer to Slider</button>
         </div>
       </form>
 
@@ -135,7 +140,7 @@
 
   <script>
     async function deleteOffer(id) {
-      if (!confirm('Are you sure you want to delete this special offer?')) return;
+      if (!confirm('Are you sure you want to delete this monthly offer from the slider?')) return;
       try {
         const res = await fetch(`/api/admin/offers/${id}`, { method: 'DELETE' });
         const data = await res.json();

@@ -778,35 +778,27 @@ app.get('/admin/offers', requireAdmin, (req, res) => {
   });
 });
 
-// Add New Offer API
+// Add New Monthly Offer Slider Banner API
 app.post('/api/admin/offers', requireAdmin, (req, res) => {
-  const { title, tag, price, image, shortDesc, highlights } = req.body;
-  if (!title || !price || !shortDesc) {
-    return res.status(400).json({ success: false, message: 'Title, Price, and Short Description are required.' });
+  const { title, subtitle, image, btnText, btnLink, validity } = req.body;
+  if (!title || !subtitle || !image) {
+    return res.status(400).json({ success: false, message: 'Title, Subtitle, and Image URL are required.' });
   }
 
   const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
   const offers = readData('offers.json');
-  
-  let highlightArray = [];
-  if (highlights) {
-    highlightArray = highlights.split(',').map(s => s.trim()).filter(s => s.length > 0);
-  }
 
   const newOffer = {
-    id: 'offer-' + Date.now(),
+    id: 'offer-monthly-' + Date.now(),
     title,
+    subtitle,
     slug,
-    price,
-    tag: tag || 'Special Deal',
     image: image || '/images/hotel-img-5.jpeg',
-    metaTitle: `${title} | Flutter Hotels & Resorts`,
-    metaDescription: shortDesc,
-    shortDesc,
-    highlights: highlightArray,
-    faqs: [
-      { q: "How to claim this offer?", a: "Book direct via Flutter Hotels & Resorts website or call our concierge." }
-    ]
+    btnText: btnText || 'Claim Offer Now',
+    btnLink: btnLink || '/checkout?type=room',
+    validity: validity || 'Limited Time Monthly Offer',
+    status: 'Active',
+    createdAt: new Date().toISOString().split('T')[0]
   };
 
   offers.unshift(newOffer);
