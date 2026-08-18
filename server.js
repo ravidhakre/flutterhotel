@@ -769,6 +769,59 @@ app.delete('/api/admin/blogs/:id', requireAdmin, (req, res) => {
   return res.json({ success: true, message: 'Blog deleted successfully.' });
 });
 
+// Admin Manage CMS Offers & Deals Page
+app.get('/admin/offers', requireAdmin, (req, res) => {
+  const offers = readData('offers.json');
+  res.render('admin/offers', {
+    title: 'CMS Special Offers & Deals | Flutter Hotels Admin',
+    offers: offers
+  });
+});
+
+// Add New Offer API
+app.post('/api/admin/offers', requireAdmin, (req, res) => {
+  const { title, tag, price, image, shortDesc, highlights } = req.body;
+  if (!title || !price || !shortDesc) {
+    return res.status(400).json({ success: false, message: 'Title, Price, and Short Description are required.' });
+  }
+
+  const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+  const offers = readData('offers.json');
+  
+  let highlightArray = [];
+  if (highlights) {
+    highlightArray = highlights.split(',').map(s => s.trim()).filter(s => s.length > 0);
+  }
+
+  const newOffer = {
+    id: 'offer-' + Date.now(),
+    title,
+    slug,
+    price,
+    tag: tag || 'Special Deal',
+    image: image || '/images/hotel-img-5.jpeg',
+    metaTitle: `${title} | Flutter Hotels & Resorts`,
+    metaDescription: shortDesc,
+    shortDesc,
+    highlights: highlightArray,
+    faqs: [
+      { q: "How to claim this offer?", a: "Book direct via Flutter Hotels & Resorts website or call our concierge." }
+    ]
+  };
+
+  offers.unshift(newOffer);
+  saveData('offers.json', offers);
+  return res.redirect('/admin/offers');
+});
+
+// Delete Offer API
+app.delete('/api/admin/offers/:id', requireAdmin, (req, res) => {
+  let offers = readData('offers.json');
+  offers = offers.filter(o => o.id !== req.params.id);
+  saveData('offers.json', offers);
+  return res.json({ success: true, message: 'Offer deleted successfully.' });
+});
+
 // 404 Route
 app.use((req, res) => {
   res.status(404).render('404', { title: 'Page Not Found | Flutter Hotels & Resorts' });
