@@ -353,18 +353,24 @@ app.post('/api/check-availability', (req, res) => {
   });
 });
 
-// Create Booking API
+// Create Booking API & Form Handler
 app.post('/api/bookings', (req, res) => {
   const { roomId, guestName, email, phone, checkIn, checkOut, guests, paymentMethod } = req.body;
 
   if (!roomId || !guestName || !email || !checkIn || !checkOut) {
-    return res.status(400).json({ success: false, message: 'Missing required booking details.' });
+    if (req.xhr || (req.headers['accept'] && req.headers['accept'].includes('application/json'))) {
+      return res.status(400).json({ success: false, message: 'Missing required booking details.' });
+    }
+    return res.redirect('/rooms');
   }
 
   const rooms = readData('rooms.json');
   const room = rooms.find(r => r.id === roomId);
   if (!room) {
-    return res.status(404).json({ success: false, message: 'Selected room not found.' });
+    if (req.xhr || (req.headers['accept'] && req.headers['accept'].includes('application/json'))) {
+      return res.status(404).json({ success: false, message: 'Selected room not found.' });
+    }
+    return res.redirect('/rooms');
   }
 
   // Calculate nights
@@ -397,12 +403,18 @@ app.post('/api/bookings', (req, res) => {
   // Asynchronously dispatch luxury HTML booking confirmation email to customer & admin
   sendBookingConfirmationEmail(newBooking, room).catch(err => console.error('Async email error:', err));
 
-  return res.json({
-    success: true,
-    message: 'Booking created successfully!',
-    bookingId: newBooking.id,
-    redirectUrl: `/booking/confirm/${newBooking.id}`
-  });
+  // If request comes from AJAX/Fetch JSON
+  if (req.xhr || (req.headers['content-type'] && req.headers['content-type'].includes('application/json'))) {
+    return res.json({
+      success: true,
+      message: 'Booking created successfully!',
+      bookingId: newBooking.id,
+      redirectUrl: `/booking/confirm/${newBooking.id}`
+    });
+  }
+
+  // Standard HTML Form submission redirect to Thank You / Confirmation Page
+  return res.redirect(`/booking/confirm/${newBooking.id}`);
 });
 
 // --- ADMIN PANEL ROUTES ---

@@ -79,7 +79,7 @@
         <div style="background: #ffffff; padding: 30px; border-radius: 10px; border: 2px solid var(--primary-blue); box-shadow: var(--shadow-lg); position: sticky; top: 100px;">
           <h3 style="font-size: 22px; margin-bottom: 20px; text-align: center; border-bottom: 2px solid var(--primary-blue); padding-bottom: 10px; color: var(--dark-bg);">Book <%= room.name %></h3>
 
-          <form id="roomBookingForm">
+          <form id="roomBookingForm" action="/api/bookings" method="POST">
             <input type="hidden" name="roomId" value="<%= room.id %>">
             
             <div class="form-group-custom" style="margin-bottom: 15px;">
