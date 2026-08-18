@@ -57,10 +57,10 @@ ul {
    TOP HEADER & GLASS MAIN NAVBAR
    ========================================================================== */
 .top-header {
-  background: var(--dark-bg);
-  color: #c0d1eb;
-  font-size: 13px;
-  padding: 10px 0;
+  background: #0f172a;
+  color: #94a3b8;
+  font-size: 12.5px;
+  padding: 8px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -72,49 +72,75 @@ ul {
 
 .top-header-info {
   display: flex;
-  gap: 15px;
+  gap: 12px;
   align-items: center;
+  white-space: nowrap;
 }
 
-.top-info-pill {
+.top-info-item {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(255, 255, 255, 0.06);
-  padding: 4px 14px;
-  border-radius: 20px;
-  font-size: 12px;
-  color: #d1dceb;
+  color: #cbd5e1;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
-.top-info-pill i {
+.top-info-item i {
   color: var(--primary-blue);
+  font-size: 12px;
+}
+
+.top-info-item a {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.top-info-item a:hover {
+  color: var(--primary-blue);
+}
+
+.top-info-divider {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 11px;
 }
 
 .top-header-links {
   display: flex;
   gap: 15px;
   align-items: center;
+  white-space: nowrap;
 }
 
 .top-social-icons {
   display: flex;
   gap: 12px;
   align-items: center;
-  margin-right: 6px;
   padding-right: 12px;
   border-right: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .top-social-icons a {
   color: #cbd5e1;
-  font-size: 13.5px;
-  transition: var(--transition);
+  font-size: 13px;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .top-social-icons a:hover {
   color: var(--primary-blue);
   transform: translateY(-1px);
+}
+
+.top-admin-badge {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff !important;
+  padding: 4px 12px;
+  border-radius: 14px;
+  font-size: 11.5px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .top-link-btn {
@@ -123,6 +149,7 @@ ul {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  font-weight: 600;
 }
 
 .top-link-btn:hover {

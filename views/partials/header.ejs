@@ -19,14 +19,17 @@
 </head>
 <body>
 
-  <!-- Top Glass Bar -->
+  <!-- Top Header Bar -->
   <div class="top-header">
     <div class="container">
       <div class="top-header-info">
-        <span class="top-info-pill"><i class="fas fa-location-dot"></i> Palkot–Lansdowne, Garhwal, Uttarakhand</span>
-        <span class="top-info-pill"><i class="fas fa-phone"></i> Direct: <a href="tel:<%= phoneMain.replace(/\s+/g, '') %>" style="color: #ffffff; font-weight: 700;"><%= phoneMain %></a></span>
-        <span class="top-info-pill desktop-only"><i class="fas fa-envelope"></i> <%= emailMain %></span>
+        <span class="top-info-item"><i class="fas fa-location-dot"></i> Palkot–Lansdowne, Garhwal, Uttarakhand</span>
+        <span class="top-info-divider">|</span>
+        <span class="top-info-item"><i class="fas fa-phone-alt"></i> Direct: <a href="tel:<%= phoneMain.replace(/\s+/g, '') %>"><%= phoneMain %></a></span>
+        <span class="top-info-divider desktop-only">|</span>
+        <span class="top-info-item desktop-only"><i class="fas fa-envelope"></i> <%= emailMain %></span>
       </div>
+      
       <div class="top-header-links">
         <div class="top-social-icons">
           <a href="https://www.facebook.com/FlutterHotelsAndResortPvtLtd" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -34,14 +37,14 @@
           <a href="https://www.youtube.com/@FlutterHotelsAndResort" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
           <a href="https://www.linkedin.com/company/104592582/admin/dashboard/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
+        
         <% if (user) { %>
-          <span class="top-user-pill"><i class="fas fa-user-circle"></i> Hi, <strong><%= user.name %></strong></span>
           <% if (user.isAdmin) { %>
             <a href="/admin" class="top-admin-badge"><i class="fas fa-chart-line"></i> Admin Portal</a>
           <% } %>
           <a href="/logout" class="top-link-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
         <% } else { %>
-          <a href="/login" class="top-link-btn"><i class="fas fa-user"></i> Guest / Admin Login</a>
+          <a href="/login" class="top-link-btn"><i class="fas fa-user"></i> Login</a>
         <% } %>
       </div>
     </div>
