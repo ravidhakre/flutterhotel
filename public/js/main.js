@@ -88,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navLinksMenu && navOverlay) {
       navLinksMenu.classList.toggle('active');
       navOverlay.classList.toggle('active');
+      document.body.classList.toggle('menu-open');
       
       if (navToggleBtn) {
         const icon = navToggleBtn.querySelector('i');
