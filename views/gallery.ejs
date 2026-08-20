@@ -1,86 +1,516 @@
 <%- include('partials/header') %>
 
-<!-- Page Header Banner -->
-<div class="page-hero-header" style="background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('/images/hotel-img-13.jpeg');">
-  <div class="container" style="max-width: 900px;">
-    <h1 style="font-size: 42px; margin-bottom: 12px; color: #ffffff;">See Flutter Hotels & Resorts for Yourself</h1>
-    <p style="color: #cbd5e1; font-size: 16px; line-height: 1.6;">
-      Rooms, views, lawns and evenings by the bonfire — a look at what’s waiting for you in Lansdowne.
+<!-- Gallery Hero Banner (Full-Height Mobile Responsive) -->
+<div class="page-hero-header" style="background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.85)), url('/images/about-hotel-banner.jpg');">
+  <div class="container" style="max-width: 900px; position: relative; z-index: 2;">
+    <span style="background: rgba(245, 158, 11, 0.25); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 6px 20px; border-radius: 30px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 18px; backdrop-filter: blur(4px);">
+      <i class="fas fa-images"></i> Visual Tour
+    </span>
+    <h1 style="font-size: 44px; margin-bottom: 14px; color: #ffffff; font-family: 'Cinzel', serif; line-height: 1.25;">Explore Flutter Hotels & Resorts Gallery</h1>
+    <p style="color: #cbd5e1; font-size: 16.5px; line-height: 1.7; max-width: 760px; margin: 0 auto 25px;">
+      Explore our luxury rooms, mountain-facing balconies, multi-cuisine dining, event spaces, and lush green lawns in Lansdowne, Uttarakhand.
     </p>
   </div>
 </div>
 
-<section class="section-padding">
+<section class="section-padding" style="background: #f8fafc; padding: 60px 0;">
   <div class="container">
     
-    <!-- Gallery Grid -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-bottom: 50px;">
-      <div style="position: relative; height: 240px; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow-sm);">
-        <img src="/images/hotel-img-1.jpg" alt="Super Deluxe Valley View" style="width: 100%; height: 100%; object-fit: cover;">
-        <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(26, 38, 56, 0.85); color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 12px;">Rooms & Balconies</span>
-      </div>
-
-      <div style="position: relative; height: 240px; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow-sm);">
-        <img src="/images/hotel-img-3.jpg" alt="Resort Lawns" style="width: 100%; height: 100%; object-fit: cover;">
-        <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(26, 38, 56, 0.85); color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 12px;">Outdoor Lawns & Bonfire</span>
-      </div>
-
-      <div style="position: relative; height: 240px; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow-sm);">
-        <img src="/images/hotel-img-4.jpeg" alt="Classic Room" style="width: 100%; height: 100%; object-fit: cover;">
-        <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(26, 38, 56, 0.85); color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 12px;">Rooms & Balconies</span>
-      </div>
-
-      <div style="position: relative; height: 240px; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow-sm);">
-        <img src="/images/hotel-img-5.jpeg" alt="Valley Outlook" style="width: 100%; height: 100%; object-fit: cover;">
-        <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(26, 38, 56, 0.85); color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 12px;">Valley & Garden Views</span>
-      </div>
-
-      <div style="position: relative; height: 240px; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow-sm);">
-        <img src="/images/hotel-img-6.jpg" alt="Dining Room" style="width: 100%; height: 100%; object-fit: cover;">
-        <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(26, 38, 56, 0.85); color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 12px;">Restaurant & Dining</span>
-      </div>
-
-      <div style="position: relative; height: 240px; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow-sm);">
-        <img src="/images/hotel-img-7.jpg" alt="Banquet Hall" style="width: 100%; height: 100%; object-fit: cover;">
-        <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(26, 38, 56, 0.85); color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 12px;">Banquet Hall & Events</span>
-      </div>
-
-      <div style="position: relative; height: 240px; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow-sm);">
-        <img src="/images/hotel-img-8.jpg" alt="Property Exterior" style="width: 100%; height: 100%; object-fit: cover;">
-        <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(26, 38, 56, 0.85); color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 12px;">Property Exterior</span>
-      </div>
-
-      <div style="position: relative; height: 240px; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow-sm);">
-        <img src="/images/hotel-img-9.jpeg" alt="Evening Lawns" style="width: 100%; height: 100%; object-fit: cover;">
-        <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(26, 38, 56, 0.85); color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 12px;">Outdoor Lawns & Bonfire</span>
-      </div>
-
-      <div style="position: relative; height: 240px; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow-sm);">
-        <img src="/images/hotel-img-10.jpeg" alt="Hillside View" style="width: 100%; height: 100%; object-fit: cover;">
-        <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(26, 38, 56, 0.85); color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 12px;">Valley & Garden Views</span>
-      </div>
-
-      <div style="position: relative; height: 240px; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow-sm);">
-        <img src="/images/hotel-img-11.jpeg" alt="Multi-cuisine food" style="width: 100%; height: 100%; object-fit: cover;">
-        <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(26, 38, 56, 0.85); color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 12px;">Restaurant & Dining</span>
-      </div>
-
-      <div style="position: relative; height: 240px; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow-sm);">
-        <img src="/images/hotel-img-14.jpeg" alt="Resort Sunset" style="width: 100%; height: 100%; object-fit: cover;">
-        <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(26, 38, 56, 0.85); color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 12px;">Valley & Garden Views</span>
-      </div>
-
-      <div style="position: relative; height: 240px; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow-sm);">
-        <img src="/images/hotel-img-15.jpeg" alt="Deluxe Room Balcony" style="width: 100%; height: 100%; object-fit: cover;">
-        <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(26, 38, 56, 0.85); color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 12px;">Rooms & Balconies</span>
-      </div>
+    <!-- Category Filter Tabs -->
+    <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 45px;" id="galleryFilterContainer">
+      <button class="gallery-filter-btn active" onclick="filterGallery('all', this)">
+        <i class="fas fa-layer-group"></i> All Photos
+      </button>
+      <button class="gallery-filter-btn" onclick="filterGallery('rooms', this)">
+        <i class="fas fa-bed"></i> Rooms & Suites
+      </button>
+      <button class="gallery-filter-btn" onclick="filterGallery('dining', this)">
+        <i class="fas fa-utensils"></i> Restaurant & Dining
+      </button>
+      <button class="gallery-filter-btn" onclick="filterGallery('meetings', this)">
+        <i class="fas fa-handshake"></i> Meetings & Events
+      </button>
+      <button class="gallery-filter-btn" onclick="filterGallery('resort', this)">
+        <i class="fas fa-mountain"></i> Resort & Views
+      </button>
+      <button class="gallery-filter-btn" onclick="filterGallery('attractions', this)">
+        <i class="fas fa-compass"></i> Lansdowne Attractions
+      </button>
     </div>
 
-    <div style="text-align: center;">
-      <a href="/rooms" class="btn-blue" style="padding: 14px 36px; font-size: 16px;"><i class="fas fa-bed"></i> Book Your Stay</a>
+    <!-- Gallery Image Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; margin-bottom: 50px;" id="galleryGrid">
+      
+      <!-- Rooms Category -->
+      <div class="gallery-item-card" data-category="rooms" onclick="openLightbox(0)">
+        <img src="/images/super-deluxe-room-bed.jpg" alt="Super Deluxe King Bed Interior">
+        <div class="gallery-card-overlay">
+          <span class="gallery-badge"><i class="fas fa-bed"></i> Rooms & Suites</span>
+          <h4 class="gallery-card-title">Super Deluxe King Bed Interior</h4>
+          <span class="gallery-expand-tag"><i class="fas fa-expand"></i> Click to View</span>
+        </div>
+      </div>
+
+      <div class="gallery-item-card" data-category="rooms" onclick="openLightbox(1)">
+        <img src="/images/room-1.jpg" alt="Deluxe Bedroom & Balcony Outlook">
+        <div class="gallery-card-overlay">
+          <span class="gallery-badge"><i class="fas fa-bed"></i> Rooms & Suites</span>
+          <h4 class="gallery-card-title">Deluxe Bedroom & Balcony Outlook</h4>
+          <span class="gallery-expand-tag"><i class="fas fa-expand"></i> Click to View</span>
+        </div>
+      </div>
+
+      <div class="gallery-item-card" data-category="rooms" onclick="openLightbox(2)">
+        <img src="/images/hotel-img-12.jpeg" alt="Super Deluxe Valley View Suite">
+        <div class="gallery-card-overlay">
+          <span class="gallery-badge"><i class="fas fa-bed"></i> Rooms & Suites</span>
+          <h4 class="gallery-card-title">Super Deluxe Valley View Suite</h4>
+          <span class="gallery-expand-tag"><i class="fas fa-expand"></i> Click to View</span>
+        </div>
+      </div>
+
+      <div class="gallery-item-card" data-category="rooms" onclick="openLightbox(3)">
+        <img src="/images/hotel-img-4.jpeg" alt="Classic Room & Mountain Window View">
+        <div class="gallery-card-overlay">
+          <span class="gallery-badge"><i class="fas fa-bed"></i> Rooms & Suites</span>
+          <h4 class="gallery-card-title">Classic Room & Mountain Window View</h4>
+          <span class="gallery-expand-tag"><i class="fas fa-expand"></i> Click to View</span>
+        </div>
+      </div>
+
+      <div class="gallery-item-card" data-category="rooms" onclick="openLightbox(4)">
+        <img src="/images/room-bedroom-2.jpg" alt="Luxury Suite Bed & Amenities">
+        <div class="gallery-card-overlay">
+          <span class="gallery-badge"><i class="fas fa-bed"></i> Rooms & Suites</span>
+          <h4 class="gallery-card-title">Luxury Suite Bed & Amenities</h4>
+          <span class="gallery-expand-tag"><i class="fas fa-expand"></i> Click to View</span>
+        </div>
+      </div>
+
+      <!-- Dining Category -->
+      <div class="gallery-item-card" data-category="dining" onclick="openLightbox(5)">
+        <img src="/images/dining-hero-banner.webp" alt="Multi-Cuisine Restaurant Hall">
+        <div class="gallery-card-overlay">
+          <span class="gallery-badge"><i class="fas fa-utensils"></i> Restaurant & Dining</span>
+          <h4 class="gallery-card-title">Multi-Cuisine Restaurant Hall</h4>
+          <span class="gallery-expand-tag"><i class="fas fa-expand"></i> Click to View</span>
+        </div>
+      </div>
+
+      <div class="gallery-item-card" data-category="dining" onclick="openLightbox(6)">
+        <img src="/images/dining-valley-table.webp" alt="Romantic Valley View Dining Table">
+        <div class="gallery-card-overlay">
+          <span class="gallery-badge"><i class="fas fa-utensils"></i> Restaurant & Dining</span>
+          <h4 class="gallery-card-title">Romantic Valley View Dining Table</h4>
+          <span class="gallery-expand-tag"><i class="fas fa-expand"></i> Click to View</span>
+        </div>
+      </div>
+
+      <div class="gallery-item-card" data-category="dining" onclick="openLightbox(7)">
+        <img src="/images/dining-buffet-setup.webp" alt="Lavish Buffet Spread & Station">
+        <div class="gallery-card-overlay">
+          <span class="gallery-badge"><i class="fas fa-utensils"></i> Restaurant & Dining</span>
+          <h4 class="gallery-card-title">Lavish Buffet Spread & Station</h4>
+          <span class="gallery-expand-tag"><i class="fas fa-expand"></i> Click to View</span>
+        </div>
+      </div>
+
+      <div class="gallery-item-card" data-category="dining" onclick="openLightbox(8)">
+        <img src="/images/dining-interior-view.webp" alt="Indoor Family Restaurant Seating">
+        <div class="gallery-card-overlay">
+          <span class="gallery-badge"><i class="fas fa-utensils"></i> Restaurant & Dining</span>
+          <h4 class="gallery-card-title">Indoor Family Restaurant Seating</h4>
+          <span class="gallery-expand-tag"><i class="fas fa-expand"></i> Click to View</span>
+        </div>
+      </div>
+
+      <div class="gallery-item-card" data-category="dining" onclick="openLightbox(9)">
+        <img src="/images/dining-tables-window.webp" alt="Glass Window Mountain View Dining">
+        <div class="gallery-card-overlay">
+          <span class="gallery-badge"><i class="fas fa-utensils"></i> Restaurant & Dining</span>
+          <h4 class="gallery-card-title">Glass Window Mountain View Dining</h4>
+          <span class="gallery-expand-tag"><i class="fas fa-expand"></i> Click to View</span>
+        </div>
+      </div>
+
+      <!-- Meetings Category -->
+      <div class="gallery-item-card" data-category="meetings" onclick="openLightbox(10)">
+        <img src="/images/meeting-hall-hero.webp" alt="Main Conference & Banquet Hall">
+        <div class="gallery-card-overlay">
+          <span class="gallery-badge"><i class="fas fa-handshake"></i> Meetings & Events</span>
+          <h4 class="gallery-card-title">Main Conference & Banquet Hall</h4>
+          <span class="gallery-expand-tag"><i class="fas fa-expand"></i> Click to View</span>
+        </div>
+      </div>
+
+      <div class="gallery-item-card" data-category="meetings" onclick="openLightbox(11)">
+        <img src="/images/conference-setup-1.webp" alt="Executive Boardroom Setup">
+        <div class="gallery-card-overlay">
+          <span class="gallery-badge"><i class="fas fa-handshake"></i> Meetings & Events</span>
+          <h4 class="gallery-card-title">Executive Boardroom Setup</h4>
+          <span class="gallery-expand-tag"><i class="fas fa-expand"></i> Click to View</span>
+        </div>
+      </div>
+
+      <div class="gallery-item-card" data-category="meetings" onclick="openLightbox(12)">
+        <img src="/images/conference-setup-2.webp" alt="Corporate Theater Seating Layout">
+        <div class="gallery-card-overlay">
+          <span class="gallery-badge"><i class="fas fa-handshake"></i> Meetings & Events</span>
+          <h4 class="gallery-card-title">Corporate Theater Seating Layout</h4>
+          <span class="gallery-expand-tag"><i class="fas fa-expand"></i> Click to View</span>
+        </div>
+      </div>
+
+      <div class="gallery-item-card" data-category="meetings" onclick="openLightbox(13)">
+        <img src="/images/meeting-banquet-space.webp" alt="Grand Banquet & Event Stage Space">
+        <div class="gallery-card-overlay">
+          <span class="gallery-badge"><i class="fas fa-handshake"></i> Meetings & Events</span>
+          <h4 class="gallery-card-title">Grand Banquet & Event Stage Space</h4>
+          <span class="gallery-expand-tag"><i class="fas fa-expand"></i> Click to View</span>
+        </div>
+      </div>
+
+      <!-- Resort & Views Category -->
+      <div class="gallery-item-card" data-category="resort" onclick="openLightbox(14)">
+        <img src="/images/about-hotel-banner.jpg" alt="Main Resort Facade & Entrance">
+        <div class="gallery-card-overlay">
+          <span class="gallery-badge"><i class="fas fa-mountain"></i> Resort & Views</span>
+          <h4 class="gallery-card-title">Main Resort Facade & Entrance</h4>
+          <span class="gallery-expand-tag"><i class="fas fa-expand"></i> Click to View</span>
+        </div>
+      </div>
+
+      <div class="gallery-item-card" data-category="resort" onclick="openLightbox(15)">
+        <img src="/images/about-property-view.jpg" alt="Hillside Estate & Pine Forest">
+        <div class="gallery-card-overlay">
+          <span class="gallery-badge"><i class="fas fa-mountain"></i> Resort & Views</span>
+          <h4 class="gallery-card-title">Hillside Estate & Pine Forest</h4>
+          <span class="gallery-expand-tag"><i class="fas fa-expand"></i> Click to View</span>
+        </div>
+      </div>
+
+      <div class="gallery-item-card" data-category="resort" onclick="openLightbox(16)">
+        <img src="/images/resort-lawns-garden.avif" alt="Lush Green Lawns & Garden">
+        <div class="gallery-card-overlay">
+          <span class="gallery-badge"><i class="fas fa-mountain"></i> Resort & Views</span>
+          <h4 class="gallery-card-title">Lush Green Lawns & Garden</h4>
+          <span class="gallery-expand-tag"><i class="fas fa-expand"></i> Click to View</span>
+        </div>
+      </div>
+
+      <div class="gallery-item-card" data-category="resort" onclick="openLightbox(17)">
+        <img src="/images/valley-city-views.jpg" alt="Garhwal Mountain Valley Sunset View">
+        <div class="gallery-card-overlay">
+          <span class="gallery-badge"><i class="fas fa-mountain"></i> Resort & Views</span>
+          <h4 class="gallery-card-title">Garhwal Mountain Valley Sunset View</h4>
+          <span class="gallery-expand-tag"><i class="fas fa-expand"></i> Click to View</span>
+        </div>
+      </div>
+
+      <!-- Attractions Category -->
+      <div class="gallery-item-card" data-category="attractions" onclick="openLightbox(18)">
+        <img src="/images/tip-n-top.jpg" alt="Tip-In-Top Sunset Viewpoint">
+        <div class="gallery-card-overlay">
+          <span class="gallery-badge"><i class="fas fa-compass"></i> Lansdowne Attractions</span>
+          <h4 class="gallery-card-title">Tip-In-Top Sunset Viewpoint</h4>
+          <span class="gallery-expand-tag"><i class="fas fa-expand"></i> Click to View</span>
+        </div>
+      </div>
+
+      <div class="gallery-item-card" data-category="attractions" onclick="openLightbox(19)">
+        <img src="/images/bhulla-lake.jpg" alt="Bhulla Tal Boating Lake">
+        <div class="gallery-card-overlay">
+          <span class="gallery-badge"><i class="fas fa-compass"></i> Lansdowne Attractions</span>
+          <h4 class="gallery-card-title">Bhulla Tal Boating Lake</h4>
+          <span class="gallery-expand-tag"><i class="fas fa-expand"></i> Click to View</span>
+        </div>
+      </div>
+
+      <div class="gallery-item-card" data-category="attractions" onclick="openLightbox(20)">
+        <img src="/images/tarkeshwar-mahadev.jpg" alt="Tarkeshwar Mahadev Temple">
+        <div class="gallery-card-overlay">
+          <span class="gallery-badge"><i class="fas fa-compass"></i> Lansdowne Attractions</span>
+          <h4 class="gallery-card-title">Tarkeshwar Mahadev Temple</h4>
+          <span class="gallery-expand-tag"><i class="fas fa-expand"></i> Click to View</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Booking CTA Bar -->
+    <div style="background: #ffffff; padding: 35px; border-radius: 16px; border: 1px solid #e2e8f0; text-align: center; box-shadow: 0 8px 30px rgba(0,0,0,0.04);">
+      <h3 style="font-size: 26px; color: var(--dark-bg); margin-bottom: 10px; font-family: 'Cinzel', serif;">Experience Hillside Luxury Firsthand</h3>
+      <p style="color: #64748b; font-size: 15px; margin-bottom: 22px;">Reserve your room at Flutter Hotels & Resorts directly for best price guarantee.</p>
+      <a href="/rooms" class="btn-blue pulsing-btn" style="padding: 14px 36px; font-size: 15px; font-weight: bold; border-radius: 8px;">
+        <i class="fas fa-calendar-check"></i> Book Your Vacation Stay
+      </a>
     </div>
 
   </div>
 </section>
+
+<!-- Full-Screen Interactive Lightbox Modal -->
+<div id="galleryLightboxModal" class="gallery-lightbox-modal">
+  <button class="lightbox-close-btn" onclick="closeLightbox()">&times;</button>
+  <button class="lightbox-nav-btn lightbox-prev-btn" onclick="navigateLightbox(-1)"><i class="fas fa-chevron-left"></i></button>
+  <button class="lightbox-nav-btn lightbox-next-btn" onclick="navigateLightbox(1)"><i class="fas fa-chevron-right"></i></button>
+  
+  <div class="lightbox-content-box">
+    <img id="lightboxImage" src="" alt="Gallery Preview">
+    <div class="lightbox-caption-bar">
+      <div>
+        <span id="lightboxCategory" class="lightbox-category-badge"></span>
+        <h4 id="lightboxTitle" style="color: #ffffff; margin: 4px 0 0; font-size: 18px; font-family: 'Cinzel', serif;"></h4>
+      </div>
+      <span id="lightboxCounter" style="color: #94a3b8; font-size: 13px; font-weight: 600;"></span>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Filter Buttons */
+.gallery-filter-btn {
+  background: #ffffff;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.gallery-filter-btn:hover, .gallery-filter-btn.active {
+  background: var(--primary-blue);
+  color: #ffffff;
+  border-color: var(--primary-blue);
+  box-shadow: 0 4px 15px rgba(95, 134, 193, 0.3);
+}
+
+/* Gallery Item Cards */
+.gallery-item-card {
+  position: relative;
+  height: 250px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+}
+.gallery-item-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.gallery-item-card:hover img {
+  transform: scale(1.08);
+}
+.gallery-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.1));
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+.gallery-item-card:hover .gallery-card-overlay {
+  opacity: 1;
+}
+.gallery-badge {
+  background: rgba(245, 158, 11, 0.3);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  width: fit-content;
+  margin-bottom: 6px;
+  backdrop-filter: blur(4px);
+}
+.gallery-card-title {
+  color: #ffffff;
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-family: 'Cinzel', serif;
+}
+.gallery-expand-tag {
+  color: #cbd5e1;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Lightbox Modal CSS */
+.gallery-lightbox-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(8px);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.gallery-lightbox-modal.show {
+  display: flex;
+}
+.lightbox-close-btn {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 40px;
+  cursor: pointer;
+  z-index: 10001;
+  line-height: 1;
+}
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.15);
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.3);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s ease;
+}
+.lightbox-nav-btn:hover {
+  background: var(--primary-blue);
+}
+.lightbox-prev-btn { left: 25px; }
+.lightbox-next-btn { right: 25px; }
+
+.lightbox-content-box {
+  max-width: 900px;
+  width: 100%;
+  background: #0f172a;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #334155;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+}
+.lightbox-content-box img {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  background: #000;
+}
+.lightbox-caption-bar {
+  padding: 20px 25px;
+  background: #0f172a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #1e293b;
+}
+.lightbox-category-badge {
+  background: var(--primary-blue);
+  color: #ffffff;
+  padding: 3px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+</style>
+
+<script>
+// Lightbox Data & Filtering Script
+const allGalleryItems = Array.from(document.querySelectorAll('.gallery-item-card')).map(card => {
+  return {
+    src: card.querySelector('img').src,
+    title: card.querySelector('.gallery-card-title').innerText,
+    category: card.dataset.category,
+    categoryName: card.querySelector('.gallery-badge').innerText
+  };
+});
+
+let currentLightboxIndex = 0;
+let filteredIndices = allGalleryItems.map((_, idx) => idx);
+
+function filterGallery(category, btnEl) {
+  // Update Active Button
+  document.querySelectorAll('.gallery-filter-btn').forEach(btn => btn.classList.remove('active'));
+  if (btnEl) btnEl.classList.add('active');
+
+  const cards = document.querySelectorAll('.gallery-item-card');
+  filteredIndices = [];
+
+  cards.forEach((card, idx) => {
+    if (category === 'all' || card.dataset.category === category) {
+      card.style.display = 'block';
+      filteredIndices.push(idx);
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+function openLightbox(index) {
+  currentLightboxIndex = index;
+  updateLightbox();
+  document.getElementById('galleryLightboxModal').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('galleryLightboxModal').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+function navigateLightbox(direction) {
+  const currentPos = filteredIndices.indexOf(currentLightboxIndex);
+  let nextPos = currentPos + direction;
+  if (nextPos < 0) nextPos = filteredIndices.length - 1;
+  if (nextPos >= filteredIndices.length) nextPos = 0;
+  currentLightboxIndex = filteredIndices[nextPos];
+  updateLightbox();
+}
+
+function updateLightbox() {
+  const item = allGalleryItems[currentLightboxIndex];
+  if (!item) return;
+  document.getElementById('lightboxImage').src = item.src;
+  document.getElementById('lightboxTitle').innerText = item.title;
+  document.getElementById('lightboxCategory').innerText = item.categoryName;
+  
+  const currentPos = filteredIndices.indexOf(currentLightboxIndex) + 1;
+  document.getElementById('lightboxCounter').innerText = `Photo ${currentPos} of ${filteredIndices.length}`;
+}
+
+// Keyboard Controls
+document.addEventListener('keydown', (e) => {
+  const modal = document.getElementById('galleryLightboxModal');
+  if (modal.classList.contains('show')) {
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') navigateLightbox(-1);
+    if (e.key === 'ArrowRight') navigateLightbox(1);
+  }
+});
+</script>
 
 <%- include('partials/footer') %>
