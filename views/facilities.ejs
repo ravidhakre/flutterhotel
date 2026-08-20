@@ -1,14 +1,14 @@
 <%- include('partials/header') %>
 
-<!-- Facilities Hero Banner -->
-<div class="page-hero-header" style="background: linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.85)), url('/images/hotel-img-1.jpg');">
-  <div class="container" style="max-width: 900px;">
-    <span style="background: rgba(245, 158, 11, 0.25); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 15px;">
-      Resort Amenities & Comfort
+<!-- Facilities Hero Banner (Full-Height Mobile Responsive) -->
+<div class="page-hero-header" style="background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.85)), url('/images/resort-lawns-garden.avif');">
+  <div class="container" style="max-width: 900px; position: relative; z-index: 2;">
+    <span style="background: rgba(245, 158, 11, 0.25); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 6px 20px; border-radius: 30px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 18px; backdrop-filter: blur(4px);">
+      <i class="fas fa-concierge-bell"></i> 5-Star Hospitality & Comfort
     </span>
-    <h1 style="font-size: 42px; margin-bottom: 12px; color: #ffffff; font-family: 'Cinzel', serif;">Resort Facilities & Guest Amenities</h1>
-    <p style="color: #cbd5e1; font-size: 16px; line-height: 1.7; max-width: 750px; margin: 0 auto;">
-      Experience 5-star hospitality with multi-cuisine dining, manicured lawns, high-speed Wi-Fi, 24/7 concierge, and scenic mountain balconies.
+    <h1 style="font-size: 44px; margin-bottom: 14px; color: #ffffff; font-family: 'Cinzel', serif; line-height: 1.25;">Resort Facilities & Guest Amenities</h1>
+    <p style="color: #cbd5e1; font-size: 16.5px; line-height: 1.7; max-width: 760px; margin: 0 auto 25px;">
+      Explore our 32,400 sq. ft. estate in Lansdowne, featuring multi-cuisine dining, manicured lawns, high-speed fiber Wi-Fi, 24/7 concierge, and mountain-view balconies.
     </p>
   </div>
 </div>
@@ -16,42 +16,158 @@
 <section class="section-padding" style="background: #f8fafc; padding: 60px 0;">
   <div class="container">
     
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
-      <div style="background: #ffffff; padding: 30px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
-        <i class="fas fa-utensils" style="font-size: 32px; color: var(--primary-blue); margin-bottom: 12px;"></i>
-        <h3 style="font-size: 18px; color: var(--dark-bg); margin-bottom: 8px;">Multi-Cuisine Restaurant</h3>
-        <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0;">Freshly prepared North Indian, Garhwali, Asian & Continental dining.</p>
+    <div style="text-align: center; max-width: 750px; margin: 0 auto 50px;">
+      <span class="section-subtitle">Designed For Your Comfort</span>
+      <h2 class="section-title">World-Class Services & Property Features</h2>
+      <p style="color: #64748b; font-size: 15px;">
+        Every detail at Flutter Hotels & Resorts is tailored to provide a seamless, relaxing retreat amidst the quiet pine forests of Lansdowne.
+      </p>
+    </div>
+
+    <!-- 12 Facilities Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; margin-bottom: 50px;">
+      
+      <!-- Facility 1 -->
+      <div style="background: #ffffff; border-radius: 16px; padding: 28px; border: 1px solid #e2e8f0; box-shadow: 0 6px 25px rgba(0,0,0,0.04); display: flex; flex-direction: column;">
+        <div style="width: 54px; height: 54px; background: rgba(95, 134, 193, 0.15); color: var(--primary-blue); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 18px;">
+          <i class="fas fa-utensils"></i>
+        </div>
+        <h3 style="font-size: 20px; color: var(--dark-bg); margin-bottom: 8px; font-family: 'Cinzel', serif;">Multi-Cuisine Restaurant</h3>
+        <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0; flex-grow: 1;">
+          Chef-prepared North Indian, authentic Garhwali local specialties, Chinese delicacies, and Continental breakfast served fresh daily.
+        </p>
       </div>
 
-      <div style="background: #ffffff; padding: 30px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
-        <i class="fas fa-wifi" style="font-size: 32px; color: #0284c7; margin-bottom: 12px;"></i>
-        <h3 style="font-size: 18px; color: var(--dark-bg); margin-bottom: 8px;">High-Speed Wi-Fi</h3>
-        <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0;">Seamless fiber internet across all rooms, dining areas & resort lawns.</p>
+      <!-- Facility 2 -->
+      <div style="background: #ffffff; border-radius: 16px; padding: 28px; border: 1px solid #e2e8f0; box-shadow: 0 6px 25px rgba(0,0,0,0.04); display: flex; flex-direction: column;">
+        <div style="width: 54px; height: 54px; background: rgba(34, 197, 94, 0.15); color: #22c55e; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 18px;">
+          <i class="fas fa-mountain"></i>
+        </div>
+        <h3 style="font-size: 20px; color: var(--dark-bg); margin-bottom: 8px; font-family: 'Cinzel', serif;">Private Valley Balconies</h3>
+        <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0; flex-grow: 1;">
+          100% of our rooms come equipped with private balconies offering unhindered vistas of Garhwal hills and sunrise over pine valleys.
+        </p>
       </div>
 
-      <div style="background: #ffffff; padding: 30px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
-        <i class="fas fa-square-parking" style="font-size: 32px; color: #22c55e; margin-bottom: 12px;"></i>
-        <h3 style="font-size: 18px; color: var(--dark-bg); margin-bottom: 8px;">Secure On-Site Parking</h3>
-        <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0;">Spacious private parking lot for cars, SUVs & Tempo Travellers.</p>
+      <!-- Facility 3 -->
+      <div style="background: #ffffff; border-radius: 16px; padding: 28px; border: 1px solid #e2e8f0; box-shadow: 0 6px 25px rgba(0,0,0,0.04); display: flex; flex-direction: column;">
+        <div style="width: 54px; height: 54px; background: rgba(245, 158, 11, 0.15); color: #f59e0b; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 18px;">
+          <i class="fas fa-handshake"></i>
+        </div>
+        <h3 style="font-size: 20px; color: var(--dark-bg); margin-bottom: 8px; font-family: 'Cinzel', serif;">Banquet & MICE Hall</h3>
+        <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0; flex-grow: 1;">
+          200-guest air-conditioned event hall equipped with projector screen, mic sound system, and customizable stage lighting.
+        </p>
       </div>
 
-      <div style="background: #ffffff; padding: 30px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
-        <i class="fas fa-fire" style="font-size: 32px; color: #f59e0b; margin-bottom: 12px;"></i>
-        <h3 style="font-size: 18px; color: var(--dark-bg); margin-bottom: 8px;">Evening Bonfire & Music</h3>
-        <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0;">Nightly bonfire setups under starry mountain skies with light music.</p>
+      <!-- Facility 4 -->
+      <div style="background: #ffffff; border-radius: 16px; padding: 28px; border: 1px solid #e2e8f0; box-shadow: 0 6px 25px rgba(0,0,0,0.04); display: flex; flex-direction: column;">
+        <div style="width: 54px; height: 54px; background: rgba(2, 132, 199, 0.15); color: #0284c7; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 18px;">
+          <i class="fas fa-wifi"></i>
+        </div>
+        <h3 style="font-size: 20px; color: var(--dark-bg); margin-bottom: 8px; font-family: 'Cinzel', serif;">High-Speed Fiber Wi-Fi</h3>
+        <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0; flex-grow: 1;">
+          High-speed fiber optical internet connectivity across all guest rooms, dining hall, reception, and outdoor lawns.
+        </p>
       </div>
 
-      <div style="background: #ffffff; padding: 30px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
-        <i class="fas fa-concierge-bell" style="font-size: 32px; color: #8b5cf6; margin-bottom: 12px;"></i>
-        <h3 style="font-size: 18px; color: var(--dark-bg); margin-bottom: 8px;">24/7 Room Service</h3>
-        <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0;">Prompt in-room dining, daily housekeeping & travel desk assistance.</p>
+      <!-- Facility 5 -->
+      <div style="background: #ffffff; border-radius: 16px; padding: 28px; border: 1px solid #e2e8f0; box-shadow: 0 6px 25px rgba(0,0,0,0.04); display: flex; flex-direction: column;">
+        <div style="width: 54px; height: 54px; background: rgba(239, 68, 68, 0.15); color: #ef4444; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 18px;">
+          <i class="fas fa-fire"></i>
+        </div>
+        <h3 style="font-size: 20px; color: var(--dark-bg); margin-bottom: 8px; font-family: 'Cinzel', serif;">Nightly Bonfire & Music</h3>
+        <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0; flex-grow: 1;">
+          Warm evening bonfire gatherings on resort lawns under starry skies with ambient music, tea, and barbeque grills.
+        </p>
       </div>
 
-      <div style="background: #ffffff; padding: 30px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
-        <i class="fas fa-gamepad" style="font-size: 32px; color: #ef4444; margin-bottom: 12px;"></i>
-        <h3 style="font-size: 18px; color: var(--dark-bg); margin-bottom: 8px;">Recreation & Lawn Games</h3>
-        <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0;">Badminton, carrom, chess, board games & kids play area.</p>
+      <!-- Facility 6 -->
+      <div style="background: #ffffff; border-radius: 16px; padding: 28px; border: 1px solid #e2e8f0; box-shadow: 0 6px 25px rgba(0,0,0,0.04); display: flex; flex-direction: column;">
+        <div style="width: 54px; height: 54px; background: rgba(139, 92, 246, 0.15); color: #8b5cf6; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 18px;">
+          <i class="fas fa-tree"></i>
+        </div>
+        <h3 style="font-size: 20px; color: var(--dark-bg); margin-bottom: 8px; font-family: 'Cinzel', serif;">32,400 Sq. Ft. Lawns</h3>
+        <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0; flex-grow: 1;">
+          Expansive manicured green lawns suitable for morning yoga, kids play, team building activities, and evening walks.
+        </p>
       </div>
+
+      <!-- Facility 7 -->
+      <div style="background: #ffffff; border-radius: 16px; padding: 28px; border: 1px solid #e2e8f0; box-shadow: 0 6px 25px rgba(0,0,0,0.04); display: flex; flex-direction: column;">
+        <div style="width: 54px; height: 54px; background: rgba(16, 185, 129, 0.15); color: #10b981; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 18px;">
+          <i class="fas fa-square-parking"></i>
+        </div>
+        <h3 style="font-size: 20px; color: var(--dark-bg); margin-bottom: 8px; font-family: 'Cinzel', serif;">Secure Private Parking</h3>
+        <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0; flex-grow: 1;">
+          Complimentary, CCTV-monitored secure on-site parking lot for personal cars, SUVs, and luxury Tempo Travellers.
+        </p>
+      </div>
+
+      <!-- Facility 8 -->
+      <div style="background: #ffffff; border-radius: 16px; padding: 28px; border: 1px solid #e2e8f0; box-shadow: 0 6px 25px rgba(0,0,0,0.04); display: flex; flex-direction: column;">
+        <div style="width: 54px; height: 54px; background: rgba(236, 72, 153, 0.15); color: #ec4899; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 18px;">
+          <i class="fas fa-concierge-bell"></i>
+        </div>
+        <h3 style="font-size: 20px; color: var(--dark-bg); margin-bottom: 8px; font-family: 'Cinzel', serif;">24/7 Room Service Desk</h3>
+        <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0; flex-grow: 1;">
+          Round-the-clock front desk assistance, in-room food delivery, wake-up calls, and daily housekeeping service.
+        </p>
+      </div>
+
+      <!-- Facility 9 -->
+      <div style="background: #ffffff; border-radius: 16px; padding: 28px; border: 1px solid #e2e8f0; box-shadow: 0 6px 25px rgba(0,0,0,0.04); display: flex; flex-direction: column;">
+        <div style="width: 54px; height: 54px; background: rgba(249, 115, 22, 0.15); color: #f97316; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 18px;">
+          <i class="fas fa-gamepad"></i>
+        </div>
+        <h3 style="font-size: 20px; color: var(--dark-bg); margin-bottom: 8px; font-family: 'Cinzel', serif;">Indoor Games & Recreation</h3>
+        <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0; flex-grow: 1;">
+          Badminton rackets, carrom, chess, board games, and outdoor kids play equipment for family entertainment.
+        </p>
+      </div>
+
+      <!-- Facility 10 -->
+      <div style="background: #ffffff; border-radius: 16px; padding: 28px; border: 1px solid #e2e8f0; box-shadow: 0 6px 25px rgba(0,0,0,0.04); display: flex; flex-direction: column;">
+        <div style="width: 54px; height: 54px; background: rgba(14, 165, 233, 0.15); color: #0ea5e9; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 18px;">
+          <i class="fas fa-shower"></i>
+        </div>
+        <h3 style="font-size: 20px; color: var(--dark-bg); margin-bottom: 8px; font-family: 'Cinzel', serif;">24/7 Hot Water & Power</h3>
+        <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0; flex-grow: 1;">
+          Continuous 24-hour geyser hot water supply in all attached bathrooms and 100% silent power backup generator.
+        </p>
+      </div>
+
+      <!-- Facility 11 -->
+      <div style="background: #ffffff; border-radius: 16px; padding: 28px; border: 1px solid #e2e8f0; box-shadow: 0 6px 25px rgba(0,0,0,0.04); display: flex; flex-direction: column;">
+        <div style="width: 54px; height: 54px; background: rgba(168, 85, 247, 0.15); color: #a855f7; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 18px;">
+          <i class="fas fa-route"></i>
+        </div>
+        <h3 style="font-size: 20px; color: var(--dark-bg); margin-bottom: 8px; font-family: 'Cinzel', serif;">Sightseeing & Cab Desk</h3>
+        <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0; flex-grow: 1;">
+          Concierge travel desk assistance for arranging local Lansdowne cabs, jungle safari tickets, and trekking guides.
+        </p>
+      </div>
+
+      <!-- Facility 12 -->
+      <div style="background: #ffffff; border-radius: 16px; padding: 28px; border: 1px solid #e2e8f0; box-shadow: 0 6px 25px rgba(0,0,0,0.04); display: flex; flex-direction: column;">
+        <div style="width: 54px; height: 54px; background: rgba(234, 179, 8, 0.15); color: #eab308; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 18px;">
+          <i class="fas fa-user-nurse"></i>
+        </div>
+        <h3 style="font-size: 20px; color: var(--dark-bg); margin-bottom: 8px; font-family: 'Cinzel', serif;">Doctor On Call</h3>
+        <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0; flex-grow: 1;">
+          First-aid kit available on premises and emergency doctor-on-call facility for total guest safety & peace of mind.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Booking CTA Bar -->
+    <div style="background: #ffffff; padding: 35px; border-radius: 16px; border: 1px solid #e2e8f0; text-align: center; box-shadow: 0 8px 30px rgba(0,0,0,0.04);">
+      <h3 style="font-size: 26px; color: var(--dark-bg); margin-bottom: 10px; font-family: 'Cinzel', serif;">Experience 5-Star Hillside Hospitality</h3>
+      <p style="color: #64748b; font-size: 15px; margin-bottom: 22px;">Book your room at Flutter Hotels & Resorts directly for best price guarantee.</p>
+      <a href="/rooms" class="btn-blue pulsing-btn" style="padding: 14px 36px; font-size: 15px; font-weight: bold; border-radius: 8px;">
+        <i class="fas fa-calendar-check"></i> Book Your Stay Now
+      </a>
     </div>
 
   </div>
