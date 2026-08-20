@@ -65,6 +65,12 @@
 
       <!-- Nav Links -->
       <div class="nav-links" id="primaryNavLinks">
+        <div class="mobile-menu-header">
+          <span class="mobile-menu-title">Main Menu</span>
+          <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close Menu">
+            <i class="fas fa-xmark"></i>
+          </button>
+        </div>
         <a href="/" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Flutter Hotels & Resorts | Hill Resort')) ? 'active' : '' %>">
           <span>Home</span>
         </a>

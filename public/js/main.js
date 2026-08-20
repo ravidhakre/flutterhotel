@@ -80,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. MOBILE NAVIGATION DRAWER TOGGLE LOGIC
   // ==========================================
   const navToggleBtn = document.getElementById('mobileNavToggle');
+  const navCloseBtn = document.getElementById('mobileMenuClose');
   const navLinksMenu = id('primaryNavLinks');
   const navOverlay = document.getElementById('mobileNavOverlay');
 
@@ -88,12 +89,14 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinksMenu.classList.toggle('active');
       navOverlay.classList.toggle('active');
       
-      const icon = navToggleBtn.querySelector('i');
-      if (icon) {
-        if (navLinksMenu.classList.contains('active')) {
-          icon.className = 'fas fa-xmark';
-        } else {
-          icon.className = 'fas fa-bars';
+      if (navToggleBtn) {
+        const icon = navToggleBtn.querySelector('i');
+        if (icon) {
+          if (navLinksMenu.classList.contains('active')) {
+            icon.className = 'fas fa-xmark';
+          } else {
+            icon.className = 'fas fa-bars-staggered';
+          }
         }
       }
     }
@@ -103,6 +106,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (navToggleBtn) {
     navToggleBtn.addEventListener('click', toggleMobileMenu);
+  }
+
+  if (navCloseBtn) {
+    navCloseBtn.addEventListener('click', toggleMobileMenu);
   }
 
   if (navOverlay) {
