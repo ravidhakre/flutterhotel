@@ -1502,3 +1502,67 @@ ul {
     text-align: center;
   }
 }
+
+/* ==========================================================================
+   GLOBAL PAGE HERO HEADER (Desktop & 100% Mobile Fullscreen Responsiveness)
+   ========================================================================== */
+.page-hero-header {
+  position: relative;
+  width: 100%;
+  padding: 100px 20px 80px;
+  text-align: center;
+  color: #ffffff;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+}
+
+@media (max-width: 768px) {
+  .hero-slider-section {
+    height: 85vh !important;
+    min-height: 85vh !important;
+  }
+
+  .offers-fullslider-wrapper,
+  .offer-fullslide-item {
+    height: 85vh !important;
+    min-height: 85vh !important;
+  }
+
+  .page-hero-header {
+    min-height: 82vh !important;
+    height: 82vh !important;
+    padding: 70px 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-position: center center !important;
+  }
+
+  .page-hero-header h1 {
+    font-size: 28px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 12px !important;
+    font-family: 'Cinzel', serif !important;
+  }
+
+  .page-hero-header p {
+    font-size: 14.5px !important;
+    line-height: 1.6 !important;
+    max-width: 100% !important;
+    color: #e2e8f0 !important;
+  }
+
+  .page-hero-header .btn-blue,
+  .page-hero-header .btn-outline-blue {
+    width: 100% !important;
+    margin-top: 12px !important;
+    text-align: center !important;
+    display: block !important;
+  }
+}
