@@ -1,0 +1,85 @@
+<%- include('partials/header') %>
+
+<!-- Group Booking Hero Banner -->
+<div style="background: linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.85)), url('/images/tip-n-top.jpg') center/cover no-repeat; padding: 90px 0 70px; text-align: center; color: #fff;">
+  <div class="container" style="max-width: 900px;">
+    <span style="background: rgba(245, 158, 11, 0.25); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 15px;">
+      Bulk Room Reservations
+    </span>
+    <h1 style="font-size: 42px; margin-bottom: 12px; color: #ffffff; font-family: 'Cinzel', serif;">Group & Tour Group Bookings</h1>
+    <p style="color: #cbd5e1; font-size: 16px; line-height: 1.7; max-width: 750px; margin: 0 auto 25px;">
+      Special discounted tariff packages for college tours, corporate outings, family reunions, and travel agent group departures (10+ rooms).
+    </p>
+    <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20get%20a%20Group%20Booking%20Quote." target="_blank" class="btn-blue pulsing-btn" style="padding: 13px 30px; font-size: 14px; font-weight: bold;">
+      <i class="fas fa-users"></i> Request Group Rates
+    </a>
+  </div>
+</div>
+
+<section class="section-padding" style="background: #f8fafc; padding: 60px 0;">
+  <div class="container">
+    
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;" class="responsive-two-col">
+      <div>
+        <h2 style="font-size: 28px; color: var(--dark-bg); margin-bottom: 15px;">Why Book Group Stays With Us?</h2>
+        <p style="color: #475569; font-size: 15px; line-height: 1.7; margin-bottom: 25px;">
+          Flutter Hotels & Resorts provides spacious inventory, dedicated group check-in desks, bus/tempo traveller parking, and tailored meal plans for groups of 15 to 150 guests.
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px;">
+          <div style="display: flex; gap: 15px; background: #ffffff; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0;">
+            <i class="fas fa-percent" style="font-size: 24px; color: #22c55e; margin-top: 3px;"></i>
+            <div>
+              <h4 style="font-size: 17px; margin-bottom: 4px;">Tiered Group Discounts</h4>
+              <p style="color: #64748b; font-size: 14px; margin: 0;">Save up to 30% on bulk room inventory for 5 or more rooms.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 15px; background: #ffffff; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0;">
+            <i class="fas fa-bus" style="font-size: 24px; color: var(--primary-blue); margin-top: 3px;"></i>
+            <div>
+              <h4 style="font-size: 17px; margin-bottom: 4px;">Complimentary Transport Assistance</h4>
+              <p style="color: #64748b; font-size: 14px; margin: 0;">Arrangements for AC Volvo & 26-Seater Tempo Traveller pickups from Delhi & Dehradun.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 15px; background: #ffffff; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0;">
+            <i class="fas fa-fire" style="font-size: 24px; color: #f59e0b; margin-top: 3px;"></i>
+            <div>
+              <h4 style="font-size: 17px; margin-bottom: 4px;">Exclusive Bonfire & Music Night</h4>
+              <p style="color: #64748b; font-size: 14px; margin: 0;">Complimentary evening bonfire setup with light music / DJ for group stays.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="background: #ffffff; padding: 30px; border-radius: 14px; border: 1.5px solid #e2e8f0; box-shadow: 0 8px 25px rgba(0,0,0,0.05);">
+          <h3 style="font-size: 20px; color: var(--dark-bg); margin-bottom: 15px; text-align: center;">Get Instant Group Quote</h3>
+          <form action="/contact" method="POST">
+            <div style="margin-bottom: 12px;">
+              <label style="font-size: 12px; font-weight: bold;">Your Name *</label>
+              <input type="text" name="name" required class="form-control-custom">
+            </div>
+            <div style="margin-bottom: 12px;">
+              <label style="font-size: 12px; font-weight: bold;">Phone Number *</label>
+              <input type="tel" name="phone" required class="form-control-custom">
+            </div>
+            <div style="margin-bottom: 12px;">
+              <label style="font-size: 12px; font-weight: bold;">No. of Rooms Needed</label>
+              <input type="number" name="rooms" value="6" class="form-control-custom">
+            </div>
+            <div style="margin-bottom: 15px;">
+              <label style="font-size: 12px; font-weight: bold;">Check-in Date</label>
+              <input type="date" name="checkIn" class="form-control-custom">
+            </div>
+            <button type="submit" class="btn-blue" style="width: 100%; font-size: 14px;"><i class="fas fa-paper-plane"></i> Submit Request</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<%- include('partials/footer') %>

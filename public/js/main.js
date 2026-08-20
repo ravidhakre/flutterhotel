@@ -120,8 +120,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (navLinksMenu) {
     const links = navLinksMenu.querySelectorAll('a');
     links.forEach(link => {
-      link.addEventListener('click', () => {
-        if (navLinksMenu.classList.contains('active')) {
+      link.addEventListener('click', (e) => {
+        if (link.id === 'moreDropdownBtn' && window.innerWidth <= 992) {
+          e.preventDefault();
+          const container = document.getElementById('moreDropdownContainer');
+          if (container) container.classList.toggle('open');
+        } else if (navLinksMenu.classList.contains('active')) {
           toggleMobileMenu();
         }
       });

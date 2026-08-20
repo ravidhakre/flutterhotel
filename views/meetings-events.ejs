@@ -1,0 +1,85 @@
+<%- include('partials/header') %>
+
+<!-- Meetings & Events Hero Banner -->
+<div style="background: linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.85)), url('/images/hotel-img-12.jpeg') center/cover no-repeat; padding: 90px 0 70px; text-align: center; color: #fff;">
+  <div class="container" style="max-width: 900px;">
+    <span style="background: rgba(245, 158, 11, 0.25); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 15px;">
+      MICE & Corporate Retreats
+    </span>
+    <h1 style="font-size: 42px; margin-bottom: 12px; color: #ffffff; font-family: 'Cinzel', serif;">Meetings & Corporate Events</h1>
+    <p style="color: #cbd5e1; font-size: 16px; line-height: 1.7; max-width: 750px; margin: 0 auto 25px;">
+      Host high-impact corporate conferences, executive retreats, team-building sessions, and strategy workshops amidst the peaceful Garhwal hills at Flutter Hotels & Resorts, Lansdowne.
+    </p>
+    <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20enquire%20about%20hosting%20a%20Corporate%20Event%20/%20Conference." target="_blank" class="btn-blue pulsing-btn" style="padding: 13px 30px; font-size: 14px; font-weight: bold;">
+      <i class="fas fa-handshake"></i> Enquire Corporate MICE Package
+    </a>
+  </div>
+</div>
+
+<section class="section-padding" style="background: #f8fafc; padding: 60px 0;">
+  <div class="container">
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 50px;">
+      <div style="background: #ffffff; padding: 35px; border-radius: 14px; border: 1px solid #e2e8f0; box-shadow: 0 6px 25px rgba(0,0,0,0.04);">
+        <i class="fas fa-laptop-house" style="font-size: 36px; color: var(--primary-blue); margin-bottom: 15px;"></i>
+        <h3 style="font-size: 20px; color: var(--dark-bg); margin-bottom: 10px;">Executive Conference Space</h3>
+        <p style="color: #64748b; font-size: 14.5px; line-height: 1.7;">
+          Equipped with modern AV tech, high-speed Wi-Fi, audio systems, projectors, and flexible seating arrangements for up to 80 delegates.
+        </p>
+      </div>
+
+      <div style="background: #ffffff; padding: 35px; border-radius: 14px; border: 1px solid #e2e8f0; box-shadow: 0 6px 25px rgba(0,0,0,0.04);">
+        <i class="fas fa-tree" style="font-size: 36px; color: #22c55e; margin-bottom: 15px;"></i>
+        <h3 style="font-size: 20px; color: var(--dark-bg); margin-bottom: 10px;">Outdoor Lawn Workshops</h3>
+        <p style="color: #64748b; font-size: 14.5px; line-height: 1.7;">
+          Lush resort lawns perfect for open-air brainstorming, morning yoga, team-building exercises, and evening bonfire networking sessions.
+        </p>
+      </div>
+
+      <div style="background: #ffffff; padding: 35px; border-radius: 14px; border: 1px solid #e2e8f0; box-shadow: 0 6px 25px rgba(0,0,0,0.04);">
+        <i class="fas fa-utensils" style="font-size: 36px; color: #f59e0b; margin-bottom: 15px;"></i>
+        <h3 style="font-size: 20px; color: var(--dark-bg); margin-bottom: 10px;">Custom Culinary Dining</h3>
+        <p style="color: #64748b; font-size: 14.5px; line-height: 1.7;">
+          Dedicated chef-curated buffet menus including Garhwali delicacies, North Indian, Asian, and continental spreads with gala dinners.
+        </p>
+      </div>
+    </div>
+
+    <!-- Quick Enquiry Form -->
+    <div style="background: #ffffff; max-width: 800px; margin: 0 auto; padding: 40px; border-radius: 16px; border: 1.5px solid #e2e8f0; box-shadow: 0 10px 35px rgba(0,0,0,0.06);">
+      <h3 style="font-size: 24px; color: var(--dark-bg); text-align: center; margin-bottom: 10px;">Plan Your Event With Us</h3>
+      <p style="color: #64748b; text-align: center; font-size: 14.5px; margin-bottom: 25px;">
+        Fill in your group details below and our MICE event specialist will get back to you within 2 hours.
+      </p>
+
+      <form action="/contact" method="POST" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;" class="responsive-two-col">
+        <div>
+          <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 6px;">Company / Group Name *</label>
+          <input type="text" name="name" required placeholder="e.g. Acme Tech Corp" class="form-control-custom">
+        </div>
+        <div>
+          <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 6px;">Mobile Number *</label>
+          <input type="tel" name="phone" required placeholder="+91 98765 43210" class="form-control-custom">
+        </div>
+        <div>
+          <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 6px;">Expected Guests *</label>
+          <input type="number" name="guests" value="25" class="form-control-custom">
+        </div>
+        <div>
+          <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 6px;">Event Date</label>
+          <input type="date" name="eventDate" class="form-control-custom">
+        </div>
+        <div style="grid-column: 1 / -1;">
+          <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 6px;">Event Requirements & Special Notes</label>
+          <textarea name="message" rows="3" placeholder="Tell us about conference hall setup, meals, bonfire, transport requirements..." class="form-control-custom"></textarea>
+        </div>
+        <div style="grid-column: 1 / -1; text-align: center; margin-top: 10px;">
+          <button type="submit" class="btn-blue" style="padding: 13px 35px; font-size: 15px;"><i class="fas fa-paper-plane"></i> Submit Event Inquiry</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<%- include('partials/footer') %>

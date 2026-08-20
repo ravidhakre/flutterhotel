@@ -215,6 +215,42 @@ app.get('/privacy-policy', (req, res) => {
   });
 });
 
+// Dropdown Sub-Menu Pages
+app.get('/meetings-events', (req, res) => {
+  res.render('meetings-events', {
+    title: 'Meetings & Corporate Events | Flutter Hotels & Resorts',
+    metaDesc: 'Host corporate conferences, executive retreats and team workshops at Flutter Hotels & Resorts, Lansdowne.'
+  });
+});
+
+app.get('/celebrations', (req, res) => {
+  res.render('celebrations', {
+    title: 'Weddings & Celebrations | Flutter Hotels & Resorts',
+    metaDesc: 'Destination weddings, anniversary galas and milestone celebrations at Flutter Hotels & Resorts, Lansdowne.'
+  });
+});
+
+app.get('/group-booking', (req, res) => {
+  res.render('group-booking', {
+    title: 'Group Bookings & Bulk Room Rates | Flutter Hotels & Resorts',
+    metaDesc: 'Discounted group rates for 5+ rooms, corporate teams, college tours and family groups.'
+  });
+});
+
+app.get('/facilities', (req, res) => {
+  res.render('facilities', {
+    title: 'Resort Facilities & Amenities | Flutter Hotels & Resorts',
+    metaDesc: 'Multi-cuisine dining, high-speed Wi-Fi, lawns, bonfire evenings and 24/7 concierge at Flutter Hotels.'
+  });
+});
+
+app.get('/location', (req, res) => {
+  res.render('location', {
+    title: 'Location & How To Reach | Flutter Hotels & Resorts',
+    metaDesc: 'Travel routes from Delhi, Kotdwar railway station, and Jolly Grant airport to Flutter Hotels & Resorts, Lansdowne.'
+  });
+});
+
 app.get('/terms-conditions', (req, res) => {
   res.render('terms-conditions', {
     title: 'Terms & Conditions | Flutter Hotels & Resorts',

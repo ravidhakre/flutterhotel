@@ -75,29 +75,37 @@
           <span>Home</span>
         </a>
         <a href="/rooms" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Rooms')) ? 'active' : '' %>">
-          <span>Rooms & Suites</span>
+          <span>Rooms</span>
         </a>
         <a href="/dining" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Dining')) ? 'active' : '' %>">
           <span>Dining</span>
         </a>
-        <a href="/gallery" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Gallery')) ? 'active' : '' %>">
-          <span>Gallery</span>
+        <a href="/packages" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Packages')) ? 'active' : '' %>">
+          <span>Packages</span>
         </a>
         <a href="/offers" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Offers') && !title.includes('Packages')) ? 'active' : '' %>">
           <span>Offers</span>
         </a>
-        <a href="/packages" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Packages')) ? 'active' : '' %>">
-          <span>Packages</span>
-        </a>
         <a href="/things-to-do" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Things To Do')) ? 'active' : '' %>">
           <span>Things To Do</span>
         </a>
-        <a href="/blog" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Blog')) ? 'active' : '' %>">
-          <span>Blog</span>
-        </a>
-        <a href="/contact" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Contact')) ? 'active' : '' %>">
-          <span>Contact Us</span>
-        </a>
+
+        <!-- More Dropdown -->
+        <div class="nav-item-dropdown" id="moreDropdownContainer">
+          <a href="#" class="nav-item-link dropdown-toggle" id="moreDropdownBtn">
+            <span>More</span> <i class="fas fa-chevron-down dropdown-arrow" style="font-size: 11px; margin-left: 4px;"></i>
+          </a>
+          <div class="dropdown-menu-box" id="moreDropdownMenu">
+            <a href="/meetings-events" class="dropdown-item-link"><i class="fas fa-handshake"></i> Meetings & Events</a>
+            <a href="/gallery" class="dropdown-item-link"><i class="fas fa-images"></i> Gallery</a>
+            <a href="/celebrations" class="dropdown-item-link"><i class="fas fa-glass-cheers"></i> Celebrations</a>
+            <a href="/group-booking" class="dropdown-item-link"><i class="fas fa-users"></i> Group Booking</a>
+            <a href="/facilities" class="dropdown-item-link"><i class="fas fa-concierge-bell"></i> Facilities</a>
+            <a href="/location" class="dropdown-item-link"><i class="fas fa-map-location-dot"></i> Location</a>
+            <a href="/contact" class="dropdown-item-link"><i class="fas fa-envelope"></i> Contact Us</a>
+            <a href="/blog" class="dropdown-item-link"><i class="fas fa-blog"></i> Blog</a>
+          </div>
+        </div>
         <% if (isAdmin) { %>
           <a href="/admin" class="nav-item-link admin-nav-link"><i class="fas fa-crown"></i> Admin</a>
         <% } %>
