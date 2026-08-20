@@ -1,265 +1,312 @@
 <%- include('partials/header') %>
 
 <!-- Hero Video Background Header Section -->
-<section class="hero-video-section">
-  <video autoplay muted loop playsinline class="hero-video-bg">
+<section class="hero-video-section" style="position: relative; min-height: 85vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #0f172a;">
+  <video autoplay muted loop playsinline class="hero-video-bg" style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); object-fit: cover; z-index: 1;">
     <source src="/images/video.mp4" type="video/mp4">
   </video>
-  <div class="hero-video-overlay"></div>
+  <div class="hero-video-overlay" style="position: absolute; inset: 0; background: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.85)); z-index: 2;"></div>
+  
+  <div class="container" style="position: relative; z-index: 3; text-align: center; max-width: 900px; padding: 60px 20px;">
+    <span style="background: rgba(245, 158, 11, 0.25); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 6px 20px; border-radius: 30px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 20px; backdrop-filter: blur(4px);">
+      <i class="fas fa-crown"></i> Lansdowne's Premier Hillside Resort
+    </span>
+    <h1 style="font-size: 48px; color: #ffffff; font-family: 'Cinzel', serif; margin-bottom: 18px; line-height: 1.25;">
+      Experience 5-Star Hillside Luxury in Lansdowne
+    </h1>
+    <p style="color: #cbd5e1; font-size: 17.5px; line-height: 1.7; max-width: 780px; margin: 0 auto 30px;">
+      Private mountain balconies, valley vistas, multi-cuisine dining, and 32,400 sq. ft. of serene pine forest tranquility at Flutter Hotels & Resorts.
+    </p>
+    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+      <a href="/rooms" class="btn-blue pulsing-btn" style="padding: 14px 34px; font-size: 15px; font-weight: bold; border-radius: 8px;">
+        <i class="fas fa-bed"></i> Explore Luxury Stays
+      </a>
+      <a href="/offers" class="btn-outline-blue" style="padding: 14px 30px; font-size: 15px; font-weight: bold; border-color: rgba(255,255,255,0.4); color: #fff; background: rgba(255,255,255,0.1); backdrop-filter: blur(4px); border-radius: 8px;">
+        <i class="fas fa-tags"></i> View Exclusive Offers
+      </a>
+    </div>
+  </div>
 </section>
 
 <!-- Check Availability Widget Bar -->
-<div class="container booking-search-wrapper" id="searchWidget">
-  <div class="booking-search-card">
+<div class="container booking-search-wrapper" id="searchWidget" style="margin-top: -45px; position: relative; z-index: 10;">
+  <div class="booking-search-card" style="background: #ffffff; padding: 25px 30px; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.12); border: 1px solid #e2e8f0;">
     <form action="/rooms" method="GET" class="search-form-grid">
       <div class="form-group-custom">
-        <label><i class="far fa-calendar-alt"></i> Check In <span style="font-size: 10px; color: #777; font-weight: normal;">(From 12:00 PM)</span></label>
+        <label style="font-weight: 700; color: #334155; font-size: 13px;"><i class="far fa-calendar-alt" style="color: var(--primary-blue);"></i> Check In <small style="color: #94a3b8; font-weight: normal;">(From 12 PM)</small></label>
         <input type="date" id="checkIn" name="checkIn" class="form-control-custom">
       </div>
       <div class="form-group-custom">
-        <label><i class="far fa-calendar-alt"></i> Check Out <span style="font-size: 10px; color: #777; font-weight: normal;">(By 10:00 AM)</span></label>
+        <label style="font-weight: 700; color: #334155; font-size: 13px;"><i class="far fa-calendar-alt" style="color: var(--primary-blue);"></i> Check Out <small style="color: #94a3b8; font-weight: normal;">(By 10 AM)</small></label>
         <input type="date" id="checkOut" name="checkOut" class="form-control-custom">
       </div>
       <div class="form-group-custom">
-        <label><i class="fas fa-users"></i> Guests</label>
+        <label style="font-weight: 700; color: #334155; font-size: 13px;"><i class="fas fa-users" style="color: var(--primary-blue);"></i> Guests</label>
         <select name="guests" class="form-control-custom">
           <option value="1">1 Guest</option>
           <option value="2" selected>2 Guests</option>
           <option value="3">3 Guests</option>
-          <option value="4">4+ Family</option>
+          <option value="4">4+ Family Stay</option>
         </select>
       </div>
       <div class="form-group-custom">
-        <label><i class="fas fa-door-open"></i> Room Type</label>
+        <label style="font-weight: 700; color: #334155; font-size: 13px;"><i class="fas fa-door-open" style="color: var(--primary-blue);"></i> Room Category</label>
         <select name="category" class="form-control-custom">
-          <option value="All">All Rooms</option>
+          <option value="All">All Categories</option>
           <option value="Super Deluxe">Super Deluxe</option>
           <option value="Classic">Classic Valley</option>
         </select>
       </div>
       <div>
-        <button type="submit" class="btn-blue search-btn-submit" style="width: 100%; text-align: center; border: none; padding: 14px;"><i class="fas fa-search"></i> Check Availability</button>
+        <button type="submit" class="btn-blue search-btn-submit" style="width: 100%; text-align: center; border: none; padding: 14px; border-radius: 8px; font-weight: bold;"><i class="fas fa-search"></i> Check Availability</button>
       </div>
     </form>
   </div>
 </div>
 
-<!-- Trust Strip -->
-<div class="trust-strip">
+<!-- Direct Booking Benefits Strip -->
+<div class="trust-strip" style="background: #ffffff; padding: 25px 0; border-bottom: 1px solid #e2e8f0; margin-bottom: 40px;">
   <div class="container">
-    <div class="trust-strip-grid">
-      <div class="trust-item">
-        <i class="fas fa-mountain"></i>
-        <span><strong>32,400 sq. ft.</strong> Hillside Property in Garhwal Himalayas</span>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center;">
+      <div style="display: flex; gap: 12px; align-items: center; justify-content: center;">
+        <i class="fas fa-tags" style="font-size: 22px; color: var(--primary-blue);"></i>
+        <span style="font-size: 13.5px; color: #334155;"><strong>Flat 10% Discount</strong> on Direct Booking</span>
       </div>
-      <div class="trust-item">
-        <i class="fas fa-award"></i>
-        <span>Independently Owned & Run — Established <strong>15 April 2023</strong></span>
+      <div style="display: flex; gap: 12px; align-items: center; justify-content: center;">
+        <i class="fas fa-cocktail" style="font-size: 22px; color: #f59e0b;"></i>
+        <span style="font-size: 13.5px; color: #334155;"><strong>Free Welcome Drink</strong> on Arrival</span>
       </div>
-      <div class="trust-item">
-        <i class="fas fa-fire"></i>
-        <span>Multi-Cuisine Restaurant & <strong>200-Guest Banquet Hall</strong> with Bonfire & DJ Evenings</span>
+      <div style="display: flex; gap: 12px; align-items: center; justify-content: center;">
+        <i class="fas fa-utensils" style="font-size: 22px; color: #22c55e;"></i>
+        <span style="font-size: 13.5px; color: #334155;"><strong>10% Off</strong> Dining & Room Service</span>
       </div>
-      <div class="trust-item">
-        <i class="fas fa-wifi"></i>
-        <span><strong>Free High-Speed Wi-Fi</strong> & Private Balcony in Every Room</span>
+      <div style="display: flex; gap: 12px; align-items: center; justify-content: center;">
+        <i class="fas fa-wifi" style="font-size: 22px; color: #0284c7;"></i>
+        <span style="font-size: 13.5px; color: #334155;"><strong>Free High-Speed Wi-Fi</strong> & Parking</span>
       </div>
     </div>
   </div>
 </div>
 
 <!-- Why Choose Flutter Section -->
-<section class="section-padding">
+<section class="section-padding" style="padding: 50px 0;">
   <div class="container">
     <div class="responsive-two-col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
       <div>
-        <span class="section-subtitle" style="text-align: left;">Why Choose Flutter</span>
-        <h2 class="section-title" style="text-align: left; font-size: 36px;">A Hillside Stay Built Around Real Comforts</h2>
-        <p style="color: var(--text-muted); margin-bottom: 25px; font-size: 15px; line-height: 1.8;">
-          Here’s exactly what you get when you book directly with <strong>Flutter Hotels & Resorts</strong> in Lansdowne:
+        <span class="section-subtitle" style="text-align: left;">32,400 Sq. Ft. Sanctuary</span>
+        <h2 class="section-title" style="text-align: left; font-size: 34px;">A Hillside Sanctuary Built Around Comfort</h2>
+        <p style="color: #64748b; margin-bottom: 25px; font-size: 15.5px; line-height: 1.8;">
+          Established on <strong>15 April 2023</strong> by <strong>Bikram Gupta</strong>, Flutter Hotels & Resorts offers pristine tranquility in Lansdowne.
         </p>
         
-        <div style="display: grid; grid-template-columns: 1fr; gap: 15px; margin-bottom: 30px;">
+        <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 30px;">
           <div style="display: flex; gap: 14px; align-items: flex-start;">
-            <i class="fas fa-check-circle" style="font-size: 20px; color: var(--primary-blue); margin-top: 3px;"></i>
+            <i class="fas fa-circle-check" style="font-size: 20px; color: #22c55e; margin-top: 3px;"></i>
             <div>
-              <h5 style="margin: 0; font-weight: 600; font-size: 16px;">Private Balconies</h5>
-              <span style="font-size: 14px; color: var(--text-muted);">Private balconies in every room, most with valley views over the Garhwal hills.</span>
+              <h5 style="margin: 0; font-weight: 700; font-size: 16px; color: var(--dark-bg);">Private Balcony in All Rooms</h5>
+              <span style="font-size: 14px; color: #64748b;">Private balconies with floor-to-ceiling Himalayan and pine valley views.</span>
             </div>
           </div>
           <div style="display: flex; gap: 14px; align-items: flex-start;">
-            <i class="fas fa-utensils" style="font-size: 20px; color: var(--primary-blue); margin-top: 3px;"></i>
+            <i class="fas fa-utensils" style="font-size: 20px; color: #22c55e; margin-top: 3px;"></i>
             <div>
-              <h5 style="margin: 0; font-weight: 600; font-size: 16px;">On-Site Multi-Cuisine Dining</h5>
-              <span style="font-size: 14px; color: var(--text-muted);">Freshly prepared multi-cuisine breakfast, lunch, and dinner.</span>
+              <h5 style="margin: 0; font-weight: 700; font-size: 16px; color: var(--dark-bg);">Multi-Cuisine Restaurant & Valley Dining</h5>
+              <span style="font-size: 14px; color: #64748b;">Freshly cooked Garhwali delicacies, North Indian, Chinese & Continental dining.</span>
             </div>
           </div>
           <div style="display: flex; gap: 14px; align-items: flex-start;">
-            <i class="fas fa-fire" style="font-size: 20px; color: var(--primary-blue); margin-top: 3px;"></i>
+            <i class="fas fa-fire" style="font-size: 20px; color: #22c55e; margin-top: 3px;"></i>
             <div>
-              <h5 style="margin: 0; font-weight: 600; font-size: 16px;">Bonfire & DJ Evenings</h5>
-              <span style="font-size: 14px; color: var(--text-muted);">Outdoor lawns strung with fairy lights — ideal for groups, celebrations, and reunions.</span>
-            </div>
-          </div>
-          <div style="display: flex; gap: 14px; align-items: flex-start;">
-            <i class="fas fa-users" style="font-size: 20px; color: var(--primary-blue); margin-top: 3px;"></i>
-            <div>
-              <h5 style="margin: 0; font-weight: 600; font-size: 16px;">Banquet Hall for 200 Guests</h5>
-              <span style="font-size: 14px; color: var(--text-muted);">Perfect for weddings, corporate offsites, and family functions.</span>
-            </div>
-          </div>
-          <div style="display: flex; gap: 14px; align-items: flex-start;">
-            <i class="fas fa-gamepad" style="font-size: 20px; color: var(--primary-blue); margin-top: 3px;"></i>
-            <div>
-              <h5 style="margin: 0; font-weight: 600; font-size: 16px;">Indoor Games & Kids Play Zone</h5>
-              <span style="font-size: 14px; color: var(--text-muted);">Dedicated recreation space for family stays and children.</span>
+              <h5 style="margin: 0; font-weight: 700; font-size: 16px; color: var(--dark-bg);">Nightly Bonfire & Music Evenings</h5>
+              <span style="font-size: 14px; color: #64748b;">Outdoor lawns strung with fairy lights — ideal for families, reunions & offsites.</span>
             </div>
           </div>
         </div>
 
-        <a href="/contact" class="btn-outline-blue">Contact Our Concierge</a>
+        <a href="/about-us" class="btn-outline-blue" style="padding: 12px 28px; font-weight: bold; border-radius: 8px;">
+          <i class="fas fa-hotel"></i> Read Our Story & Legacy
+        </a>
       </div>
 
       <div>
-        <img src="/images/hotel-img-3.jpg" alt="Flutter Hotels Lawns and Resort View" style="width: 100%; border-radius: 12px; box-shadow: var(--shadow-lg);">
+        <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+          <img src="/images/about-hotel-banner.jpg" alt="Flutter Hotels & Resorts Lansdowne Main Facade" style="width: 100%; height: 420px; object-fit: cover;">
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Luxury Rooms Teaser Section -->
-<section class="section-padding" style="background: var(--light-bg);">
+<!-- Luxury Rooms Showcase -->
+<section class="section-padding" style="background: #f8fafc; padding: 60px 0;">
   <div class="container">
-    <div class="section-header">
+    <div style="text-align: center; max-width: 750px; margin: 0 auto 50px;">
       <span class="section-subtitle">Luxury Accommodations</span>
-      <h2 class="section-title">Suites Built Around Himalayan Views</h2>
-      <p style="color: var(--text-muted);">Three distinct room categories, each offering a private balcony, king bed, and panoramic Garhwal views.</p>
-      <div class="title-line-divider" style="margin-top: 15px;"></div>
+      <h2 class="section-title">Rooms Built Around Himalayan Vistas</h2>
+      <p style="color: #64748b; font-size: 15px;">
+        Three room categories, one common luxury: private balcony, king bed, and uninterrupted valley views.
+      </p>
     </div>
 
-    <div class="luxury-rooms-grid">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
       <% rooms.forEach((room, idx) => { %>
-        <div class="luxury-room-card">
-          <div class="room-img-container">
-            <img src="<%= room.image %>" alt="<%= room.name %>" class="room-img">
+        <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
+          
+          <!-- Image Box with Badge -->
+          <div style="position: relative; height: 240px; overflow: hidden;">
+            <img src="<%= room.image %>" alt="<%= room.name %>" style="width: 100%; height: 100%; object-fit: cover;">
             
-            <!-- Category Tag -->
-            <span class="room-tag-badge">
-              <% if (idx === 0) { %><i class="fas fa-crown"></i> Most Popular<% } else if (idx === 1) { %><i class="fas fa-tree"></i> Resort Lawns<% } else { %><i class="fas fa-gem"></i> Best Value<% } %>
+            <% if (room.badge) { %>
+              <span style="position: absolute; top: 15px; left: 15px; background: rgba(15, 23, 42, 0.85); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; backdrop-filter: blur(4px);">
+                <i class="fas fa-crown"></i> <%= room.badge %>
+              </span>
+            <% } %>
+
+            <span style="position: absolute; bottom: 15px; right: 15px; background: var(--primary-blue); color: #ffffff; padding: 6px 16px; border-radius: 20px; font-size: 14px; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+              ₹<%= room.price.toLocaleString() %> <small style="font-size: 11px; font-weight: normal;">/ Night</small>
             </span>
+          </div>
 
-            <!-- Price Tag Overlay -->
-            <div class="room-price-overlay">
-              <span class="price-val">₹<%= room.price.toLocaleString() %></span>
-              <span class="price-unit">/ Night</span>
+          <!-- Content Body -->
+          <div style="padding: 26px; flex-grow: 1; display: flex; flex-direction: column;">
+            <h3 style="font-size: 21px; color: var(--dark-bg); margin-bottom: 12px; font-family: 'Cinzel', serif;"><%= room.name %></h3>
+
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 15px;">
+              <span style="background: #f1f5f9; color: #334155; padding: 4px 10px; border-radius: 20px; font-size: 11.5px; font-weight: 600;">
+                <i class="fas fa-bed" style="color: var(--primary-blue);"></i> <%= room.bed %>
+              </span>
+              <span style="background: #f1f5f9; color: #334155; padding: 4px 10px; border-radius: 20px; font-size: 11.5px; font-weight: 600;">
+                <i class="fas fa-ruler-combined" style="color: var(--primary-blue);"></i> <%= room.size %>
+              </span>
+              <span style="background: #f1f5f9; color: #334155; padding: 4px 10px; border-radius: 20px; font-size: 11.5px; font-weight: 600;">
+                <i class="fas fa-mountain" style="color: var(--primary-blue);"></i> <%= room.view %>
+              </span>
+            </div>
+
+            <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;"><%= room.description %></p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+              <a href="/rooms/<%= room.slug || room.id %>" class="btn-outline-blue" style="padding: 10px 0; font-size: 12.5px; text-align: center; font-weight: bold; border-radius: 8px;">
+                <i class="fas fa-info-circle"></i> View Details
+              </a>
+              <a href="/checkout?room=<%= room.slug || room.id %>" class="btn-blue" style="padding: 10px 0; font-size: 12.5px; text-align: center; font-weight: bold; border-radius: 8px;">
+                <i class="fas fa-calendar-check"></i> Book Now
+              </a>
             </div>
           </div>
 
-          <div class="room-card-content">
-            <h3 class="luxury-room-title"><%= room.name %></h3>
-
-            <!-- Specs Grid Pills -->
-            <div class="specs-pills-row">
-              <div class="spec-pill"><i class="fas fa-bed"></i> <%= room.bed %></div>
-              <div class="spec-pill"><i class="fas fa-vector-square"></i> <%= room.size %></div>
-              <div class="spec-pill"><i class="fas fa-mountain"></i> <%= room.view %></div>
-            </div>
-
-            <p class="luxury-room-desc"><%= room.description %></p>
-
-            <!-- Amenities Quick Bar -->
-            <div class="amenities-quick-bar">
-              <span><i class="fas fa-wifi"></i> Free Wi-Fi</span>
-              <span><i class="fas fa-mug-hot"></i> Coffee Maker</span>
-              <span><i class="fas fa-tv"></i> 32" TV</span>
-              <span><i class="fas fa-door-open"></i> Private Balcony</span>
-            </div>
-
-            <!-- Card Actions -->
-            <div class="room-action-footer">
-              <a href="/rooms/<%= room.id %>" class="btn-card-outline"><i class="fas fa-circle-info"></i> Specs & FAQs</a>
-              <a href="/rooms/<%= room.id %>" class="btn-card-primary"><i class="fas fa-calendar-check"></i> Book Room</a>
-            </div>
-          </div>
         </div>
       <% }); %>
     </div>
 
-    <div style="text-align: center; margin-top: 50px;">
-      <a href="/rooms" class="btn-blue" style="padding: 14px 38px; font-size: 15px;"><i class="fas fa-layer-group"></i> View All Accommodations & Pricing</a>
+    <div style="text-align: center; margin-top: 45px;">
+      <a href="/rooms" class="btn-blue" style="padding: 14px 38px; font-size: 15px; font-weight: bold; border-radius: 8px;">
+        <i class="fas fa-layer-group"></i> Explore All Rooms & Rates
+      </a>
     </div>
   </div>
 </section>
 
 <!-- Offers & Packages Banner -->
-<section class="parallax-banner">
-  <div class="container">
-    <span class="hero-subtitle">Special Packages</span>
-    <h2 style="font-size: 40px; margin-bottom: 20px; color: #ffffff;">Save on Your Stay with Our Direct Offers</h2>
-    <p style="max-width: 750px; margin: 0 auto 30px; font-size: 16px; color: #e2e8f0;">
-      From 20% off weekday stays with a free dinner included, to our <strong>₹4,999/person 2N/3D group departure</strong> from Delhi — there’s a package for every kind of trip to Lansdowne.
+<section style="background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.88)), url('/images/dining-valley-table.webp'); background-size: cover; background-position: center; padding: 80px 0; color: #ffffff; text-align: center;">
+  <div class="container" style="max-width: 850px;">
+    <span style="background: rgba(245, 158, 11, 0.25); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 15px;">
+      Special Packages & Offers
+    </span>
+    <h2 style="font-size: 40px; margin-bottom: 16px; color: #ffffff; font-family: 'Cinzel', serif;">Save More With Direct Package Deals</h2>
+    <p style="margin: 0 auto 30px; font-size: 16.5px; color: #cbd5e1; line-height: 1.7;">
+      From romantic candlelight dinner packages to our <strong>₹4,999/person 2N/3D Delhi group departure</strong> — experience Lansdowne with zero hassle.
     </p>
-    <a href="/offers" class="btn-blue" style="font-size: 16px; padding: 14px 36px;"><i class="fas fa-tags"></i> View All Offers & Packages</a>
+    <a href="/packages" class="btn-blue pulsing-btn" style="font-size: 15px; padding: 14px 36px; font-weight: bold; border-radius: 8px;">
+      <i class="fas fa-tags"></i> View All Packages & Offers
+    </a>
   </div>
 </section>
 
 <!-- Guest Reviews Section -->
-<section class="section-padding">
+<section class="section-padding" style="padding: 60px 0;">
   <div class="container">
-    <div class="section-header">
-      <span class="section-subtitle">Guest Reviews</span>
+    <div style="text-align: center; max-width: 750px; margin: 0 auto 45px;">
+      <span class="section-subtitle">Verified Guest Reviews</span>
       <h2 class="section-title">What Our Guests Say</h2>
-      <p style="color: var(--text-muted);">
-        Flutter Hotels & Resorts opened in April 2023 — here’s what our guests have said about their stay with us in Lansdowne.
-      </p>
-      <div class="title-line-divider" style="margin-top: 15px;"></div>
+      <p style="color: #64748b; font-size: 15px;">Real experiences shared by guests who stayed at Flutter Hotels & Resorts, Lansdowne.</p>
     </div>
 
-    <div class="reviews-grid">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
       <% reviews.forEach(review => { %>
-        <div class="review-card">
-          <div class="review-stars">
+        <div style="background: #ffffff; padding: 30px; border-radius: 14px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04); display: flex; flex-direction: column;">
+          <div style="color: #f59e0b; margin-bottom: 12px; font-size: 15px;">
             <% for(let i=0; i<review.rating; i++) { %>
               <i class="fas fa-star"></i>
             <% } %>
           </div>
-          <p class="review-text">"<%= review.text %>"</p>
-          <div class="review-author"><%= review.author %> — <span style="font-weight: 400; color: #888;"><%= review.location %></span></div>
+          <p style="color: #334155; font-size: 14.5px; line-height: 1.7; font-style: italic; margin-bottom: 20px; flex-grow: 1;">"<%= review.text %>"</p>
+          <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid #f1f5f9;">
+            <div>
+              <strong style="color: var(--dark-bg); font-size: 14px; display: block;"><%= review.author %></strong>
+              <span style="font-size: 12px; color: #64748b;"><%= review.location %></span>
+            </div>
+            <span style="background: #e0f2fe; color: #0284c7; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: bold;"><i class="fas fa-circle-check"></i> Verified Guest</span>
+          </div>
         </div>
       <% }); %>
     </div>
   </div>
 </section>
 
-<!-- Things To Do Teaser -->
-<section class="section-padding" style="background: var(--light-bg);">
+<!-- Lansdowne Sightseeing Section -->
+<section class="section-padding" style="background: #f8fafc; padding: 60px 0;">
   <div class="container">
-    <div class="responsive-two-col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
-      <div>
-        <img src="/images/hotel-img-4.jpeg" alt="Lansdowne Sightseeing" style="width: 100%; border-radius: 12px; box-shadow: var(--shadow-lg);">
+    <div style="text-align: center; max-width: 750px; margin: 0 auto 40px;">
+      <span class="section-subtitle">Surrounding Attractions</span>
+      <h2 class="section-title">Explore Lansdowne Sightseeing</h2>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 40px;">
+      <div style="position: relative; height: 240px; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.06); border: 1px solid #e2e8f0;">
+        <img src="/images/tip-n-top.jpg" alt="Tip-n-Top Sunset Point" style="width: 100%; height: 100%; object-fit: cover;">
+        <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.85); color: #fff; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; backdrop-filter: blur(4px);">
+          <i class="fas fa-mountain"></i> Tip-n-Top Viewpoint
+        </span>
       </div>
-      <div>
-        <span class="section-subtitle" style="text-align: left;">Explore Lansdowne</span>
-        <h2 class="section-title" style="text-align: left; font-size: 36px;">More Than Just a Place to Stay</h2>
-        <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 15px; line-height: 1.8;">
-          Step outside and explore Tarkeshwar Mahadev Temple, watch sunrise from Tip-in-Top Point, or spend an afternoon boating on Bhulla Tal Lake — all within easy reach of the resort.
-        </p>
-        <a href="/things-to-do" class="btn-blue"><i class="fas fa-map-marked-alt"></i> Explore Things To Do</a>
+
+      <div style="position: relative; height: 240px; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.06); border: 1px solid #e2e8f0;">
+        <img src="/images/bhulla-lake.jpg" alt="Bhulla Lake Lansdowne" style="width: 100%; height: 100%; object-fit: cover;">
+        <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.85); color: #fff; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; backdrop-filter: blur(4px);">
+          <i class="fas fa-water"></i> Bhulla Tal Boating Lake
+        </span>
       </div>
+
+      <div style="position: relative; height: 240px; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.06); border: 1px solid #e2e8f0;">
+        <img src="/images/tarkeshwar-mahadev.jpg" alt="Tarkeshwar Mahadev Temple" style="width: 100%; height: 100%; object-fit: cover;">
+        <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.85); color: #fff; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; backdrop-filter: blur(4px);">
+          <i class="fas fa-gopuram"></i> Tarkeshwar Mahadev Temple
+        </span>
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <a href="/things-to-do" class="btn-outline-blue" style="padding: 12px 30px; font-weight: bold; border-radius: 8px;">
+        <i class="fas fa-map-marked-alt"></i> View Complete Lansdowne Sightseeing Guide
+      </a>
     </div>
   </div>
 </section>
 
 <!-- Celebrations / Events Teaser -->
-<section class="section-padding">
+<section class="section-padding" style="padding: 60px 0;">
   <div class="container">
-    <div style="background: var(--dark-bg); color: #ffffff; padding: 60px 40px; border-radius: 16px; text-align: center; background-image: linear-gradient(rgba(26, 38, 56, 0.88), rgba(26, 38, 56, 0.88)), url('/images/hotel-img-8.jpg'); background-size: cover; background-position: center;">
-      <span style="color: var(--primary-blue); text-transform: uppercase; letter-spacing: 3px; font-weight: 600; font-size: 14px;">Events & Weddings</span>
-      <h2 style="font-size: 38px; color: #ffffff; margin: 10px 0 15px;">Celebrate Your Big Day With Us</h2>
-      <p style="max-width: 750px; margin: 0 auto 30px; color: #cbd5e1; font-size: 16px;">
-        Our banquet hall seats up to <strong>200 guests</strong>, and our outdoor lawns with fairy lights set the scene for weddings, birthdays, anniversaries and reunions — with catering handled in-house by our multi-cuisine restaurant.
+    <div style="background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.88)), url('/images/destination-wedding-decor.jpg'); background-size: cover; background-position: center; color: #ffffff; padding: 60px 40px; border-radius: 16px; text-align: center; box-shadow: 0 10px 35px rgba(0,0,0,0.12);">
+      <span style="background: rgba(245, 158, 11, 0.25); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 15px;">
+        Weddings & Celebrations
+      </span>
+      <h2 style="font-size: 38px; color: #ffffff; margin: 10px 0 15px; font-family: 'Cinzel', serif;">Celebrate Your Big Day With Us</h2>
+      <p style="max-width: 750px; margin: 0 auto 30px; color: #cbd5e1; font-size: 16px; line-height: 1.7;">
+        Our 200-guest banquet hall and fairy-lit outdoor lawns set the scene for weddings, birthdays, anniversaries, and reunions — with in-house catering by our multi-cuisine restaurant.
       </p>
-      <a href="/offers/wedding-celebration-package" class="btn-blue" style="padding: 14px 36px; font-size: 16px;"><i class="fas fa-glass-cheers"></i> Plan Your Celebration</a>
+      <a href="/celebrations" class="btn-blue pulsing-btn" style="padding: 14px 36px; font-size: 15px; font-weight: bold; border-radius: 8px;">
+        <i class="fas fa-glass-cheers"></i> Plan Your Destination Event
+      </a>
     </div>
   </div>
 </section>
