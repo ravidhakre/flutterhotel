@@ -1,85 +1,223 @@
 <%- include('partials/header') %>
 
-<!-- Page Header Banner -->
-<div style="background: linear-gradient(rgba(26, 38, 56, 0.75), rgba(26, 38, 56, 0.75)), url('/images/hotel-img-4.jpeg') center/cover; padding: 70px 0; text-align: center; color: #fff;">
-  <div class="container">
-    <h1 style="font-size: 42px; margin-bottom: 10px; color: #ffffff;">Things To Do In Lansdowne</h1>
-    <p style="color: var(--primary-blue); letter-spacing: 2px; text-transform: uppercase; font-weight: 600;">
-      A quiet hill station with a handful of unmissable stops — all within easy reach of the resort.
+<!-- Things To Do Hero Banner -->
+<div style="background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('/images/tip-n-top.jpg') center/cover no-repeat; padding: 85px 0 65px; text-align: center; color: #fff;">
+  <div class="container" style="max-width: 900px;">
+    <span style="background: rgba(245, 158, 11, 0.25); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 15px;">
+      Explore Lansdowne
+    </span>
+    <h1 style="font-size: 42px; margin-bottom: 12px; color: #ffffff; font-family: 'Cinzel', serif;">Top Things To Do in Lansdowne</h1>
+    <p style="color: #cbd5e1; font-size: 16px; line-height: 1.7; max-width: 750px; margin: 0 auto 25px;">
+      From serene alpine lakes and historic colonial churches to ancient temples and panoramic Himalayan sunrise viewpoints — explore the best attractions surrounding Flutter Hotels & Resorts.
     </p>
+    <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20book%20a%20local%20sightseeing%20cab%20tour%20in%20Lansdowne." target="_blank" class="btn-blue pulsing-btn" style="padding: 13px 30px; font-size: 14px; font-weight: bold;">
+      <i class="fas fa-car-side"></i> Book Sightseeing Cab Tour
+    </a>
   </div>
 </div>
 
-<section class="section-padding">
+<section class="section-padding" style="background: #f8fafc; padding: 60px 0;">
   <div class="container">
-    <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 50px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
-      Lansdowne rewards slow travel. Beyond the resort, you’ll find temples, viewpoints, a colonial-era church, a war memorial, a waterfall and a lake — each an easy trip from Flutter Hotels & Resorts.
-    </p>
+    
+    <div style="text-align: center; max-width: 700px; margin: 0 auto 50px;">
+      <span class="section-subtitle">Sightseeing Guide</span>
+      <h2 class="section-title">Must-Visit Attractions & Activities</h2>
+      <p style="color: #64748b; font-size: 15px;">
+        All popular Lansdowne attractions are conveniently accessible from Flutter Hotels & Resorts. Our concierge team can arrange private cabs, guided walks, and custom sightseeing itineraries.
+      </p>
+    </div>
 
     <!-- Attractions Grid -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 60px;">
+    <div style="display: flex; flex-direction: column; gap: 40px;">
       
-      <div style="background: #fff; border-radius: 12px; border: 1.5px solid #e2e8f0; overflow: hidden; box-shadow: var(--shadow-sm);">
-        <img src="/images/hotel-img-6.jpg" alt="Tarkeshwar Mahadev Temple" style="width: 100%; height: 200px; object-fit: cover;">
-        <div style="padding: 25px;">
-          <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px;">Tarkeshwar Mahadev Temple</h3>
-          <p style="color: var(--text-muted); font-size: 14px;">A revered Shiva temple set among pine and cedar trees — a peaceful stop for morning darshan or a quiet walk.</p>
+      <!-- Attraction 1: Tip-in-Top Viewpoint -->
+      <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: grid; grid-template-columns: 1fr 1.2fr;" class="responsive-two-col">
+        <div style="height: 100%; min-height: 300px; position: relative;">
+          <img src="/images/tip-n-top.jpg" alt="Tip-in-Top Viewpoint Lansdowne" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; top: 15px; left: 15px; background: var(--primary-blue); color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: bold;">
+            <i class="fas fa-mountain"></i> Viewpoint
+          </span>
+        </div>
+        <div style="padding: 35px; display: flex; flex-direction: column; justify-content: center;">
+          <div style="display: flex; gap: 15px; font-size: 13px; color: #0284c7; font-weight: bold; margin-bottom: 8px;">
+            <span><i class="fas fa-route"></i> 5 km from Resort</span>
+            <span><i class="fas fa-clock"></i> 1 - 2 Hours</span>
+          </div>
+          <h3 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 12px;">1. Tip-in-Top (Tiffin Top) Viewpoint</h3>
+          <p style="color: #475569; font-size: 14.5px; line-height: 1.7; margin-bottom: 18px;">
+            Situated at the highest point in Lansdowne (approx. 1,700 meters above sea level), Tip-in-Top offers breathtaking 360-degree panoramic views of the snow-capped Himalayan range and deep Garhwal valleys. It is the most popular sunrise and sunset spot in Lansdowne.
+          </p>
+          <div style="background: #f8fafc; padding: 12px 16px; border-radius: 8px; border-left: 3px solid var(--primary-blue); font-size: 13px; color: #334155; margin-bottom: 20px;">
+            <strong>Insider Tip:</strong> Visit early in the morning around 6:00 AM for clear, unobstructed views of the Trishul and Chaukhamba Himalayan peaks.
+          </div>
+          <div>
+            <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20book%20a%20cab%20to%20Tip-in-Top%20Viewpoint." target="_blank" class="btn-outline-blue" style="padding: 10px 20px; font-size: 13px;">
+              <i class="fab fa-whatsapp"></i> Book Cab to Tip-in-Top
+            </a>
+          </div>
         </div>
       </div>
 
-      <div style="background: #fff; border-radius: 12px; border: 1.5px solid #e2e8f0; overflow: hidden; box-shadow: var(--shadow-sm);">
-        <img src="/images/hotel-img-1.jpg" alt="Tip-in-Top Point" style="width: 100%; height: 200px; object-fit: cover;">
-        <div style="padding: 25px;">
-          <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px;">Tip-in-Top Point (Tiffin Top)</h3>
-          <p style="color: var(--text-muted); font-size: 14px;">Lansdowne’s well-known viewpoint for sunrise and sunset, with sweeping views over the surrounding Garhwal hills.</p>
+      <!-- Attraction 2: Bhulla Tal Lake -->
+      <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: grid; grid-template-columns: 1.2fr 1fr;" class="responsive-two-col">
+        <div style="padding: 35px; display: flex; flex-direction: column; justify-content: center; order: 1;" class="order-mobile-2">
+          <div style="display: flex; gap: 15px; font-size: 13px; color: #0284c7; font-weight: bold; margin-bottom: 8px;">
+            <span><i class="fas fa-route"></i> 4 km from Resort</span>
+            <span><i class="fas fa-clock"></i> 1.5 - 2 Hours</span>
+          </div>
+          <h3 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 12px;">2. Bhulla Tal Lake & Herbal Park</h3>
+          <p style="color: #475569; font-size: 14.5px; line-height: 1.7; margin-bottom: 18px;">
+            Bhulla Tal is a serene man-made lake dedicated to the young Garhwali soldiers ('Bhulla' meaning younger brother in Garhwali) of the Garhwal Rifles. Surrounded by oak trees, it features paddle boating, a duck enclosure, a bamboo bridge, a children's park, and a lovely herbal garden cafe.
+          </p>
+          <div style="background: #f8fafc; padding: 12px 16px; border-radius: 8px; border-left: 3px solid #22c55e; font-size: 13px; color: #334155; margin-bottom: 20px;">
+            <strong>Activities:</strong> Paddle boating, nature walks, feeding ducks, souvenir shopping at the Garhwali handicrafts shop.
+          </div>
+          <div>
+            <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20book%20a%20visit%20to%20Bhulla%20Tal%20Lake." target="_blank" class="btn-outline-blue" style="padding: 10px 20px; font-size: 13px;">
+              <i class="fab fa-whatsapp"></i> Plan Bhulla Lake Visit
+            </a>
+          </div>
+        </div>
+        <div style="height: 100%; min-height: 300px; position: relative; order: 2;" class="order-mobile-1">
+          <img src="/images/bhulla-lake.jpg" alt="Bhulla Tal Lake Lansdowne" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; top: 15px; right: 15px; background: #0284c7; color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: bold;">
+            <i class="fas fa-water"></i> Lake & Boating
+          </span>
         </div>
       </div>
 
-      <div style="background: #fff; border-radius: 12px; border: 1.5px solid #e2e8f0; overflow: hidden; box-shadow: var(--shadow-sm);">
-        <img src="/images/hotel-img-7.jpg" alt="St. Mary’s Church" style="width: 100%; height: 200px; object-fit: cover;">
-        <div style="padding: 25px;">
-          <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px;">St. Mary’s Church</h3>
-          <p style="color: var(--text-muted); font-size: 14px;">Built in 1895, this colonial-era church is one of Lansdowne’s oldest landmarks — worth a visit for its history and architecture.</p>
+      <!-- Attraction 3: St. Mary's & St. John's Church -->
+      <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: grid; grid-template-columns: 1fr 1.2fr;" class="responsive-two-col">
+        <div style="height: 100%; min-height: 300px; position: relative;">
+          <img src="/images/st-marys-church.jpg" alt="St Mary's Church Lansdowne" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; top: 15px; left: 15px; background: #8b5cf6; color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: bold;">
+            <i class="fas fa-church"></i> Colonial Heritage
+          </span>
+        </div>
+        <div style="padding: 35px; display: flex; flex-direction: column; justify-content: center;">
+          <div style="display: flex; gap: 15px; font-size: 13px; color: #0284c7; font-weight: bold; margin-bottom: 8px;">
+            <span><i class="fas fa-route"></i> 4.5 km from Resort</span>
+            <span><i class="fas fa-clock"></i> 45 Mins</span>
+          </div>
+          <h3 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 12px;">3. St. Mary's & St. John's Colonial Churches</h3>
+          <p style="color: #475569; font-size: 14.5px; line-height: 1.7; margin-bottom: 18px;">
+            Constructed in 1895 during the British era by Colonel A.H.B. Hume, St. Mary's Church is a stunning stone structure with stained glass windows and Victorian architecture. Nearby St. John's Church (built in 1936) is the only operational church in Lansdowne, nestled amidst towering pine trees.
+          </p>
+          <div style="background: #f8fafc; padding: 12px 16px; border-radius: 8px; border-left: 3px solid #8b5cf6; font-size: 13px; color: #334155; margin-bottom: 20px;">
+            <strong>Audio-Visual Show:</strong> St. Mary's Church houses a small museum showcasing pre-independence photographs and documentary videos on Lansdowne's history.
+          </div>
+          <div>
+            <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20visit%20St.%20Mary's%20Church." target="_blank" class="btn-outline-blue" style="padding: 10px 20px; font-size: 13px;">
+              <i class="fab fa-whatsapp"></i> Explore Heritage Sites
+            </a>
+          </div>
         </div>
       </div>
 
-      <div style="background: #fff; border-radius: 12px; border: 1.5px solid #e2e8f0; overflow: hidden; box-shadow: var(--shadow-sm);">
-        <img src="/images/hotel-img-8.jpg" alt="Garhwal Rifles War Memorial" style="width: 100%; height: 200px; object-fit: cover;">
-        <div style="padding: 25px;">
-          <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px;">Garhwal Rifles Regimental War Memorial</h3>
-          <p style="color: var(--text-muted); font-size: 14px;">A memorial honouring the Garhwal Rifles regiment — a meaningful stop for anyone interested in military history.</p>
+      <!-- Attraction 4: Garhwal Rifles Regimental Museum -->
+      <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: grid; grid-template-columns: 1.2fr 1fr;" class="responsive-two-col">
+        <div style="padding: 35px; display: flex; flex-direction: column; justify-content: center; order: 1;" class="order-mobile-2">
+          <div style="display: flex; gap: 15px; font-size: 13px; color: #0284c7; font-weight: bold; margin-bottom: 8px;">
+            <span><i class="fas fa-route"></i> 4 km from Resort</span>
+            <span><i class="fas fa-clock"></i> 1 Hour</span>
+          </div>
+          <h3 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 12px;">4. Garhwal Rifles Regimental Museum & War Memorial</h3>
+          <p style="color: #475569; font-size: 14.5px; line-height: 1.7; margin-bottom: 18px;">
+            Lansdowne is the command cantonment headquarters of the famed Garhwal Rifles Regiment of the Indian Army. The Darwan Singh Sangrahalaya (Regimental Museum) showcases rare military weapons, war trophies, historical uniforms, and bravery medals dating back to World War I & II.
+          </p>
+          <div style="background: #f8fafc; padding: 12px 16px; border-radius: 8px; border-left: 3px solid #f59e0b; font-size: 13px; color: #334155; margin-bottom: 20px;">
+            <strong>Timings:</strong> 9:00 AM – 12:00 PM & 3:30 PM – 5:30 PM (Closed on Wednesdays). Formal attire recommended.
+          </div>
+          <div>
+            <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20visit%20the%20Garhwal%20Rifles%20Museum." target="_blank" class="btn-outline-blue" style="padding: 10px 20px; font-size: 13px;">
+              <i class="fab fa-whatsapp"></i> Plan Museum Visit
+            </a>
+          </div>
+        </div>
+        <div style="height: 100%; min-height: 300px; position: relative; order: 2;" class="order-mobile-1">
+          <img src="/images/garhwal-rifles-museum.jpg" alt="Garhwal Rifles Museum Lansdowne" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; top: 15px; right: 15px; background: #f59e0b; color: #0f172a; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: bold;">
+            <i class="fas fa-shield-halved"></i> Military History
+          </span>
         </div>
       </div>
 
-      <div style="background: #fff; border-radius: 12px; border: 1.5px solid #e2e8f0; overflow: hidden; box-shadow: var(--shadow-sm);">
-        <img src="/images/hotel-img-9.jpeg" alt="Bhalugarh Waterfalls" style="width: 100%; height: 200px; object-fit: cover;">
-        <div style="padding: 25px;">
-          <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px;">Bhalugarh Waterfalls</h3>
-          <p style="color: var(--text-muted); font-size: 14px;">A scenic waterfall on the outskirts of town, a good half-day trip for those who enjoy a short trek through forest paths.</p>
+      <!-- Attraction 5: Tarkeshwar Mahadev Temple -->
+      <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: grid; grid-template-columns: 1fr 1.2fr;" class="responsive-two-col">
+        <div style="height: 100%; min-height: 300px; position: relative;">
+          <img src="/images/tarkeshwar-mahadev.jpg" alt="Tarkeshwar Mahadev Temple Lansdowne" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; top: 15px; left: 15px; background: #166534; color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: bold;">
+            <i class="fas fa-om"></i> Sacred Temple
+          </span>
+        </div>
+        <div style="padding: 35px; display: flex; flex-direction: column; justify-content: center;">
+          <div style="display: flex; gap: 15px; font-size: 13px; color: #0284c7; font-weight: bold; margin-bottom: 8px;">
+            <span><i class="fas fa-route"></i> 38 km from Resort</span>
+            <span><i class="fas fa-clock"></i> Half-Day Trip</span>
+          </div>
+          <h3 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 12px;">5. Tarkeshwar Mahadev Temple & Deodar Forests</h3>
+          <p style="color: #475569; font-size: 14.5px; line-height: 1.7; margin-bottom: 18px;">
+            Perched at an altitude of 2,092 meters and surrounded by dense, ancient Deodar and Cedar forests, Tarkeshwar Mahadev is a sacred Lord Shiva temple. Thousands of metal bells hung around the temple complex create a divine, peaceful atmosphere.
+          </p>
+          <div style="background: #f8fafc; padding: 12px 16px; border-radius: 8px; border-left: 3px solid #166534; font-size: 13px; color: #334155; margin-bottom: 20px;">
+            <strong>Must Experience:</strong> Take a quiet meditation walk through the soaring Deodar canopy and natural water springs behind the temple.
+          </div>
+          <div>
+            <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20book%20a%20half-day%20cab%20tour%20to%20Tarkeshwar%20Mahadev%20Temple." target="_blank" class="btn-outline-blue" style="padding: 10px 20px; font-size: 13px;">
+              <i class="fab fa-whatsapp"></i> Book Temple Cab Tour
+            </a>
+          </div>
         </div>
       </div>
 
-      <div style="background: #fff; border-radius: 12px; border: 1.5px solid #e2e8f0; overflow: hidden; box-shadow: var(--shadow-sm);">
-        <img src="/images/hotel-img-10.jpeg" alt="Bhulla Tal Lake" style="width: 100%; height: 200px; object-fit: cover;">
-        <div style="padding: 25px;">
-          <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px;">Bhulla Tal Lake</h3>
-          <p style="color: var(--text-muted); font-size: 14px;">A small lake in the heart of Lansdowne offering boating — a relaxed way to spend an afternoon with family.</p>
+      <!-- Attraction 6: Bhalugarh Waterfalls & Nature Trails -->
+      <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: grid; grid-template-columns: 1.2fr 1fr;" class="responsive-two-col">
+        <div style="padding: 35px; display: flex; flex-direction: column; justify-content: center; order: 1;" class="order-mobile-2">
+          <div style="display: flex; gap: 15px; font-size: 13px; color: #0284c7; font-weight: bold; margin-bottom: 8px;">
+            <span><i class="fas fa-route"></i> Nearby Trek Trail</span>
+            <span><i class="fas fa-clock"></i> 2 - 3 Hours</span>
+          </div>
+          <h3 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 12px;">6. Bhalugarh Waterfalls & Pine Nature Walks</h3>
+          <p style="color: #475569; font-size: 14.5px; line-height: 1.7; margin-bottom: 18px;">
+            For adventure lovers and nature enthusiasts, the secret waterfall trails near Lansdowne offer refreshing natural streams, birdwatching opportunities, and scenic pine forest walks away from crowded tourist spots.
+          </p>
+          <div style="background: #f8fafc; padding: 12px 16px; border-radius: 8px; border-left: 3px solid #0284c7; font-size: 13px; color: #334155; margin-bottom: 20px;">
+            <strong>Resort Activity:</strong> Flutter Hotels & Resorts organizes guided morning nature walks and sunset photography trails for resort guests.
+          </div>
+          <div>
+            <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20know%20more%20about%20guided%20nature%20walks%20and%20waterfall%20treks." target="_blank" class="btn-outline-blue" style="padding: 10px 20px; font-size: 13px;">
+              <i class="fab fa-whatsapp"></i> Enquire Nature Trek
+            </a>
+          </div>
+        </div>
+        <div style="height: 100%; min-height: 300px; position: relative; order: 2;" class="order-mobile-1">
+          <img src="/images/bhalugarh-waterfall.jpg" alt="Bhalugarh Waterfall Lansdowne" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; top: 15px; right: 15px; background: #0284c7; color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: bold;">
+            <i class="fas fa-person-hiking"></i> Nature & Trekking
+          </span>
         </div>
       </div>
 
     </div>
 
-    <!-- Getting Here Box -->
-    <div style="background: var(--light-bg); padding: 30px; border-radius: 12px; border: 1.5px solid #e2e8f0; text-align: center; max-width: 800px; margin: 0 auto 40px;">
-      <h3 style="font-size: 22px; margin-bottom: 15px; color: var(--dark-bg);"><i class="fas fa-route" style="color: var(--primary-blue);"></i> Getting Here</h3>
-      <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 10px;"><strong>Nearest Airport:</strong> Dehradun (Jolly Grant Airport)</p>
-      <p style="color: var(--text-muted); font-size: 15px;"><strong>Nearest Railway Station:</strong> Kotdwara Railway Station</p>
-    </div>
+  </div>
+</section>
 
-    <div style="text-align: center;">
-      <a href="/rooms" class="btn-blue" style="padding: 14px 36px; font-size: 16px;"><i class="fas fa-bed"></i> Plan Your Stay & Book Direct</a>
+<!-- Sightseeing Booking Callout -->
+<section style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 60px 0; color: #ffffff; text-align: center;">
+  <div class="container" style="max-width: 800px;">
+    <h2 style="font-size: 32px; font-family: 'Cinzel', serif; color: #ffffff; margin-bottom: 12px;">Need Custom Sightseeing & Transport Arrangements?</h2>
+    <p style="color: #cbd5e1; font-size: 16px; margin-bottom: 25px; line-height: 1.6;">
+      Let our resort front desk handle your local transportation, private cab rentals, and guided hill tours so you can relax and enjoy Lansdowne stress-free.
+    </p>
+    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+      <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20book%20a%20sightseeing%20cab%20during%20my%20stay%20at%20Flutter%20Hotels." target="_blank" class="btn-blue" style="background: #25d366 !important; border-color: #25d366 !important; padding: 14px 30px; font-size: 15px;">
+        <i class="fab fa-whatsapp"></i> Chat with Concierge
+      </a>
+      <a href="tel:<%= phoneMain.replace(/\s+/g, '') %>" class="btn-outline-blue" style="padding: 14px 28px; font-size: 15px;">
+        <i class="fas fa-phone-alt"></i> Call +91 89 2923 2740
+      </a>
     </div>
-
   </div>
 </section>
 

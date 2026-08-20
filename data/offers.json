@@ -1,35 +1,136 @@
 [
   {
-    "id": "offer-monthly-1",
-    "title": "August Monsoon Special: 25% Off + Complimentary Dinner",
-    "subtitle": "Book your hillside retreat at Flutter Hotels & Resorts this month and enjoy exclusive 25% off room rates plus a free multi-cuisine dinner.",
-    "image": "/images/hotel-img-5.jpeg",
-    "btnText": "Claim August Offer",
-    "btnLink": "/checkout?type=room",
-    "validity": "Valid till 31st August 2026",
-    "status": "Active",
-    "createdAt": "2026-08-01"
+    "id": "weekday-escape-offer",
+    "title": "Weekday Escape Offer — Save Up to 20% + Free Dinner",
+    "slug": "weekday-escape-offer",
+    "price": "Starting from ₹2,400",
+    "tag": "Midweek Special",
+    "image": "/images/valley-city-views.jpg",
+    "metaTitle": "Weekday Escape Offer — Up to 20% Off + Free Dinner | Flutter Hotels",
+    "metaDescription": "Escape the weekend rush and enjoy a peaceful stay in Lansdowne (Mon-Thu). Save up to 20% on 2N/3D stay with free dinner, or 15% off 1-night stay.",
+    "shortDesc": "Escape the weekend rush and enjoy a peaceful stay in Lansdowne. Save up to 20% on a 2N/3D stay from Monday to Thursday, including one complimentary dinner, or get 15% off on 1-night stays.",
+    "validity": "Valid Mon – Thu Stays",
+    "btnText": "View Offer Details",
+    "btnLink": "/offers/weekday-escape-offer",
+    "highlights": [
+      "Up to 20% off on 2 Nights / 3 Days stays (Mon – Thu)",
+      "One complimentary multi-cuisine dinner included",
+      "15% off on 1-night quick weekday stays",
+      "Comfortable rooms with peaceful mountain views",
+      "Quieter resort lawns & hassle-free sightseeing"
+    ],
+    "inclusions": [
+      "2 Nights / 3 Days comfortable hillside stay",
+      "One complimentary multi-cuisine dinner for all guests",
+      "Daily morning tea / coffee with cookies",
+      "Access to resort green lawns & indoor games",
+      "Free high-speed Wi-Fi and parking"
+    ],
+    "whyChoose": [
+      "Avoid weekend crowds and traffic delays",
+      "Enjoy a private, quiet mountain environment",
+      "Ideal for peaceful workations with high-speed internet",
+      "Better room category availability"
+    ],
+    "terms": [
+      "Offer valid only for stays between Monday and Thursday.",
+      "Up to 20% discount applies to 2 Nights / 3 Days eligible bookings.",
+      "15% discount applies to 1-night weekday bookings.",
+      "Complimentary dinner is included once during a 2N/3D stay.",
+      "Subject to room availability at booking time. Taxes extra."
+    ]
   },
   {
-    "id": "offer-monthly-2",
-    "title": "2N/3D Delhi Group Departure — ₹4,999 All-Inclusive",
-    "subtitle": "Includes AC Volvo transfer from Akshardham Metro Delhi, hillside stay, guided sightseeing, and exclusive bonfire & DJ evening.",
-    "image": "/images/hotel-img-7.jpg",
-    "btnText": "Book Group Package",
-    "btnLink": "/checkout?type=package&id=2n3d-group-departure",
-    "validity": "Weekly Departures Every Friday",
-    "status": "Active",
-    "createdAt": "2026-08-05"
+    "id": "weekend-escape-offer",
+    "title": "Weekend Escape Offer — Flat 20% Off + Free Breakfast",
+    "slug": "weekend-escape-offer",
+    "price": "Starting from ₹3,200 / person",
+    "tag": "Popular Weekend Deal",
+    "image": "/images/bhulla-lake.jpg",
+    "metaTitle": "Weekend Escape Offer — Flat 20% Off | Flutter Hotels & Resorts",
+    "metaDescription": "Take a break from city life with flat 20% off on weekend stays at Flutter Hotels & Resorts, Lansdowne. Complimentary daily breakfast included.",
+    "shortDesc": "Take a break from the everyday rush and escape to Lansdowne. Enjoy flat 20% off on your weekend stay at Flutter Hotels & Resorts, along with a complimentary breakfast and peaceful mountain comfort.",
+    "validity": "Valid Weekend Stays",
+    "btnText": "View Offer Details",
+    "btnLink": "/offers/weekend-escape-offer",
+    "highlights": [
+      "Flat 20% off on weekend stays",
+      "Complimentary daily breakfast for all booked guests",
+      "Starting from ₹3,200 per person",
+      "Serene hill surroundings & private balcony rooms",
+      "Popular for getaways from Delhi NCR, Dehradun & Meerut"
+    ],
+    "inclusions": [
+      "Comfortable luxury room stay with mountain view",
+      "Complimentary chef-prepared breakfast daily",
+      "Access to resort lawns, kids play area & activity room",
+      "Evening tea/coffee session",
+      "Free Wi-Fi & parking"
+    ],
+    "whyChoose": [
+      "Perfect weekend break from Delhi NCR (just 5.5 hrs drive)",
+      "Unwind with friends, family, or partner",
+      "Explore Tip-n-Top, Bhulla Lake & St. Mary's Church"
+    ],
+    "terms": [
+      "Applicable on eligible weekend stays subject to availability.",
+      "Flat 20% discount is applied on room tariff.",
+      "Complimentary breakfast is included for confirmed guests.",
+      "Cannot be combined with other ongoing promotions. Taxes extra."
+    ]
   },
   {
-    "id": "offer-monthly-3",
-    "title": "Honeymoon & Romantic Escape Package",
-    "subtitle": "Private balcony with Garhwal valley view, candlelit dinner arrangement under the stars, and fresh flower room decoration.",
-    "image": "/images/hotel-img-8.jpg",
-    "btnText": "Enquire Romantic Stay",
-    "btnLink": "https://wa.me/918929232740?text=Hi,%20I'd%20like%20to%20know%20more%20about%20the%20Honeymoon%20Package.",
-    "validity": "Valid Throughout 2026",
-    "status": "Active",
-    "createdAt": "2026-08-10"
+    "id": "2n3d-group-departure",
+    "title": "Lansdowne Group Departure — 2N/3D All-Inclusive Escape",
+    "slug": "2n3d-group-departure",
+    "price": "Starting from ₹4,999 / person",
+    "tag": "All-Inclusive Tour",
+    "image": "/images/tip-n-top.jpg",
+    "metaTitle": "2N/3D Lansdowne Group Departure from Delhi | Flutter Hotels",
+    "metaDescription": "Join our 2N/3D group departure to Lansdowne — ₹4,999/person all-inclusive with AC transport from Delhi, meals, sightseeing & bonfire DJ night.",
+    "shortDesc": "Escape the city rush with an unforgettable group trip to Lansdowne! Includes AC Tempo Traveller transport from Delhi/Noida/Meerut, 2N/3D resort stay, all meals, bonfire & DJ evening, and guided sightseeing.",
+    "validity": "Weekly Friday Departures",
+    "btnText": "View Offer Details",
+    "btnLink": "/offers/2n3d-group-departure",
+    "highlights": [
+      "₹4,999 per person all-inclusive package",
+      "Boarding from Akshardham Metro (Delhi), Noida Sec 62 & Meerut",
+      "2 Nights / 3 Days comfortable stay at Flutter Hotels & Resorts",
+      "Daily breakfast & dinner included",
+      "Full 1-day local sightseeing tour & Sidhbali Mandir visit",
+      "Evening bonfire with DJ & light music session"
+    ],
+    "inclusions": [
+      "Round-trip AC/non-AC Tempo Traveller transport from Delhi/Noida/Meerut",
+      "2 Nights stay in private balcony rooms at Flutter Hotels & Resorts",
+      "Non-alcoholic welcome drink on arrival",
+      "Daily breakfast and dinner at in-house restaurant",
+      "Morning and evening tea/coffee with cookies",
+      "1-Day Lansdowne local sightseeing tour",
+      "Dedicated group assistant & tour manager",
+      "Bonfire & DJ music evening",
+      "Tolls, state taxes & parking fees included"
+    ],
+    "itinerary": [
+      {
+        "day": "Day 1: Delhi to Lansdowne (Check-in & Evening Music)",
+        "desc": "Board the AC Tempo Traveller from Akshardham Metro Station Delhi (or Noida / Meerut). Enjoy the scenic 260 km drive to Lansdowne. Arrive at Flutter Hotels & Resorts, complete check-in, and enjoy a refreshing welcome drink. Relax in your room. In the evening, enjoy a fun group music session followed by a delicious multi-cuisine dinner."
+      },
+      {
+        "day": "Day 2: Lansdowne Local Sightseeing & Bonfire DJ Night",
+        "desc": "Start with a hearty breakfast at the resort. Head out for a guided local sightseeing tour covering Bhulla Tal Lake (boating), Tip-in-Top viewpoint, St. Mary's Church, and Garhwal Rifles War Memorial. Return to resort in evening for group games, bonfire, DJ music, dinner, and overnight stay."
+      },
+      {
+        "day": "Day 3: Check-out, Sidhbali Mandir Visit & Return to Delhi",
+        "desc": "After breakfast, check out from the resort. On the way back, visit the sacred Sidhbali Mandir in Kotdwar. Continue your comfortable journey back to Delhi, arriving in the evening with cherished mountain memories."
+      }
+    ],
+    "terms": [
+      "25% advance payment required at time of booking.",
+      "50% of total package amount within 7 days of confirmation.",
+      "Full payment required before check-in.",
+      "Cancellation 7+ days prior: 50% refund. Less than 7 days: Non-refundable.",
+      "Entry tickets, boating fees & personal expenses not included."
+    ]
   }
 ]

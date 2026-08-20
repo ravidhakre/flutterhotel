@@ -260,6 +260,10 @@ app.get('/checkout', (req, res) => {
     const packages = readData('packages.json');
     item = packages.find(p => p.id === id || p.slug === id);
     if (!item) item = packages[0];
+  } else if (type === 'offer') {
+    const offers = readData('offers.json');
+    item = offers.find(o => o.id === id || o.slug === id);
+    if (!item) item = offers[0];
   } else {
     const rooms = readData('rooms.json');
     if (id) {

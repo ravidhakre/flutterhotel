@@ -1,71 +1,138 @@
 <%- include('partials/header') %>
 
-<div style="background: var(--dark-bg); color: #fff; padding: 50px 0;">
-  <div class="container">
-    <span style="color: var(--primary-blue); text-transform: uppercase; letter-spacing: 2px; font-weight: 600;"><%= offer.tag %></span>
-    <h1 style="font-size: 38px; margin-top: 5px; color: #ffffff;"><%= offer.title %></h1>
+<!-- Offer Detail Hero Banner (Location Background Image Only) -->
+<div style="background: linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.85)), url('<%= offer.image %>') center/cover no-repeat; padding: 90px 0 70px; text-align: center; color: #fff; position: relative;">
+  <div class="container" style="max-width: 900px; position: relative; z-index: 2;">
+    <span style="background: rgba(245, 158, 11, 0.25); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 6px 20px; border-radius: 30px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 18px; backdrop-filter: blur(4px);">
+      <i class="fas fa-tags"></i> <%= offer.tag || 'Special Offer' %>
+    </span>
+    <h1 style="font-size: 38px; color: #ffffff; margin-bottom: 15px; font-family: 'Cinzel', serif; line-height: 1.3;"><%= offer.title %></h1>
+    <p style="color: #cbd5e1; font-size: 16px; line-height: 1.7; max-width: 750px; margin: 0 auto 20px;">
+      <%= offer.shortDesc %>
+    </p>
+    <div style="font-size: 26px; font-weight: bold; color: #f59e0b; margin-bottom: 25px;">
+      <%= offer.price %>
+    </div>
+    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+      <a href="/checkout?type=offer&id=<%= offer.id %>" class="btn-blue pulsing-btn" style="padding: 14px 32px; font-size: 15px; font-weight: bold;">
+        <i class="fas fa-calendar-check"></i> Book This Offer Online
+      </a>
+      <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20book%20the%20<%= encodeURIComponent(offer.title) %>." target="_blank" class="btn-blue" style="background: #25d366 !important; border-color: #25d366 !important; padding: 14px 28px;">
+        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+      </a>
+    </div>
   </div>
 </div>
 
-<section class="section-padding">
-  <div class="container">
-    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;">
+<section class="section-padding" style="background: #f8fafc; padding: 60px 0;">
+  <div class="container" style="max-width: 950px;">
+    
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;" class="responsive-two-col">
       
-      <!-- Main Content -->
+      <!-- Left Main Details Column -->
       <div>
-        <img src="<%= offer.image %>" alt="<%= offer.title %>" style="width: 100%; height: 380px; object-fit: cover; border-radius: 12px; margin-bottom: 30px; box-shadow: var(--shadow-sm);">
-
-        <h3 style="font-size: 26px; margin-bottom: 15px;">Package Highlights & Details</h3>
-        <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 30px; line-height: 1.8;">
-          <%= offer.shortDesc %>
-        </p>
-
-        <div style="background: var(--light-bg); padding: 30px; border-radius: 12px; border: 1.5px solid #e2e8f0; margin-bottom: 40px;">
-          <h4 style="font-size: 20px; margin-bottom: 20px; color: var(--dark-bg);"><i class="fas fa-star" style="color: var(--primary-blue);"></i> What’s Included in This Package:</h4>
-          <ul style="display: flex; flex-direction: column; gap: 12px;">
-            <% offer.highlights.forEach(item => { %>
-              <li style="display: flex; align-items: center; gap: 10px; font-size: 15px;">
-                <i class="fas fa-check-circle" style="color: var(--primary-blue);"></i>
-                <span><%= item %></span>
-              </li>
-            <% }); %>
-          </ul>
+        
+        <!-- Offer Overview Card -->
+        <div style="background: #ffffff; border-radius: 12px; padding: 30px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04); margin-bottom: 30px;">
+          <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 15px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px;">
+            <i class="fas fa-circle-info" style="color: var(--primary-blue);"></i> Offer Overview
+          </h3>
+          <p style="color: #475569; font-size: 15px; line-height: 1.8; margin: 0;">
+            <%= offer.shortDesc %>
+          </p>
         </div>
 
-        <% if (offer.faqs && offer.faqs.length > 0) { %>
-          <h3 style="font-size: 24px; margin-bottom: 20px;">Frequently Asked Questions</h3>
-          <div style="background: var(--light-bg); padding: 25px; border-radius: 10px; border: 1px solid #e2e8f0; margin-bottom: 40px;">
-            <% offer.faqs.forEach(faq => { %>
-              <div style="margin-bottom: 15px;">
-                <strong style="font-size: 16px; color: var(--dark-bg); display: block;">Q: <%= faq.q %></strong>
-                <p style="color: var(--text-muted); margin-top: 4px;"><%= faq.a %></p>
-              </div>
-            <% }); %>
+        <!-- Package Inclusions Card -->
+        <% if (offer.inclusions && offer.inclusions.length > 0) { %>
+          <div style="background: #ffffff; border-radius: 12px; padding: 30px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04); margin-bottom: 30px;">
+            <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 20px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px;">
+              <i class="fas fa-check-double" style="color: #22c55e;"></i> What's Included in This Offer
+            </h3>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+              <% offer.inclusions.forEach(function(inc) { %>
+                <li style="display: flex; gap: 12px; align-items: flex-start; font-size: 15px; color: #334155;">
+                  <i class="fas fa-check-circle" style="color: #22c55e; margin-top: 3px; font-size: 16px;"></i>
+                  <span><%= inc %></span>
+                </li>
+              <% }); %>
+            </ul>
           </div>
         <% } %>
+
+        <!-- Day-wise Itinerary Card (If Available, e.g. for 2N/3D Group Departure) -->
+        <% if (offer.itinerary && offer.itinerary.length > 0) { %>
+          <div style="background: #ffffff; border-radius: 12px; padding: 30px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04); margin-bottom: 30px;">
+            <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 20px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px;">
+              <i class="fas fa-route" style="color: var(--primary-blue);"></i> Day-by-Day Tour Itinerary
+            </h3>
+            
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+              <% offer.itinerary.forEach(function(item) { %>
+                <div style="background: #f8fafc; padding: 20px; border-radius: 10px; border-left: 4px solid var(--primary-blue); border: 1px solid #e2e8f0; border-left-width: 4px;">
+                  <h4 style="font-size: 17px; color: var(--dark-bg); margin-bottom: 8px;"><%= item.day %></h4>
+                  <p style="color: #475569; font-size: 14px; line-height: 1.7; margin: 0;"><%= item.desc %></p>
+                </div>
+              <% }); %>
+            </div>
+          </div>
+        <% } %>
+
+        <!-- Terms & Conditions Card -->
+        <% if (offer.terms && offer.terms.length > 0) { %>
+          <div style="background: #ffffff; border-radius: 12px; padding: 30px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04); margin-bottom: 30px;">
+            <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 15px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px;">
+              <i class="fas fa-gavel" style="color: #64748b;"></i> Terms & Conditions
+            </h3>
+            <ul style="list-style: disc; padding-left: 20px; margin: 0; color: #64748b; font-size: 13.5px; line-height: 1.7;">
+              <% offer.terms.forEach(function(term) { %>
+                <li><%= term %></li>
+              <% }); %>
+            </ul>
+          </div>
+        <% } %>
+
       </div>
 
-      <!-- Action Sidebar -->
+      <!-- Right Sidebar Column -->
       <div>
-        <div style="background: #ffffff; padding: 30px; border-radius: 12px; border: 2px solid var(--primary-blue); box-shadow: var(--shadow-lg); position: sticky; top: 100px; text-align: center;">
-          <span style="font-size: 13px; color: #888; text-transform: uppercase;">Package Rate</span>
-          <div style="font-size: 28px; font-weight: bold; color: var(--primary-blue); margin-bottom: 20px;"><%= offer.price %></div>
+        <div style="background: #ffffff; border-radius: 12px; padding: 25px; border: 1.5px solid #e2e8f0; box-shadow: 0 8px 25px rgba(0,0,0,0.06); position: sticky; top: 100px;">
+          
+          <h4 style="font-size: 18px; color: var(--dark-bg); margin-bottom: 15px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px;">
+            Book This Package
+          </h4>
 
-          <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I’d%20like%20to%20enquire%20about%20the%20<%= encodeURIComponent(offer.title) %>." target="_blank" class="btn-blue" style="width: 100%; padding: 14px; margin-bottom: 15px; background: #25d366 !important; border-color: #25d366 !important;">
-            <i class="fab fa-whatsapp"></i> Enquire on WhatsApp
-          </a>
-
-          <a href="/contact" class="btn-outline-blue" style="width: 100%; display: block; padding: 12px;">
-            <i class="fas fa-envelope"></i> Send Website Enquiry
-          </a>
-
-          <div style="margin-top: 20px; font-size: 13px; color: #666; border-top: 1px solid #eee; padding-top: 15px;">
-            <i class="fas fa-phone-alt" style="color: var(--primary-blue);"></i> Call Direct: <strong>+91 89 2923 2740</strong>
+          <div style="font-size: 24px; font-weight: bold; color: var(--primary-blue); margin-bottom: 5px;">
+            <%= offer.price %>
           </div>
+          <span style="font-size: 12px; color: #22c55e; font-weight: bold; display: block; margin-bottom: 20px;">
+            <i class="fas fa-clock"></i> <%= offer.validity || 'Limited Slots' %>
+          </span>
+
+          <a href="/checkout?type=offer&id=<%= offer.id %>" class="btn-blue pulsing-btn" style="width: 100%; text-align: center; margin-bottom: 12px; padding: 14px; font-weight: bold; display: block;">
+            <i class="fas fa-calendar-check"></i> Book Online Now
+          </a>
+
+          <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20book%20the%20<%= encodeURIComponent(offer.title) %>." target="_blank" class="btn-blue" style="width: 100%; text-align: center; margin-bottom: 12px; padding: 14px; background: #25d366 !important; border-color: #25d366 !important; display: block;">
+            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+          </a>
+
+          <a href="tel:<%= phoneMain.replace(/\s+/g, '') %>" class="btn-outline-blue" style="width: 100%; text-align: center; display: block; padding: 12px;">
+            <i class="fas fa-phone-alt"></i> Call Reservations Desk
+          </a>
+
+          <div style="margin-top: 20px; background: #f8fafc; padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 12px; color: #64748b; text-align: center;">
+            <i class="fas fa-shield-alt" style="color: #22c55e;"></i> Best Direct Rate Guarantee • No Hidden Charges
+          </div>
+
         </div>
       </div>
 
     </div>
+
+    <div style="margin-top: 40px; text-align: center;">
+      <a href="/offers" class="btn-outline-blue"><i class="fas fa-arrow-left"></i> Back to All Offers</a>
+    </div>
+
   </div>
 </section>
 
