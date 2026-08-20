@@ -1,7 +1,7 @@
 <%- include('partials/header') %>
 
-<!-- About Us Hero Banner (Full-Height Mobile Responsive) -->
-<div class="page-hero-header" style="background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.85)), url('/images/hotel-img-8.jpg');">
+<!-- About Us Hero Banner (Main Hotel Facade Image) -->
+<div class="page-hero-header" style="background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.85)), url('/images/about-hotel-banner.jpg');">
   <div class="container" style="max-width: 900px; position: relative; z-index: 2;">
     <span style="background: rgba(245, 158, 11, 0.25); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 6px 20px; border-radius: 30px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 18px; backdrop-filter: blur(4px);">
       <i class="fas fa-hotel"></i> Our Story & Legacy
@@ -56,7 +56,7 @@
 
       <div>
         <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
-          <img src="/images/hotel-img-8.jpg" alt="Flutter Hotels & Resorts Lansdowne Exterior" style="width: 100%; height: 420px; object-fit: cover;">
+          <img src="/images/about-property-view.jpg" alt="Flutter Hotels & Resorts Lansdowne Exterior View" style="width: 100%; height: 420px; object-fit: cover;">
         </div>
       </div>
     </div>
@@ -100,16 +100,34 @@
       </div>
     </div>
 
-    <!-- Image Showcase Gallery -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 50px;">
-      <div style="height: 220px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-        <img src="/images/hotel-img-5.jpeg" alt="Resort Valley View" style="width: 100%; height: 100%; object-fit: cover;">
+    <!-- Things To Do Local Attractions Showcase Gallery -->
+    <div style="margin-bottom: 50px;">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 30px;">
+        <span class="section-subtitle">Surrounding Attractions</span>
+        <h3 style="font-size: 26px; color: var(--dark-bg); font-family: 'Cinzel', serif;">Explore Lansdowne Sightseeing</h3>
       </div>
-      <div style="height: 220px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-        <img src="/images/resort-lawns-garden.avif" alt="Resort Lawns & Garden" style="width: 100%; height: 100%; object-fit: cover;">
-      </div>
-      <div style="height: 220px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-        <img src="/images/valley-city-views.jpg" alt="Lansdowne Hillside View" style="width: 100%; height: 100%; object-fit: cover;">
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+        <div style="position: relative; height: 240px; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.06); border: 1px solid #e2e8f0;">
+          <img src="/images/tip-n-top.jpg" alt="Tip-n-Top Point Lansdowne" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.85); color: #fff; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; backdrop-filter: blur(4px);">
+            <i class="fas fa-mountain"></i> Tip-n-Top Point
+          </span>
+        </div>
+
+        <div style="position: relative; height: 240px; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.06); border: 1px solid #e2e8f0;">
+          <img src="/images/bhulla-lake.jpg" alt="Bhulla Lake Lansdowne" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.85); color: #fff; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; backdrop-filter: blur(4px);">
+            <i class="fas fa-water"></i> Bhulla Lake
+          </span>
+        </div>
+
+        <div style="position: relative; height: 240px; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.06); border: 1px solid #e2e8f0;">
+          <img src="/images/tarkeshwar-mahadev.jpg" alt="Tarkeshwar Mahadev Temple" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.85); color: #fff; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; backdrop-filter: blur(4px);">
+            <i class="fas fa-gopuram"></i> Tarkeshwar Mahadev Temple
+          </span>
+        </div>
       </div>
     </div>
 
