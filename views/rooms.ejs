@@ -1,90 +1,112 @@
 <%- include('partials/header') %>
 
-<!-- Page Header Banner -->
-<div class="page-hero-header" style="background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('/images/hotel-img-1.jpg');">
-  <div class="container" style="max-width: 900px;">
-    <h1 style="font-size: 42px; margin-bottom: 12px; color: #ffffff;">Rooms Built Around the View</h1>
-    <p style="color: #cbd5e1; font-size: 16px; line-height: 1.6;">Three room types, one thing in common: a private balcony and a king bed waiting at the end of a Himalayan day.</p>
+<!-- Rooms Hero Banner (Full-Height Mobile Responsive) -->
+<div class="page-hero-header" style="background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.85)), url('/images/hotel-img-12.jpeg');">
+  <div class="container" style="max-width: 900px; position: relative; z-index: 2;">
+    <span style="background: rgba(245, 158, 11, 0.25); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 6px 20px; border-radius: 30px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 18px; backdrop-filter: blur(4px);">
+      <i class="fas fa-door-open"></i> Hillside Luxury Stays
+    </span>
+    <h1 style="font-size: 44px; margin-bottom: 14px; color: #ffffff; font-family: 'Cinzel', serif; line-height: 1.25;">Rooms & Suites Built Around Himalayan Views</h1>
+    <p style="color: #cbd5e1; font-size: 16.5px; line-height: 1.7; max-width: 760px; margin: 0 auto 25px;">
+      Three luxury room categories, one common feature: a private balcony, plush king bed, and uninterrupted valley views waiting at the end of a Himalayan day.
+    </p>
   </div>
 </div>
 
-<section class="section-padding">
+<section class="section-padding" style="background: #f8fafc; padding: 60px 0;">
   <div class="container">
     
     <!-- All Rooms Shared Features Strip -->
-    <div style="background: var(--light-bg); padding: 30px; border-radius: 12px; margin-bottom: 45px; border: 1.5px solid #e2e8f0;">
-      <h3 style="font-size: 22px; margin-bottom: 15px; text-align: center;">All Rooms at Flutter Hotels & Resorts Include:</h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; text-align: center;">
-        <div style="background: #ffffff; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
-          <i class="fas fa-wifi" style="color: var(--primary-blue); font-size: 22px; margin-bottom: 6px;"></i>
-          <h5 style="margin: 0; font-size: 14px;">Free High-Speed Wi-Fi</h5>
+    <div style="background: #ffffff; padding: 25px 30px; border-radius: 14px; margin-bottom: 50px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center;">
+        <div>
+          <i class="fas fa-vector-square" style="font-size: 22px; color: var(--primary-blue); margin-bottom: 6px;"></i>
+          <div style="font-size: 14px; font-weight: bold; color: var(--dark-bg);">Spacious 120-180 sq. ft.</div>
+          <span style="font-size: 12px; color: #64748b;">Elegantly furnished spaces</span>
         </div>
-        <div style="background: #ffffff; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
-          <i class="fas fa-tv" style="color: var(--primary-blue); font-size: 22px; margin-bottom: 6px;"></i>
-          <h5 style="margin: 0; font-size: 14px;">32-inch Smart TV</h5>
+        <div>
+          <i class="fas fa-cloud-sun" style="font-size: 22px; color: #22c55e; margin-bottom: 6px;"></i>
+          <div style="font-size: 14px; font-weight: bold; color: var(--dark-bg);">Private Balcony in All Rooms</div>
+          <span style="font-size: 12px; color: #64748b;">Direct valley or lawn outlook</span>
         </div>
-        <div style="background: #ffffff; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
-          <i class="fas fa-mug-hot" style="color: var(--primary-blue); font-size: 22px; margin-bottom: 6px;"></i>
-          <h5 style="margin: 0; font-size: 14px;">Tea/Coffee Maker</h5>
+        <div>
+          <i class="fas fa-wifi" style="font-size: 22px; color: #0284c7; margin-bottom: 6px;"></i>
+          <div style="font-size: 14px; font-weight: bold; color: var(--dark-bg);">Free High-Speed Wi-Fi</div>
+          <span style="font-size: 12px; color: #64748b;">Seamless fiber connection</span>
         </div>
-        <div style="background: #ffffff; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
-          <i class="fas fa-bottle-water" style="color: var(--primary-blue); font-size: 22px; margin-bottom: 6px;"></i>
-          <h5 style="margin: 0; font-size: 14px;">Mineral Water</h5>
-        </div>
-        <div style="background: #ffffff; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
-          <i class="fas fa-door-closed" style="color: var(--primary-blue); font-size: 22px; margin-bottom: 6px;"></i>
-          <h5 style="margin: 0; font-size: 14px;">Wardrobe & Storage</h5>
-        </div>
-        <div style="background: #ffffff; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
-          <i class="fas fa-mountain" style="color: var(--primary-blue); font-size: 22px; margin-bottom: 6px;"></i>
-          <h5 style="margin: 0; font-size: 14px;">Private Balcony</h5>
+        <div>
+          <i class="fas fa-concierge-bell" style="font-size: 22px; color: #f59e0b; margin-bottom: 6px;"></i>
+          <div style="font-size: 14px; font-weight: bold; color: var(--dark-bg);">24/7 Room Service Desk</div>
+          <span style="font-size: 12px; color: #64748b;">In-room dining & assistance</span>
         </div>
       </div>
     </div>
 
-    <!-- Luxury Rooms Catalog Grid -->
-    <div class="luxury-rooms-grid">
-      <% rooms.forEach((room, idx) => { %>
-        <div class="luxury-room-card">
-          <div class="room-img-container">
-            <img src="<%= room.image %>" alt="<%= room.name %>" class="room-img">
+    <!-- Rooms Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+      <% rooms.forEach(room => { %>
+        <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          
+          <!-- Room Image with Badges -->
+          <div style="position: relative; height: 250px; overflow: hidden;">
+            <img src="<%= room.image %>" alt="<%= room.name %>" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
             
-            <span class="room-tag-badge">
-              <% if (idx === 0) { %><i class="fas fa-crown"></i> Most Popular<% } else if (idx === 1) { %><i class="fas fa-tree"></i> Resort Lawns<% } else { %><i class="fas fa-gem"></i> Best Value<% } %>
+            <% if (room.badge) { %>
+              <span style="position: absolute; top: 15px; left: 15px; background: rgba(15, 23, 42, 0.85); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(4px);">
+                <i class="fas fa-crown"></i> <%= room.badge %>
+              </span>
+            <% } %>
+
+            <span style="position: absolute; bottom: 15px; right: 15px; background: var(--primary-blue); color: #ffffff; padding: 6px 16px; border-radius: 20px; font-size: 14px; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+              ₹<%= room.price.toLocaleString() %> <small style="font-size: 11px; font-weight: normal;">/ Night</small>
             </span>
-
-            <div class="room-price-overlay">
-              <span class="price-val">₹<%= room.price.toLocaleString() %></span>
-              <span class="price-unit">/ Night</span>
-            </div>
           </div>
 
-          <div class="room-card-content">
-            <h3 class="luxury-room-title"><%= room.name %></h3>
-
-            <div class="specs-pills-row">
-              <div class="spec-pill"><i class="fas fa-bed"></i> <%= room.bed %></div>
-              <div class="spec-pill"><i class="fas fa-vector-square"></i> <%= room.size %></div>
-              <div class="spec-pill"><i class="fas fa-mountain"></i> <%= room.view %></div>
+          <!-- Room Content Body -->
+          <div style="padding: 28px; display: flex; flex-direction: column; flex-grow: 1;">
+            <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 12px; font-family: 'Cinzel', serif;"><%= room.name %></h3>
+            
+            <!-- Quick Spec Pills -->
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px;">
+              <span style="background: #f1f5f9; color: #334155; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">
+                <i class="fas fa-bed" style="color: var(--primary-blue);"></i> <%= room.bed %>
+              </span>
+              <span style="background: #f1f5f9; color: #334155; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">
+                <i class="fas fa-ruler-combined" style="color: var(--primary-blue);"></i> <%= room.size %>
+              </span>
+              <span style="background: #f1f5f9; color: #334155; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">
+                <i class="fas fa-mountain" style="color: var(--primary-blue);"></i> <%= room.view %>
+              </span>
             </div>
 
-            <p class="luxury-room-desc"><%= room.description %></p>
+            <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+              <%= room.description %>
+            </p>
 
-            <div class="amenities-quick-bar">
-              <span><i class="fas fa-wifi"></i> Free Wi-Fi</span>
-              <span><i class="fas fa-mug-hot"></i> Coffee Maker</span>
-              <span><i class="fas fa-tv"></i> 32" TV</span>
-              <span><i class="fas fa-door-open"></i> Private Balcony</span>
+            <!-- Amenities List -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 25px; padding-top: 15px; border-top: 1px solid #f1f5f9;">
+              <span style="font-size: 12.5px; color: #475569;"><i class="fas fa-wifi" style="color: #22c55e;"></i> Free Fiber Wi-Fi</span>
+              <span style="font-size: 12.5px; color: #475569;"><i class="fas fa-coffee" style="color: #22c55e;"></i> Tea/Coffee Maker</span>
+              <span style="font-size: 12.5px; color: #475569;"><i class="fas fa-tv" style="color: #22c55e;"></i> 32" Smart LED TV</span>
+              <span style="font-size: 12.5px; color: #475569;"><i class="fas fa-cloud-sun" style="color: #22c55e;"></i> Private Balcony</span>
             </div>
 
-            <div class="room-action-footer">
-              <a href="/rooms/<%= room.id %>" class="btn-card-outline"><i class="fas fa-circle-info"></i> Specs & FAQs</a>
-              <a href="/checkout?type=room&id=<%= room.id %>" class="btn-card-primary"><i class="fas fa-calendar-check"></i> Book Room</a>
+            <!-- Dual Action Buttons -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+              <a href="/rooms/<%= room.slug || room.id %>" class="btn-outline-blue" style="padding: 11px 0; font-size: 13px; text-align: center; font-weight: bold; border-radius: 8px;">
+                <i class="fas fa-info-circle"></i> View Details
+              </a>
+              <a href="/checkout?room=<%= room.slug || room.id %>" class="btn-blue" style="padding: 11px 0; font-size: 13px; text-align: center; font-weight: bold; border-radius: 8px;">
+                <i class="fas fa-calendar-check"></i> Book Now
+              </a>
             </div>
+
           </div>
+
         </div>
       <% }); %>
     </div>
+
   </div>
 </section>
 

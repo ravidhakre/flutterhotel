@@ -1,6 +1,7 @@
 [
   {
-    "id": "room-valley-super-deluxe",
+    "id": "super-deluxe-valley-view",
+    "slug": "super-deluxe-valley-view",
     "name": "Super Deluxe – Valley View",
     "category": "Super Deluxe",
     "price": 3200,
@@ -11,13 +12,31 @@
     "wifi": true,
     "breakfast": true,
     "view": "Garhwal Valley View",
-    "image": "/images/hotel-img-1.jpg",
+    "image": "/images/hotel-img-12.jpeg",
+    "gallery": [
+      "/images/hotel-img-12.jpeg",
+      "/images/hotel-img-1.jpg",
+      "/images/hotel-img-10.jpeg",
+      "/images/hotel-img-14.jpeg"
+    ],
     "featured": true,
-    "description": "180 sq. ft. of comfort with a king bed, private balcony and uninterrupted valley views — our most requested room for couples and honeymooners.",
-    "amenities": ["Free Wi-Fi", "Private Balcony", "32-inch TV", "Tea/Coffee Maker", "Mineral Water Bottle", "Wardrobe", "Doctor-on-call", "Cab-on-request"]
+    "badge": "MOST POPULAR",
+    "description": "180 sq. ft. of luxury with a Plush King Bed, private balcony with uninterrupted valley views over the Garhwal Himalayas — our most requested room for couples and honeymooners.",
+    "amenities": [
+      "Free High-Speed Wi-Fi",
+      "Private Valley View Balcony",
+      "Plush King Size Bed",
+      "32-inch Smart LED TV",
+      "Tea & Coffee Maker",
+      "Complimentary Water Bottles",
+      "Spacious Wardrobe & Mirror",
+      "24/7 Hot & Cold Water",
+      "24/7 Room Service Desk"
+    ]
   },
   {
-    "id": "room-garden-super-deluxe",
+    "id": "super-deluxe-garden-view",
+    "slug": "super-deluxe-garden-view",
     "name": "Super Deluxe – Garden View",
     "category": "Super Deluxe",
     "price": 2800,
@@ -28,13 +47,31 @@
     "wifi": true,
     "breakfast": true,
     "view": "Resort Garden View",
-    "image": "/images/hotel-img-3.jpg",
+    "image": "/images/hotel-img-14.jpeg",
+    "gallery": [
+      "/images/hotel-img-14.jpeg",
+      "/images/hotel-img-3.jpg",
+      "/images/resort-lawns-garden.avif",
+      "/images/hotel-img-4.jpeg"
+    ],
     "featured": true,
-    "description": "180 sq. ft., king bed and a private balcony overlooking the resort’s green lawns — a calm, quiet base for families and longer stays.",
-    "amenities": ["Free Wi-Fi", "Private Balcony", "32-inch TV", "Tea/Coffee Maker", "Mineral Water Bottle", "Wardrobe", "Doctor-on-call", "Kids Play Area Access"]
+    "badge": "RESORT GARDEN VIEW",
+    "description": "180 sq. ft., King Bed and a private balcony overlooking the resort’s manicured green lawns and pine trees — a serene, peaceful retreat for small families and extended mountain stays.",
+    "amenities": [
+      "Free High-Speed Wi-Fi",
+      "Private Garden View Balcony",
+      "Plush King Size Bed",
+      "32-inch Smart LED TV",
+      "Tea & Coffee Maker",
+      "Complimentary Water Bottles",
+      "Spacious Wardrobe",
+      "24/7 Hot & Cold Water",
+      "Kids Play Area Access"
+    ]
   },
   {
-    "id": "room-classic-valley",
+    "id": "classic-valley",
+    "slug": "classic-valley",
     "name": "Classic – Valley",
     "category": "Classic",
     "price": 2400,
@@ -46,8 +83,23 @@
     "breakfast": true,
     "view": "Valley View",
     "image": "/images/hotel-img-4.jpeg",
+    "gallery": [
+      "/images/hotel-img-4.jpeg",
+      "/images/room-1.jpg",
+      "/images/hotel-img-1.jpg"
+    ],
     "featured": true,
-    "description": "A cosy 120 sq. ft. room with a king bed, valley-facing private balcony and every essential you need — great value without compromising on the view.",
-    "amenities": ["Free Wi-Fi", "Private Balcony", "32-inch TV", "Tea/Coffee Maker", "Mineral Water Bottle", "Wardrobe"]
+    "badge": "BEST VALUE",
+    "description": "A cozy 120 sq. ft. room featuring a comfortable King Bed, valley-facing private balcony, and every modern essential — exceptional value without compromising on privacy or Himalayan views.",
+    "amenities": [
+      "Free High-Speed Wi-Fi",
+      "Private Balcony",
+      "Comfortable King Bed",
+      "32-inch Smart LED TV",
+      "Tea & Coffee Maker",
+      "Complimentary Water Bottles",
+      "Compact Work Desk & Wardrobe",
+      "24/7 Hot & Cold Shower"
+    ]
   }
 ]
