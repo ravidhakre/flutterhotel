@@ -1,17 +1,17 @@
 <%- include('partials/header') %>
 
-<!-- Meetings & Events Hero Banner -->
-<div class="page-hero-header" style="background: linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.85)), url('/images/hotel-img-12.jpeg');">
-  <div class="container" style="max-width: 900px;">
-    <span style="background: rgba(245, 158, 11, 0.25); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 15px;">
-      MICE & Corporate Retreats
+<!-- Meetings & Events Hero Banner (Conference & Venue Image) -->
+<div class="page-hero-header" style="background: linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.85)), url('/images/hotel-img-15.jpeg');">
+  <div class="container" style="max-width: 900px; position: relative; z-index: 2;">
+    <span style="background: rgba(245, 158, 11, 0.25); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 6px 20px; border-radius: 30px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 18px; backdrop-filter: blur(4px);">
+      <i class="fas fa-handshake"></i> MICE & Corporate Retreats
     </span>
-    <h1 style="font-size: 42px; margin-bottom: 12px; color: #ffffff; font-family: 'Cinzel', serif;">Meetings & Corporate Events</h1>
-    <p style="color: #cbd5e1; font-size: 16px; line-height: 1.7; max-width: 750px; margin: 0 auto 25px;">
-      Host high-impact corporate conferences, executive retreats, team-building sessions, and strategy workshops amidst the peaceful Garhwal hills at Flutter Hotels & Resorts, Lansdowne.
+    <h1 style="font-size: 42px; margin-bottom: 14px; color: #ffffff; font-family: 'Cinzel', serif; line-height: 1.3;">Meetings & Corporate Events in Lansdowne</h1>
+    <p style="color: #cbd5e1; font-size: 16.5px; line-height: 1.7; max-width: 760px; margin: 0 auto 25px;">
+      Elevate your corporate conferences, executive retreats, team-building sessions, and strategy workshops amidst the refreshing Garhwal hills at Flutter Hotels & Resorts.
     </p>
-    <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20enquire%20about%20hosting%20a%20Corporate%20Event%20/%20Conference." target="_blank" class="btn-blue pulsing-btn" style="padding: 13px 30px; font-size: 14px; font-weight: bold;">
-      <i class="fas fa-handshake"></i> Enquire Corporate MICE Package
+    <a href="#eventEnquirySection" class="btn-blue pulsing-btn" style="padding: 14px 32px; font-size: 15px; font-weight: bold;">
+      <i class="fas fa-paper-plane"></i> Request Custom Corporate Quote
     </a>
   </div>
 </div>
@@ -19,62 +19,172 @@
 <section class="section-padding" style="background: #f8fafc; padding: 60px 0;">
   <div class="container">
     
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 50px;">
-      <div style="background: #ffffff; padding: 35px; border-radius: 14px; border: 1px solid #e2e8f0; box-shadow: 0 6px 25px rgba(0,0,0,0.04);">
-        <i class="fas fa-laptop-house" style="font-size: 36px; color: var(--primary-blue); margin-bottom: 15px;"></i>
-        <h3 style="font-size: 20px; color: var(--dark-bg); margin-bottom: 10px;">Executive Conference Space</h3>
-        <p style="color: #64748b; font-size: 14.5px; line-height: 1.7;">
-          Equipped with modern AV tech, high-speed Wi-Fi, audio systems, projectors, and flexible seating arrangements for up to 80 delegates.
-        </p>
-      </div>
-
-      <div style="background: #ffffff; padding: 35px; border-radius: 14px; border: 1px solid #e2e8f0; box-shadow: 0 6px 25px rgba(0,0,0,0.04);">
-        <i class="fas fa-tree" style="font-size: 36px; color: #22c55e; margin-bottom: 15px;"></i>
-        <h3 style="font-size: 20px; color: var(--dark-bg); margin-bottom: 10px;">Outdoor Lawn Workshops</h3>
-        <p style="color: #64748b; font-size: 14.5px; line-height: 1.7;">
-          Lush resort lawns perfect for open-air brainstorming, morning yoga, team-building exercises, and evening bonfire networking sessions.
-        </p>
-      </div>
-
-      <div style="background: #ffffff; padding: 35px; border-radius: 14px; border: 1px solid #e2e8f0; box-shadow: 0 6px 25px rgba(0,0,0,0.04);">
-        <i class="fas fa-utensils" style="font-size: 36px; color: #f59e0b; margin-bottom: 15px;"></i>
-        <h3 style="font-size: 20px; color: var(--dark-bg); margin-bottom: 10px;">Custom Culinary Dining</h3>
-        <p style="color: #64748b; font-size: 14.5px; line-height: 1.7;">
-          Dedicated chef-curated buffet menus including Garhwali delicacies, North Indian, Asian, and continental spreads with gala dinners.
-        </p>
-      </div>
+    <div style="text-align: center; max-width: 750px; margin: 0 auto 50px;">
+      <span class="section-subtitle">Venue Spaces</span>
+      <h2 class="section-title">World-Class Event Facilities</h2>
+      <p style="color: #64748b; font-size: 15px;">
+        Whether you require a formal indoor conference hall or an inspiring outdoor mountain lawn for team workshops, our venue spaces are fully customizable to meet your corporate goals.
+      </p>
     </div>
 
-    <!-- Quick Enquiry Form -->
-    <div style="background: #ffffff; max-width: 800px; margin: 0 auto; padding: 40px; border-radius: 16px; border: 1.5px solid #e2e8f0; box-shadow: 0 10px 35px rgba(0,0,0,0.06);">
-      <h3 style="font-size: 24px; color: var(--dark-bg); text-align: center; margin-bottom: 10px;">Plan Your Event With Us</h3>
-      <p style="color: #64748b; text-align: center; font-size: 14.5px; margin-bottom: 25px;">
-        Fill in your group details below and our MICE event specialist will get back to you within 2 hours.
+    <!-- Feature Cards with Photos -->
+    <div style="display: flex; flex-direction: column; gap: 40px; margin-bottom: 60px;">
+      
+      <!-- Feature 1: Executive Conference Hall -->
+      <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: grid; grid-template-columns: 1fr 1.2fr;" class="responsive-two-col">
+        <div style="height: 100%; min-height: 320px; position: relative;">
+          <img src="/images/hotel-img-15.jpeg" alt="Executive Conference Hall Lansdowne" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; top: 15px; left: 15px; background: var(--primary-blue); color: #fff; padding: 5px 16px; border-radius: 20px; font-size: 12px; font-weight: bold;">
+            <i class="fas fa-building"></i> Indoor Conference Hall
+          </span>
+        </div>
+        <div style="padding: 35px; display: flex; flex-direction: column; justify-content: center;">
+          <div style="display: flex; gap: 15px; font-size: 13px; color: #0284c7; font-weight: bold; margin-bottom: 8px;">
+            <span><i class="fas fa-users"></i> Up to 80 Delegates</span>
+            <span><i class="fas fa-wifi"></i> High-Speed Fiber Internet</span>
+          </div>
+          <h3 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 12px;">1. Executive Conference Hall</h3>
+          <p style="color: #475569; font-size: 14.5px; line-height: 1.7; margin-bottom: 18px;">
+            A state-of-the-art conference space designed for strategy meets, board presentations, and annual reviews. Configurable in Theater, Classroom, U-Shape, or Boardroom setups.
+          </p>
+          
+          <ul style="list-style: none; padding: 0; margin: 0 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;" class="responsive-two-col">
+            <li style="font-size: 13.5px; color: #334155; display: flex; align-items: center; gap: 8px;">
+              <i class="fas fa-check-circle" style="color: #22c55e;"></i> HD Projection & Screen
+            </li>
+            <li style="font-size: 13.5px; color: #334155; display: flex; align-items: center; gap: 8px;">
+              <i class="fas fa-check-circle" style="color: #22c55e;"></i> Wireless Mics & Audio
+            </li>
+            <li style="font-size: 13.5px; color: #334155; display: flex; align-items: center; gap: 8px;">
+              <i class="fas fa-check-circle" style="color: #22c55e;"></i> Ergonomic Chairs & Desks
+            </li>
+            <li style="font-size: 13.5px; color: #334155; display: flex; align-items: center; gap: 8px;">
+              <i class="fas fa-check-circle" style="color: #22c55e;"></i> Executive Stationery
+            </li>
+          </ul>
+
+          <div>
+            <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20book%20the%20Executive%20Conference%20Hall." target="_blank" class="btn-outline-blue" style="padding: 10px 22px; font-size: 13px;">
+              <i class="fab fa-whatsapp"></i> Check Hall Availability
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 2: Outdoor Lawn Workshops -->
+      <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: grid; grid-template-columns: 1.2fr 1fr;" class="responsive-two-col">
+        <div style="padding: 35px; display: flex; flex-direction: column; justify-content: center; order: 1;" class="order-mobile-2">
+          <div style="display: flex; gap: 15px; font-size: 13px; color: #0284c7; font-weight: bold; margin-bottom: 8px;">
+            <span><i class="fas fa-tree"></i> Mountain Lawns</span>
+            <span><i class="fas fa-users"></i> Up to 150 Guests</span>
+          </div>
+          <h3 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 12px;">2. Outdoor Lawn Workshops & Team Building</h3>
+          <p style="color: #475569; font-size: 14.5px; line-height: 1.7; margin-bottom: 18px;">
+            Break away from four walls and host engaging outdoor team-building activities, morning wellness sessions, and evening networking receptions surrounded by fresh pine air and panoramic Himalayan mountain views.
+          </p>
+
+          <ul style="list-style: none; padding: 0; margin: 0 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;" class="responsive-two-col">
+            <li style="font-size: 13.5px; color: #334155; display: flex; align-items: center; gap: 8px;">
+              <i class="fas fa-check-circle" style="color: #22c55e;"></i> Open-Air Brainstorming
+            </li>
+            <li style="font-size: 13.5px; color: #334155; display: flex; align-items: center; gap: 8px;">
+              <i class="fas fa-check-circle" style="color: #22c55e;"></i> Team Building Games
+            </li>
+            <li style="font-size: 13.5px; color: #334155; display: flex; align-items: center; gap: 8px;">
+              <i class="fas fa-check-circle" style="color: #22c55e;"></i> Evening Bonfire & DJ
+            </li>
+            <li style="font-size: 13.5px; color: #334155; display: flex; align-items: center; gap: 8px;">
+              <i class="fas fa-check-circle" style="color: #22c55e;"></i> Live Barbecue Setup
+            </li>
+          </ul>
+
+          <div>
+            <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20plan%20Outdoor%20Lawn%20Workshops." target="_blank" class="btn-outline-blue" style="padding: 10px 22px; font-size: 13px;">
+              <i class="fab fa-whatsapp"></i> Plan Outdoor Event
+            </a>
+          </div>
+        </div>
+        <div style="height: 100%; min-height: 320px; position: relative; order: 2;" class="order-mobile-1">
+          <img src="/images/resort-lawns-garden.avif" alt="Resort Lawns Lansdowne" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; top: 15px; right: 15px; background: #22c55e; color: #fff; padding: 5px 16px; border-radius: 20px; font-size: 12px; font-weight: bold;">
+            <i class="fas fa-sun"></i> Open-Air Lawn
+          </span>
+        </div>
+      </div>
+
+      <!-- Feature 3: Custom Culinary Dining -->
+      <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: grid; grid-template-columns: 1fr 1.2fr;" class="responsive-two-col">
+        <div style="height: 100%; min-height: 320px; position: relative;">
+          <img src="/images/hotel-img-11.jpeg" alt="Culinary Dining Lansdowne" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; top: 15px; left: 15px; background: #f59e0b; color: #0f172a; padding: 5px 16px; border-radius: 20px; font-size: 12px; font-weight: bold;">
+            <i class="fas fa-utensils"></i> Corporate Catering
+          </span>
+        </div>
+        <div style="padding: 35px; display: flex; flex-direction: column; justify-content: center;">
+          <div style="display: flex; gap: 15px; font-size: 13px; color: #0284c7; font-weight: bold; margin-bottom: 8px;">
+            <span><i class="fas fa-mug-hot"></i> High-Tea Sessions</span>
+            <span><i class="fas fa-wine-glass"></i> Gala Dinners</span>
+          </div>
+          <h3 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 12px;">3. Custom Corporate Culinary Dining</h3>
+          <p style="color: #475569; font-size: 14.5px; line-height: 1.7; margin-bottom: 18px;">
+            Our culinary team crafts customized meal spreads for corporate groups — from power breakfasts and working buffet lunches to high-tea cookies and multi-course evening gala dinners with authentic Garhwali specials.
+          </p>
+
+          <ul style="list-style: none; padding: 0; margin: 0 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;" class="responsive-two-col">
+            <li style="font-size: 13.5px; color: #334155; display: flex; align-items: center; gap: 8px;">
+              <i class="fas fa-check-circle" style="color: #22c55e;"></i> Chef-Curated Menus
+            </li>
+            <li style="font-size: 13.5px; color: #334155; display: flex; align-items: center; gap: 8px;">
+              <i class="fas fa-check-circle" style="color: #22c55e;"></i> Garhwali & North Indian
+            </li>
+            <li style="font-size: 13.5px; color: #334155; display: flex; align-items: center; gap: 8px;">
+              <i class="fas fa-check-circle" style="color: #22c55e;"></i> Morning & Evening High Tea
+            </li>
+            <li style="font-size: 13.5px; color: #334155; display: flex; align-items: center; gap: 8px;">
+              <i class="fas fa-check-circle" style="color: #22c55e;"></i> Customized Dietary Options
+            </li>
+          </ul>
+
+          <div>
+            <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20discuss%20Corporate%20Catering%20menus." target="_blank" class="btn-outline-blue" style="padding: 10px 22px; font-size: 13px;">
+              <i class="fab fa-whatsapp"></i> Discuss Catering Menus
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Quick Corporate Enquiry Form -->
+    <div id="eventEnquirySection" style="background: #ffffff; max-width: 850px; margin: 0 auto; padding: 45px; border-radius: 16px; border: 1.5px solid #e2e8f0; box-shadow: 0 10px 35px rgba(0,0,0,0.06);">
+      <h3 style="font-size: 26px; color: var(--dark-bg); text-align: center; margin-bottom: 10px; font-family: 'Cinzel', serif;">Plan Your Event With Us</h3>
+      <p style="color: #64748b; text-align: center; font-size: 15px; margin-bottom: 30px;">
+        Fill in your company & event details below. Our corporate MICE specialist will contact you with a customized package proposal within 2 hours.
       </p>
 
       <form action="/contact" method="POST" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;" class="responsive-two-col">
         <div>
           <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 6px;">Company / Group Name *</label>
-          <input type="text" name="name" required placeholder="e.g. Acme Tech Corp" class="form-control-custom">
+          <input type="text" name="name" required placeholder="e.g. Google / Acme Tech Corp" class="form-control-custom">
         </div>
         <div>
           <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 6px;">Mobile Number *</label>
           <input type="tel" name="phone" required placeholder="+91 98765 43210" class="form-control-custom">
         </div>
         <div>
-          <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 6px;">Expected Guests *</label>
-          <input type="number" name="guests" value="25" class="form-control-custom">
+          <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 6px;">Expected Attendees *</label>
+          <input type="number" name="guests" value="30" class="form-control-custom">
         </div>
         <div>
-          <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 6px;">Event Date</label>
+          <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 6px;">Proposed Event Dates</label>
           <input type="date" name="eventDate" class="form-control-custom">
         </div>
         <div style="grid-column: 1 / -1;">
           <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 6px;">Event Requirements & Special Notes</label>
-          <textarea name="message" rows="3" placeholder="Tell us about conference hall setup, meals, bonfire, transport requirements..." class="form-control-custom"></textarea>
+          <textarea name="message" rows="3" placeholder="Tell us about conference hall setup, room count, meals, bonfire, AC Tempo Traveller transport requirements..." class="form-control-custom"></textarea>
         </div>
         <div style="grid-column: 1 / -1; text-align: center; margin-top: 10px;">
-          <button type="submit" class="btn-blue" style="padding: 13px 35px; font-size: 15px;"><i class="fas fa-paper-plane"></i> Submit Event Inquiry</button>
+          <button type="submit" class="btn-blue pulsing-btn" style="padding: 14px 40px; font-size: 15px; font-weight: bold;"><i class="fas fa-paper-plane"></i> Submit Corporate Inquiry</button>
         </div>
       </form>
     </div>
