@@ -1,16 +1,16 @@
 <%- include('partials/header') %>
 
-<!-- Location Hero Banner -->
-<div class="page-hero-header" style="background: linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.85)), url('/images/valley-city-views.jpg');">
-  <div class="container" style="max-width: 900px;">
-    <span style="background: rgba(245, 158, 11, 0.25); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 15px;">
-      Hillside Sanctuary
+<!-- Location Hero Banner (Full-Height Mobile Responsive) -->
+<div class="page-hero-header" style="background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.85)), url('/images/valley-city-views.jpg');">
+  <div class="container" style="max-width: 900px; position: relative; z-index: 2;">
+    <span style="background: rgba(245, 158, 11, 0.25); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 6px 20px; border-radius: 30px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 18px; backdrop-filter: blur(4px);">
+      <i class="fas fa-map-location-dot"></i> Hillside Sanctuary
     </span>
-    <h1 style="font-size: 42px; margin-bottom: 12px; color: #ffffff; font-family: 'Cinzel', serif;">How To Reach Flutter Hotels & Resorts</h1>
-    <p style="color: #cbd5e1; font-size: 16px; line-height: 1.7; max-width: 750px; margin: 0 auto 25px;">
+    <h1 style="font-size: 44px; margin-bottom: 14px; color: #ffffff; font-family: 'Cinzel', serif; line-height: 1.25;">How To Reach Flutter Hotels & Resorts</h1>
+    <p style="color: #cbd5e1; font-size: 16.5px; line-height: 1.7; max-width: 760px; margin: 0 auto 25px;">
       Located at Palkot–Lansdowne, Garhwal, Uttarakhand (246155). Easily accessible by road from Delhi NCR (255 km), Kotdwar Railway Station (40 km), and Jolly Grant Airport Dehradun (145 km).
     </p>
-    <a href="<%= mapEmbedUrl %>" target="_blank" class="btn-blue pulsing-btn" style="padding: 13px 30px; font-size: 14px; font-weight: bold;">
+    <a href="https://share.google/zTrQmg3ZsRlLWlJuk" target="_blank" class="btn-blue pulsing-btn" style="padding: 14px 32px; font-size: 15px; font-weight: bold;">
       <i class="fas fa-location-arrow"></i> Open Google Maps Navigation
     </a>
   </div>
@@ -20,39 +20,94 @@
   <div class="container">
     
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 50px;" class="responsive-two-col">
+      
+      <!-- Travel Routes Left -->
       <div>
-        <h2 style="font-size: 26px; color: var(--dark-bg); margin-bottom: 20px;">Travel Routes & Distances</h2>
+        <span class="section-subtitle" style="text-align: left;">Travel Directions</span>
+        <h2 class="section-title" style="text-align: left; font-size: 32px; margin-bottom: 25px;">Getting To Lansdowne</h2>
         
-        <div style="display: flex; flex-direction: column; gap: 15px;">
-          <div style="background: #ffffff; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0; display: flex; gap: 15px; align-items: center;">
-            <i class="fas fa-car-side" style="font-size: 28px; color: var(--primary-blue);"></i>
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          
+          <!-- Route 1: Road -->
+          <div style="background: #ffffff; padding: 24px; border-radius: 14px; border: 1px solid #e2e8f0; display: flex; gap: 18px; align-items: flex-start; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+            <div style="width: 48px; height: 48px; background: rgba(95, 134, 193, 0.15); color: var(--primary-blue); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;">
+              <i class="fas fa-car-side"></i>
+            </div>
             <div>
-              <h4 style="font-size: 16px; margin-bottom: 2px;">By Road from Delhi NCR (255 km)</h4>
-              <p style="color: #64748b; font-size: 13.5px; margin: 0;">Delhi → Meerut Expressway → Bijnor → Kotdwar → Palkot-Lansdowne (~5.5 Hours drive).</p>
+              <h4 style="font-size: 17px; color: var(--dark-bg); margin-bottom: 4px; font-family: 'Cinzel', serif;">By Road from Delhi NCR (255 km)</h4>
+              <p style="color: #64748b; font-size: 14px; margin: 0; line-height: 1.6;">
+                Delhi → Delhi–Meerut Expressway → Bijnor → Kotdwar → Palkot-Lansdowne (~5.5 Hours scenic drive). Smooth NH34 highway route.
+              </p>
             </div>
           </div>
 
-          <div style="background: #ffffff; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0; display: flex; gap: 15px; align-items: center;">
-            <i class="fas fa-train" style="font-size: 28px; color: #0284c7;"></i>
+          <!-- Route 2: Train -->
+          <div style="background: #ffffff; padding: 24px; border-radius: 14px; border: 1px solid #e2e8f0; display: flex; gap: 18px; align-items: flex-start; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+            <div style="width: 48px; height: 48px; background: rgba(2, 132, 199, 0.15); color: #0284c7; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;">
+              <i class="fas fa-train"></i>
+            </div>
             <div>
-              <h4 style="font-size: 16px; margin-bottom: 2px;">Nearest Railway Station — Kotdwar (KTW - 40 km)</h4>
-              <p style="color: #64748b; font-size: 13.5px; margin: 0;">Daily trains from Delhi (Mussoorie Express & Siddhabali Jan Shatabdi). Taxi available outside station.</p>
+              <h4 style="font-size: 17px; color: var(--dark-bg); margin-bottom: 4px; font-family: 'Cinzel', serif;">Nearest Railway Station — Kotdwar (40 km)</h4>
+              <p style="color: #64748b; font-size: 14px; margin: 0; line-height: 1.6;">
+                Kotdwar (KTW) has daily direct express trains from Delhi (Mussoorie Express & Siddhabali Jan Shatabdi). Local cabs available outside station (~1 hour mountain drive).
+              </p>
             </div>
           </div>
 
-          <div style="background: #ffffff; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0; display: flex; gap: 15px; align-items: center;">
-            <i class="fas fa-plane-departure" style="font-size: 28px; color: #22c55e;"></i>
-            <div>
-              <h4 style="font-size: 16px; margin-bottom: 2px;">Nearest Airport — Jolly Grant Dehradun (DED - 145 km)</h4>
-              <p style="color: #64748b; font-size: 13.5px; margin: 0;">Direct flights from Delhi, Mumbai, Bangalore & Hyderabad (~4 Hours scenic mountain taxi ride).</p>
+          <!-- Route 3: Air -->
+          <div style="background: #ffffff; padding: 24px; border-radius: 14px; border: 1px solid #e2e8f0; display: flex; gap: 18px; align-items: flex-start; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+            <div style="width: 48px; height: 48px; background: rgba(34, 197, 94, 0.15); color: #22c55e; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;">
+              <i class="fas fa-plane-departure"></i>
             </div>
+            <div>
+              <h4 style="font-size: 17px; color: var(--dark-bg); margin-bottom: 4px; font-family: 'Cinzel', serif;">Nearest Airport — Jolly Grant Dehradun (145 km)</h4>
+              <p style="color: #64748b; font-size: 14px; margin: 0; line-height: 1.6;">
+                Jolly Grant Airport Dehradun (DED) has daily non-stop flights from Delhi, Mumbai, Bangalore & Hyderabad (~4 Hours scenic mountain taxi ride).
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Google Maps Embed Right -->
+      <div>
+        <div style="background: #ffffff; border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.06); height: 100%; min-height: 420px; display: flex; flex-direction: column;">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3460.5!2d78.691456!3d29.823888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3909f18a287fa83d%3A0x6fb2a06bb72d2e1b!2sFlutter%20Hotels%20%26%20Resorts!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0; flex-grow: 1; min-height: 360px;" allowfullscreen="" loading="lazy"></iframe>
+          
+          <div style="padding: 16px 20px; background: #ffffff; border-top: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 13px; color: #64748b;"><i class="fas fa-map-marker-alt" style="color: var(--primary-blue);"></i> Palkot, Lansdowne, Uttarakhand 246155</span>
+            <a href="https://share.google/zTrQmg3ZsRlLWlJuk" target="_blank" style="color: var(--primary-blue); font-weight: bold; font-size: 13px; text-decoration: underline;">
+              Get Live Directions <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
         </div>
       </div>
 
-      <div>
-        <div style="background: #ffffff; border-radius: 14px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 8px 25px rgba(0,0,0,0.06); height: 100%; min-height: 380px;">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3460.5!2d78.68!3d29.84!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3909f18a287fa83d%3A0x6fb2a06bb72d2e1b!2sFlutter%20Hotels%20%26%20Resorts!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0; min-height: 380px;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- Quick Location Specs Box -->
+    <div style="background: #ffffff; padding: 30px; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center;">
+        <div>
+          <i class="fas fa-location-crosshairs" style="font-size: 24px; color: var(--primary-blue); margin-bottom: 6px;"></i>
+          <div style="font-size: 14px; font-weight: bold; color: var(--dark-bg);">GPS Coordinates</div>
+          <span style="font-size: 12px; color: #64748b;">29.8238° N, 78.6914° E</span>
+        </div>
+        <div>
+          <i class="fas fa-temperature-three-quarters" style="font-size: 24px; color: #f59e0b; margin-bottom: 6px;"></i>
+          <div style="font-size: 14px; font-weight: bold; color: var(--dark-bg);">Pleasant Hill Climate</div>
+          <span style="font-size: 12px; color: #64748b;">15°C – 25°C Summer • 4°C Winter</span>
+        </div>
+        <div>
+          <i class="fas fa-shield-halved" style="font-size: 24px; color: #22c55e; margin-bottom: 6px;"></i>
+          <div style="font-size: 14px; font-weight: bold; color: var(--dark-bg);">Pristine Cantonment Zone</div>
+          <span style="font-size: 12px; color: #64748b;">Peaceful, safe & pollution-free</span>
+        </div>
+        <div>
+          <i class="fas fa-phone-volume" style="font-size: 24px; color: #0284c7; margin-bottom: 6px;"></i>
+          <div style="font-size: 14px; font-weight: bold; color: var(--dark-bg);">Concierge Taxi Assistance</div>
+          <span style="font-size: 12px; color: #64748b;">Call +91 89 2923 2740 for pickup</span>
         </div>
       </div>
     </div>

@@ -254,7 +254,8 @@ app.get('/facilities', (req, res) => {
 app.get('/location', (req, res) => {
   res.render('location', {
     title: 'Location & How To Reach | Flutter Hotels & Resorts',
-    metaDesc: 'Travel routes from Delhi, Kotdwar railway station, and Jolly Grant airport to Flutter Hotels & Resorts, Lansdowne.'
+    metaDesc: 'Travel routes from Delhi, Kotdwar railway station, and Jolly Grant airport to Flutter Hotels & Resorts, Lansdowne.',
+    mapEmbedUrl: 'https://share.google/zTrQmg3ZsRlLWlJuk'
   });
 });
 
