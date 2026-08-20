@@ -71,6 +71,12 @@
         <a href="/rooms" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Rooms')) ? 'active' : '' %>">
           <span>Rooms & Suites</span>
         </a>
+        <a href="/dining" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Dining')) ? 'active' : '' %>">
+          <span>Dining</span>
+        </a>
+        <a href="/gallery" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Gallery')) ? 'active' : '' %>">
+          <span>Gallery</span>
+        </a>
         <a href="/offers" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Offers') && !title.includes('Packages')) ? 'active' : '' %>">
           <span>Offers</span>
         </a>
@@ -79,12 +85,6 @@
         </a>
         <a href="/things-to-do" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Things To Do')) ? 'active' : '' %>">
           <span>Things To Do</span>
-        </a>
-        <a href="/dining" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Dining')) ? 'active' : '' %>">
-          <span>Dining</span>
-        </a>
-        <a href="/gallery" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Gallery')) ? 'active' : '' %>">
-          <span>Gallery</span>
         </a>
         <a href="/blog" class="nav-item-link <%= (typeof title !== 'undefined' && title.includes('Blog')) ? 'active' : '' %>">
           <span>Blog</span>

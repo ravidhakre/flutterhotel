@@ -1203,3 +1203,86 @@ ul {
     text-align: center;
   }
 }
+
+/* ==========================================================================
+   OFFERS HERO BANNER (Increased Height & Fullscreen Mobile View)
+   ========================================================================== */
+.offers-hero-banner {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  background: url('/images/offer-banner.avif') center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  padding: 120px 20px;
+  overflow: hidden;
+}
+
+.offers-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.75) 0%, rgba(15, 23, 42, 0.6) 50%, rgba(15, 23, 42, 0.85) 100%);
+  z-index: 1;
+}
+
+.offers-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+}
+
+.offers-hero-badge {
+  background: rgba(245, 158, 11, 0.25);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  padding: 6px 20px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: inline-block;
+  margin-bottom: 18px;
+  backdrop-filter: blur(4px);
+}
+
+.offers-hero-title {
+  font-size: 44px;
+  font-family: 'Cinzel', serif;
+  color: #ffffff;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.offers-hero-subtitle {
+  color: #cbd5e1;
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .offers-hero-banner {
+    min-height: 85vh !important;
+    height: 85vh !important;
+    padding: 60px 20px !important;
+    background-position: center center !important;
+  }
+
+  .offers-hero-title {
+    font-size: 30px !important;
+    line-height: 1.3 !important;
+  }
+
+  .offers-hero-subtitle {
+    font-size: 14px !important;
+  }
+}
