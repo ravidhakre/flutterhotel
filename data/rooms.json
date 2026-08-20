@@ -12,12 +12,12 @@
     "wifi": true,
     "breakfast": true,
     "view": "Garhwal Valley View",
-    "image": "/images/hotel-img-12.jpeg",
+    "image": "/images/super-deluxe-room-bed.jpg",
     "gallery": [
-      "/images/hotel-img-12.jpeg",
-      "/images/hotel-img-1.jpg",
-      "/images/hotel-img-10.jpeg",
-      "/images/hotel-img-14.jpeg"
+      "/images/super-deluxe-room-bed.jpg",
+      "/images/room-1.jpg",
+      "/images/hotel-img-4.jpeg",
+      "/images/hotel-img-1.jpg"
     ],
     "featured": true,
     "badge": "MOST POPULAR",
@@ -47,12 +47,12 @@
     "wifi": true,
     "breakfast": true,
     "view": "Resort Garden View",
-    "image": "/images/hotel-img-14.jpeg",
+    "image": "/images/room-1.jpg",
     "gallery": [
-      "/images/hotel-img-14.jpeg",
+      "/images/room-1.jpg",
+      "/images/super-deluxe-room-bed.jpg",
       "/images/hotel-img-3.jpg",
-      "/images/resort-lawns-garden.avif",
-      "/images/hotel-img-4.jpeg"
+      "/images/resort-lawns-garden.avif"
     ],
     "featured": true,
     "badge": "RESORT GARDEN VIEW",
@@ -86,7 +86,7 @@
     "gallery": [
       "/images/hotel-img-4.jpeg",
       "/images/room-1.jpg",
-      "/images/hotel-img-1.jpg"
+      "/images/super-deluxe-room-bed.jpg"
     ],
     "featured": true,
     "badge": "BEST VALUE",
