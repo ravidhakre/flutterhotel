@@ -118,7 +118,7 @@ function generateBookingEmailHTML(booking, room) {
       <div class="email-footer">
         <strong>Flutter Hotels & Resorts, Lansdowne</strong><br>
         Palkot–Lansdowne, Pauri Garhwal, Uttarakhand – 246155, India<br>
-        Phone: +91 89 2923 2740 / +91 13 8629 9133 | Email: sales@flutterhotel.com<br>
+        Phone: +91 89 2923 2740 | Email: sales@flutterhotel.com<br>
         © 2026 Flutter Hotels & Resorts. All Rights Reserved.
       </div>
     </div>

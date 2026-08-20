@@ -73,7 +73,7 @@ app.use((req, res, next) => {
   res.locals.user = req.session.user || null;
   res.locals.isAdmin = !!(req.session.user && req.session.user.isAdmin);
   res.locals.phoneMain = "+91 89 2923 2740";
-  res.locals.phoneAlt = "+91 13 8629 9133";
+  res.locals.phoneAlt = "";
   res.locals.emailMain = "sales@flutterhotel.com";
   res.locals.whatsappNum = "918929232740";
   next();
@@ -216,6 +216,13 @@ app.get('/privacy-policy', (req, res) => {
 });
 
 // Dropdown Sub-Menu Pages
+app.get('/about-us', (req, res) => {
+  res.render('about', {
+    title: 'About Us | Flutter Hotels & Resorts, Lansdowne',
+    metaDesc: 'Welcome to Flutter Hotels & Resorts, Lansdowne — 32,400 sq. ft. hillside sanctuary established on 15 April 2023 by Bikram Gupta.'
+  });
+});
+
 app.get('/meetings-events', (req, res) => {
   res.render('meetings-events', {
     title: 'Meetings & Corporate Events | Flutter Hotels & Resorts',
