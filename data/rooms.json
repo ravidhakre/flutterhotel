@@ -116,11 +116,11 @@
     "wifi": true,
     "breakfast": true,
     "view": "Private Balcony",
-    "image": "/images/room-bedroom-4.jpg",
+    "image": "/images/Rooms/family-four-bedded/family-four-bedroom-1.jpg",
     "gallery": [
-      "/images/room-bedroom-4.jpg",
-      "/images/Rooms/2.jpeg",
-      "/images/Rooms/6.jpeg"
+      "/images/Rooms/family-four-bedded/family-four-bedroom-1.jpg",
+      "/images/Rooms/family-four-bedded/family-four-bedroom-2.jpg",
+      "/images/Rooms/family-four-bedded/family-four-washroom.jpg"
     ],
     "featured": true,
     "badge": "TOTAL 02 ROOMS",
