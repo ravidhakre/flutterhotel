@@ -167,12 +167,15 @@ ul {
   border-bottom: 2px solid rgba(95, 134, 193, 0.18);
 }
 
+.main-navbar .navbar-inner {
+  height: 86px;
+}
+
 .navbar-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 12px 20px;
-  height: 76px;
 }
 
 .navbar-brand-logo {
@@ -182,8 +185,8 @@ ul {
 }
 
 .brand-logo-img {
-  height: 50px;
-  max-height: 52px;
+  height: 66px;
+  max-height: 70px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -1240,11 +1243,11 @@ ul {
   }
 
   .navbar-inner {
-    height: 66px;
+    height: 74px;
   }
 
   .brand-logo-img {
-    height: 44px;
+    height: 56px;
   }
 
   .hero-video-section {
