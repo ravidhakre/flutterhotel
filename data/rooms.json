@@ -13,11 +13,11 @@
     "wifi": true,
     "breakfast": true,
     "view": "Private Balcony",
-    "image": "/images/hotel-img-4.jpeg",
+    "image": "/images/Rooms/1.jpeg",
     "gallery": [
-      "/images/hotel-img-4.jpeg",
-      "/images/room-1.jpg",
-      "/images/super-deluxe-room-bed.jpg"
+      "/images/Rooms/1.jpeg",
+      "/images/Rooms/2.jpeg",
+      "/images/Rooms/3.jpeg"
     ],
     "featured": true,
     "badge": "TOTAL 05 ROOMS",
@@ -47,11 +47,11 @@
     "wifi": true,
     "breakfast": true,
     "view": "Private Balcony",
-    "image": "/images/super-deluxe-room-bed.jpg",
+    "image": "/images/Rooms/4.jpeg",
     "gallery": [
-      "/images/super-deluxe-room-bed.jpg",
-      "/images/room-1.jpg",
-      "/images/hotel-img-4.jpeg"
+      "/images/Rooms/4.jpeg",
+      "/images/Rooms/5.jpeg",
+      "/images/Rooms/6.jpeg"
     ],
     "featured": true,
     "badge": "TOTAL 10 ROOMS",
@@ -81,11 +81,11 @@
     "wifi": true,
     "breakfast": true,
     "view": "Private Balcony",
-    "image": "/images/room-1.jpg",
+    "image": "/images/Rooms/7.jpeg",
     "gallery": [
-      "/images/room-1.jpg",
-      "/images/super-deluxe-room-bed.jpg",
-      "/images/hotel-img-3.jpg"
+      "/images/Rooms/7.jpeg",
+      "/images/Rooms/8.jpeg",
+      "/images/Rooms/9.jpeg"
     ],
     "featured": true,
     "badge": "TOTAL 02 ROOMS",
@@ -115,11 +115,11 @@
     "wifi": true,
     "breakfast": true,
     "view": "Private Balcony",
-    "image": "/images/hotel-img-3.jpg",
+    "image": "/images/room-bedroom-4.jpg",
     "gallery": [
-      "/images/hotel-img-3.jpg",
-      "/images/super-deluxe-room-bed.jpg",
-      "/images/room-1.jpg"
+      "/images/room-bedroom-4.jpg",
+      "/images/Rooms/2.jpeg",
+      "/images/Rooms/6.jpeg"
     ],
     "featured": true,
     "badge": "TOTAL 02 ROOMS",
@@ -152,8 +152,8 @@
     "image": "/images/hotel-img-1.jpg",
     "gallery": [
       "/images/hotel-img-1.jpg",
-      "/images/super-deluxe-room-bed.jpg",
-      "/images/room-1.jpg"
+      "/images/Rooms/5.jpeg",
+      "/images/Rooms/3.jpeg"
     ],
     "featured": true,
     "badge": "TOTAL 05 ROOMS",
