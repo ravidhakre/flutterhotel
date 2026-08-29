@@ -1250,15 +1250,12 @@ ul {
   .hero-video-section {
     position: relative !important;
     width: 100% !important;
-    min-height: 75vh !important;
+    min-height: 60vh !important;
     height: auto !important;
     max-height: none !important;
-    display: flex !important;
-    align-items: flex-end !important;
-    justify-content: center !important;
     overflow: hidden !important;
     background: #0f172a !important;
-    padding: 90px 15px 40px !important;
+    padding: 0 !important;
   }
 
   .hero-video-bg {
