@@ -1,14 +1,14 @@
 <%- include('partials/header') %>
 
 <!-- Things To Do Hero Banner -->
-<div class="page-hero-header" style="background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('/images/tip-n-top.jpg');">
-  <div class="container" style="max-width: 900px;">
-    <span style="background: rgba(245, 158, 11, 0.25); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 15px;">
-      Explore Lansdowne
+<div class="page-hero-header" style="background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('/images/things-to-do/tip n top viewpoint lansdowne1.jpeg'); background-size: cover; background-position: center;">
+  <div class="container" style="max-width: 900px; position: relative; z-index: 2;">
+    <span style="background: rgba(245, 158, 11, 0.25); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 15px; backdrop-filter: blur(4px);">
+      <i class="fas fa-compass"></i> Explore Lansdowne
     </span>
     <h1 style="font-size: 42px; margin-bottom: 12px; color: #ffffff; font-family: 'Cinzel', serif;">Top Things To Do in Lansdowne</h1>
     <p style="color: #cbd5e1; font-size: 16px; line-height: 1.7; max-width: 750px; margin: 0 auto 25px;">
-      From serene alpine lakes and historic colonial churches to ancient temples and panoramic Himalayan sunrise viewpoints — explore the best attractions surrounding Flutter Hotels & Resorts.
+      From serene alpine lakes and historic colonial churches to ancient temples and panoramic sunrise viewpoints — explore the best attractions surrounding Flutter Hotels & Resorts.
     </p>
     <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20book%20a%20local%20sightseeing%20cab%20tour%20in%20Lansdowne." target="_blank" class="btn-blue pulsing-btn" style="padding: 13px 30px; font-size: 14px; font-weight: bold;">
       <i class="fas fa-car-side"></i> Book Sightseeing Cab Tour
@@ -23,7 +23,7 @@
       <span class="section-subtitle">Sightseeing Guide</span>
       <h2 class="section-title">Must-Visit Attractions & Activities</h2>
       <p style="color: #64748b; font-size: 15px;">
-        All popular Lansdowne attractions are conveniently accessible from Flutter Hotels & Resorts. Our concierge team can arrange private cabs, guided walks, and custom sightseeing itineraries.
+        All popular Lansdowne attractions are conveniently accessible from Flutter Hotels & Resorts. Swipe or scroll photos on each attraction card to view multiple perspectives!
       </p>
     </div>
 
@@ -32,23 +32,34 @@
       
       <!-- Attraction 1: Tip-in-Top Viewpoint -->
       <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: grid; grid-template-columns: 1fr 1.2fr;" class="responsive-two-col">
-        <div style="height: 100%; min-height: 300px; position: relative;">
-          <img src="/images/tip-n-top.jpg" alt="Tip-in-Top Viewpoint Lansdowne" style="width: 100%; height: 100%; object-fit: cover;">
-          <span style="position: absolute; top: 15px; left: 15px; background: var(--primary-blue); color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: bold;">
+        <!-- Swipeable Image Carousel Container -->
+        <div style="height: 100%; min-height: 320px; position: relative; overflow: hidden;">
+          <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
+            <% ['/images/things-to-do/tip n top viewpoint lansdowne1.jpeg', '/images/things-to-do/tip n top viewpoint lansdowne2.jpeg', '/images/things-to-do/tip n top viewpoint lansdowne3.jpeg'].forEach((imgUrl, imgIdx) => { %>
+              <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
+                <img src="<%= imgUrl %>" alt="Tip-in-Top Viewpoint - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+            <% }); %>
+          </div>
+          <span style="position: absolute; top: 15px; left: 15px; background: var(--primary-blue); color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; pointer-events: none;">
             <i class="fas fa-mountain"></i> Viewpoint
           </span>
+          <span style="position: absolute; top: 15px; right: 15px; background: rgba(15, 23, 42, 0.85); color: #ffffff; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
+            <i class="fas fa-arrows-left-right"></i> Scroll Photos (3)
+          </span>
         </div>
+
         <div style="padding: 35px; display: flex; flex-direction: column; justify-content: center;">
           <div style="display: flex; gap: 15px; font-size: 13px; color: #0284c7; font-weight: bold; margin-bottom: 8px;">
             <span><i class="fas fa-route"></i> 5 km from Resort</span>
             <span><i class="fas fa-clock"></i> 1 - 2 Hours</span>
           </div>
-          <h3 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 12px;">1. Tip-in-Top (Tiffin Top) Viewpoint</h3>
+          <h3 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 12px; font-family: 'Cinzel', serif;">1. Tip-in-Top (Tiffin Top) Viewpoint</h3>
           <p style="color: #475569; font-size: 14.5px; line-height: 1.7; margin-bottom: 18px;">
-            Situated at the highest point in Lansdowne (approx. 1,700 meters above sea level), Tip-in-Top offers breathtaking 360-degree panoramic views of the snow-capped Himalayan range and deep Garhwal valleys. It is the most popular sunrise and sunset spot in Lansdowne.
+            Situated at the highest point in Lansdowne (approx. 1,700 meters above sea level), Tip-in-Top offers breathtaking 360-degree panoramic views of the snow-capped Garhwal peaks and deep valleys. It is the most popular sunrise and sunset spot in Lansdowne.
           </p>
           <div style="background: #f8fafc; padding: 12px 16px; border-radius: 8px; border-left: 3px solid var(--primary-blue); font-size: 13px; color: #334155; margin-bottom: 20px;">
-            <strong>Insider Tip:</strong> Visit early in the morning around 6:00 AM for clear, unobstructed views of the Trishul and Chaukhamba Himalayan peaks.
+            <strong>Insider Tip:</strong> Visit early in the morning around 6:00 AM for clear, unobstructed views of the Trishul and Chaukhamba peaks.
           </div>
           <div>
             <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20book%20a%20cab%20to%20Tip-in-Top%20Viewpoint." target="_blank" class="btn-outline-blue" style="padding: 10px 20px; font-size: 13px;">
@@ -65,7 +76,7 @@
             <span><i class="fas fa-route"></i> 4 km from Resort</span>
             <span><i class="fas fa-clock"></i> 1.5 - 2 Hours</span>
           </div>
-          <h3 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 12px;">2. Bhulla Tal Lake & Herbal Park</h3>
+          <h3 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 12px; font-family: 'Cinzel', serif;">2. Bhulla Tal Lake & Herbal Park</h3>
           <p style="color: #475569; font-size: 14.5px; line-height: 1.7; margin-bottom: 18px;">
             Bhulla Tal is a serene man-made lake dedicated to the young Garhwali soldiers ('Bhulla' meaning younger brother in Garhwali) of the Garhwal Rifles. Surrounded by oak trees, it features paddle boating, a duck enclosure, a bamboo bridge, a children's park, and a lovely herbal garden cafe.
           </p>
@@ -78,30 +89,52 @@
             </a>
           </div>
         </div>
-        <div style="height: 100%; min-height: 300px; position: relative; order: 2;" class="order-mobile-1">
-          <img src="/images/bhulla-lake.jpg" alt="Bhulla Tal Lake Lansdowne" style="width: 100%; height: 100%; object-fit: cover;">
-          <span style="position: absolute; top: 15px; right: 15px; background: #0284c7; color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: bold;">
+
+        <!-- Swipeable Image Carousel Container -->
+        <div style="height: 100%; min-height: 320px; position: relative; overflow: hidden; order: 2;" class="order-mobile-1">
+          <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
+            <% ['/images/things-to-do/bhulla tal lake and herbal park lansdowne1.jpeg', '/images/things-to-do/bhulla tal lake and herbal park lansdowne2.jpeg', '/images/things-to-do/bhulla tal lake and herbal park lansdowne3.jpeg'].forEach((imgUrl, imgIdx) => { %>
+              <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
+                <img src="<%= imgUrl %>" alt="Bhulla Tal Lake - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+            <% }); %>
+          </div>
+          <span style="position: absolute; top: 15px; right: 15px; background: #0284c7; color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; pointer-events: none;">
             <i class="fas fa-water"></i> Lake & Boating
+          </span>
+          <span style="position: absolute; top: 15px; left: 15px; background: rgba(15, 23, 42, 0.85); color: #ffffff; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
+            <i class="fas fa-arrows-left-right"></i> Scroll Photos (3)
           </span>
         </div>
       </div>
 
       <!-- Attraction 3: St. Mary's & St. John's Church -->
       <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: grid; grid-template-columns: 1fr 1.2fr;" class="responsive-two-col">
-        <div style="height: 100%; min-height: 300px; position: relative;">
-          <img src="/images/st-marys-church.jpg" alt="St Mary's Church Lansdowne" style="width: 100%; height: 100%; object-fit: cover;">
-          <span style="position: absolute; top: 15px; left: 15px; background: #8b5cf6; color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: bold;">
+        <!-- Swipeable Image Carousel Container -->
+        <div style="height: 100%; min-height: 320px; position: relative; overflow: hidden;">
+          <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
+            <% ['/images/things-to-do/st marys and st johns colonial lansdowne1.jpeg', '/images/things-to-do/st marys and st johns colonial lansdowne2.jpeg', '/images/things-to-do/st marys and st johns colonial lansdowne3.jpeg'].forEach((imgUrl, imgIdx) => { %>
+              <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
+                <img src="<%= imgUrl %>" alt="St Mary's Church - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+            <% }); %>
+          </div>
+          <span style="position: absolute; top: 15px; left: 15px; background: #8b5cf6; color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; pointer-events: none;">
             <i class="fas fa-church"></i> Colonial Heritage
           </span>
+          <span style="position: absolute; top: 15px; right: 15px; background: rgba(15, 23, 42, 0.85); color: #ffffff; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
+            <i class="fas fa-arrows-left-right"></i> Scroll Photos (3)
+          </span>
         </div>
+
         <div style="padding: 35px; display: flex; flex-direction: column; justify-content: center;">
           <div style="display: flex; gap: 15px; font-size: 13px; color: #0284c7; font-weight: bold; margin-bottom: 8px;">
             <span><i class="fas fa-route"></i> 4.5 km from Resort</span>
             <span><i class="fas fa-clock"></i> 45 Mins</span>
           </div>
-          <h3 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 12px;">3. St. Mary's & St. John's Colonial Churches</h3>
+          <h3 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 12px; font-family: 'Cinzel', serif;">3. St. Mary's & St. John's Colonial Churches</h3>
           <p style="color: #475569; font-size: 14.5px; line-height: 1.7; margin-bottom: 18px;">
-            Constructed in 1895 during the British era by Colonel A.H.B. Hume, St. Mary's Church is a stunning stone structure with stained glass windows and Victorian architecture. Nearby St. John's Church (built in 1936) is the only operational church in Lansdowne, nestled amidst towering pine trees.
+            Constructed in 1895 during the British era by Colonel A.H.B. Hume, St. Mary's Church is a stunning stone structure with stained glass windows and Victorian architecture. Nearby St. John's Church (built in 1936) is nestled amidst towering pine trees.
           </p>
           <div style="background: #f8fafc; padding: 12px 16px; border-radius: 8px; border-left: 3px solid #8b5cf6; font-size: 13px; color: #334155; margin-bottom: 20px;">
             <strong>Audio-Visual Show:</strong> St. Mary's Church houses a small museum showcasing pre-independence photographs and documentary videos on Lansdowne's history.
@@ -121,7 +154,7 @@
             <span><i class="fas fa-route"></i> 4 km from Resort</span>
             <span><i class="fas fa-clock"></i> 1 Hour</span>
           </div>
-          <h3 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 12px;">4. Garhwal Rifles Regimental Museum & War Memorial</h3>
+          <h3 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 12px; font-family: 'Cinzel', serif;">4. Garhwal Rifles Regimental Museum & War Memorial</h3>
           <p style="color: #475569; font-size: 14.5px; line-height: 1.7; margin-bottom: 18px;">
             Lansdowne is the command cantonment headquarters of the famed Garhwal Rifles Regiment of the Indian Army. The Darwan Singh Sangrahalaya (Regimental Museum) showcases rare military weapons, war trophies, historical uniforms, and bravery medals dating back to World War I & II.
           </p>
@@ -134,28 +167,50 @@
             </a>
           </div>
         </div>
-        <div style="height: 100%; min-height: 300px; position: relative; order: 2;" class="order-mobile-1">
-          <img src="/images/garhwal-rifles-museum.jpg" alt="Garhwal Rifles Museum Lansdowne" style="width: 100%; height: 100%; object-fit: cover;">
-          <span style="position: absolute; top: 15px; right: 15px; background: #f59e0b; color: #0f172a; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: bold;">
+
+        <!-- Swipeable Image Carousel Container -->
+        <div style="height: 100%; min-height: 320px; position: relative; overflow: hidden; order: 2;" class="order-mobile-1">
+          <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
+            <% ['/images/things-to-do/garhwal rifles regiment museum lansdowne1.jpeg', '/images/things-to-do/garhwal rifles regiment museum lansdowne2.jpeg', '/images/things-to-do/garhwal rifles regiment museum lansdowne3.jpeg', '/images/things-to-do/garhwal rifles regiment museum lansdowne4.jpeg'].forEach((imgUrl, imgIdx) => { %>
+              <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
+                <img src="<%= imgUrl %>" alt="Garhwal Rifles Museum - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+            <% }); %>
+          </div>
+          <span style="position: absolute; top: 15px; right: 15px; background: #f59e0b; color: #0f172a; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; pointer-events: none;">
             <i class="fas fa-shield-halved"></i> Military History
+          </span>
+          <span style="position: absolute; top: 15px; left: 15px; background: rgba(15, 23, 42, 0.85); color: #ffffff; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
+            <i class="fas fa-arrows-left-right"></i> Scroll Photos (4)
           </span>
         </div>
       </div>
 
       <!-- Attraction 5: Tarkeshwar Mahadev Temple -->
       <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: grid; grid-template-columns: 1fr 1.2fr;" class="responsive-two-col">
-        <div style="height: 100%; min-height: 300px; position: relative;">
-          <img src="/images/tarkeshwar-mahadev.jpg" alt="Tarkeshwar Mahadev Temple Lansdowne" style="width: 100%; height: 100%; object-fit: cover;">
-          <span style="position: absolute; top: 15px; left: 15px; background: #166534; color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: bold;">
+        <!-- Swipeable Image Carousel Container -->
+        <div style="height: 100%; min-height: 320px; position: relative; overflow: hidden;">
+          <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
+            <% ['/images/things-to-do/Tarkeshwar mahadev temple in lansdowne1.jpeg', '/images/things-to-do/Tarkeshwar mahadev temple in lansdowne2.jpeg', '/images/things-to-do/Tarkeshwar mahadev temple in lansdowne3.jpeg', '/images/things-to-do/Tarkeshwar mahadev temple in lansdowne4.jpeg'].forEach((imgUrl, imgIdx) => { %>
+              <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
+                <img src="<%= imgUrl %>" alt="Tarkeshwar Mahadev Temple - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+            <% }); %>
+          </div>
+          <span style="position: absolute; top: 15px; left: 15px; background: #166534; color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; pointer-events: none;">
             <i class="fas fa-om"></i> Sacred Temple
           </span>
+          <span style="position: absolute; top: 15px; right: 15px; background: rgba(15, 23, 42, 0.85); color: #ffffff; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
+            <i class="fas fa-arrows-left-right"></i> Scroll Photos (4)
+          </span>
         </div>
+
         <div style="padding: 35px; display: flex; flex-direction: column; justify-content: center;">
           <div style="display: flex; gap: 15px; font-size: 13px; color: #0284c7; font-weight: bold; margin-bottom: 8px;">
             <span><i class="fas fa-route"></i> 38 km from Resort</span>
             <span><i class="fas fa-clock"></i> Half-Day Trip</span>
           </div>
-          <h3 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 12px;">5. Tarkeshwar Mahadev Temple & Deodar Forests</h3>
+          <h3 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 12px; font-family: 'Cinzel', serif;">5. Tarkeshwar Mahadev Temple & Deodar Forests</h3>
           <p style="color: #475569; font-size: 14.5px; line-height: 1.7; margin-bottom: 18px;">
             Perched at an altitude of 2,092 meters and surrounded by dense, ancient Deodar and Cedar forests, Tarkeshwar Mahadev is a sacred Lord Shiva temple. Thousands of metal bells hung around the temple complex create a divine, peaceful atmosphere.
           </p>
@@ -177,7 +232,7 @@
             <span><i class="fas fa-route"></i> Nearby Trek Trail</span>
             <span><i class="fas fa-clock"></i> 2 - 3 Hours</span>
           </div>
-          <h3 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 12px;">6. Bhalugarh Waterfalls & Pine Nature Walks</h3>
+          <h3 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 12px; font-family: 'Cinzel', serif;">6. Bhalugarh Waterfalls & Pine Nature Walks</h3>
           <p style="color: #475569; font-size: 14.5px; line-height: 1.7; margin-bottom: 18px;">
             For adventure lovers and nature enthusiasts, the secret waterfall trails near Lansdowne offer refreshing natural streams, birdwatching opportunities, and scenic pine forest walks away from crowded tourist spots.
           </p>
@@ -190,10 +245,21 @@
             </a>
           </div>
         </div>
-        <div style="height: 100%; min-height: 300px; position: relative; order: 2;" class="order-mobile-1">
-          <img src="/images/bhalugarh-waterfall.jpg" alt="Bhalugarh Waterfall Lansdowne" style="width: 100%; height: 100%; object-fit: cover;">
-          <span style="position: absolute; top: 15px; right: 15px; background: #0284c7; color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: bold;">
+
+        <!-- Swipeable Image Carousel Container -->
+        <div style="height: 100%; min-height: 320px; position: relative; overflow: hidden; order: 2;" class="order-mobile-1">
+          <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
+            <% ['/images/things-to-do/bhalugarh waterfalls lansdowne1.jpeg', '/images/things-to-do/bhalugarh waterfalls lansdowne2.jpeg', '/images/things-to-do/bhalugarh waterfalls lansdowne3.jpeg'].forEach((imgUrl, imgIdx) => { %>
+              <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
+                <img src="<%= imgUrl %>" alt="Bhalugarh Waterfall - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+            <% }); %>
+          </div>
+          <span style="position: absolute; top: 15px; right: 15px; background: #0284c7; color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; pointer-events: none;">
             <i class="fas fa-person-hiking"></i> Nature & Trekking
+          </span>
+          <span style="position: absolute; top: 15px; left: 15px; background: rgba(15, 23, 42, 0.85); color: #ffffff; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
+            <i class="fas fa-arrows-left-right"></i> Scroll Photos (3)
           </span>
         </div>
       </div>
