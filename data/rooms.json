@@ -13,11 +13,12 @@
     "wifi": true,
     "breakfast": true,
     "view": "Private Balcony",
-    "image": "/images/Rooms/1.jpeg",
+    "image": "/images/Rooms/classic/classic-bedroom-1.jpg",
     "gallery": [
-      "/images/Rooms/1.jpeg",
-      "/images/Rooms/2.jpeg",
-      "/images/Rooms/3.jpeg"
+      "/images/Rooms/classic/classic-bedroom-1.jpg",
+      "/images/Rooms/classic/classic-bedroom-2.jpg",
+      "/images/Rooms/classic/classic-bedroom-3.jpg",
+      "/images/Rooms/classic/classic-washroom.jpg"
     ],
     "featured": true,
     "badge": "TOTAL 05 ROOMS",
