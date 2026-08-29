@@ -290,24 +290,54 @@
     </div>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 40px;">
+      <!-- Card 1: Tip-n-Top Viewpoint -->
       <div style="position: relative; height: 240px; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.06); border: 1px solid #e2e8f0;">
-        <img src="/images/tip-n-top.jpg" alt="Tip-n-Top Sunset Point" style="width: 100%; height: 100%; object-fit: cover;">
-        <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.85); color: #fff; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; backdrop-filter: blur(4px);">
+        <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
+          <% ['/images/things-to-do/tip n top viewpoint lansdowne1.jpeg', '/images/things-to-do/tip n top viewpoint lansdowne2.jpeg', '/images/things-to-do/tip n top viewpoint lansdowne3.jpeg'].forEach((imgUrl, imgIdx) => { %>
+            <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
+              <img src="<%= imgUrl %>" alt="Tip-n-Top Viewpoint - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+          <% }); %>
+        </div>
+        <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.85); color: #fff; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; backdrop-filter: blur(4px); pointer-events: none;">
           <i class="fas fa-mountain"></i> Tip-n-Top Viewpoint
         </span>
-      </div>
-
-      <div style="position: relative; height: 240px; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.06); border: 1px solid #e2e8f0;">
-        <img src="/images/bhulla-lake.jpg" alt="Bhulla Lake Lansdowne" style="width: 100%; height: 100%; object-fit: cover;">
-        <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.85); color: #fff; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; backdrop-filter: blur(4px);">
-          <i class="fas fa-water"></i> Bhulla Tal Boating Lake
+        <span style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.85); color: #ffffff; padding: 4px 10px; border-radius: 16px; font-size: 10.5px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
+          <i class="fas fa-arrows-left-right"></i> Scroll Photos
         </span>
       </div>
 
+      <!-- Card 2: Bhulla Tal Boating Lake -->
       <div style="position: relative; height: 240px; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.06); border: 1px solid #e2e8f0;">
-        <img src="/images/tarkeshwar-mahadev.jpg" alt="Tarkeshwar Mahadev Temple" style="width: 100%; height: 100%; object-fit: cover;">
-        <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.85); color: #fff; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; backdrop-filter: blur(4px);">
-          <i class="fas fa-gopuram"></i> Tarkeshwar Mahadev Temple
+        <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
+          <% ['/images/things-to-do/bhulla tal lake and herbal park lansdowne1.jpeg', '/images/things-to-do/bhulla tal lake and herbal park lansdowne2.jpeg', '/images/things-to-do/bhulla tal lake and herbal park lansdowne3.jpeg'].forEach((imgUrl, imgIdx) => { %>
+            <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
+              <img src="<%= imgUrl %>" alt="Bhulla Tal Boating Lake - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+          <% }); %>
+        </div>
+        <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.85); color: #fff; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; backdrop-filter: blur(4px); pointer-events: none;">
+          <i class="fas fa-water"></i> Bhulla Tal Boating Lake
+        </span>
+        <span style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.85); color: #ffffff; padding: 4px 10px; border-radius: 16px; font-size: 10.5px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
+          <i class="fas fa-arrows-left-right"></i> Scroll Photos
+        </span>
+      </div>
+
+      <!-- Card 3: Tarkeshwar Mahadev Temple -->
+      <div style="position: relative; height: 240px; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.06); border: 1px solid #e2e8f0;">
+        <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
+          <% ['/images/things-to-do/Tarkeshwar mahadev temple in lansdowne1.jpeg', '/images/things-to-do/Tarkeshwar mahadev temple in lansdowne2.jpeg', '/images/things-to-do/Tarkeshwar mahadev temple in lansdowne3.jpeg', '/images/things-to-do/Tarkeshwar mahadev temple in lansdowne4.jpeg'].forEach((imgUrl, imgIdx) => { %>
+            <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
+              <img src="<%= imgUrl %>" alt="Tarkeshwar Mahadev Temple - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+          <% }); %>
+        </div>
+        <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.85); color: #fff; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; backdrop-filter: blur(4px); pointer-events: none;">
+          <i class="fas fa-om"></i> Tarkeshwar Mahadev Temple
+        </span>
+        <span style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.85); color: #ffffff; padding: 4px 10px; border-radius: 16px; font-size: 10.5px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
+          <i class="fas fa-arrows-left-right"></i> Scroll Photos
         </span>
       </div>
     </div>
