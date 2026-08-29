@@ -89,9 +89,9 @@
     "image": "/images/resort-lawns-garden.avif",
     "metaTitle": "Weddings & Celebrations | Flutter Hotels & Resorts",
     "metaDescription": "Host weddings, birthdays, anniversaries and reunions at Flutter Hotels & Resorts, Lansdowne — banquet hall, lawns, catering.",
-    "shortDesc": "Our 200-guest banquet hall and fairy-lit outdoor lawns set the scene for memorable weddings, milestone birthdays, and family reunions.",
+    "shortDesc": "Our 120-guest indoor banquet hall and fairy-lit outdoor lawns set the scene for memorable weddings, milestone birthdays, and family reunions.",
     "inclusions": [
-      "Exclusive access to 200-guest Banquet Hall & Fairy-lit Outdoor Lawns",
+      "Exclusive access to 120-guest Indoor Banquet Hall & Fairy-lit Outdoor Lawns",
       "Accommodation for up to 60+ guests in resort rooms",
       "Customized North Indian, Chinese & Garhwali buffet menus",
       "Stage, mandap, light & sound setup arrangements",
@@ -102,7 +102,7 @@
       {"day": "Event Day 2", "title": "Haldi & Wedding Ceremony", "desc": "Morning Haldi ceremony, afternoon lunch, evening Barat reception & Mandap ceremony."}
     ],
     "faqs": [
-      {"q": "What is the guest capacity for weddings?", "a": "Up to 200 guests across the banquet hall and connected lawns."},
+      {"q": "What is the guest capacity for weddings?", "a": "Up to 120 guests across the indoor banquet hall and connected outdoor lawns."},
       {"q": "Do you provide decor and catering?", "a": "Yes, we provide complete in-house catering and decor packages."}
     ]
   },
