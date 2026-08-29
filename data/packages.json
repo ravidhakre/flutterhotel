@@ -1,12 +1,12 @@
 [
   {
     "id": "honeymoon-package",
-    "title": "01. Honeymoon Package",
+    "title": "Honeymoon Package",
     "slug": "honeymoon-package",
     "price": "₹9,999 / Couple (2N/3D)",
     "tag": "Romantic Special",
     "image": "/images/dining-valley-table.webp",
-    "metaTitle": "01. Honeymoon Package in Lansdowne | Flutter Hotels & Resorts",
+    "metaTitle": "Honeymoon Package in Lansdowne | Flutter Hotels & Resorts",
     "metaDescription": "Celebrate your honeymoon with a valley-view stay, private balcony, candle light dinner and bed decoration at Flutter Hotels & Resorts, Lansdowne.",
     "shortDesc": "A valley view room with private balcony, romantic candlelight dinner under stars, flower bed decoration, and welcome cake for newlyweds.",
     "inclusions": [
@@ -27,12 +27,12 @@
   },
   {
     "id": "delhi-to-delhi-group-package",
-    "title": "02. Delhi to Delhi Group Package",
+    "title": "Delhi to Delhi Group Package",
     "slug": "delhi-to-delhi-group-package",
     "price": "₹4,999 / Person (2N/3D)",
     "tag": "All-Inclusive Group Tour",
     "image": "/images/tip-n-top.jpg",
-    "metaTitle": "02. Delhi to Delhi Group Package | Flutter Hotels & Resorts",
+    "metaTitle": "Delhi to Delhi Group Package | Flutter Hotels & Resorts",
     "metaDescription": "All-inclusive group departure from Delhi to Lansdowne with AC vehicle, resort stay, meals, sightseeing, and bonfire night.",
     "shortDesc": "Hassle-free AC transport from Delhi Akshardham Metro, resort accommodation, all meals, sightseeing tour, and bonfire music evening.",
     "inclusions": [
@@ -53,12 +53,12 @@
   },
   {
     "id": "weekday-package",
-    "title": "03. Weekday Package",
+    "title": "Weekday Package",
     "slug": "weekday-package",
     "price": "₹3,999 / Couple (2N/3D)",
     "tag": "Best Savings Deal",
     "image": "/images/hotel-img-4.jpeg",
-    "metaTitle": "03. Weekday Package | Flutter Hotels & Resorts Lansdowne",
+    "metaTitle": "Weekday Package | Flutter Hotels & Resorts Lansdowne",
     "metaDescription": "Peaceful weekday staycation in Lansdowne with 2 nights stay, breakfast, complimentary Wi-Fi and quiet mountain environment.",
     "shortDesc": "Escape weekend crowds with a peaceful Monday-to-Thursday hillside stay, daily breakfast, and serene mountain vistas.",
     "inclusions": [
@@ -78,12 +78,12 @@
   },
   {
     "id": "weekend-package",
-    "title": "04. Weekend Package",
+    "title": "Weekend Package",
     "slug": "weekend-package",
     "price": "₹6,499 / Couple (2N/3D)",
     "tag": "Weekend Getaway",
     "image": "/images/valley-city-views.jpg",
-    "metaTitle": "04. Weekend Package | Flutter Hotels & Resorts Lansdowne",
+    "metaTitle": "Weekend Package | Flutter Hotels & Resorts Lansdowne",
     "metaDescription": "Recharge your weekend in Lansdowne — 2 nights room stay, daily breakfast, evening tea, and lawn bonfire.",
     "shortDesc": "Recharge in fresh pine air — 2 nights room stay, daily breakfast, evening tea with local Garhwali snacks, and bonfire.",
     "inclusions": [
@@ -103,12 +103,12 @@
   },
   {
     "id": "destination-wedding-package",
-    "title": "05. Destination Wedding Package",
+    "title": "Destination Wedding Package",
     "slug": "destination-wedding-package",
     "price": "Custom Wedding Quote",
     "tag": "Grand Destination Wedding",
     "image": "/images/resort-lawns-garden.avif",
-    "metaTitle": "05. Destination Wedding Package | Flutter Hotels & Resorts",
+    "metaTitle": "Destination Wedding Package | Flutter Hotels & Resorts",
     "metaDescription": "Host your dream hillside wedding at Flutter Hotels & Resorts, Lansdowne — 120-guest banquet, fairy-lit lawns, catering & decor.",
     "shortDesc": "Complete destination wedding package with 120-guest indoor banquet hall, fairy-lit outdoor lawns, customized catering, and decor.",
     "inclusions": [
@@ -128,12 +128,12 @@
   },
   {
     "id": "family-get-together-package",
-    "title": "06. Family Get-Together Package",
+    "title": "Family Get-Together Package",
     "slug": "family-get-together-package",
     "price": "Starting from ₹1,800 / Person",
     "tag": "Family Reunion",
     "image": "/images/birthday-lawn-party.jpg",
-    "metaTitle": "06. Family Get-Together Package | Flutter Hotels Lansdowne",
+    "metaTitle": "Family Get-Together Package | Flutter Hotels Lansdowne",
     "metaDescription": "Reunite with family in the Garhwal hills — group stays, private lawn access, games, barbecue, and bonfire.",
     "shortDesc": "Perfect package for family reunions — spacious family suites, private lawn space, group dining, barbecue, and indoor games.",
     "inclusions": [
@@ -153,12 +153,12 @@
   },
   {
     "id": "corporate-package",
-    "title": "07. Corporate Package",
+    "title": "Corporate Package",
     "slug": "corporate-package",
     "price": "Custom Corporate Quote",
     "tag": "Corporate Offsite & MICE",
     "image": "/images/conference-setup-1.webp",
-    "metaTitle": "07. Corporate Package & MICE | Flutter Hotels & Resorts",
+    "metaTitle": "Corporate Package & MICE | Flutter Hotels & Resorts",
     "metaDescription": "Host team offsites & conferences in Lansdowne — air-conditioned hall for 120, screen/mic setup, team building activities & gala dinner.",
     "shortDesc": "Air-conditioned 120-guest hall setup with screen & mic, group stay rates, team building lawn activities, and gala dinner.",
     "inclusions": [
@@ -178,12 +178,12 @@
   },
   {
     "id": "school-and-college-package",
-    "title": "08. School & College Package",
+    "title": "School & College Package",
     "slug": "school-and-college-package",
     "price": "₹1,499 / Student (1N/2D)",
     "tag": "Student Educational Tour",
     "image": "/images/bhulla-lake.jpg",
-    "metaTitle": "08. School & College Package | Flutter Hotels Lansdowne",
+    "metaTitle": "School & College Package | Flutter Hotels Lansdowne",
     "metaDescription": "Safe and educational group packages for schools, colleges & institutes — multi-sharing rooms, healthy meals, and sightseeing.",
     "shortDesc": "Safe, supervised educational trips for student groups — multi-sharing accommodation, 3 full meals, nature walks, and army museum visits.",
     "inclusions": [
@@ -203,12 +203,12 @@
   },
   {
     "id": "birthday-celebration-package",
-    "title": "09. Birthday Celebration Package",
+    "title": "Birthday Celebration Package",
     "slug": "birthday-celebration-package",
     "price": "Starting from ₹1,200 / Person",
     "tag": "Birthday Party Special",
     "image": "/images/celebration-hero-banner.jpg",
-    "metaTitle": "09. Birthday Celebration Package | Flutter Hotels Lansdowne",
+    "metaTitle": "Birthday Celebration Package | Flutter Hotels Lansdowne",
     "metaDescription": "Celebrate birthdays in Lansdowne — balloon decor, birthday cake, music evening, private lawn space, and buffet dinner.",
     "shortDesc": "Celebrate milestone birthdays with customized lawn balloon decor, fresh birthday cake, DJ music, bonfire, and buffet dinner.",
     "inclusions": [
@@ -227,12 +227,12 @@
   },
   {
     "id": "anniversary-celebration-package",
-    "title": "10. Anniversary Celebration Package",
+    "title": "Anniversary Celebration Package",
     "slug": "anniversary-celebration-package",
     "price": "₹7,999 / Couple (1N/2D)",
     "tag": "Anniversary Special",
     "image": "/images/romantic-candlelight-dinner.jpg",
-    "metaTitle": "10. Anniversary Celebration Package | Flutter Hotels Lansdowne",
+    "metaTitle": "Anniversary Celebration Package | Flutter Hotels Lansdowne",
     "metaDescription": "Re-ignite romance on your anniversary in Lansdowne — private balcony room, candlelight dinner, wine, cake, and bed decoration.",
     "shortDesc": "Memorable anniversary celebration — private balcony room, romantic candlelight dinner setup, anniversary cake, and flower decoration.",
     "inclusions": [
@@ -252,12 +252,12 @@
   },
   {
     "id": "retirement-celebration-package",
-    "title": "11. Retirement Celebration Package",
+    "title": "Retirement Celebration Package",
     "slug": "retirement-celebration-package",
     "price": "Starting from ₹1,500 / Person",
     "tag": "Milestone Honor",
     "image": "/images/dining-hall-seating.webp",
-    "metaTitle": "11. Retirement Celebration Package | Flutter Hotels Lansdowne",
+    "metaTitle": "Retirement Celebration Package | Flutter Hotels Lansdowne",
     "metaDescription": "Honor a distinguished career with a peaceful hill retirement celebration — banquet venue, customized menu, and family stay.",
     "shortDesc": "Honor a lifetime of hard work with a peaceful hill retirement function — indoor hall / lawn venue, customized menu, and family stay.",
     "inclusions": [
@@ -276,12 +276,12 @@
   },
   {
     "id": "engagement-celebration-package",
-    "title": "12. Engagement Celebration Package",
+    "title": "Engagement Celebration Package",
     "slug": "engagement-celebration-package",
     "price": "Custom Celebration Quote",
     "tag": "Roka & Ring Ceremony",
     "image": "/images/destination-wedding-decor.jpg",
-    "metaTitle": "12. Engagement Celebration Package | Flutter Hotels Lansdowne",
+    "metaTitle": "Engagement Celebration Package | Flutter Hotels Lansdowne",
     "metaDescription": "Host your Roka or Ring Ceremony in Lansdowne — floral stage backdrop, high tea, ring exchange setup & lavish dinner.",
     "shortDesc": "Elegant Roka & Ring Ceremony package — floral stage backdrop, ring exchange setup, high tea, bonfire, and lavish buffet dinner.",
     "inclusions": [
@@ -300,12 +300,12 @@
   },
   {
     "id": "kitty-party-celebration-package",
-    "title": "13. Kitty Party Celebration Package",
+    "title": "Kitty Party Celebration Package",
     "slug": "kitty-party-celebration-package",
     "price": "₹999 / Person (Day Out)",
     "tag": "Day Out & High Tea",
     "image": "/images/dining-interior-view.webp",
-    "metaTitle": "13. Kitty Party Celebration Package | Flutter Hotels Lansdowne",
+    "metaTitle": "Kitty Party Celebration Package | Flutter Hotels Lansdowne",
     "metaDescription": "Fun day-out kitty party package for ladies groups — private dining space, tambola & games, high tea, and lavish lunch.",
     "shortDesc": "Fun day-out kitty party package for ladies groups — private dining space, music & games setup, lavish 3-course lunch, and high tea.",
     "inclusions": [
