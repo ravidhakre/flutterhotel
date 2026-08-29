@@ -82,11 +82,11 @@
     "wifi": true,
     "breakfast": true,
     "view": "Private Balcony",
-    "image": "/images/Rooms/7.jpeg",
+    "image": "/images/Rooms/family-suite/family-suite-bedroom-1.jpg",
     "gallery": [
-      "/images/Rooms/7.jpeg",
-      "/images/Rooms/8.jpeg",
-      "/images/Rooms/9.jpeg"
+      "/images/Rooms/family-suite/family-suite-bedroom-1.jpg",
+      "/images/Rooms/family-suite/family-suite-bedroom-2.jpg",
+      "/images/Rooms/family-suite/family-suite-washroom.jpg"
     ],
     "featured": true,
     "badge": "TOTAL 02 ROOMS",
