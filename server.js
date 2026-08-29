@@ -280,6 +280,13 @@ app.get('/booking-policy', (req, res) => {
   });
 });
 
+app.get('/careers', (req, res) => {
+  res.render('careers', {
+    title: 'Careers & Job Openings | Flutter Hotels & Resorts',
+    metaDesc: 'Explore hospitality career opportunities at Flutter Hotels & Resorts, Lansdowne. Join our front desk, housekeeping, culinary, and management team.'
+  });
+});
+
 // Dedicated 2-Step Checkout Page
 app.get('/checkout', (req, res) => {
   const { type, id, checkIn, checkOut, guests } = req.query;
