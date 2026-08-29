@@ -2,7 +2,7 @@
   {
     "id": "classic-room",
     "slug": "classic-room",
-    "name": "01. Classic Room with Private Balcony",
+    "name": "Classic Room with Private Balcony",
     "category": "Classic Room",
     "price": 2400,
     "rating": 5,
@@ -37,7 +37,7 @@
   {
     "id": "super-deluxe-room",
     "slug": "super-deluxe-room",
-    "name": "02. Super Deluxe Room with Private Balcony",
+    "name": "Super Deluxe Room with Private Balcony",
     "category": "Super Deluxe",
     "price": 3200,
     "rating": 5,
@@ -70,7 +70,7 @@
   {
     "id": "family-suite",
     "slug": "family-suite",
-    "name": "03. Family Suite with Private Balcony",
+    "name": "Family Suite with Private Balcony",
     "category": "Family Suite",
     "price": 4500,
     "rating": 5,
@@ -104,7 +104,7 @@
   {
     "id": "family-four-bedded",
     "slug": "family-four-bedded",
-    "name": "04. Family Room Four Bedded with Private Balcony",
+    "name": "Family Room Four Bedded with Private Balcony",
     "category": "Family Four Bedded",
     "price": 4800,
     "rating": 5,
@@ -138,7 +138,7 @@
   {
     "id": "independent-cottage",
     "slug": "independent-cottage",
-    "name": "05. Independent Cottage with Private Balcony",
+    "name": "Independent Cottage with Private Balcony",
     "category": "Independent Cottage",
     "price": 3800,
     "rating": 5,
