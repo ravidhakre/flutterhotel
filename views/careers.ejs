@@ -8,7 +8,7 @@
     </span>
     <h1 style="font-size: 44px; margin-bottom: 14px; color: #ffffff; font-family: 'Cinzel', serif; line-height: 1.25;">Careers at Flutter Hotels & Resorts</h1>
     <p style="color: #cbd5e1; font-size: 16.5px; line-height: 1.7; max-width: 760px; margin: 0 auto 25px;">
-      Join our passionate team of hospitality professionals in Lansdowne. Explore rewarding career opportunities in hotel management, front desk operations, culinary arts, housekeeping, and guest services.
+      Join our passionate team of hospitality professionals in Lansdowne. Explore rewarding career opportunities and apply directly via WhatsApp.
     </p>
   </div>
 </div>
@@ -48,51 +48,72 @@
 
     <!-- Current Openings Header -->
     <div style="text-align: center; max-width: 750px; margin: 0 auto 40px;">
-      <span class="section-subtitle">Current Opportunities</span>
+      <span class="section-subtitle">Current Openings</span>
       <h2 class="section-title">Open Positions in Lansdowne</h2>
     </div>
 
     <!-- Open Positions List -->
-    <div style="display: flex; flex-direction: column; gap: 20px; max-width: 850px; margin: 0 auto 60px;">
-      
-      <!-- Position 1 -->
-      <div style="background: #ffffff; padding: 25px 30px; border-radius: 14px; border: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
-        <div>
-          <h4 style="font-size: 19px; color: var(--dark-bg); margin-bottom: 4px;">Front Desk Executive / Receptionist</h4>
-          <span style="color: #64748b; font-size: 13.5px;"><i class="fas fa-location-dot" style="color: var(--primary-blue);"></i> Lansdowne, Uttarakhand | Full-Time</span>
-        </div>
-        <a href="mailto:sales@flutterhotel.com?subject=Application%20for%20Front%20Desk%20Executive" class="btn-blue" style="padding: 10px 22px; font-size: 13.5px; border-radius: 8px;"><i class="fas fa-paper-plane"></i> Apply Now</a>
-      </div>
+    <div style="display: flex; flex-direction: column; gap: 24px; max-width: 900px; margin: 0 auto 60px;">
+      <% if (locals.jobs && jobs.length > 0) { %>
+        <% jobs.forEach(job => { %>
+          <div style="background: #ffffff; padding: 30px; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 6px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column; gap: 15px;">
+            
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; border-bottom: 1px solid #f1f5f9; padding-bottom: 15px;">
+              <div>
+                <span style="background: #f1f5f9; color: var(--primary-blue); padding: 4px 12px; border-radius: 20px; font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 8px;">
+                  <i class="fas fa-tag"></i> <%= job.category || 'Hospitality' %>
+                </span>
+                <h3 style="font-size: 22px; color: var(--dark-bg); margin: 0 0 6px; font-family: 'Cinzel', serif;"><%= job.title %></h3>
+                <div style="display: flex; gap: 15px; flex-wrap: wrap; font-size: 13.5px; color: #64748b;">
+                  <span><i class="fas fa-location-dot" style="color: var(--primary-blue);"></i> <%= job.location || 'Lansdowne, Uttarakhand' %></span>
+                  <span><i class="fas fa-clock" style="color: var(--primary-blue);"></i> <%= job.type || 'Full-Time' %></span>
+                  <span><i class="fas fa-briefcase" style="color: var(--primary-blue);"></i> Exp: <%= job.experience || '1-3 Yrs' %></span>
+                </div>
+              </div>
 
-      <!-- Position 2 -->
-      <div style="background: #ffffff; padding: 25px 30px; border-radius: 14px; border: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
-        <div>
-          <h4 style="font-size: 19px; color: var(--dark-bg); margin-bottom: 4px;">F&B Captain / Multi-Cuisine Chef</h4>
-          <span style="color: #64748b; font-size: 13.5px;"><i class="fas fa-location-dot" style="color: var(--primary-blue);"></i> Lansdowne, Uttarakhand | Full-Time</span>
-        </div>
-        <a href="mailto:sales@flutterhotel.com?subject=Application%20for%20Chef%20/%20FB%20Captain" class="btn-blue" style="padding: 10px 22px; font-size: 13.5px; border-radius: 8px;"><i class="fas fa-paper-plane"></i> Apply Now</a>
-      </div>
+              <!-- Apply via WhatsApp CTA -->
+              <div>
+                <a href="https://wa.me/<%= job.whatsappNumber || '918929232740' %>?text=<%= encodeURIComponent('Hi, I am interested in applying for the ' + job.title + ' position at Flutter Hotels & Resorts.') %>" target="_blank" style="background: #25D366; color: #ffffff; padding: 12px 24px; border-radius: 8px; font-weight: bold; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35); transition: transform 0.2s ease;">
+                  <i class="fab fa-whatsapp" style="font-size: 19px;"></i> Apply Now via WhatsApp
+                </a>
+              </div>
+            </div>
 
-      <!-- Position 3 -->
-      <div style="background: #ffffff; padding: 25px 30px; border-radius: 14px; border: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
-        <div>
-          <h4 style="font-size: 19px; color: var(--dark-bg); margin-bottom: 4px;">Housekeeping Supervisor</h4>
-          <span style="color: #64748b; font-size: 13.5px;"><i class="fas fa-location-dot" style="color: var(--primary-blue);"></i> Lansdowne, Uttarakhand | Full-Time</span>
-        </div>
-        <a href="mailto:sales@flutterhotel.com?subject=Application%20for%20Housekeeping%20Supervisor" class="btn-blue" style="padding: 10px 22px; font-size: 13.5px; border-radius: 8px;"><i class="fas fa-paper-plane"></i> Apply Now</a>
-      </div>
+            <div>
+              <h5 style="margin: 0 0 6px; font-size: 14px; color: #334155; font-weight: 700;">Job Description & Role Responsibilities:</h5>
+              <p style="color: #64748b; font-size: 14.5px; line-height: 1.7; margin: 0 0 12px;"><%= job.description %></p>
+              
+              <% if (job.requirements) { %>
+                <h5 style="margin: 0 0 6px; font-size: 14px; color: #334155; font-weight: 700;">Key Requirements & Qualifications:</h5>
+                <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0;"><%= job.requirements %></p>
+              <% } %>
+            </div>
 
+          </div>
+        <% }); %>
+      <% } else { %>
+        <div style="background: #ffffff; padding: 40px; border-radius: 16px; border: 1px solid #e2e8f0; text-align: center; color: #64748b;">
+          <i class="fas fa-briefcase" style="font-size: 40px; color: #cbd5e1; margin-bottom: 15px; display: block;"></i>
+          <h4 style="margin: 0 0 8px; font-size: 18px; color: var(--dark-bg);">No Active Openings Right Now</h4>
+          <p style="margin: 0;">Feel free to send your resume directly via WhatsApp or email for upcoming vacancies.</p>
+        </div>
+      <% } %>
     </div>
 
     <!-- Resume Application Box -->
-    <div style="background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.88)), url('/images/hotel-img-3.jpg'); background-size: cover; background-position: center; padding: 50px 30px; border-radius: 16px; text-align: center; color: #ffffff; max-width: 850px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.12);">
-      <h3 style="font-size: 28px; color: #ffffff; margin-bottom: 12px; font-family: 'Cinzel', serif;">Don't See Your Ideal Role?</h3>
-      <p style="color: #cbd5e1; font-size: 15.5px; max-width: 650px; margin: 0 auto 25px; line-height: 1.6;">
-        We are always on the lookout for talented individuals. Email your updated Resume / CV to <strong>sales@flutterhotel.com</strong> with your area of interest.
+    <div style="background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.88)), url('/images/hotel-img-3.jpg'); background-size: cover; background-position: center; padding: 50px 30px; border-radius: 16px; text-align: center; color: #ffffff; max-width: 900px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.12);">
+      <h3 style="font-size: 28px; color: #ffffff; margin-bottom: 12px; font-family: 'Cinzel', serif;">Direct Contact with Hiring Team</h3>
+      <p style="color: #cbd5e1; font-size: 15.5px; max-width: 680px; margin: 0 auto 25px; line-height: 1.6;">
+        Have questions about working at Flutter Hotels & Resorts? Connect directly with our management team on WhatsApp or send your updated CV.
       </p>
-      <a href="mailto:sales@flutterhotel.com?subject=General%20Career%20Application" class="btn-blue pulsing-btn" style="padding: 14px 34px; font-size: 15px; font-weight: bold; border-radius: 8px;">
-        <i class="fas fa-envelope"></i> Send Resume / CV
-      </a>
+      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://wa.me/918929232740?text=Hi%2C%20I%20would%20like%20to%20apply%20for%20a%20career%20opportunity%20at%20Flutter%20Hotels%20%26%20Resorts." target="_blank" style="background: #25D366; color: #ffffff; padding: 14px 30px; font-weight: bold; font-size: 15px; border-radius: 8px; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);">
+          <i class="fab fa-whatsapp" style="font-size: 20px;"></i> Chat on WhatsApp
+        </a>
+        <a href="mailto:sales@flutterhotel.com?subject=Career%20Application%20Resume" class="btn-outline-blue" style="padding: 14px 30px; font-weight: bold; font-size: 15px; border-radius: 8px; border-color: rgba(255,255,255,0.4); color: #fff; background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);">
+          <i class="fas fa-envelope"></i> Email Resume / CV
+        </a>
+      </div>
     </div>
 
   </div>

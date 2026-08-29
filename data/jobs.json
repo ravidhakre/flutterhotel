@@ -1,0 +1,41 @@
+[
+  {
+    "id": "job-1",
+    "title": "Front Desk Executive / Receptionist",
+    "category": "Front Desk Operations",
+    "location": "Lansdowne, Uttarakhand",
+    "type": "Full-Time",
+    "experience": "1 - 3 Years",
+    "description": "Handle guest check-ins, check-outs, reservation inquiries, phone calls, and assist guests with a welcoming attitude.",
+    "requirements": "Good communication skills in Hindi & English; Knowledge of hotel PMS software / computer operations; Customer-centric and professional hospitality attitude.",
+    "postedDate": "2026-08-29",
+    "whatsappNumber": "918929232740",
+    "status": "Active"
+  },
+  {
+    "id": "job-2",
+    "title": "F&B Captain / Multi-Cuisine Chef",
+    "category": "Culinary & Dining",
+    "location": "Lansdowne, Uttarakhand",
+    "type": "Full-Time",
+    "experience": "2 - 5 Years",
+    "description": "Prepare authentic Garhwali, North Indian, and Chinese dishes for resort guests, manage kitchen inventory, and maintain high hygiene standards.",
+    "requirements": "Proven experience as Chef / Cook in hotel or resort; Knowledge of North Indian, Tandoor & Garhwali cuisines; Strict food safety and kitchen hygiene management.",
+    "postedDate": "2026-08-29",
+    "whatsappNumber": "918929232740",
+    "status": "Active"
+  },
+  {
+    "id": "job-3",
+    "title": "Housekeeping Supervisor",
+    "category": "Housekeeping & Facilities",
+    "location": "Lansdowne, Uttarakhand",
+    "type": "Full-Time",
+    "experience": "1 - 4 Years",
+    "description": "Oversee guest room cleanliness, linen maintenance, daily housekeeping staff schedule, and public area sanitation.",
+    "requirements": "Prior experience in hotel/resort housekeeping; Strong attention to detail and staff supervision skills.",
+    "postedDate": "2026-08-29",
+    "whatsappNumber": "918929232740",
+    "status": "Active"
+  }
+]

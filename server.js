@@ -281,9 +281,11 @@ app.get('/booking-policy', (req, res) => {
 });
 
 app.get('/careers', (req, res) => {
+  const jobs = readData('jobs.json').filter(j => j.status === 'Active' || !j.status);
   res.render('careers', {
     title: 'Careers & Job Openings | Flutter Hotels & Resorts',
-    metaDesc: 'Explore hospitality career opportunities at Flutter Hotels & Resorts, Lansdowne. Join our front desk, housekeeping, culinary, and management team.'
+    metaDesc: 'Explore hospitality career opportunities at Flutter Hotels & Resorts, Lansdowne. Apply directly via WhatsApp.',
+    jobs: jobs
   });
 });
 
@@ -867,6 +869,73 @@ app.delete('/api/admin/offers/:id', requireAdmin, (req, res) => {
   offers = offers.filter(o => o.id !== req.params.id);
   saveData('offers.json', offers);
   return res.json({ success: true, message: 'Offer deleted successfully.' });
+});
+
+// Admin Manage Careers & Jobs Page
+app.get('/admin/jobs', requireAdmin, (req, res) => {
+  const jobs = readData('jobs.json');
+  res.render('admin/jobs', {
+    title: 'Careers & Job Openings Management | Flutter Hotels Admin',
+    jobs: jobs
+  });
+});
+
+// Add New Job Opening API
+app.post('/api/admin/jobs', requireAdmin, (req, res) => {
+  const { title, category, location, type, experience, description, requirements, whatsappNumber } = req.body;
+  if (!title || !description) {
+    return res.status(400).json({ success: false, message: 'Title and Description are required.' });
+  }
+
+  const jobs = readData('jobs.json');
+  const newJob = {
+    id: 'job-' + Date.now(),
+    title,
+    category: category || 'General Hospitality',
+    location: location || 'Lansdowne, Uttarakhand',
+    type: type || 'Full-Time',
+    experience: experience || '1 - 3 Years',
+    description,
+    requirements: requirements || '',
+    postedDate: new Date().toISOString().split('T')[0],
+    whatsappNumber: whatsappNumber || '918929232740',
+    status: 'Active'
+  };
+
+  jobs.unshift(newJob);
+  saveData('jobs.json', jobs);
+  return res.redirect('/admin/jobs');
+});
+
+// Edit Job Opening API
+app.post('/api/admin/jobs/edit/:id', requireAdmin, (req, res) => {
+  const { title, category, location, type, experience, description, requirements, whatsappNumber, status } = req.body;
+  let jobs = readData('jobs.json');
+  const index = jobs.findIndex(j => j.id === req.params.id);
+  if (index !== -1) {
+    jobs[index] = {
+      ...jobs[index],
+      title: title || jobs[index].title,
+      category: category || jobs[index].category,
+      location: location || jobs[index].location,
+      type: type || jobs[index].type,
+      experience: experience || jobs[index].experience,
+      description: description || jobs[index].description,
+      requirements: requirements || jobs[index].requirements,
+      whatsappNumber: whatsappNumber || jobs[index].whatsappNumber,
+      status: status || jobs[index].status || 'Active'
+    };
+    saveData('jobs.json', jobs);
+  }
+  return res.redirect('/admin/jobs');
+});
+
+// Delete Job Opening API
+app.delete('/api/admin/jobs/:id', requireAdmin, (req, res) => {
+  let jobs = readData('jobs.json');
+  jobs = jobs.filter(j => j.id !== req.params.id);
+  saveData('jobs.json', jobs);
+  return res.json({ success: true, message: 'Job posting deleted successfully.' });
 });
 
 // 404 Route
