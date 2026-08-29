@@ -48,11 +48,12 @@
     "wifi": true,
     "breakfast": true,
     "view": "Private Balcony",
-    "image": "/images/Rooms/4.jpeg",
+    "image": "/images/Rooms/super-deluxe/super-deluxe-bedroom-1.jpg",
     "gallery": [
-      "/images/Rooms/4.jpeg",
-      "/images/Rooms/5.jpeg",
-      "/images/Rooms/6.jpeg"
+      "/images/Rooms/super-deluxe/super-deluxe-bedroom-1.jpg",
+      "/images/Rooms/super-deluxe/super-deluxe-bedroom-2.jpg",
+      "/images/Rooms/super-deluxe/super-deluxe-bedroom-3.jpg",
+      "/images/Rooms/super-deluxe/super-deluxe-washroom.jpg"
     ],
     "featured": true,
     "badge": "TOTAL 10 ROOMS",
