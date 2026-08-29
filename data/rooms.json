@@ -150,11 +150,11 @@
     "wifi": true,
     "breakfast": true,
     "view": "Private Balcony",
-    "image": "/images/hotel-img-1.jpg",
+    "image": "/images/Rooms/independent-cottage/cottage-exterior-1.jpg",
     "gallery": [
-      "/images/hotel-img-1.jpg",
-      "/images/Rooms/5.jpeg",
-      "/images/Rooms/3.jpeg"
+      "/images/Rooms/independent-cottage/cottage-exterior-1.jpg",
+      "/images/Rooms/independent-cottage/cottage-balcony-view.jpg",
+      "/images/Rooms/independent-cottage/cottage-lawn-swings.jpg"
     ],
     "featured": true,
     "badge": "TOTAL 05 ROOMS",
