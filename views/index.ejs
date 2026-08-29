@@ -9,36 +9,71 @@
 
 <!-- Check Availability Widget Bar -->
 <div class="container booking-search-wrapper" id="searchWidget" style="margin-top: -45px; position: relative; z-index: 10;">
-  <div class="booking-search-card" style="background: #ffffff; padding: 25px 30px; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.12); border: 1px solid #e2e8f0;">
+  <div class="booking-search-card" style="background: #ffffff; padding: 22px 25px; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.12); border: 1px solid #e2e8f0;">
     <form action="/rooms" method="GET" class="search-form-grid">
+      
+      <!-- 1. Check In -->
       <div class="form-group-custom">
-        <label style="font-weight: 700; color: #334155; font-size: 13px;"><i class="far fa-calendar-alt" style="color: var(--primary-blue);"></i> Check In <small style="color: #94a3b8; font-weight: normal;">(From 12 PM)</small></label>
+        <label style="font-weight: 700; color: #334155; font-size: 11.5px;"><i class="far fa-calendar-alt" style="color: var(--primary-blue);"></i> Check In <small style="color: #94a3b8; font-weight: normal;">(From 12 PM)</small></label>
         <input type="date" id="checkIn" name="checkIn" class="form-control-custom">
       </div>
+
+      <!-- 2. Check Out -->
       <div class="form-group-custom">
-        <label style="font-weight: 700; color: #334155; font-size: 13px;"><i class="far fa-calendar-alt" style="color: var(--primary-blue);"></i> Check Out <small style="color: #94a3b8; font-weight: normal;">(By 10 AM)</small></label>
+        <label style="font-weight: 700; color: #334155; font-size: 11.5px;"><i class="far fa-calendar-alt" style="color: var(--primary-blue);"></i> Check Out <small style="color: #94a3b8; font-weight: normal;">(By 10 AM)</small></label>
         <input type="date" id="checkOut" name="checkOut" class="form-control-custom">
       </div>
+
+      <!-- 3. No. of Rooms (1 to 24) -->
       <div class="form-group-custom">
-        <label style="font-weight: 700; color: #334155; font-size: 13px;"><i class="fas fa-users" style="color: var(--primary-blue);"></i> Guests</label>
-        <select name="guests" class="form-control-custom">
-          <option value="1">1 Guest</option>
-          <option value="2" selected>2 Guests</option>
-          <option value="3">3 Guests</option>
-          <option value="4">4+ Family Stay</option>
+        <label style="font-weight: 700; color: #334155; font-size: 11.5px;"><i class="fas fa-bed" style="color: var(--primary-blue);"></i> No. of Rooms</label>
+        <select name="rooms" class="form-control-custom">
+          <% for(let r = 1; r <= 24; r++) { %>
+            <option value="<%= r %>" <%= r === 1 ? 'selected' : '' %>><%= r %> <%= r === 1 ? 'Room' : 'Rooms' %></option>
+          <% } %>
         </select>
       </div>
+
+      <!-- 4. No. of Adults -->
       <div class="form-group-custom">
-        <label style="font-weight: 700; color: #334155; font-size: 13px;"><i class="fas fa-door-open" style="color: var(--primary-blue);"></i> Room Category</label>
+        <label style="font-weight: 700; color: #334155; font-size: 11.5px;"><i class="fas fa-user" style="color: var(--primary-blue);"></i> No. of Adults</label>
+        <select name="adults" class="form-control-custom">
+          <option value="1">1 Adult</option>
+          <option value="2" selected>2 Adults</option>
+          <option value="3">3 Adults</option>
+          <option value="4">4 Adults</option>
+          <option value="5">5+ Adults</option>
+        </select>
+      </div>
+
+      <!-- 5. No. of Children & Age -->
+      <div class="form-group-custom">
+        <label style="font-weight: 700; color: #334155; font-size: 11.5px;"><i class="fas fa-child" style="color: var(--primary-blue);"></i> Children & Age</label>
+        <select name="children" class="form-control-custom">
+          <option value="0" selected>0 Children</option>
+          <option value="1-under5">1 Child (Below 5 Yrs)</option>
+          <option value="1-over5">1 Child (5-12 Yrs)</option>
+          <option value="2-under5">2 Children (Below 5 Yrs)</option>
+          <option value="2-over5">2 Children (5-12 Yrs)</option>
+          <option value="3">3+ Children</option>
+        </select>
+      </div>
+
+      <!-- 6. Room Category -->
+      <div class="form-group-custom">
+        <label style="font-weight: 700; color: #334155; font-size: 11.5px;"><i class="fas fa-door-open" style="color: var(--primary-blue);"></i> Room Category</label>
         <select name="category" class="form-control-custom">
           <option value="All">All Categories</option>
           <option value="Super Deluxe">Super Deluxe</option>
           <option value="Classic">Classic Valley</option>
         </select>
       </div>
+
+      <!-- 7. Submit Button -->
       <div>
-        <button type="submit" class="btn-blue search-btn-submit" style="width: 100%; text-align: center; border: none; padding: 14px; border-radius: 8px; font-weight: bold;"><i class="fas fa-search"></i> Check Availability</button>
+        <button type="submit" class="btn-blue search-btn-submit" style="width: 100%; text-align: center; border: none; padding: 13px 10px; border-radius: 8px; font-weight: bold; font-size: 13px;"><i class="fas fa-search"></i> Check Availability</button>
       </div>
+
     </form>
   </div>
 </div>

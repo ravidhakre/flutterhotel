@@ -630,8 +630,8 @@ ul {
 
 .search-form-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) 180px;
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) 170px;
+  gap: 15px;
   align-items: end;
 }
 
