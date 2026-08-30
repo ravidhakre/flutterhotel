@@ -402,90 +402,93 @@
       <!-- Motion Scroll Track -->
       <div id="sightseeingMotionTrack" style="display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; padding: 10px 5px;">
         
-        <!-- 1. Tip-n-Top Viewpoint -->
-        <div style="flex: 0 0 310px; scroll-snap-align: start; height: 260px; border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; transition: transform 0.3s ease;">
-          <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
-            <% ['/images/things-to-do/tip n top viewpoint lansdowne1.jpeg', '/images/things-to-do/tip n top viewpoint lansdowne2.jpeg', '/images/things-to-do/tip n top viewpoint lansdowne3.jpeg'].forEach((imgUrl, imgIdx) => { %>
-              <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
-                <img src="<%= imgUrl %>" alt="Tip-n-Top Viewpoint - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-            <% }); %>
-          </div>
-          <span style="position: absolute; bottom: 14px; left: 14px; background: rgba(15, 23, 42, 0.88); color: #fff; padding: 6px 16px; border-radius: 20px; font-size: 12.5px; font-weight: bold; backdrop-filter: blur(4px); pointer-events: none;">
-            <i class="fas fa-mountain" style="color: #f59e0b;"></i> Tip-n-Top Viewpoint
+        <!-- 1. Tip-in-Top Viewpoint -->
+        <a href="/things-to-do" style="flex: 0 0 280px; width: 280px; height: 280px; scroll-snap-align: start; border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; display: block; text-decoration: none;">
+          <img src="/images/tip-n-top-viewpoint.jpg" alt="Tip-in-Top Viewpoint Lansdowne" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; bottom: 14px; left: 14px; right: 14px; background: rgba(15, 23, 42, 0.88); color: #fff; padding: 8px 14px; border-radius: 12px; font-size: 13px; font-weight: bold; backdrop-filter: blur(4px); text-align: center; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+            <i class="fas fa-mountain" style="color: #f59e0b; margin-right: 6px;"></i> Tip-n-Top Point
           </span>
-          <span style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.85); color: #ffffff; padding: 4px 10px; border-radius: 16px; font-size: 10.5px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
-            <i class="fas fa-arrows-left-right"></i> Scroll Photos
-          </span>
-        </div>
+        </a>
 
         <!-- 2. Bhulla Tal Boating Lake -->
-        <div style="flex: 0 0 310px; scroll-snap-align: start; height: 260px; border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; transition: transform 0.3s ease;">
-          <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
-            <% ['/images/things-to-do/bhulla tal lake and herbal park lansdowne1.jpeg', '/images/things-to-do/bhulla tal lake and herbal park lansdowne2.jpeg', '/images/things-to-do/bhulla tal lake and herbal park lansdowne3.jpeg'].forEach((imgUrl, imgIdx) => { %>
-              <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
-                <img src="<%= imgUrl %>" alt="Bhulla Tal Boating Lake - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-            <% }); %>
-          </div>
-          <span style="position: absolute; bottom: 14px; left: 14px; background: rgba(15, 23, 42, 0.88); color: #fff; padding: 6px 16px; border-radius: 20px; font-size: 12.5px; font-weight: bold; backdrop-filter: blur(4px); pointer-events: none;">
-            <i class="fas fa-water" style="color: #0284c7;"></i> Bhulla Tal Boating Lake
+        <a href="/things-to-do" style="flex: 0 0 280px; width: 280px; height: 280px; scroll-snap-align: start; border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; display: block; text-decoration: none;">
+          <img src="/images/things-to-do/Bhulla Tal Boating Lake lansdowne1.jpeg" alt="Bhulla Tal Boating Lake" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; bottom: 14px; left: 14px; right: 14px; background: rgba(15, 23, 42, 0.88); color: #fff; padding: 8px 14px; border-radius: 12px; font-size: 13px; font-weight: bold; backdrop-filter: blur(4px); text-align: center; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+            <i class="fas fa-water" style="color: #0284c7; margin-right: 6px;"></i> Bhulla Lake
           </span>
-          <span style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.85); color: #ffffff; padding: 4px 10px; border-radius: 16px; font-size: 10.5px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
-            <i class="fas fa-arrows-left-right"></i> Scroll Photos
-          </span>
-        </div>
+        </a>
 
         <!-- 3. Tarkeshwar Mahadev Temple -->
-        <div style="flex: 0 0 310px; scroll-snap-align: start; height: 260px; border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; transition: transform 0.3s ease;">
-          <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
-            <% ['/images/things-to-do/Tarkeshwar mahadev temple in lansdowne1.jpeg', '/images/things-to-do/Tarkeshwar mahadev temple in lansdowne2.jpeg', '/images/things-to-do/Tarkeshwar mahadev temple in lansdowne3.jpeg', '/images/things-to-do/Tarkeshwar mahadev temple in lansdowne4.jpeg'].forEach((imgUrl, imgIdx) => { %>
-              <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
-                <img src="<%= imgUrl %>" alt="Tarkeshwar Mahadev Temple - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-            <% }); %>
-          </div>
-          <span style="position: absolute; bottom: 14px; left: 14px; background: rgba(15, 23, 42, 0.88); color: #fff; padding: 6px 16px; border-radius: 20px; font-size: 12.5px; font-weight: bold; backdrop-filter: blur(4px); pointer-events: none;">
-            <i class="fas fa-om" style="color: #22c55e;"></i> Tarkeshwar Mahadev Temple
+        <a href="/things-to-do" style="flex: 0 0 280px; width: 280px; height: 280px; scroll-snap-align: start; border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; display: block; text-decoration: none;">
+          <img src="/images/things-to-do/Tarkeshwar mahadev temple in lansdowne1.jpeg" alt="Tarkeshwar Mahadev Temple" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; bottom: 14px; left: 14px; right: 14px; background: rgba(15, 23, 42, 0.88); color: #fff; padding: 8px 14px; border-radius: 12px; font-size: 13px; font-weight: bold; backdrop-filter: blur(4px); text-align: center; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+            <i class="fas fa-om" style="color: #22c55e; margin-right: 6px;"></i> Tarkeshwar Mahadev Temple
           </span>
-          <span style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.85); color: #ffffff; padding: 4px 10px; border-radius: 16px; font-size: 10.5px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
-            <i class="fas fa-arrows-left-right"></i> Scroll Photos
-          </span>
-        </div>
+        </a>
 
         <!-- 4. Garhwal Rifles Regimental Museum -->
-        <div style="flex: 0 0 310px; scroll-snap-align: start; height: 260px; border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; transition: transform 0.3s ease;">
-          <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
-            <% ['/images/things-to-do/garhwal rifles regiment museum lansdowne1.jpeg', '/images/things-to-do/garhwal rifles regiment museum lansdowne2.jpeg', '/images/things-to-do/garhwal rifles regiment museum lansdowne3.jpeg', '/images/things-to-do/garhwal rifles regiment museum lansdowne4.jpeg'].forEach((imgUrl, imgIdx) => { %>
-              <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
-                <img src="<%= imgUrl %>" alt="Garhwal Rifles Museum - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-            <% }); %>
-          </div>
-          <span style="position: absolute; bottom: 14px; left: 14px; background: rgba(15, 23, 42, 0.88); color: #fff; padding: 6px 16px; border-radius: 20px; font-size: 12.5px; font-weight: bold; backdrop-filter: blur(4px); pointer-events: none;">
-            <i class="fas fa-shield-halved" style="color: #f59e0b;"></i> Garhwal Rifles Museum
+        <a href="/things-to-do" style="flex: 0 0 280px; width: 280px; height: 280px; scroll-snap-align: start; border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; display: block; text-decoration: none;">
+          <img src="/images/things-to-do/garhwal rifles regiment museum lansdowne1.jpeg" alt="Garhwal Rifles Regimental Museum" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; bottom: 14px; left: 14px; right: 14px; background: rgba(15, 23, 42, 0.88); color: #fff; padding: 8px 14px; border-radius: 12px; font-size: 13px; font-weight: bold; backdrop-filter: blur(4px); text-align: center; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+            <i class="fas fa-shield-halved" style="color: #f59e0b; margin-right: 6px;"></i> Garhwal Rifles Museum
           </span>
-          <span style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.85); color: #ffffff; padding: 4px 10px; border-radius: 16px; font-size: 10.5px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
-            <i class="fas fa-arrows-left-right"></i> Scroll Photos
-          </span>
-        </div>
+        </a>
 
         <!-- 5. St. Mary's Colonial Church -->
-        <div style="flex: 0 0 310px; scroll-snap-align: start; height: 260px; border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; transition: transform 0.3s ease;">
-          <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
-            <% ['/images/things-to-do/st marys and st johns colonial lansdowne1.jpeg', '/images/things-to-do/st marys and st johns colonial lansdowne2.jpeg', '/images/things-to-do/st marys and st johns colonial lansdowne3.jpeg'].forEach((imgUrl, imgIdx) => { %>
-              <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
-                <img src="<%= imgUrl %>" alt="St Mary's Church - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-            <% }); %>
-          </div>
-          <span style="position: absolute; bottom: 14px; left: 14px; background: rgba(15, 23, 42, 0.88); color: #fff; padding: 6px 16px; border-radius: 20px; font-size: 12.5px; font-weight: bold; backdrop-filter: blur(4px); pointer-events: none;">
-            <i class="fas fa-church" style="color: #a855f7;"></i> St. Mary's Colonial Church
+        <a href="/things-to-do" style="flex: 0 0 280px; width: 280px; height: 280px; scroll-snap-align: start; border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; display: block; text-decoration: none;">
+          <img src="/images/things-to-do/st marys and st johns colonial lansdowne1.jpeg" alt="St. Mary's Colonial Church" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; bottom: 14px; left: 14px; right: 14px; background: rgba(15, 23, 42, 0.88); color: #fff; padding: 8px 14px; border-radius: 12px; font-size: 13px; font-weight: bold; backdrop-filter: blur(4px); text-align: center; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+            <i class="fas fa-church" style="color: #a855f7; margin-right: 6px;"></i> St. Mary's Church
           </span>
-          <span style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.85); color: #ffffff; padding: 4px 10px; border-radius: 16px; font-size: 10.5px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
-            <i class="fas fa-arrows-left-right"></i> Scroll Photos
+        </a>
+
+        <!-- 6. Bhalugarh Waterfalls -->
+        <a href="/things-to-do" style="flex: 0 0 280px; width: 280px; height: 280px; scroll-snap-align: start; border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; display: block; text-decoration: none;">
+          <img src="/images/things-to-do/bhalugarh waterfalls lansdowne1.jpeg" alt="Bhalugarh Waterfalls" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; bottom: 14px; left: 14px; right: 14px; background: rgba(15, 23, 42, 0.88); color: #fff; padding: 8px 14px; border-radius: 12px; font-size: 13px; font-weight: bold; backdrop-filter: blur(4px); text-align: center; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+            <i class="fas fa-waterfall" style="color: #06b6d4; margin-right: 6px;"></i> Bhalugarh Waterfalls
           </span>
-        </div>
+        </a>
+
+        <!-- 7. Bhim Pakora -->
+        <a href="/things-to-do" style="flex: 0 0 280px; width: 280px; height: 280px; scroll-snap-align: start; border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; display: block; text-decoration: none;">
+          <img src="/images/things-to-do/bhim-pakora-1.jpg" alt="Bhim Pakora Lansdowne" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; bottom: 14px; left: 14px; right: 14px; background: rgba(15, 23, 42, 0.88); color: #fff; padding: 8px 14px; border-radius: 12px; font-size: 13px; font-weight: bold; backdrop-filter: blur(4px); text-align: center; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+            <i class="fas fa-mountain-sun" style="color: #8b5cf6; margin-right: 6px;"></i> Bhim Pakora
+          </span>
+        </a>
+
+        <!-- 8. Siddhbali Temple -->
+        <a href="/things-to-do" style="flex: 0 0 280px; width: 280px; height: 280px; scroll-snap-align: start; border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; display: block; text-decoration: none;">
+          <img src="/images/things-to-do/siddhbali-temple-1.jpg" alt="Shri Siddhbali Temple Kotdwar" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; bottom: 14px; left: 14px; right: 14px; background: rgba(15, 23, 42, 0.88); color: #fff; padding: 8px 14px; border-radius: 12px; font-size: 13px; font-weight: bold; backdrop-filter: blur(4px); text-align: center; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+            <i class="fas fa-place-of-worship" style="color: #f59e0b; margin-right: 6px;"></i> Siddhbali Temple
+          </span>
+        </a>
+
+        <!-- 9. Santoshi Mata Mandir -->
+        <a href="/things-to-do" style="flex: 0 0 280px; width: 280px; height: 280px; scroll-snap-align: start; border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; display: block; text-decoration: none;">
+          <img src="/images/things-to-do/santoshi-mata-1.jpg" alt="Santoshi Mata Mandir Sunset Point" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; bottom: 14px; left: 14px; right: 14px; background: rgba(15, 23, 42, 0.88); color: #fff; padding: 8px 14px; border-radius: 12px; font-size: 13px; font-weight: bold; backdrop-filter: blur(4px); text-align: center; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+            <i class="fas fa-sun" style="color: #e11d48; margin-right: 6px;"></i> Santoshi Mata Temple
+          </span>
+        </a>
+
+        <!-- 10. Snow View Sunset Point -->
+        <a href="/things-to-do" style="flex: 0 0 280px; width: 280px; height: 280px; scroll-snap-align: start; border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; display: block; text-decoration: none;">
+          <img src="/images/things-to-do/snow-view-sunset-1.jpg" alt="Snow View Sunset Point" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; bottom: 14px; left: 14px; right: 14px; background: rgba(15, 23, 42, 0.88); color: #fff; padding: 8px 14px; border-radius: 12px; font-size: 13px; font-weight: bold; backdrop-filter: blur(4px); text-align: center; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+            <i class="fas fa-sun" style="color: #f59e0b; margin-right: 6px;"></i> Snow View Sunset Point
+          </span>
+        </a>
+
+        <!-- 11. Kaleshwar Mahadev Temple -->
+        <a href="/things-to-do" style="flex: 0 0 280px; width: 280px; height: 280px; scroll-snap-align: start; border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; display: block; text-decoration: none;">
+          <img src="/images/things-to-do/kaleshwar-mahadev-2.jpg" alt="Kaleshwar Mahadev Temple" style="width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; bottom: 14px; left: 14px; right: 14px; background: rgba(15, 23, 42, 0.88); color: #fff; padding: 8px 14px; border-radius: 12px; font-size: 13px; font-weight: bold; backdrop-filter: blur(4px); text-align: center; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+            <i class="fas fa-om" style="color: #166534; margin-right: 6px;"></i> Kaleshwar Mahadev Temple
+          </span>
+        </a>
 
       </div>
     </div>
@@ -516,7 +519,7 @@
         if (track.scrollLeft >= maxScroll - 10) {
           track.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
-          track.scrollBy({ left: 330, behavior: 'smooth' });
+          track.scrollBy({ left: 304, behavior: 'smooth' });
         }
       }
     }, 3500);
