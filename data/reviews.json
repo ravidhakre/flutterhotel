@@ -19,5 +19,26 @@
     "location": "Faridabad (Delhi NCR)",
     "rating": 5,
     "text": "My experience at this hotel was absolutely wonderful. The ambience, food, and staff hospitality were perfect. I want to highly commend the manager, Anuj, for his exceptional hospitality from check-in to check-out!"
+  },
+  {
+    "id": "REV-4",
+    "author": "Ankit & Priya",
+    "location": "Delhi NCR (2N Stay)",
+    "rating": 5,
+    "text": "The valley view from our private balcony was worth the trip alone. The bonfire evening with the staff was a lovely surprise!"
+  },
+  {
+    "id": "REV-5",
+    "author": "Rohit Malhotra",
+    "location": "Noida (Delhi NCR)",
+    "rating": 5,
+    "text": "Good Indian food at the restaurant and the kids loved the play zone. Staff arranged a cab for us to Tarkeshwar temple with no hassle."
+  },
+  {
+    "id": "REV-6",
+    "author": "Siddharth Rawat",
+    "location": "Delhi NCR (Group Stay)",
+    "rating": 5,
+    "text": "The group departure package from Delhi was seamless. The fairy lights on the outdoor lawn and DJ evening made our anniversary unforgettable."
   }
 ]
