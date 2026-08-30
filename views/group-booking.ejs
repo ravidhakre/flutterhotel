@@ -1,17 +1,19 @@
 <%- include('partials/header') %>
 
-<!-- Group Booking Hero Banner -->
-<div class="page-hero-header" style="background: linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.85)), url('/images/tip-n-top.jpg');">
-  <div class="container" style="max-width: 900px;">
-    <span style="background: rgba(245, 158, 11, 0.25); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 15px;">
-      Bulk Room Reservations
+<!-- Group Booking Hero Banner (User's Real Estate Exterior Banner) -->
+<div class="page-hero-header" style="background: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.8)), url('/images/group-booking-hero.jpg'); background-size: cover; background-position: center;">
+  <div class="container" style="max-width: 900px; position: relative; z-index: 2;">
+    <span style="background: rgba(34, 197, 94, 0.25); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.4); padding: 6px 20px; border-radius: 30px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 18px; backdrop-filter: blur(4px);">
+      <i class="fas fa-percent"></i> 20% Discount for Group Bookings
     </span>
-    <h1 style="font-size: 42px; margin-bottom: 12px; color: #ffffff; font-family: 'Cinzel', serif;">Group & Tour Group Bookings</h1>
-    <p style="color: #cbd5e1; font-size: 16px; line-height: 1.7; max-width: 750px; margin: 0 auto 25px;">
-      Special discounted tariff packages for college tours, corporate outings, family reunions, and travel agent group departures (10+ rooms).
+    <h1 style="font-size: 42px; margin-bottom: 16px; color: #ffffff; font-family: 'Cinzel', serif; line-height: 1.25;">
+      Group Booking in Flutter Hotels & Resorts
+    </h1>
+    <p style="color: #cbd5e1; font-size: 16.5px; line-height: 1.7; max-width: 780px; margin: 0 auto 25px;">
+      Are you looking to gather a group and make it memorable? Flutter Hotels & Resorts is your go-to destination for unforgettable group stays in Lansdowne! With a fantastic 20% discount on group bookings for up to 75 people, we offer the perfect setting for any type of group event.
     </p>
-    <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20get%20a%20Group%20Booking%20Quote." target="_blank" class="btn-blue pulsing-btn" style="padding: 13px 30px; font-size: 14px; font-weight: bold;">
-      <i class="fas fa-users"></i> Request Group Rates
+    <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20get%20a%2020%25%20Discounted%20Group%20Booking%20Quote." target="_blank" class="btn-blue pulsing-btn" style="padding: 14px 34px; font-size: 15px; font-weight: bold; border-radius: 8px;">
+      <i class="fab fa-whatsapp"></i> Claim 20% Group Discount
     </a>
   </div>
 </div>
@@ -19,63 +21,160 @@
 <section class="section-padding" style="background: #f8fafc; padding: 60px 0;">
   <div class="container">
     
-    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;" class="responsive-two-col">
-      <div>
-        <h2 style="font-size: 28px; color: var(--dark-bg); margin-bottom: 15px;">Why Book Group Stays With Us?</h2>
-        <p style="color: #475569; font-size: 15px; line-height: 1.7; margin-bottom: 25px;">
-          Flutter Hotels & Resorts provides spacious inventory, dedicated group check-in desks, bus/tempo traveller parking, and tailored meal plans for groups of 15 to 150 guests.
+    <div style="text-align: center; max-width: 800px; margin: 0 auto 50px;">
+      <span class="section-subtitle">Tailored For Every Group</span>
+      <h2 class="section-title">Extraordinary Experiences For Your Group Stays</h2>
+      <p style="color: #64748b; font-size: 15.5px; line-height: 1.7;">
+        Here's how Flutter Hotels & Resorts can turn your next group gathering into an extraordinary experience in the pine-scented hills of Lansdowne.
+      </p>
+    </div>
+
+    <!-- 6 Group Gathering Categories Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 60px;">
+      
+      <!-- 1. Family Fun -->
+      <div style="background: #ffffff; border-radius: 16px; padding: 32px; border: 1px solid #e2e8f0; box-shadow: 0 6px 25px rgba(0,0,0,0.04); display: flex; flex-direction: column;">
+        <div style="width: 56px; height: 56px; background: rgba(95, 134, 193, 0.15); color: var(--primary-blue); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px;">
+          <i class="fas fa-people-roof"></i>
+        </div>
+        <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px; font-family: 'Cinzel', serif;">Family Fun</h3>
+        <p style="color: #64748b; font-size: 14.5px; line-height: 1.7; margin: 0; flex-grow: 1;">
+          Reunite with loved ones in style! Our spacious rooms and family-friendly amenities make it easy to bond, relax, and host intimate events and functions to create lasting memories. Enjoy fun activities and beautiful views that cater to every generation.
         </p>
+      </div>
 
-        <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px;">
-          <div style="display: flex; gap: 15px; background: #ffffff; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0;">
-            <i class="fas fa-percent" style="font-size: 24px; color: #22c55e; margin-top: 3px;"></i>
-            <div>
-              <h4 style="font-size: 17px; margin-bottom: 4px;">Tiered Group Discounts</h4>
-              <p style="color: #64748b; font-size: 14px; margin: 0;">Save up to 30% on bulk room inventory for 5 or more rooms.</p>
+      <!-- 2. School and College Adventures -->
+      <div style="background: #ffffff; border-radius: 16px; padding: 32px; border: 1px solid #e2e8f0; box-shadow: 0 6px 25px rgba(0,0,0,0.04); display: flex; flex-direction: column;">
+        <div style="width: 56px; height: 56px; background: rgba(34, 197, 94, 0.15); color: #22c55e; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px;">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px; font-family: 'Cinzel', serif;">School and College Adventures</h3>
+        <p style="color: #64748b; font-size: 14.5px; line-height: 1.7; margin: 0; flex-grow: 1;">
+          Ready for a school trip or college outing? We’ve got you covered! Our resort provides comfortable lodging and engaging activities to ensure students and educators have a rewarding and enjoyable experience.
+        </p>
+      </div>
+
+      <!-- 3. Friends' Escapades -->
+      <div style="background: #ffffff; border-radius: 16px; padding: 32px; border: 1px solid #e2e8f0; box-shadow: 0 6px 25px rgba(0,0,0,0.04); display: flex; flex-direction: column;">
+        <div style="width: 56px; height: 56px; background: rgba(245, 158, 11, 0.15); color: #f59e0b; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px;">
+          <i class="fas fa-compass-drafting"></i>
+        </div>
+        <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px; font-family: 'Cinzel', serif;">Friends’ Escapades</h3>
+        <p style="color: #64748b; font-size: 14.5px; line-height: 1.7; margin: 0; flex-grow: 1;">
+          Grab your friends and escape to paradise! Whether you’re up for an adventure or just some quality downtime, our scenic resort is the perfect playground for fun-filled escapades.
+        </p>
+      </div>
+
+      <!-- 4. Senior Serenity -->
+      <div style="background: #ffffff; border-radius: 16px; padding: 32px; border: 1px solid #e2e8f0; box-shadow: 0 6px 25px rgba(0,0,0,0.04); display: flex; flex-direction: column;">
+        <div style="width: 56px; height: 56px; background: rgba(139, 92, 246, 0.15); color: #8b5cf6; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px;">
+          <i class="fas fa-heart-pulse"></i>
+        </div>
+        <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px; font-family: 'Cinzel', serif;">Senior Serenity</h3>
+        <p style="color: #64748b; font-size: 14.5px; line-height: 1.7; margin: 0; flex-grow: 1;">
+          Seeking a peaceful retreat for senior citizens? Our tranquil setting and accessible facilities offer a relaxing and enjoyable environment. From serene surroundings to thoughtful amenities, we cater to all your needs.
+        </p>
+      </div>
+
+      <!-- 5. Women's Retreats -->
+      <div style="background: #ffffff; border-radius: 16px; padding: 32px; border: 1px solid #e2e8f0; box-shadow: 0 6px 25px rgba(0,0,0,0.04); display: flex; flex-direction: column;">
+        <div style="width: 56px; height: 56px; background: rgba(225, 29, 72, 0.15); color: #e11d48; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px;">
+          <i class="fas fa-spa"></i>
+        </div>
+        <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px; font-family: 'Cinzel', serif;">Women’s Retreats</h3>
+        <p style="color: #64748b; font-size: 14.5px; line-height: 1.7; margin: 0; flex-grow: 1;">
+          Celebrate the women in your life with a special getaway. Whether it’s a wellness retreat or a social gathering, our elegant resort provides a stylish and welcoming atmosphere for unforgettable moments.
+        </p>
+      </div>
+
+      <!-- 6. Corporate Retreats -->
+      <div style="background: #ffffff; border-radius: 16px; padding: 32px; border: 1px solid #e2e8f0; box-shadow: 0 6px 25px rgba(0,0,0,0.04); display: flex; flex-direction: column;">
+        <div style="width: 56px; height: 56px; background: rgba(2, 132, 199, 0.15); color: #0284c7; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px;">
+          <i class="fas fa-briefcase"></i>
+        </div>
+        <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px; font-family: 'Cinzel', serif;">Corporate Retreats</h3>
+        <p style="color: #64748b; font-size: 14.5px; line-height: 1.7; margin: 0; flex-grow: 1;">
+          Mix business with pleasure in our versatile spaces. Perfect for team-building or corporate events, our resort offers a refreshing break from the office, with everything you need to make your event a success.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Group Booking Inquiry & Perks Section -->
+    <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: start;" class="responsive-two-col">
+      <div>
+        <div style="background: #ffffff; border-radius: 16px; padding: 35px; border: 1px solid #e2e8f0; box-shadow: 0 8px 30px rgba(0,0,0,0.05); margin-bottom: 25px;">
+          <span style="background: #dcfce7; color: #166534; padding: 4px 12px; border-radius: 16px; font-size: 12px; font-weight: bold; margin-bottom: 10px; display: inline-block;">
+            <i class="fas fa-tags"></i> Special Group Package
+          </span>
+          <h3 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 12px; font-family: 'Cinzel', serif;">
+            Flat 20% Off For Groups Up To 75 Guests
+          </h3>
+          <p style="color: #475569; font-size: 15px; line-height: 1.7; margin-bottom: 20px;">
+            Enjoy custom buffet meal arrangements, complimentary evening bonfire, bus/tempo traveller parking, and dedicated group check-in desks.
+          </p>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+            <div style="background: #f8fafc; padding: 14px; border-radius: 10px; border: 1px solid #e2e8f0; display: flex; gap: 10px; align-items: center;">
+              <i class="fas fa-bus" style="font-size: 20px; color: var(--primary-blue);"></i>
+              <div>
+                <strong style="font-size: 13px; color: var(--dark-bg); display: block;">Bus & Traveller Parking</strong>
+                <span style="font-size: 11.5px; color: #64748b;">On-site parking space</span>
+              </div>
             </div>
-          </div>
 
-          <div style="display: flex; gap: 15px; background: #ffffff; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0;">
-            <i class="fas fa-bus" style="font-size: 24px; color: var(--primary-blue); margin-top: 3px;"></i>
-            <div>
-              <h4 style="font-size: 17px; margin-bottom: 4px;">Complimentary Transport Assistance</h4>
-              <p style="color: #64748b; font-size: 14px; margin: 0;">Arrangements for AC Volvo & 26-Seater Tempo Traveller pickups from Delhi & Dehradun.</p>
-            </div>
-          </div>
-
-          <div style="display: flex; gap: 15px; background: #ffffff; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0;">
-            <i class="fas fa-fire" style="font-size: 24px; color: #f59e0b; margin-top: 3px;"></i>
-            <div>
-              <h4 style="font-size: 17px; margin-bottom: 4px;">Exclusive Bonfire & Music Night</h4>
-              <p style="color: #64748b; font-size: 14px; margin: 0;">Complimentary evening bonfire setup with light music / DJ for group stays.</p>
+            <div style="background: #f8fafc; padding: 14px; border-radius: 10px; border: 1px solid #e2e8f0; display: flex; gap: 10px; align-items: center;">
+              <i class="fas fa-fire" style="font-size: 20px; color: #f59e0b;"></i>
+              <div>
+                <strong style="font-size: 13px; color: var(--dark-bg); display: block;">Bonfire & Music</strong>
+                <span style="font-size: 11.5px; color: #64748b;">Included for group stays</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       <div>
-        <div style="background: #ffffff; padding: 30px; border-radius: 14px; border: 1.5px solid #e2e8f0; box-shadow: 0 8px 25px rgba(0,0,0,0.05);">
-          <h3 style="font-size: 20px; color: var(--dark-bg); margin-bottom: 15px; text-align: center;">Get Instant Group Quote</h3>
+        <div style="background: #ffffff; padding: 32px; border-radius: 16px; border: 1.5px solid #e2e8f0; box-shadow: 0 8px 30px rgba(0,0,0,0.06);">
+          <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 14px; text-align: center; font-family: 'Cinzel', serif;">Request 20% Off Group Quote</h3>
           <form action="/contact" method="POST">
             <div style="margin-bottom: 12px;">
-              <label style="font-size: 12px; font-weight: bold;">Your Name *</label>
-              <input type="text" name="name" required class="form-control-custom">
+              <label style="font-size: 12px; font-weight: bold; color: #334155;">Your Name *</label>
+              <input type="text" name="name" required placeholder="e.g. Rahul Sharma" class="form-control-custom">
             </div>
             <div style="margin-bottom: 12px;">
-              <label style="font-size: 12px; font-weight: bold;">Phone Number *</label>
-              <input type="tel" name="phone" required class="form-control-custom">
+              <label style="font-size: 12px; font-weight: bold; color: #334155;">Phone Number *</label>
+              <input type="tel" name="phone" required placeholder="e.g. +91 98765 43210" class="form-control-custom">
             </div>
             <div style="margin-bottom: 12px;">
-              <label style="font-size: 12px; font-weight: bold;">No. of Rooms Needed</label>
-              <input type="number" name="rooms" value="6" class="form-control-custom">
+              <label style="font-size: 12px; font-weight: bold; color: #334155;">Group Type & Guests Count</label>
+              <input type="text" name="groupType" placeholder="e.g. College Trip / 40 Guests" class="form-control-custom">
             </div>
             <div style="margin-bottom: 15px;">
-              <label style="font-size: 12px; font-weight: bold;">Check-in Date</label>
+              <label style="font-size: 12px; font-weight: bold; color: #334155;">Check-in Date</label>
               <input type="date" name="checkIn" class="form-control-custom">
             </div>
-            <button type="submit" class="btn-blue" style="width: 100%; font-size: 14px;"><i class="fas fa-paper-plane"></i> Submit Request</button>
+            <button type="submit" class="btn-blue" style="width: 100%; font-size: 14px; font-weight: bold;"><i class="fas fa-paper-plane"></i> Submit Group Request</button>
           </form>
         </div>
+      </div>
+    </div>
+
+    <!-- Bottom Conversion CTA Banner -->
+    <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 50px 35px; border-radius: 20px; color: #ffffff; text-align: center; box-shadow: 0 10px 35px rgba(0,0,0,0.12); max-width: 900px; margin: 50px auto 0;">
+      <h3 style="font-size: 30px; font-family: 'Cinzel', serif; color: #ffffff; margin-bottom: 16px;">
+        Ready to Plan Your Group Stay in Lansdowne?
+      </h3>
+      <p style="color: #cbd5e1; font-size: 16px; max-width: 780px; margin: 0 auto 30px; line-height: 1.7;">
+        Get in touch with our resort group reservations desk for tailored group packages, custom meal menus, and instant 20% discount booking options.
+      </p>
+      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20book%20a%20Group%20Stay%20at%20Flutter%20Hotels%20Lansdowne." target="_blank" class="btn-blue" style="background: #25d366 !important; border-color: #25d366 !important; padding: 14px 34px; font-size: 15px; font-weight: bold;">
+          <i class="fab fa-whatsapp"></i> Chat with Group Concierge on WhatsApp
+        </a>
+        <a href="tel:<%= phoneMain.replace(/\s+/g, '') %>" class="btn-outline-blue" style="padding: 14px 28px; font-size: 15px;">
+          <i class="fas fa-phone-alt"></i> Call +91 89 2923 2740
+        </a>
       </div>
     </div>
 
