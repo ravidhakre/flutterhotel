@@ -219,7 +219,7 @@ app.get('/privacy-policy', (req, res) => {
 app.get('/about-us', (req, res) => {
   res.render('about', {
     title: 'About Us | Flutter Hotels & Resorts, Lansdowne',
-    metaDesc: 'Welcome to Flutter Hotels & Resorts, Lansdowne — 32,400 sq. ft. hillside sanctuary established on 15 April 2023 by Bikram Gupta.'
+    metaDesc: 'Welcome to Flutter Hotels & Resorts, Lansdowne — hillside sanctuary offering valley views, private balcony stays, and Garhwali hospitality.'
   });
 });
 
