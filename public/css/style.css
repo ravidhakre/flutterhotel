@@ -1601,3 +1601,76 @@ ul {
     display: block !important;
   }
 }
+
+/* Unique Luxury Perks Strip Container */
+.perks-grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  align-items: center;
+}
+
+.perk-pill-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f8fafc;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.perk-pill-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  border-color: #cbd5e1;
+}
+
+.perk-icon-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+.perk-text-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.perk-text-group strong {
+  font-size: 12.5px;
+  color: #1e293b;
+  line-height: 1.2;
+}
+
+.perk-text-group span {
+  font-size: 11px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+@media (max-width: 1100px) {
+  .perks-grid-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: 6px;
+  }
+  .perks-grid-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  .perk-pill-card {
+    flex: 0 0 200px;
+    scroll-snap-align: start;
+  }
+}
+
