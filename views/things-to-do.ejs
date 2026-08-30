@@ -299,6 +299,41 @@
         </div>
       </div>
 
+      <!-- Attraction 8: Siddhbali Temple – A Sacred Hanuman Shrine Near Kotdwar -->
+      <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: grid; grid-template-columns: 1.2fr 1fr;" class="responsive-two-col">
+        <div style="padding: 35px; display: flex; flex-direction: column; justify-content: center; order: 1;" class="order-mobile-2">
+          <h3 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 12px; font-family: 'Cinzel', serif;">8. Siddhbali Temple – A Sacred Hanuman Shrine Near Kotdwar</h3>
+          <p style="color: #475569; font-size: 14.5px; line-height: 1.7; margin-bottom: 18px;">
+            A revered Hanuman temple perched on a hillock along the Khoh River, en route between Kotdwar and Lansdowne. Climb a short flight of stairs to seek blessings, soak in panoramic Garhwal views, and enjoy the temple's famous community Bhandara (free meal) tradition. A peaceful half-day excursion from Lansdowne.
+          </p>
+          <div style="background: #f8fafc; padding: 12px 16px; border-radius: 8px; border-left: 3px solid #f59e0b; font-size: 13px; color: #334155; margin-bottom: 20px;">
+            <strong>Sacred Tradition:</strong> Famous for its daily community Bhandara and divine Hanumanji idol built high above the Khoh river valley.
+          </div>
+          <div>
+            <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20visit%20Shri%20Siddhbali%20Dham%20Temple%20during%20my%20stay." target="_blank" class="btn-outline-blue" style="padding: 10px 20px; font-size: 13px;">
+              <i class="fab fa-whatsapp"></i> Plan Siddhbali Temple Visit
+            </a>
+          </div>
+        </div>
+
+        <!-- Swipeable Image Carousel Container -->
+        <div style="height: 100%; min-height: 320px; position: relative; overflow: hidden; order: 2;" class="order-mobile-1">
+          <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
+            <% ['/images/things-to-do/siddhbali-temple-1.jpg', '/images/things-to-do/siddhbali-temple-2.jpg', '/images/things-to-do/siddhbali-temple-3.jpg'].forEach((imgUrl, imgIdx) => { %>
+              <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
+                <img src="<%= imgUrl %>" alt="Shri Siddhbali Temple Kotdwar - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+            <% }); %>
+          </div>
+          <span style="position: absolute; top: 15px; right: 15px; background: #f59e0b; color: #0f172a; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; pointer-events: none;">
+            <i class="fas fa-place-of-worship"></i> Sacred Hanuman Shrine
+          </span>
+          <span style="position: absolute; top: 15px; left: 15px; background: rgba(15, 23, 42, 0.85); color: #ffffff; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
+            <i class="fas fa-arrows-left-right"></i> Scroll Photos (3)
+          </span>
+        </div>
+      </div>
+
     </div>
 
   </div>
