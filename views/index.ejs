@@ -261,36 +261,86 @@
   </div>
 </section>
 
-<!-- Guest Reviews Section -->
-<section class="section-padding" style="padding: 60px 0;">
+<!-- Guest Reviews Motion Section -->
+<section class="section-padding" style="padding: 60px 0; overflow: hidden; background: #ffffff;">
   <div class="container">
-    <div style="text-align: center; max-width: 750px; margin: 0 auto 45px;">
+    <div style="text-align: center; max-width: 750px; margin: 0 auto 40px;">
       <span class="section-subtitle">Verified Guest Reviews</span>
       <h2 class="section-title">What Our Guests Say</h2>
-      <p style="color: #64748b; font-size: 15px;">Real experiences shared by guests who stayed at Flutter Hotels & Resorts, Lansdowne.</p>
+      <p style="color: #64748b; font-size: 15px;">Real Google experiences shared by guests who stayed at Flutter Hotels & Resorts, Lansdowne.</p>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
-      <% reviews.forEach(review => { %>
-        <div style="background: #ffffff; padding: 30px; border-radius: 14px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04); display: flex; flex-direction: column;">
-          <div style="color: #f59e0b; margin-bottom: 12px; font-size: 15px;">
-            <% for(let i=0; i<review.rating; i++) { %>
-              <i class="fas fa-star"></i>
-            <% } %>
-          </div>
-          <p style="color: #334155; font-size: 14.5px; line-height: 1.7; font-style: italic; margin-bottom: 20px; flex-grow: 1;">"<%= review.text %>"</p>
-          <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid #f1f5f9;">
-            <div>
-              <strong style="color: var(--dark-bg); font-size: 14px; display: block;"><%= review.author %></strong>
-              <span style="font-size: 12px; color: #64748b;"><%= review.location %></span>
+    <!-- Motion Track Container -->
+    <div style="position: relative;">
+      
+      <!-- Navigation Arrow Left -->
+      <button onclick="scrollReviews(-340)" style="position: absolute; left: -15px; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(15, 23, 42, 0.85); color: #ffffff; border: none; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.25); display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px);">
+        <i class="fas fa-chevron-left" style="font-size: 16px;"></i>
+      </button>
+
+      <!-- Navigation Arrow Right -->
+      <button onclick="scrollReviews(340)" style="position: absolute; right: -15px; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(15, 23, 42, 0.85); color: #ffffff; border: none; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.25); display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px);">
+        <i class="fas fa-chevron-right" style="font-size: 16px;"></i>
+      </button>
+
+      <!-- Motion Scroll Track -->
+      <div id="reviewsMotionTrack" style="display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; padding: 10px 5px 20px;">
+        <% reviews.forEach(review => { %>
+          <div style="flex: 0 0 320px; scroll-snap-align: start; background: #f8fafc; padding: 28px; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column; transition: transform 0.3s ease;">
+            <div style="color: #f59e0b; margin-bottom: 12px; font-size: 15px;">
+              <% for(let i=0; i<review.rating; i++) { %>
+                <i class="fas fa-star"></i>
+              <% } %>
             </div>
-            <span style="background: #e0f2fe; color: #0284c7; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: bold;"><i class="fas fa-circle-check"></i> Verified Guest</span>
+            <p style="color: #334155; font-size: 14.5px; line-height: 1.7; font-style: italic; margin-bottom: 20px; flex-grow: 1;">"<%= review.text %>"</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid #cbd5e1;">
+              <div>
+                <strong style="color: var(--dark-bg); font-size: 14.5px; display: block;"><%= review.author %></strong>
+                <span style="font-size: 12px; color: #64748b;"><%= review.location %></span>
+              </div>
+              <span style="background: #e0f2fe; color: #0284c7; padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: bold;"><i class="fas fa-circle-check"></i> Verified Guest</span>
+            </div>
           </div>
-        </div>
-      <% }); %>
+        <% }); %>
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+  function scrollReviews(offset) {
+    const track = document.getElementById('reviewsMotionTrack');
+    if (track) {
+      track.scrollBy({ left: offset, behavior: 'smooth' });
+    }
+  }
+
+  let reviewsAutoScrollTimer = null;
+  function startReviewsMotion() {
+    if (reviewsAutoScrollTimer) clearInterval(reviewsAutoScrollTimer);
+    reviewsAutoScrollTimer = setInterval(() => {
+      const track = document.getElementById('reviewsMotionTrack');
+      if (track) {
+        const maxScroll = track.scrollWidth - track.clientWidth;
+        if (track.scrollLeft >= maxScroll - 10) {
+          track.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          track.scrollBy({ left: 340, behavior: 'smooth' });
+        }
+      }
+    }, 4000);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    startReviewsMotion();
+    const trackElem = document.getElementById('reviewsMotionTrack');
+    if (trackElem) {
+      trackElem.addEventListener('mouseenter', () => clearInterval(reviewsAutoScrollTimer));
+      trackElem.addEventListener('mouseleave', startReviewsMotion);
+      trackElem.addEventListener('touchstart', () => clearInterval(reviewsAutoScrollTimer));
+    }
+  });
+</script>
 
 <!-- Lansdowne Sightseeing Motion Slider Section -->
 <section class="section-padding" style="background: #f8fafc; padding: 60px 0; overflow: hidden;">
