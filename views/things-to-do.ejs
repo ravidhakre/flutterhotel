@@ -404,6 +404,41 @@
         </div>
       </div>
 
+      <!-- Attraction 11: Kaleshwar Mahadev Temple – Where Time Slows Down -->
+      <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: grid; grid-template-columns: 1fr 1.2fr;" class="responsive-two-col">
+        <!-- Swipeable Image Carousel Container -->
+        <div style="height: 100%; min-height: 320px; position: relative; overflow: hidden;">
+          <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
+            <% ['/images/things-to-do/kaleshwar-mahadev-1.jpg', '/images/things-to-do/kaleshwar-mahadev-2.jpg', '/images/things-to-do/kaleshwar-mahadev-3.jpg', '/images/things-to-do/kaleshwar-mahadev-4.jpg'].forEach((imgUrl, imgIdx) => { %>
+              <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
+                <img src="<%= imgUrl %>" alt="Kaleshwar Mahadev Temple Lansdowne - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+            <% }); %>
+          </div>
+          <span style="position: absolute; top: 15px; left: 15px; background: #166534; color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; pointer-events: none;">
+            <i class="fas fa-om"></i> Ancient Shiva Temple
+          </span>
+          <span style="position: absolute; top: 15px; right: 15px; background: rgba(15, 23, 42, 0.85); color: #ffffff; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
+            <i class="fas fa-arrows-left-right"></i> Scroll Photos (4)
+          </span>
+        </div>
+
+        <div style="padding: 35px; display: flex; flex-direction: column; justify-content: center;">
+          <h3 style="font-size: 24px; color: var(--dark-bg); margin-bottom: 12px; font-family: 'Cinzel', serif;">11. Kaleshwar Mahadev Temple – Where Time Slows Down</h3>
+          <p style="color: #475569; font-size: 14.5px; line-height: 1.7; margin-bottom: 18px;">
+            Just a short walk from the town, this ancient Shiva temple is a hidden gem for anyone seeking a bit of peace and quiet. Surrounded by fragrant pine forests, it's the kind of place where you'll want to sit a while, breathe in the mountain air, and simply be present. A must-visit if you love a good mix of spirituality and scenery!
+          </p>
+          <div style="background: #f8fafc; padding: 12px 16px; border-radius: 8px; border-left: 3px solid #166534; font-size: 13px; color: #334155; margin-bottom: 20px;">
+            <strong>Spiritual Heritage:</strong> Believed to be over 500 years old, it is one of the oldest worshipped shrines in Lansdowne.
+          </div>
+          <div>
+            <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20visit%20Kaleshwar%20Mahadev%20Temple." target="_blank" class="btn-outline-blue" style="padding: 10px 20px; font-size: 13px;">
+              <i class="fab fa-whatsapp"></i> Plan Temple Visit
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
 
   </div>
