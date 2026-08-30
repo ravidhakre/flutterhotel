@@ -1,7 +1,7 @@
 <%- include('partials/header') %>
 
 <!-- Things To Do Hero Banner -->
-<div class="page-hero-header" style="background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('/images/things-to-do/tip n top viewpoint lansdowne1.jpeg'); background-size: cover; background-position: center;">
+<div class="page-hero-header" style="background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.8)), url('/images/tip-n-top-viewpoint.jpg'); background-size: cover; background-position: center;">
   <div class="container" style="max-width: 900px; position: relative; z-index: 2;">
     <span style="background: rgba(245, 158, 11, 0.25); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 15px; backdrop-filter: blur(4px);">
       <i class="fas fa-compass"></i> Explore Lansdowne
@@ -35,7 +35,7 @@
         <!-- Swipeable Image Carousel Container -->
         <div style="height: 100%; min-height: 320px; position: relative; overflow: hidden;">
           <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
-            <% ['/images/things-to-do/tip n top viewpoint lansdowne1.jpeg', '/images/things-to-do/tip n top viewpoint lansdowne2.jpeg', '/images/things-to-do/tip n top viewpoint lansdowne3.jpeg'].forEach((imgUrl, imgIdx) => { %>
+            <% ['/images/tip-n-top-viewpoint.jpg', '/images/things-to-do/tip n top viewpoint lansdowne2.jpeg', '/images/things-to-do/tip n top viewpoint lansdowne3.jpeg'].forEach((imgUrl, imgIdx) => { %>
               <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
                 <img src="<%= imgUrl %>" alt="Tip-in-Top Viewpoint - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
