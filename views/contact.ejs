@@ -11,7 +11,7 @@
 
 <section class="section-padding">
   <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;" class="responsive-two-col">
       
       <!-- Contact Info -->
       <div>
@@ -70,7 +70,7 @@
           </div>
         </div>
 
-        <div style="display: flex; gap: 15px; margin-top: 20px;">
+        <div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
           <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I’d%20like%20to%20know%20more%20about%20Flutter%20Hotels%20%26%20Resorts." target="_blank" class="btn-blue" style="background: #25d366 !important; border-color: #25d366 !important; padding: 12px 24px;">
             <i class="fab fa-whatsapp"></i> Chat on WhatsApp
           </a>
@@ -81,39 +81,39 @@
       </div>
 
       <!-- Contact Form -->
-      <div style="background: var(--light-bg); padding: 35px; border-radius: 12px; border: 1.5px solid #e2e8f0;">
-        <h3 style="font-size: 22px; margin-bottom: 20px; color: var(--dark-bg);">Send Us an Enquiry</h3>
+      <div style="background: var(--light-bg); padding: 30px; border-radius: 16px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+        <h3 style="font-size: 22px; margin-bottom: 20px; color: var(--dark-bg); font-family: 'Cinzel', serif;">Send Us an Enquiry</h3>
         
         <form action="/contact" method="POST">
           <div class="form-group-custom" style="margin-bottom: 15px;">
-            <label>Full Name *</label>
+            <label style="font-size: 13px; font-weight: 600; color: #334155;">Full Name *</label>
             <input type="text" name="name" required placeholder="John Doe" class="form-control-custom">
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;" class="responsive-two-col">
             <div>
-              <label>Phone Number *</label>
+              <label style="font-size: 13px; font-weight: 600; color: #334155;">Phone Number *</label>
               <input type="tel" name="phone" required placeholder="+91 89 2923 2740" class="form-control-custom">
             </div>
             <div>
-              <label>Email Address *</label>
+              <label style="font-size: 13px; font-weight: 600; color: #334155;">Email Address *</label>
               <input type="email" name="email" required placeholder="john@example.com" class="form-control-custom">
             </div>
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;" class="responsive-two-col">
             <div>
-              <label>Check-in / Check-out Dates</label>
+              <label style="font-size: 13px; font-weight: 600; color: #334155;">Check-in / Check-out Dates</label>
               <input type="text" name="dates" placeholder="e.g. 20-22 Aug" class="form-control-custom">
             </div>
             <div>
-              <label>Number of Guests</label>
+              <label style="font-size: 13px; font-weight: 600; color: #334155;">Number of Guests</label>
               <input type="text" name="guests" placeholder="e.g. 2 Adults" class="form-control-custom">
             </div>
           </div>
 
           <div class="form-group-custom" style="margin-bottom: 15px;">
-            <label>Purpose of Enquiry</label>
+            <label style="font-size: 13px; font-weight: 600; color: #334155;">Purpose of Enquiry</label>
             <select name="subject" class="form-control-custom">
               <option value="Room Booking">Room Booking</option>
               <option value="Weekday / Weekend Offer">Weekday / Weekend Offer</option>
@@ -126,11 +126,11 @@
           </div>
 
           <div class="form-group-custom" style="margin-bottom: 20px;">
-            <label>Message / Notes</label>
+            <label style="font-size: 13px; font-weight: 600; color: #334155;">Message / Notes</label>
             <textarea name="message" rows="4" placeholder="How can we assist you today?" class="form-control-custom"></textarea>
           </div>
 
-          <button type="submit" class="btn-blue" style="width: 100%; padding: 14px; border: none;"><i class="fas fa-paper-plane"></i> Send Enquiry</button>
+          <button type="submit" class="btn-blue" style="width: 100%; padding: 14px; border: none; font-size: 15px; font-weight: bold;"><i class="fas fa-paper-plane"></i> Send Enquiry</button>
         </form>
       </div>
 
