@@ -5,7 +5,7 @@
     "slug": "honeymoon-package",
     "price": "Starting from ₹2,499 / Person",
     "tag": "Romantic Special",
-    "image": "/images/celebrations/honeymoon-1.jpg",
+    "image": "/images/packages/honeymoon-package-1.jpg",
     "metaTitle": "Honeymoon Package in Lansdowne | Flutter Hotels & Resorts",
     "metaDescription": "Celebrate your honeymoon with a valley-view stay, private balcony, candle light dinner and bed decoration at Flutter Hotels & Resorts, Lansdowne.",
     "shortDesc": "A valley view room with private balcony, romantic candlelight dinner under stars, flower bed decoration, and welcome cake for newlyweds.",
@@ -17,12 +17,33 @@
       "Bonfire evening & 15% discount on additional room service"
     ],
     "itinerary": [
-      {"day": "Day 1", "title": "Check-in & Candlelight Dinner", "desc": "Check-in at 12:00 PM with welcome drinks. Enjoy private balcony valley vistas and romantic candlelight dinner."},
-      {"day": "Day 2", "title": "Sightseeing & Bonfire", "desc": "Morning breakfast followed by local sightseeing (Tip-in-Top, Bhulla Lake). Evening bonfire on resort lawns."},
-      {"day": "Day 3", "title": "Breakfast & Departure", "desc": "Morning breakfast, memorable photos on resort lawns, and checkout by 10:00 AM."}
+      {
+        "day": "Day 1",
+        "title": "Check-in & Candlelight Dinner",
+        "desc": "Check-in at 12:00 PM with welcome drinks. Enjoy private balcony valley vistas and romantic candlelight dinner."
+      },
+      {
+        "day": "Day 2",
+        "title": "Sightseeing & Bonfire",
+        "desc": "Morning breakfast followed by local sightseeing (Tip-in-Top, Bhulla Lake). Evening bonfire on resort lawns."
+      },
+      {
+        "day": "Day 3",
+        "title": "Breakfast & Departure",
+        "desc": "Morning breakfast, memorable photos on resort lawns, and checkout by 10:00 AM."
+      }
     ],
     "faqs": [
-      {"q": "Can we customize the candlelight dinner menu?", "a": "Yes, our chef customizes the dinner menu according to your preferences."}
+      {
+        "q": "Can we customize the candlelight dinner menu?",
+        "a": "Yes, our chef customizes the dinner menu according to your preferences."
+      }
+    ],
+    "images": [
+      "/images/packages/honeymoon-package-1.jpg",
+      "/images/packages/honeymoon-package-2.webp",
+      "/images/packages/honeymoon-package-3.jpg",
+      "/images/packages/honeymoon-package-4.jpg"
     ]
   },
   {
@@ -31,7 +52,7 @@
     "slug": "group-departure-package",
     "price": "Starting from ₹4,999 / Person",
     "tag": "All-Inclusive Tour",
-    "image": "/images/celebrations/family-gettogether-1.jpg",
+    "image": "/images/packages/group-departure-package-1.jpg",
     "metaTitle": "Delhi Group Departure Package | Flutter Hotels & Resorts",
     "metaDescription": "All-inclusive group departure from Delhi to Lansdowne with AC vehicle, resort stay, meals, sightseeing, and bonfire night.",
     "shortDesc": "Hassle-free AC transport from Delhi Akshardham Metro, resort accommodation, all meals, sightseeing tour, and bonfire music evening.",
@@ -43,12 +64,33 @@
       "Bonfire & Music Evening on resort lawns"
     ],
     "itinerary": [
-      {"day": "Day 1", "title": "Delhi Pickup & Resort Check-in", "desc": "6:00 AM pickup from Akshardham Metro Delhi. Scenic drive to Lansdowne, check-in & evening tea."},
-      {"day": "Day 2", "title": "Sightseeing & Bonfire Night", "desc": "Explore Lansdowne viewpoints and historic sites. Evening bonfire & music with dinner."},
-      {"day": "Day 3", "title": "Breakfast & Return Journey", "desc": "Morning breakfast, checkout and return journey back to Delhi."}
+      {
+        "day": "Day 1",
+        "title": "Delhi Pickup & Resort Check-in",
+        "desc": "6:00 AM pickup from Akshardham Metro Delhi. Scenic drive to Lansdowne, check-in & evening tea."
+      },
+      {
+        "day": "Day 2",
+        "title": "Sightseeing & Bonfire Night",
+        "desc": "Explore Lansdowne viewpoints and historic sites. Evening bonfire & music with dinner."
+      },
+      {
+        "day": "Day 3",
+        "title": "Breakfast & Return Journey",
+        "desc": "Morning breakfast, checkout and return journey back to Delhi."
+      }
     ],
     "faqs": [
-      {"q": "Where is the Delhi pickup location?", "a": "Akshardham Metro Station Gate No. 2 at 6:00 AM."}
+      {
+        "q": "Where is the Delhi pickup location?",
+        "a": "Akshardham Metro Station Gate No. 2 at 6:00 AM."
+      }
+    ],
+    "images": [
+      "/images/packages/group-departure-package-1.jpg",
+      "/images/packages/group-departure-package-2.jpg",
+      "/images/packages/group-departure-package-3.jpg",
+      "/images/packages/group-departure-package-4.jpeg"
     ]
   },
   {
@@ -57,7 +99,7 @@
     "slug": "weekday-package",
     "price": "Starting from ₹1,999 / Room",
     "tag": "Best Savings Deal",
-    "image": "/images/hotel-img-4.jpeg",
+    "image": "/images/packages/weekday-package-1.jpg",
     "metaTitle": "Weekdays Package | Flutter Hotels & Resorts Lansdowne",
     "metaDescription": "Peaceful weekday staycation in Lansdowne with room stay, breakfast, complimentary Wi-Fi and quiet mountain environment.",
     "shortDesc": "Escape weekend crowds with a peaceful Monday-to-Thursday hillside stay, daily breakfast, and serene mountain vistas.",
@@ -69,11 +111,27 @@
       "Early check-in / late check-out priority"
     ],
     "itinerary": [
-      {"day": "Day 1", "title": "Weekday Check-in & Relaxation", "desc": "Check-in, relax on your private balcony, and enjoy peaceful Garhwal surroundings."},
-      {"day": "Day 2", "title": "Local Exploration & Dining", "desc": "Breakfast, local walks in pine woods, and multi-cuisine dinner."}
+      {
+        "day": "Day 1",
+        "title": "Weekday Check-in & Relaxation",
+        "desc": "Check-in, relax on your private balcony, and enjoy peaceful Garhwal surroundings."
+      },
+      {
+        "day": "Day 2",
+        "title": "Local Exploration & Dining",
+        "desc": "Breakfast, local walks in pine woods, and multi-cuisine dinner."
+      }
     ],
     "faqs": [
-      {"q": "Which days are applicable for weekday packages?", "a": "Check-in valid between Monday and Thursday."}
+      {
+        "q": "Which days are applicable for weekday packages?",
+        "a": "Check-in valid between Monday and Thursday."
+      }
+    ],
+    "images": [
+      "/images/packages/weekday-package-1.jpg",
+      "/images/packages/weekday-package-2.jpg",
+      "/images/packages/weekday-package-3.jpg"
     ]
   },
   {
@@ -82,7 +140,7 @@
     "slug": "weekend-package",
     "price": "Starting from ₹3,999 / Room",
     "tag": "Weekend Getaway",
-    "image": "/images/valley-city-views.jpg",
+    "image": "/images/packages/weekend-package-1.jpg",
     "metaTitle": "Weekend Package | Flutter Hotels & Resorts Lansdowne",
     "metaDescription": "Recharge your weekend in Lansdowne — room stay, daily breakfast, evening tea, and lawn bonfire.",
     "shortDesc": "Recharge in fresh pine air — room stay, daily breakfast, evening tea with local Garhwali snacks, and bonfire.",
@@ -94,11 +152,28 @@
       "Free Wi-Fi & secure on-site parking"
     ],
     "itinerary": [
-      {"day": "Day 1", "title": "Friday Arrival & Bonfire", "desc": "Check-in, evening tea with mountain view, and warm lawn bonfire."},
-      {"day": "Day 2", "title": "Saturday Sightseeing & Dinner", "desc": "Breakfast, visit local points, and enjoy multi-cuisine dinner buffet."}
+      {
+        "day": "Day 1",
+        "title": "Friday Arrival & Bonfire",
+        "desc": "Check-in, evening tea with mountain view, and warm lawn bonfire."
+      },
+      {
+        "day": "Day 2",
+        "title": "Saturday Sightseeing & Dinner",
+        "desc": "Breakfast, visit local points, and enjoy multi-cuisine dinner buffet."
+      }
     ],
     "faqs": [
-      {"q": "What time is the lawn bonfire?", "a": "Bonfire starts around 7:30 PM on resort lawns."}
+      {
+        "q": "What time is the lawn bonfire?",
+        "a": "Bonfire starts around 7:30 PM on resort lawns."
+      }
+    ],
+    "images": [
+      "/images/packages/weekend-package-1.jpg",
+      "/images/packages/weekend-package-2.jpg",
+      "/images/packages/weekend-package-3.jpg",
+      "/images/packages/weekend-package-4.jpg"
     ]
   },
   {
@@ -107,7 +182,7 @@
     "slug": "destination-wedding-package",
     "price": "Starting from ₹8,999 / Person",
     "tag": "Destination Wedding",
-    "image": "/images/celebrations/wedding-1.jpeg",
+    "image": "/images/packages/destination-wedding-package-1.jpeg",
     "metaTitle": "Destination Wedding Package | Flutter Hotels & Resorts",
     "metaDescription": "Exchange vows against the Garhwal hills — 100 to 120 guest banquet hall, mandap lawns, customized catering and decor.",
     "shortDesc": "Exchange vows against the Garhwal hills! Complete wedding package with mandap lawns, banquet hall, custom buffets, and honeymoon suite.",
@@ -119,11 +194,28 @@
       "Dedicated event planner & DJ sound system setup"
     ],
     "itinerary": [
-      {"day": "Day 1", "title": "Mehendi & Sangeet Evening", "desc": "Guest check-in, evening Mehendi function on lawns, and vibrant Sangeet celebration."},
-      {"day": "Day 2", "title": "Wedding Ceremony & Reception", "desc": "Mandap rituals amidst mountain backdrop followed by grand Reception dinner buffet."}
+      {
+        "day": "Day 1",
+        "title": "Mehendi & Sangeet Evening",
+        "desc": "Guest check-in, evening Mehendi function on lawns, and vibrant Sangeet celebration."
+      },
+      {
+        "day": "Day 2",
+        "title": "Wedding Ceremony & Reception",
+        "desc": "Mandap rituals amidst mountain backdrop followed by grand Reception dinner buffet."
+      }
     ],
     "faqs": [
-      {"q": "What is the maximum capacity for destination weddings?", "a": "Our lawn and banquet hall comfortably host up to 100-120 guests."}
+      {
+        "q": "What is the maximum capacity for destination weddings?",
+        "a": "Our lawn and banquet hall comfortably host up to 100-120 guests."
+      }
+    ],
+    "images": [
+      "/images/packages/destination-wedding-package-1.jpeg",
+      "/images/packages/destination-wedding-package-2.jpeg",
+      "/images/packages/destination-wedding-package-3.jpeg",
+      "/images/packages/destination-wedding-package-4.jpeg"
     ]
   },
   {
@@ -132,7 +224,7 @@
     "slug": "family-gettogether-package",
     "price": "Starting from ₹2,499 / Person",
     "tag": "Family Togetherness",
-    "image": "/images/celebrations/family-gettogether-2.jpg",
+    "image": "/images/packages/family-gettogether-package-1.jpg",
     "metaTitle": "Family Get-together Package | Flutter Hotels & Resorts",
     "metaDescription": "Reunite with loved ones in Lansdowne with spacious accommodations, buffet meals, and lawn bonfire.",
     "shortDesc": "Reunite with loved ones in style! Spacious rooms, private balcony views, bonfire DJ evening setups, and family dining.",
@@ -144,11 +236,27 @@
       "Bus / Tempo Traveller on-site parking"
     ],
     "itinerary": [
-      {"day": "Day 1", "title": "Arrival & Family Bonfire", "desc": "Check-in, evening tea, and family bonding around warm bonfire."},
-      {"day": "Day 2", "title": "Sightseeing & Gala Dinner", "desc": "Local sights exploration followed by family gala dinner."}
+      {
+        "day": "Day 1",
+        "title": "Arrival & Family Bonfire",
+        "desc": "Check-in, evening tea, and family bonding around warm bonfire."
+      },
+      {
+        "day": "Day 2",
+        "title": "Sightseeing & Gala Dinner",
+        "desc": "Local sights exploration followed by family gala dinner."
+      }
     ],
     "faqs": [
-      {"q": "Is parking available for tempo travellers?", "a": "Yes, we have secure on-site parking for buses and tempo travellers."}
+      {
+        "q": "Is parking available for tempo travellers?",
+        "a": "Yes, we have secure on-site parking for buses and tempo travellers."
+      }
+    ],
+    "images": [
+      "/images/packages/family-gettogether-package-1.jpg",
+      "/images/packages/family-gettogether-package-2.jpg",
+      "/images/packages/family-gettogether-package-3.jpg"
     ]
   },
   {
@@ -157,7 +265,7 @@
     "slug": "corporate-package",
     "price": "Starting from ₹2,199 / Person",
     "tag": "Corporate Retreat",
-    "image": "/images/conference-setup-1.webp",
+    "image": "/images/packages/corporate-package-1.webp",
     "metaTitle": "Corporate MICE Package | Flutter Hotels & Resorts Lansdowne",
     "metaDescription": "Host executive offsites and team retreats in Lansdowne with conference hall, high-speed Wi-Fi, and team building activities.",
     "shortDesc": "Mix business with pleasure in our versatile spaces. Conference hall setup, high-speed fiber internet, all meals, and team activities.",
@@ -169,11 +277,27 @@
       "Team building lawn activities & bonfire evening"
     ],
     "itinerary": [
-      {"day": "Day 1", "title": "Strategy Session & Bonfire", "desc": "Welcome drinks, plenary conference session, and evening team bonfire."},
-      {"day": "Day 2", "title": "Team Building & Gala Dinner", "desc": "Morning strategy sprints, afternoon outdoor games, and gala dinner."}
+      {
+        "day": "Day 1",
+        "title": "Strategy Session & Bonfire",
+        "desc": "Welcome drinks, plenary conference session, and evening team bonfire."
+      },
+      {
+        "day": "Day 2",
+        "title": "Team Building & Gala Dinner",
+        "desc": "Morning strategy sprints, afternoon outdoor games, and gala dinner."
+      }
     ],
     "faqs": [
-      {"q": "Do you provide audio/visual equipment for presentations?", "a": "Yes, HD projector, screen, wireless mics, and podium are included."}
+      {
+        "q": "Do you provide audio/visual equipment for presentations?",
+        "a": "Yes, HD projector, screen, wireless mics, and podium are included."
+      }
+    ],
+    "images": [
+      "/images/packages/corporate-package-1.webp",
+      "/images/packages/corporate-package-2.jpg",
+      "/images/packages/corporate-package-3.avif"
     ]
   },
   {
@@ -182,7 +306,7 @@
     "slug": "school-and-college-package",
     "price": "Starting from ₹2,199 / Person",
     "tag": "Educational Outing",
-    "image": "/images/hero-slides/hero-slide-2.jpg",
+    "image": "/images/packages/school-and-college-package-1.avif",
     "metaTitle": "School & College Tour Package | Flutter Hotels & Resorts",
     "metaDescription": "Affordable student group tours in Lansdowne with comfortable lodging, delicious meals, and sightseeing guidance.",
     "shortDesc": "Ready for a school trip or college outing? Comfortable lodging, nutritious meals, sightseeing guidance, and engaging activities.",
@@ -194,11 +318,28 @@
       "On-site coach & tempo traveller parking"
     ],
     "itinerary": [
-      {"day": "Day 1", "title": "Student Check-in & Fun Evening", "desc": "Check-in, orientation, nature walks, and evening bonfire."},
-      {"day": "Day 2", "title": "Historical & Nature Sightseeing", "desc": "Visit Army Museum, Bhulla Lake, and local eco-trails."}
+      {
+        "day": "Day 1",
+        "title": "Student Check-in & Fun Evening",
+        "desc": "Check-in, orientation, nature walks, and evening bonfire."
+      },
+      {
+        "day": "Day 2",
+        "title": "Historical & Nature Sightseeing",
+        "desc": "Visit Army Museum, Bhulla Lake, and local eco-trails."
+      }
     ],
     "faqs": [
-      {"q": "Are staff/teachers provided complimentary stay?", "a": "Yes, 1 instructor stay is complimentary per 15 students."}
+      {
+        "q": "Are staff/teachers provided complimentary stay?",
+        "a": "Yes, 1 instructor stay is complimentary per 15 students."
+      }
+    ],
+    "images": [
+      "/images/packages/school-and-college-package-1.avif",
+      "/images/packages/school-and-college-package-2.jpg",
+      "/images/packages/school-and-college-package-3.jpeg",
+      "/images/packages/school-and-college-package-4.webp"
     ]
   },
   {
@@ -207,7 +348,7 @@
     "slug": "birthday-party-package",
     "price": "Starting from ₹2,499 / Person",
     "tag": "Milestone Birthdays",
-    "image": "/images/celebrations/birthday-1.png",
+    "image": "/images/packages/birthday-party-package-1.png",
     "metaTitle": "Birthday Party Package | Flutter Hotels & Resorts Lansdowne",
     "metaDescription": "Celebrate milestone birthdays in Lansdowne with lawn party decor, custom cake, DJ music, and multi-cuisine dinner.",
     "shortDesc": "Turning another year older is a momentous occasion! Celebrate in style with indoor & outdoor party setups, custom theme decor, DJ sound system, bonfire pit, and gourmet catering.",
@@ -219,10 +360,21 @@
       "Multi-cuisine dinner buffet for guests"
     ],
     "itinerary": [
-      {"day": "Day 1", "title": "Party Check-in & Lawn Celebration", "desc": "Check-in, evening cake cutting, DJ music party, bonfire & buffet dinner."}
+      {
+        "day": "Day 1",
+        "title": "Party Check-in & Lawn Celebration",
+        "desc": "Check-in, evening cake cutting, DJ music party, bonfire & buffet dinner."
+      }
     ],
     "faqs": [
-      {"q": "Can we bring our own theme decoration ideas?", "a": "Yes, our event team will customize decor according to your theme."}
+      {
+        "q": "Can we bring our own theme decoration ideas?",
+        "a": "Yes, our event team will customize decor according to your theme."
+      }
+    ],
+    "images": [
+      "/images/packages/birthday-party-package-1.png",
+      "/images/packages/birthday-party-package-2.webp"
     ]
   },
   {
@@ -231,7 +383,7 @@
     "slug": "anniversary-package",
     "price": "Starting from ₹2,499 / Person",
     "tag": "Romantic Milestone",
-    "image": "/images/celebrations/anniversary-1.jpg",
+    "image": "/images/packages/anniversary-package-1.jpg",
     "metaTitle": "Anniversary Package | Flutter Hotels & Resorts Lansdowne",
     "metaDescription": "Mark your special anniversary with candlelit dining under stars, flower bed setup, and romantic valley views.",
     "shortDesc": "Mark your special milestone with elegance and serenity! Private candlelit dinner under starry mountain skies, fresh flower bed decoration, gourmet cuisine, and romantic valley views.",
@@ -243,10 +395,22 @@
       "Daily Chef Special Breakfast for 2"
     ],
     "itinerary": [
-      {"day": "Day 1", "title": "Check-in & Romantic Candlelight Dinner", "desc": "Check-in, evening balcony tea, and candlelit dinner under the stars."}
+      {
+        "day": "Day 1",
+        "title": "Check-in & Romantic Candlelight Dinner",
+        "desc": "Check-in, evening balcony tea, and candlelit dinner under the stars."
+      }
     ],
     "faqs": [
-      {"q": "Can we arrange live acoustic music for dinner?", "a": "Yes, live acoustic guitar performance can be arranged on request."}
+      {
+        "q": "Can we arrange live acoustic music for dinner?",
+        "a": "Yes, live acoustic guitar performance can be arranged on request."
+      }
+    ],
+    "images": [
+      "/images/packages/anniversary-package-1.jpg",
+      "/images/packages/anniversary-package-2.jpg",
+      "/images/packages/anniversary-package-3.webp"
     ]
   },
   {
@@ -255,7 +419,7 @@
     "slug": "retirement-package",
     "price": "Starting from ₹2,499 / Person",
     "tag": "Milestone Honor",
-    "image": "/images/celebrations/retirement-1.jpg",
+    "image": "/images/packages/retirement-package-1.jpg",
     "metaTitle": "Retirement Celebration Package | Flutter Hotels & Resorts",
     "metaDescription": "Honor a lifetime of achievements in Lansdowne with elegant banquet setup, gourmet catering, and guest stays.",
     "shortDesc": "Honor a lifetime of achievements with style and grace! Versatile indoor/outdoor banquet venues, gourmet catering, AV setup for speech/slideshows, and comfortable guest stays.",
@@ -267,10 +431,22 @@
       "Comfortable guest room accommodations"
     ],
     "itinerary": [
-      {"day": "Day 1", "title": "Retirement Honor Function & Dinner", "desc": "Guest arrival, memory slideshow presentation, speech ceremony & dinner."}
+      {
+        "day": "Day 1",
+        "title": "Retirement Honor Function & Dinner",
+        "desc": "Guest arrival, memory slideshow presentation, speech ceremony & dinner."
+      }
     ],
     "faqs": [
-      {"q": "Is projector available for slideshows?", "a": "Yes, HD projector and sound system are provided."}
+      {
+        "q": "Is projector available for slideshows?",
+        "a": "Yes, HD projector and sound system are provided."
+      }
+    ],
+    "images": [
+      "/images/packages/retirement-package-1.jpg",
+      "/images/packages/retirement-package-2.jpeg",
+      "/images/packages/retirement-package-3.jpg"
     ]
   },
   {
@@ -279,7 +455,7 @@
     "slug": "engagement-package",
     "price": "Starting from ₹6,999 / Person",
     "tag": "Ring Ceremony",
-    "image": "/images/celebrations/engagement-1.jpg",
+    "image": "/images/packages/engagement-package-1.jpg",
     "metaTitle": "Engagement & Ring Ceremony Package | Flutter Hotels & Resorts",
     "metaDescription": "Host your dream engagement in Lansdowne with floral stage setup, cocktail snacks, live music, and scenic backdrop.",
     "shortDesc": "Begin your journey of togetherness with an enchanting ring ceremony! Elegant floral stage setups, cocktail evening snacks, live music, and scenic mountain backdrops for pictures.",
@@ -291,10 +467,22 @@
       "Bridal room for makeup & dressing"
     ],
     "itinerary": [
-      {"day": "Day 1", "title": "Ring Ceremony & Cocktail Evening", "desc": "Guest check-in, ring ceremony on stage, cocktail snacks & gala dinner."}
+      {
+        "day": "Day 1",
+        "title": "Ring Ceremony & Cocktail Evening",
+        "desc": "Guest check-in, ring ceremony on stage, cocktail snacks & gala dinner."
+      }
     ],
     "faqs": [
-      {"q": "Is green room / bridal dressing room provided?", "a": "Yes, dedicated air-conditioned room with balcony is provided."}
+      {
+        "q": "Is green room / bridal dressing room provided?",
+        "a": "Yes, dedicated air-conditioned room with balcony is provided."
+      }
+    ],
+    "images": [
+      "/images/packages/engagement-package-1.jpg",
+      "/images/packages/engagement-package-2.jpg",
+      "/images/packages/engagement-package-3.webp"
     ]
   },
   {
@@ -315,10 +503,22 @@
       "Special photo zone decor for group pictures"
     ],
     "itinerary": [
-      {"day": "Day 1", "title": "High Tea & Lawn Kitty Party", "desc": "Arrival at 1:00 PM, high tea, lawn games, photo session & buffet lunch/dinner."}
+      {
+        "day": "Day 1",
+        "title": "High Tea & Lawn Kitty Party",
+        "desc": "Arrival at 1:00 PM, high tea, lawn games, photo session & buffet lunch/dinner."
+      }
     ],
     "faqs": [
-      {"q": "Can we book daytime lawn slots for Kitty Parties?", "a": "Yes, both daytime (11 AM - 4 PM) and evening slots are available."}
+      {
+        "q": "Can we book daytime lawn slots for Kitty Parties?",
+        "a": "Yes, both daytime (11 AM - 4 PM) and evening slots are available."
+      }
+    ],
+    "images": [
+      "/images/celebrations/kitty-party-1.jpg",
+      "/images/packages/kitty-party-package-2.jpg",
+      "/images/packages/kitty-party-package-3.jpg"
     ]
   }
 ]
