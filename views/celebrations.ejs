@@ -32,48 +32,48 @@
     <!-- Celebration Packages Style 3-Column Card Grid -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 60px;">
       
-      <!-- Card 01: Birthday Celebration -->
+      <!-- Card 01: Honeymoon Celebration -->
       <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
         <div style="position: relative; height: 240px; overflow: hidden;">
           <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
-            <% ['/images/celebrations/birthday-1.png', '/images/celebrations/birthday-2.webp'].forEach((imgUrl, imgIdx) => { %>
+            <% ['/images/celebrations/honeymoon-1.jpg', '/images/celebrations/honeymoon-2.webp', '/images/celebrations/honeymoon-3.jpg', '/images/celebrations/honeymoon-4.jpg'].forEach((imgUrl, imgIdx) => { %>
               <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
-                <img src="<%= imgUrl %>" alt="Birthday Celebration - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="<%= imgUrl %>" alt="Honeymoon Celebration - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
             <% }); %>
           </div>
           <span style="position: absolute; top: 15px; right: 15px; background: rgba(15, 23, 42, 0.85); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(4px); pointer-events: none;">
-            <i class="fas fa-cake-candles"></i> 01 • Birthday
+            <i class="fas fa-heart"></i> 01 • Honeymoon
           </span>
           <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.82); color: #ffffff; padding: 3px 10px; border-radius: 12px; font-size: 10.5px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
-            <i class="fas fa-arrows-left-right"></i> Scroll Photos (2)
+            <i class="fas fa-arrows-left-right"></i> Scroll Photos (4)
           </span>
         </div>
         <div style="padding: 28px; flex-grow: 1; display: flex; flex-direction: column;">
-          <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px; font-family: 'Cinzel', serif;">01. Birthday Celebration</h3>
+          <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px; font-family: 'Cinzel', serif;">01. Honeymoon Celebration</h3>
           <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
-            Turning another year older is a momentous occasion! Celebrate in style with indoor & outdoor party setups, custom theme decor, DJ sound system, bonfire pit, and gourmet catering.
+            Romantic valley view stay with private balcony, candlelit dinner under starry mountain skies, fresh flower bed decoration, and welcome cake for newlyweds.
           </p>
           <div style="background: #f8fafc; padding: 14px 18px; border-radius: 10px; margin-bottom: 20px; border: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center;">
             <div>
-              <span style="font-size: 11px; text-transform: uppercase; color: #64748b; font-weight: 700;">Venue Capacity</span>
-              <div style="font-size: 15px; font-weight: bold; color: var(--primary-blue);">Up to 100-120 Guests</div>
+              <span style="font-size: 11px; text-transform: uppercase; color: #64748b; font-weight: 700;">Romantic Setup</span>
+              <div style="font-size: 15px; font-weight: bold; color: var(--primary-blue);">Candlelit Dinner & Bed Setup</div>
             </div>
             <span style="font-size: 12px; color: #22c55e; font-weight: bold;"><i class="fas fa-shield-check"></i> Best Rate</span>
           </div>
-          <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20enquire%20about%20booking%20a%20Birthday%20Celebration%20at%20Flutter%20Hotels." target="_blank" style="background: #25D366; color: #ffffff; padding: 12px 0; width: 100%; font-size: 14px; text-align: center; font-weight: bold; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);">
+          <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20enquire%20about%20booking%20a%20Honeymoon%20Celebration%20at%20Flutter%20Hotels." target="_blank" style="background: #25D366; color: #ffffff; padding: 12px 0; width: 100%; font-size: 14px; text-align: center; font-weight: bold; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);">
             <i class="fab fa-whatsapp" style="font-size: 17px;"></i> Enquire Celebration
           </a>
         </div>
       </div>
 
-      <!-- Card 02: Wedding Celebration -->
+      <!-- Card 02: Destination Wedding -->
       <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
         <div style="position: relative; height: 240px; overflow: hidden;">
           <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
             <% ['/images/celebrations/wedding-1.jpeg', '/images/celebrations/wedding-2.jpeg', '/images/celebrations/wedding-3.jpeg', '/images/celebrations/wedding-4.jpeg'].forEach((imgUrl, imgIdx) => { %>
               <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
-                <img src="<%= imgUrl %>" alt="Wedding Celebration - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="<%= imgUrl %>" alt="Destination Wedding - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
             <% }); %>
           </div>
@@ -85,7 +85,7 @@
           </span>
         </div>
         <div style="padding: 28px; flex-grow: 1; display: flex; flex-direction: column;">
-          <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px; font-family: 'Cinzel', serif;">02. Wedding Celebration</h3>
+          <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px; font-family: 'Cinzel', serif;">02. Destination Wedding</h3>
           <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
             Exchange vows against the Garhwal hills! Host intimate gatherings or grand celebrations for up to 100 to 120 guests with mandap lawns, gourmet catering, rehearsal dinners, and honeymoon suites.
           </p>
@@ -96,13 +96,48 @@
             </div>
             <span style="font-size: 12px; color: #22c55e; font-weight: bold;"><i class="fas fa-shield-check"></i> Best Rate</span>
           </div>
-          <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20enquire%20about%20booking%20a%20Wedding%20Celebration%20at%20Flutter%20Hotels." target="_blank" style="background: #25D366; color: #ffffff; padding: 12px 0; width: 100%; font-size: 14px; text-align: center; font-weight: bold; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);">
+          <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20enquire%20about%20booking%20a%20Destination%20Wedding%20Celebration%20at%20Flutter%20Hotels." target="_blank" style="background: #25D366; color: #ffffff; padding: 12px 0; width: 100%; font-size: 14px; text-align: center; font-weight: bold; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);">
             <i class="fab fa-whatsapp" style="font-size: 17px;"></i> Enquire Celebration
           </a>
         </div>
       </div>
 
-      <!-- Card 03: Anniversary Celebration -->
+      <!-- Card 03: Family Get-together -->
+      <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
+        <div style="position: relative; height: 240px; overflow: hidden;">
+          <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
+            <% ['/images/celebrations/family-gettogether-1.jpg', '/images/celebrations/family-gettogether-2.jpg', '/images/celebrations/family-gettogether-3.jpg'].forEach((imgUrl, imgIdx) => { %>
+              <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
+                <img src="<%= imgUrl %>" alt="Family Get-together - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+            <% }); %>
+          </div>
+          <span style="position: absolute; top: 15px; right: 15px; background: rgba(15, 23, 42, 0.85); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(4px); pointer-events: none;">
+            <i class="fas fa-users"></i> 03 • Family Togetherness
+          </span>
+          <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.82); color: #ffffff; padding: 3px 10px; border-radius: 12px; font-size: 10.5px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
+            <i class="fas fa-arrows-left-right"></i> Scroll Photos (3)
+          </span>
+        </div>
+        <div style="padding: 28px; flex-grow: 1; display: flex; flex-direction: column;">
+          <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px; font-family: 'Cinzel', serif;">03. Family Get-together</h3>
+          <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+            Reunite with loved ones in style! Spacious room accommodations, private balcony mountain views, bonfire DJ evening setups, and family-friendly dining for all generations.
+          </p>
+          <div style="background: #f8fafc; padding: 14px 18px; border-radius: 10px; margin-bottom: 20px; border: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <span style="font-size: 11px; text-transform: uppercase; color: #64748b; font-weight: 700;">Event Setup</span>
+              <div style="font-size: 15px; font-weight: bold; color: var(--primary-blue);">Bonfire & Family Buffet</div>
+            </div>
+            <span style="font-size: 12px; color: #22c55e; font-weight: bold;"><i class="fas fa-shield-check"></i> Best Rate</span>
+          </div>
+          <a href="https://wa.me/<%= whatsappNum %>?text=Hi,%20I'd%20like%20to%20enquire%20about%20booking%20a%20Family%20Get-together%20at%20Flutter%20Hotels." target="_blank" style="background: #25D366; color: #ffffff; padding: 12px 0; width: 100%; font-size: 14px; text-align: center; font-weight: bold; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);">
+            <i class="fab fa-whatsapp" style="font-size: 17px;"></i> Enquire Celebration
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 04: Anniversary Celebration -->
       <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
         <div style="position: relative; height: 240px; overflow: hidden;">
           <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
@@ -113,14 +148,14 @@
             <% }); %>
           </div>
           <span style="position: absolute; top: 15px; right: 15px; background: rgba(15, 23, 42, 0.85); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(4px); pointer-events: none;">
-            <i class="fas fa-wine-glass-alt"></i> 03 • Anniversary
+            <i class="fas fa-wine-glass-alt"></i> 04 • Anniversary
           </span>
           <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.82); color: #ffffff; padding: 3px 10px; border-radius: 12px; font-size: 10.5px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
             <i class="fas fa-arrows-left-right"></i> Scroll Photos (3)
           </span>
         </div>
         <div style="padding: 28px; flex-grow: 1; display: flex; flex-direction: column;">
-          <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px; font-family: 'Cinzel', serif;">03. Anniversary Celebration</h3>
+          <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px; font-family: 'Cinzel', serif;">04. Anniversary Celebration</h3>
           <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
             Mark your special milestone with elegance and serenity! Private candlelit dinner under starry mountain skies, fresh flower bed decoration, gourmet cuisine, and romantic valley views.
           </p>
@@ -137,7 +172,7 @@
         </div>
       </div>
 
-      <!-- Card 04: Retirement Celebration -->
+      <!-- Card 05: Retirement Celebration -->
       <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
         <div style="position: relative; height: 240px; overflow: hidden;">
           <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
@@ -148,14 +183,14 @@
             <% }); %>
           </div>
           <span style="position: absolute; top: 15px; right: 15px; background: rgba(15, 23, 42, 0.85); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(4px); pointer-events: none;">
-            <i class="fas fa-award"></i> 04 • Retirement
+            <i class="fas fa-award"></i> 05 • Retirement
           </span>
           <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.82); color: #ffffff; padding: 3px 10px; border-radius: 12px; font-size: 10.5px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
             <i class="fas fa-arrows-left-right"></i> Scroll Photos (3)
           </span>
         </div>
         <div style="padding: 28px; flex-grow: 1; display: flex; flex-direction: column;">
-          <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px; font-family: 'Cinzel', serif;">04. Retirement Celebration</h3>
+          <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px; font-family: 'Cinzel', serif;">05. Retirement Celebration</h3>
           <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
             Honor a lifetime of achievements with style and grace! Versatile indoor/outdoor banquet venues, gourmet catering, AV setup for speech/slideshows, and comfortable guest stays.
           </p>
@@ -172,7 +207,7 @@
         </div>
       </div>
 
-      <!-- Card 05: Engagement Celebration -->
+      <!-- Card 06: Engagement Celebration -->
       <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
         <div style="position: relative; height: 240px; overflow: hidden;">
           <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
@@ -183,14 +218,14 @@
             <% }); %>
           </div>
           <span style="position: absolute; top: 15px; right: 15px; background: rgba(15, 23, 42, 0.85); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(4px); pointer-events: none;">
-            <i class="fas fa-ring"></i> 05 • Engagement
+            <i class="fas fa-ring"></i> 06 • Engagement
           </span>
           <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.82); color: #ffffff; padding: 3px 10px; border-radius: 12px; font-size: 10.5px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
             <i class="fas fa-arrows-left-right"></i> Scroll Photos (3)
           </span>
         </div>
         <div style="padding: 28px; flex-grow: 1; display: flex; flex-direction: column;">
-          <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px; font-family: 'Cinzel', serif;">05. Engagement Celebration</h3>
+          <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px; font-family: 'Cinzel', serif;">06. Engagement Celebration</h3>
           <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
             Begin your journey of togetherness with an enchanting ring ceremony! Elegant floral stage setups, cocktail evening snacks, live music, and scenic mountain backdrops for pictures.
           </p>
@@ -207,7 +242,7 @@
         </div>
       </div>
 
-      <!-- Card 06: Kitty Party Celebration -->
+      <!-- Card 07: Kitty Party Celebration -->
       <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
         <div style="position: relative; height: 240px; overflow: hidden;">
           <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
@@ -218,14 +253,14 @@
             <% }); %>
           </div>
           <span style="position: absolute; top: 15px; right: 15px; background: rgba(15, 23, 42, 0.85); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(4px); pointer-events: none;">
-            <i class="fas fa-users-rectangle"></i> 06 • Kitty Party
+            <i class="fas fa-users-rectangle"></i> 07 • Kitty Party
           </span>
           <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.82); color: #ffffff; padding: 3px 10px; border-radius: 12px; font-size: 10.5px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
             <i class="fas fa-arrows-left-right"></i> Scroll Photos (3)
           </span>
         </div>
         <div style="padding: 28px; flex-grow: 1; display: flex; flex-direction: column;">
-          <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px; font-family: 'Cinzel', serif;">06. Kitty Party Celebration</h3>
+          <h3 style="font-size: 22px; color: var(--dark-bg); margin-bottom: 10px; font-family: 'Cinzel', serif;">07. Kitty Party Celebration</h3>
           <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
             Host stylish, fun-filled Kitty Parties with your close circle! Enjoy high tea, mocktails, fun games in our manicured green lawns, multi-cuisine buffet, and private lounge seating.
           </p>
