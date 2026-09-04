@@ -34,10 +34,20 @@
       
       <!-- Card 01: Birthday Celebration -->
       <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
+        <!-- Swipeable Image Carousel Container for Birthday Card -->
         <div style="position: relative; height: 240px; overflow: hidden;">
-          <img src="/images/birthday-lawn-party.jpg" alt="Birthday Celebration" style="width: 100%; height: 100%; object-fit: cover;">
-          <span style="position: absolute; top: 15px; right: 15px; background: rgba(15, 23, 42, 0.85); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(4px);">
+          <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
+            <% ['/images/celebrations/birthday-1.png', '/images/celebrations/birthday-2.webp'].forEach((imgUrl, imgIdx) => { %>
+              <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
+                <img src="<%= imgUrl %>" alt="Birthday Celebration - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+            <% }); %>
+          </div>
+          <span style="position: absolute; top: 15px; right: 15px; background: rgba(15, 23, 42, 0.85); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(4px); pointer-events: none;">
             <i class="fas fa-cake-candles"></i> 01 • Birthday
+          </span>
+          <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.82); color: #ffffff; padding: 3px 10px; border-radius: 12px; font-size: 10.5px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
+            <i class="fas fa-arrows-left-right"></i> Scroll Photos (2)
           </span>
         </div>
         <div style="padding: 28px; flex-grow: 1; display: flex; flex-direction: column;">
