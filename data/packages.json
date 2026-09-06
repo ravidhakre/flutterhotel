@@ -99,7 +99,7 @@
     "slug": "weekday-package",
     "price": "Starting from ₹1,999 / Room",
     "tag": "Best Savings Deal",
-    "image": "/images/packages/weekday-package-1.jpg",
+    "image": "/images/packages/weekday-package-2.jpg",
     "metaTitle": "Weekdays Package | Flutter Hotels & Resorts Lansdowne",
     "metaDescription": "Peaceful weekday staycation in Lansdowne with room stay, breakfast, complimentary Wi-Fi and quiet mountain environment.",
     "shortDesc": "Escape weekend crowds with a peaceful Monday-to-Thursday hillside stay, daily breakfast, and serene mountain vistas.",
@@ -129,8 +129,8 @@
       }
     ],
     "images": [
-      "/images/packages/weekday-package-1.jpg",
       "/images/packages/weekday-package-2.jpg",
+      "/images/packages/weekday-package-1.jpg",
       "/images/packages/weekday-package-3.jpg"
     ]
   },
