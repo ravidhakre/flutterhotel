@@ -140,7 +140,7 @@
     "slug": "weekend-package",
     "price": "Starting from ₹3,999 / Room",
     "tag": "Weekend Getaway",
-    "image": "/images/packages/weekend-package-1.jpg",
+    "image": "/images/packages/weekend-package-3.jpg",
     "metaTitle": "Weekend Package | Flutter Hotels & Resorts Lansdowne",
     "metaDescription": "Recharge your weekend in Lansdowne — room stay, daily breakfast, evening tea, and lawn bonfire.",
     "shortDesc": "Recharge in fresh pine air — room stay, daily breakfast, evening tea with local Garhwali snacks, and bonfire.",
@@ -170,9 +170,9 @@
       }
     ],
     "images": [
+      "/images/packages/weekend-package-3.jpg",
       "/images/packages/weekend-package-1.jpg",
       "/images/packages/weekend-package-2.jpg",
-      "/images/packages/weekend-package-3.jpg",
       "/images/packages/weekend-package-4.jpg"
     ]
   },
