@@ -455,7 +455,7 @@
     "slug": "engagement-package",
     "price": "Starting from ₹6,999 / Person",
     "tag": "Ring Ceremony",
-    "image": "/images/packages/engagement-package-1.jpg",
+    "image": "/images/packages/engagement-package-3.webp",
     "metaTitle": "Engagement & Ring Ceremony Package | Flutter Hotels & Resorts",
     "metaDescription": "Host your dream engagement in Lansdowne with floral stage setup, cocktail snacks, live music, and scenic backdrop.",
     "shortDesc": "Begin your journey of togetherness with an enchanting ring ceremony! Elegant floral stage setups, cocktail evening snacks, live music, and scenic mountain backdrops for pictures.",
@@ -480,9 +480,9 @@
       }
     ],
     "images": [
+      "/images/packages/engagement-package-3.webp",
       "/images/packages/engagement-package-1.jpg",
-      "/images/packages/engagement-package-2.jpg",
-      "/images/packages/engagement-package-3.webp"
+      "/images/packages/engagement-package-2.jpg"
     ]
   },
   {
