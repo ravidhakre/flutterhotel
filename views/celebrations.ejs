@@ -35,7 +35,7 @@
       <!-- Card 01: Honeymoon Celebration -->
       <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
         <div style="position: relative; height: 240px; overflow: hidden;">
-          <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
+          <div class="celebration-gallery-track" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; height: 100%; width: 100%;">
             <% ['/images/celebrations/honeymoon-1.jpg', '/images/celebrations/honeymoon-2.webp', '/images/celebrations/honeymoon-3.jpg', '/images/celebrations/honeymoon-4.jpg'].forEach((imgUrl, imgIdx) => { %>
               <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
                 <img src="<%= imgUrl %>" alt="Honeymoon Celebration - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
@@ -45,6 +45,12 @@
           <span style="position: absolute; top: 15px; right: 15px; background: rgba(15, 23, 42, 0.85); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(4px); pointer-events: none;">
             <i class="fas fa-heart"></i> 01 • Honeymoon
           </span>
+          <button onclick="this.parentElement.querySelector('.celebration-gallery-track').scrollBy({left: -260, behavior: 'smooth'})" aria-label="Previous Photo" style="position: absolute; top: 50%; left: 8px; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; background: rgba(15, 23, 42, 0.75); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.4); display: flex; align-items: center; justify-content: center; font-size: 10px; cursor: pointer; backdrop-filter: blur(4px); z-index: 5; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button onclick="this.parentElement.querySelector('.celebration-gallery-track').scrollBy({left: 260, behavior: 'smooth'})" aria-label="Next Photo" style="position: absolute; top: 50%; right: 8px; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; background: rgba(15, 23, 42, 0.75); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.4); display: flex; align-items: center; justify-content: center; font-size: 10px; cursor: pointer; backdrop-filter: blur(4px); z-index: 5; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+            <i class="fas fa-chevron-right"></i>
+          </button>
           <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.82); color: #ffffff; padding: 3px 10px; border-radius: 12px; font-size: 10.5px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
             <i class="fas fa-arrows-left-right"></i> Scroll Photos (4)
           </span>
@@ -70,7 +76,7 @@
       <!-- Card 02: Destination Wedding -->
       <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
         <div style="position: relative; height: 240px; overflow: hidden;">
-          <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
+          <div class="celebration-gallery-track" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; height: 100%; width: 100%;">
             <% ['/images/celebrations/wedding-1.jpeg', '/images/celebrations/wedding-2.jpeg', '/images/celebrations/wedding-3.jpeg', '/images/celebrations/wedding-4.jpeg'].forEach((imgUrl, imgIdx) => { %>
               <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
                 <img src="<%= imgUrl %>" alt="Destination Wedding - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
@@ -80,6 +86,12 @@
           <span style="position: absolute; top: 15px; right: 15px; background: rgba(15, 23, 42, 0.85); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(4px); pointer-events: none;">
             <i class="fas fa-heart"></i> 02 • Wedding
           </span>
+          <button onclick="this.parentElement.querySelector('.celebration-gallery-track').scrollBy({left: -260, behavior: 'smooth'})" aria-label="Previous Photo" style="position: absolute; top: 50%; left: 8px; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; background: rgba(15, 23, 42, 0.75); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.4); display: flex; align-items: center; justify-content: center; font-size: 10px; cursor: pointer; backdrop-filter: blur(4px); z-index: 5; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button onclick="this.parentElement.querySelector('.celebration-gallery-track').scrollBy({left: 260, behavior: 'smooth'})" aria-label="Next Photo" style="position: absolute; top: 50%; right: 8px; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; background: rgba(15, 23, 42, 0.75); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.4); display: flex; align-items: center; justify-content: center; font-size: 10px; cursor: pointer; backdrop-filter: blur(4px); z-index: 5; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+            <i class="fas fa-chevron-right"></i>
+          </button>
           <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.82); color: #ffffff; padding: 3px 10px; border-radius: 12px; font-size: 10.5px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
             <i class="fas fa-arrows-left-right"></i> Scroll Photos (4)
           </span>
@@ -105,7 +117,7 @@
       <!-- Card 03: Family Get-together -->
       <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
         <div style="position: relative; height: 240px; overflow: hidden;">
-          <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
+          <div class="celebration-gallery-track" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; height: 100%; width: 100%;">
             <% ['/images/celebrations/family-gettogether-1.jpg', '/images/celebrations/family-gettogether-2.jpg', '/images/celebrations/family-gettogether-3.jpg'].forEach((imgUrl, imgIdx) => { %>
               <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
                 <img src="<%= imgUrl %>" alt="Family Get-together - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
@@ -115,6 +127,12 @@
           <span style="position: absolute; top: 15px; right: 15px; background: rgba(15, 23, 42, 0.85); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(4px); pointer-events: none;">
             <i class="fas fa-users"></i> 03 • Family Togetherness
           </span>
+          <button onclick="this.parentElement.querySelector('.celebration-gallery-track').scrollBy({left: -260, behavior: 'smooth'})" aria-label="Previous Photo" style="position: absolute; top: 50%; left: 8px; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; background: rgba(15, 23, 42, 0.75); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.4); display: flex; align-items: center; justify-content: center; font-size: 10px; cursor: pointer; backdrop-filter: blur(4px); z-index: 5; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button onclick="this.parentElement.querySelector('.celebration-gallery-track').scrollBy({left: 260, behavior: 'smooth'})" aria-label="Next Photo" style="position: absolute; top: 50%; right: 8px; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; background: rgba(15, 23, 42, 0.75); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.4); display: flex; align-items: center; justify-content: center; font-size: 10px; cursor: pointer; backdrop-filter: blur(4px); z-index: 5; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+            <i class="fas fa-chevron-right"></i>
+          </button>
           <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.82); color: #ffffff; padding: 3px 10px; border-radius: 12px; font-size: 10.5px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
             <i class="fas fa-arrows-left-right"></i> Scroll Photos (3)
           </span>
@@ -140,7 +158,7 @@
       <!-- Card 04: Anniversary Celebration -->
       <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
         <div style="position: relative; height: 240px; overflow: hidden;">
-          <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
+          <div class="celebration-gallery-track" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; height: 100%; width: 100%;">
             <% ['/images/celebrations/anniversary-1.jpg', '/images/celebrations/anniversary-2.jpg', '/images/celebrations/anniversary-3.webp'].forEach((imgUrl, imgIdx) => { %>
               <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
                 <img src="<%= imgUrl %>" alt="Anniversary Celebration - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
@@ -150,6 +168,12 @@
           <span style="position: absolute; top: 15px; right: 15px; background: rgba(15, 23, 42, 0.85); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(4px); pointer-events: none;">
             <i class="fas fa-wine-glass-alt"></i> 04 • Anniversary
           </span>
+          <button onclick="this.parentElement.querySelector('.celebration-gallery-track').scrollBy({left: -260, behavior: 'smooth'})" aria-label="Previous Photo" style="position: absolute; top: 50%; left: 8px; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; background: rgba(15, 23, 42, 0.75); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.4); display: flex; align-items: center; justify-content: center; font-size: 10px; cursor: pointer; backdrop-filter: blur(4px); z-index: 5; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button onclick="this.parentElement.querySelector('.celebration-gallery-track').scrollBy({left: 260, behavior: 'smooth'})" aria-label="Next Photo" style="position: absolute; top: 50%; right: 8px; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; background: rgba(15, 23, 42, 0.75); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.4); display: flex; align-items: center; justify-content: center; font-size: 10px; cursor: pointer; backdrop-filter: blur(4px); z-index: 5; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+            <i class="fas fa-chevron-right"></i>
+          </button>
           <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.82); color: #ffffff; padding: 3px 10px; border-radius: 12px; font-size: 10.5px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
             <i class="fas fa-arrows-left-right"></i> Scroll Photos (3)
           </span>
@@ -175,7 +199,7 @@
       <!-- Card 05: Retirement Celebration -->
       <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
         <div style="position: relative; height: 240px; overflow: hidden;">
-          <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
+          <div class="celebration-gallery-track" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; height: 100%; width: 100%;">
             <% ['/images/celebrations/retirement-1.jpg', '/images/celebrations/retirement-2.jpeg', '/images/celebrations/retirement-3.jpg'].forEach((imgUrl, imgIdx) => { %>
               <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
                 <img src="<%= imgUrl %>" alt="Retirement Celebration - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
@@ -185,6 +209,12 @@
           <span style="position: absolute; top: 15px; right: 15px; background: rgba(15, 23, 42, 0.85); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(4px); pointer-events: none;">
             <i class="fas fa-award"></i> 05 • Retirement
           </span>
+          <button onclick="this.parentElement.querySelector('.celebration-gallery-track').scrollBy({left: -260, behavior: 'smooth'})" aria-label="Previous Photo" style="position: absolute; top: 50%; left: 8px; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; background: rgba(15, 23, 42, 0.75); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.4); display: flex; align-items: center; justify-content: center; font-size: 10px; cursor: pointer; backdrop-filter: blur(4px); z-index: 5; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button onclick="this.parentElement.querySelector('.celebration-gallery-track').scrollBy({left: 260, behavior: 'smooth'})" aria-label="Next Photo" style="position: absolute; top: 50%; right: 8px; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; background: rgba(15, 23, 42, 0.75); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.4); display: flex; align-items: center; justify-content: center; font-size: 10px; cursor: pointer; backdrop-filter: blur(4px); z-index: 5; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+            <i class="fas fa-chevron-right"></i>
+          </button>
           <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.82); color: #ffffff; padding: 3px 10px; border-radius: 12px; font-size: 10.5px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
             <i class="fas fa-arrows-left-right"></i> Scroll Photos (3)
           </span>
@@ -210,7 +240,7 @@
       <!-- Card 06: Engagement Celebration -->
       <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
         <div style="position: relative; height: 240px; overflow: hidden;">
-          <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
+          <div class="celebration-gallery-track" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; height: 100%; width: 100%;">
             <% ['/images/celebrations/engagement-1.jpg', '/images/celebrations/engagement-2.jpg', '/images/celebrations/engagement-3.webp'].forEach((imgUrl, imgIdx) => { %>
               <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
                 <img src="<%= imgUrl %>" alt="Engagement Celebration - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
@@ -220,6 +250,12 @@
           <span style="position: absolute; top: 15px; right: 15px; background: rgba(15, 23, 42, 0.85); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(4px); pointer-events: none;">
             <i class="fas fa-ring"></i> 06 • Engagement
           </span>
+          <button onclick="this.parentElement.querySelector('.celebration-gallery-track').scrollBy({left: -260, behavior: 'smooth'})" aria-label="Previous Photo" style="position: absolute; top: 50%; left: 8px; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; background: rgba(15, 23, 42, 0.75); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.4); display: flex; align-items: center; justify-content: center; font-size: 10px; cursor: pointer; backdrop-filter: blur(4px); z-index: 5; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button onclick="this.parentElement.querySelector('.celebration-gallery-track').scrollBy({left: 260, behavior: 'smooth'})" aria-label="Next Photo" style="position: absolute; top: 50%; right: 8px; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; background: rgba(15, 23, 42, 0.75); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.4); display: flex; align-items: center; justify-content: center; font-size: 10px; cursor: pointer; backdrop-filter: blur(4px); z-index: 5; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+            <i class="fas fa-chevron-right"></i>
+          </button>
           <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.82); color: #ffffff; padding: 3px 10px; border-radius: 12px; font-size: 10.5px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
             <i class="fas fa-arrows-left-right"></i> Scroll Photos (3)
           </span>
@@ -245,7 +281,7 @@
       <!-- Card 07: Kitty Party Celebration -->
       <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
         <div style="position: relative; height: 240px; overflow: hidden;">
-          <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; height: 100%; width: 100%;">
+          <div class="celebration-gallery-track" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; height: 100%; width: 100%;">
             <% ['/images/celebrations/kitty-party-1.jpg', '/images/celebrations/kitty-party-2.jpg', '/images/birthday-lawn-party.jpg'].forEach((imgUrl, imgIdx) => { %>
               <div style="flex: 0 0 100%; scroll-snap-align: start; height: 100%; position: relative;">
                 <img src="<%= imgUrl %>" alt="Kitty Party Celebration - Photo <%= imgIdx + 1 %>" style="width: 100%; height: 100%; object-fit: cover;">
@@ -255,6 +291,12 @@
           <span style="position: absolute; top: 15px; right: 15px; background: rgba(15, 23, 42, 0.85); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(4px); pointer-events: none;">
             <i class="fas fa-users-rectangle"></i> 07 • Kitty Party
           </span>
+          <button onclick="this.parentElement.querySelector('.celebration-gallery-track').scrollBy({left: -260, behavior: 'smooth'})" aria-label="Previous Photo" style="position: absolute; top: 50%; left: 8px; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; background: rgba(15, 23, 42, 0.75); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.4); display: flex; align-items: center; justify-content: center; font-size: 10px; cursor: pointer; backdrop-filter: blur(4px); z-index: 5; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button onclick="this.parentElement.querySelector('.celebration-gallery-track').scrollBy({left: 260, behavior: 'smooth'})" aria-label="Next Photo" style="position: absolute; top: 50%; right: 8px; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; background: rgba(15, 23, 42, 0.75); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.4); display: flex; align-items: center; justify-content: center; font-size: 10px; cursor: pointer; backdrop-filter: blur(4px); z-index: 5; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+            <i class="fas fa-chevron-right"></i>
+          </button>
           <span style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.82); color: #ffffff; padding: 3px 10px; border-radius: 12px; font-size: 10.5px; font-weight: 600; backdrop-filter: blur(4px); pointer-events: none;">
             <i class="fas fa-arrows-left-right"></i> Scroll Photos (3)
           </span>
