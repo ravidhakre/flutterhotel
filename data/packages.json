@@ -419,7 +419,7 @@
     "slug": "retirement-package",
     "price": "Starting from ₹2,499 / Person",
     "tag": "Milestone Honor",
-    "image": "/images/packages/retirement-package-1.jpg",
+    "image": "/images/packages/retirement-package-2.jpeg",
     "metaTitle": "Retirement Celebration Package | Flutter Hotels & Resorts",
     "metaDescription": "Honor a lifetime of achievements in Lansdowne with elegant banquet setup, gourmet catering, and guest stays.",
     "shortDesc": "Honor a lifetime of achievements with style and grace! Versatile indoor/outdoor banquet venues, gourmet catering, AV setup for speech/slideshows, and comfortable guest stays.",
@@ -444,8 +444,8 @@
       }
     ],
     "images": [
-      "/images/packages/retirement-package-1.jpg",
       "/images/packages/retirement-package-2.jpeg",
+      "/images/packages/retirement-package-1.jpg",
       "/images/packages/retirement-package-3.jpg"
     ]
   },
