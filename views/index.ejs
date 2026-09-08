@@ -60,9 +60,10 @@
         <label style="font-weight: 700; color: #334155; font-size: 11.5px;"><i class="fas fa-baby" style="color: var(--primary-blue);"></i> Child Age</label>
         <select name="childAge" id="childAge" class="form-control-custom" disabled style="opacity: 0.55; cursor: not-allowed; background-color: #f1f5f9; transition: all 0.3s ease;">
           <option value="" selected disabled>Select Age</option>
-          <option value="Below 5 Yrs">Below 5 Yrs (Complimentary)</option>
-          <option value="5-12 Yrs">5 – 12 Yrs (Child Rate)</option>
-          <option value="Above 12 Yrs">Above 12 Yrs (Adult Rate)</option>
+          <option value="Below 1 Year">Below 1 Year</option>
+          <% for(let age = 1; age <= 17; age++) { %>
+            <option value="<%= age %> <%= age === 1 ? 'Year' : 'Years' %>"><%= age %> <%= age === 1 ? 'Year' : 'Years' %></option>
+          <% } %>
         </select>
       </div>
 
