@@ -55,14 +55,29 @@
         </select>
       </div>
 
-      <!-- 6. Child Age (Dynamic per child) -->
-      <div class="form-group-custom" id="childAgeWrapper">
+      <!-- 6. Child Age (Dynamic per child via popover) -->
+      <div class="form-group-custom" id="childAgeWrapper" style="position: relative;">
         <label id="childAgeMainLabel" style="font-weight: 700; color: #334155; font-size: 11.5px;"><i class="fas fa-baby" style="color: var(--primary-blue);"></i> Child Age</label>
         <div id="childAgeContainer">
           <select name="childAge" id="childAge" class="form-control-custom" disabled style="opacity: 0.55; cursor: not-allowed; background-color: #f1f5f9; transition: all 0.3s ease;">
             <option value="" selected disabled>Select Age</option>
           </select>
         </div>
+
+        <!-- Floating Popover Modal for 2+ Children -->
+        <div id="childAgePopoverModal" class="child-age-popover-card" style="display: none;">
+          <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px; margin-bottom: 12px; border-bottom: 1px solid #e2e8f0;">
+            <strong style="font-size: 13px; color: #0f172a;"><i class="fas fa-child" style="color: #0284c7;"></i> Select Children Ages</strong>
+            <button type="button" onclick="closeChildAgePopover()" style="background: none; border: none; font-size: 18px; color: #64748b; cursor: pointer; line-height: 1;">&times;</button>
+          </div>
+          <div id="popoverChildFields" style="display: flex; flex-direction: column; gap: 10px; max-height: 200px; overflow-y: auto; padding-right: 4px;">
+            <!-- Dynamic dropdowns generated here -->
+          </div>
+          <div style="margin-top: 14px; text-align: right;">
+            <button type="button" class="btn-blue" onclick="saveChildAgesPopover()" style="padding: 8px 18px; font-size: 12.5px; border-radius: 6px; border: none; font-weight: bold;">Apply Ages</button>
+          </div>
+        </div>
+        <div id="childAgePopoverBackdrop" class="child-age-popover-overlay" style="display: none;" onclick="closeChildAgePopover()"></div>
       </div>
 
       <!-- 7. Room Category -->
@@ -88,12 +103,12 @@
 </div>
 
 <script>
-  function buildAgeSelectOptions() {
-    let opts = '<option value="" selected disabled>Select Age</option>';
-    opts += '<option value="Below 1 Year">Below 1 Year</option>';
+  function buildAgeSelectOptions(selectedValue = '') {
+    let opts = '<option value="" disabled ' + (selectedValue === '' ? 'selected' : '') + '>Select Age</option>';
+    opts += '<option value="Below 1 Year" ' + (selectedValue === 'Below 1 Year' ? 'selected' : '') + '>Below 1 Year</option>';
     for (let age = 1; age <= 17; age++) {
-      const label = age === 1 ? '1 Year' : age + ' Years';
-      opts += `<option value="${label}">${label}</option>`;
+      const val = age === 1 ? '1 Year' : age + ' Years';
+      opts += `<option value="${val}" ${selectedValue === val ? 'selected' : ''}>${val}</option>`;
     }
     return opts;
   }
@@ -105,7 +120,7 @@
     if (!numChildren || !container) return;
 
     const count = parseInt(numChildren.value, 10);
-    const optionsHtml = buildAgeSelectOptions();
+    closeChildAgePopover();
 
     if (count === 0) {
       if (mainLabel) mainLabel.innerHTML = '<i class="fas fa-baby" style="color: var(--primary-blue);"></i> Child Age';
@@ -118,25 +133,72 @@
       if (mainLabel) mainLabel.innerHTML = '<i class="fas fa-baby" style="color: var(--primary-blue);"></i> Child 1 Age';
       container.innerHTML = `
         <select name="childAge" class="form-control-custom" style="opacity: 1; cursor: pointer; background-color: #ffffff; border-color: #0284c7;" required>
-          ${optionsHtml}
+          ${buildAgeSelectOptions()}
         </select>
       `;
     } else {
       if (mainLabel) mainLabel.innerHTML = `<i class="fas fa-baby" style="color: var(--primary-blue);"></i> Children Ages (${count})`;
-      let html = '<div style="display: flex; flex-direction: column; gap: 8px;">';
-      for (let i = 1; i <= count; i++) {
-        html += `
-          <div>
-            <label style="font-size: 10px; font-weight: 700; color: #475569; display: block; margin-bottom: 2px;">Child ${i} Age</label>
-            <select name="childAge" class="form-control-custom" style="opacity: 1; cursor: pointer; background-color: #ffffff; border-color: #0284c7; padding: 8px 10px; font-size: 13px;" required>
-              ${optionsHtml}
-            </select>
-          </div>
-        `;
-      }
-      html += '</div>';
-      container.innerHTML = html;
+      container.innerHTML = `
+        <div class="child-age-trigger-btn" onclick="openChildAgePopover()" style="width: 100%; padding: 12px 14px; border: 1.5px solid #0284c7; border-radius: 8px; background: #ffffff; color: #0f172a; font-size: 13.5px; font-weight: 600; display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: all 0.2s ease;">
+          <span id="childAgeTriggerText" style="color: #0284c7;"><i class="fas fa-sliders-h"></i> Set Ages (${count})</span>
+          <i class="fas fa-chevron-down" style="font-size: 11px; color: #64748b;"></i>
+        </div>
+        <div id="hiddenChildAgeInputs"></div>
+      `;
+      buildPopoverChildFields(count);
     }
+  }
+
+  function buildPopoverChildFields(count) {
+    const popFields = document.getElementById('popoverChildFields');
+    if (!popFields) return;
+    let html = '';
+    for (let i = 1; i <= count; i++) {
+      html += `
+        <div>
+          <label style="font-size: 11px; font-weight: 700; color: #475569; display: block; margin-bottom: 3px;">Child ${i} Age</label>
+          <select class="form-control-custom popover-child-age-select" style="padding: 8px 12px; font-size: 13px;" required>
+            ${buildAgeSelectOptions()}
+          </select>
+        </div>
+      `;
+    }
+    popFields.innerHTML = html;
+  }
+
+  function openChildAgePopover() {
+    const modal = document.getElementById('childAgePopoverModal');
+    const backdrop = document.getElementById('childAgePopoverBackdrop');
+    if (modal) modal.style.display = 'block';
+    if (backdrop) backdrop.style.display = 'block';
+  }
+
+  function closeChildAgePopover() {
+    const modal = document.getElementById('childAgePopoverModal');
+    const backdrop = document.getElementById('childAgePopoverBackdrop');
+    if (modal) modal.style.display = 'none';
+    if (backdrop) backdrop.style.display = 'none';
+  }
+
+  function saveChildAgesPopover() {
+    const selects = document.querySelectorAll('.popover-child-age-select');
+    const hiddenContainer = document.getElementById('hiddenChildAgeInputs');
+    const triggerText = document.getElementById('childAgeTriggerText');
+    
+    let selectedValues = [];
+    let hiddenHtml = '';
+    
+    selects.forEach((sel, idx) => {
+      const val = sel.value || 'Below 1 Year';
+      selectedValues.push(val.replace(' Years', 'y').replace(' Year', 'y'));
+      hiddenHtml += `<input type="hidden" name="childAge" value="${val}">`;
+    });
+
+    if (hiddenContainer) hiddenContainer.innerHTML = hiddenHtml;
+    if (triggerText) {
+      triggerText.innerHTML = `<i class="fas fa-check-circle" style="color: #10b981;"></i> ${selectedValues.join(', ')}`;
+    }
+    closeChildAgePopover();
   }
 </script>
 
