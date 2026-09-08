@@ -44,23 +44,30 @@
         </select>
       </div>
 
-      <!-- 5. No. of Children & Age -->
+      <!-- 5. No. of Children -->
       <div class="form-group-custom">
-        <label style="font-weight: 700; color: #334155; font-size: 11.5px;"><i class="fas fa-child" style="color: var(--primary-blue);"></i> Children & Age</label>
-        <select name="children" class="form-control-custom">
+        <label style="font-weight: 700; color: #334155; font-size: 11.5px;"><i class="fas fa-child" style="color: var(--primary-blue);"></i> No. of Children</label>
+        <select name="children" id="numChildren" class="form-control-custom" onchange="toggleChildAge()">
           <option value="0" selected>0 Children</option>
-          <option value="1-under5">1 Child (Below 5 Yrs)</option>
-          <option value="1-over5">1 Child (5-12 Yrs)</option>
-          <option value="2-under5">2 Children (Below 5 Yrs)</option>
-          <option value="2-over5">2 Children (5-12 Yrs)</option>
-          <% for(let c = 3; c <= 10; c++) { %>
-            <option value="<%= c %>"><%= c %> Children</option>
+          <% for(let c = 1; c <= 10; c++) { %>
+            <option value="<%= c %>"><%= c %> <%= c === 1 ? 'Child' : 'Children' %></option>
           <% } %>
         </select>
       </div>
 
-      <!-- 6. Room Category -->
+      <!-- 6. Child Age -->
       <div class="form-group-custom">
+        <label style="font-weight: 700; color: #334155; font-size: 11.5px;"><i class="fas fa-baby" style="color: var(--primary-blue);"></i> Child Age</label>
+        <select name="childAge" id="childAge" class="form-control-custom" disabled style="opacity: 0.55; cursor: not-allowed; background-color: #f1f5f9; transition: all 0.3s ease;">
+          <option value="" selected disabled>Select Age</option>
+          <option value="Below 5 Yrs">Below 5 Yrs (Complimentary)</option>
+          <option value="5-12 Yrs">5 – 12 Yrs (Child Rate)</option>
+          <option value="Above 12 Yrs">Above 12 Yrs (Adult Rate)</option>
+        </select>
+      </div>
+
+      <!-- 7. Room Category -->
+      <div class="form-group-custom search-col-full-mobile">
         <label style="font-weight: 700; color: #334155; font-size: 11.5px;"><i class="fas fa-door-open" style="color: var(--primary-blue);"></i> Room Category</label>
         <select name="category" class="form-control-custom">
           <option value="All">All Categories</option>
@@ -72,14 +79,37 @@
         </select>
       </div>
 
-      <!-- 7. Submit Button -->
-      <div>
+      <!-- 8. Submit Button -->
+      <div class="search-col-full-mobile">
         <button type="submit" class="btn-blue search-btn-submit" style="width: 100%; text-align: center; border: none; padding: 13px 10px; border-radius: 8px; font-weight: bold; font-size: 13px;"><i class="fas fa-search"></i> Check Availability</button>
       </div>
 
     </form>
   </div>
 </div>
+
+<script>
+  function toggleChildAge() {
+    const numChildren = document.getElementById('numChildren');
+    const childAge = document.getElementById('childAge');
+    if (!numChildren || !childAge) return;
+    const count = parseInt(numChildren.value, 10);
+    if (count >= 1) {
+      childAge.disabled = false;
+      childAge.style.opacity = '1';
+      childAge.style.cursor = 'pointer';
+      childAge.style.backgroundColor = '#ffffff';
+      childAge.style.borderColor = '#0284c7';
+    } else {
+      childAge.disabled = true;
+      childAge.value = '';
+      childAge.style.opacity = '0.55';
+      childAge.style.cursor = 'not-allowed';
+      childAge.style.backgroundColor = '#f1f5f9';
+      childAge.style.borderColor = '#cbd5e1';
+    }
+  }
+</script>
 
 <!-- Direct Booking Benefits Strip -->
 <div class="trust-strip" style="background: #ffffff; padding: 20px 0; border-bottom: 1px solid #e2e8f0; margin-bottom: 40px; overflow: hidden;">

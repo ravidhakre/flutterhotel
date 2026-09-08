@@ -633,8 +633,8 @@ ul {
 
 .search-form-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) 170px;
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr)) 160px;
+  gap: 12px;
   align-items: end;
 }
 
@@ -1317,8 +1317,12 @@ ul {
   }
 
   .search-form-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr 1fr !important;
     gap: 12px !important;
+  }
+
+  .search-col-full-mobile {
+    grid-column: span 2 !important;
   }
 
   .section-padding {
