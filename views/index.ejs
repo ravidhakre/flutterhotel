@@ -2,10 +2,30 @@
 
 <!-- Hero Video Background Header Section -->
 <section class="hero-video-section" style="position: relative; min-height: 80vh; overflow: hidden; background: #0f172a;">
-  <video autoplay muted loop playsinline class="hero-video-bg" style="position: absolute; top: 0; left: 50%; width: 100%; height: 100%; transform: translateX(-50%); object-fit: cover; object-position: top center; z-index: 1;">
+  <video id="heroBgVideo" autoplay muted playsinline class="hero-video-bg" style="position: absolute; top: 0; left: 50%; width: 100%; height: 100%; transform: translateX(-50%); object-fit: cover; object-position: top center; z-index: 1;">
     <source src="/images/home-page-video1.mp4" type="video/mp4">
   </video>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const videoElem = document.getElementById('heroBgVideo');
+    if (!videoElem) return;
+
+    const videoPlaylist = [
+      '/images/home-page-video1.mp4',
+      '/images/home-page-video2.mp4'
+    ];
+    let currentVideoIndex = 0;
+
+    videoElem.addEventListener('ended', () => {
+      currentVideoIndex = (currentVideoIndex + 1) % videoPlaylist.length;
+      videoElem.src = videoPlaylist[currentVideoIndex];
+      videoElem.load();
+      videoElem.play().catch(err => console.log('Autoplay error:', err));
+    });
+  });
+</script>
 
 <!-- Check Availability Widget Bar -->
 <div class="container booking-search-wrapper" id="searchWidget" style="margin-top: -45px; position: relative; z-index: 10;">
