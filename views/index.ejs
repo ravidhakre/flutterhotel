@@ -55,16 +55,14 @@
         </select>
       </div>
 
-      <!-- 6. Child Age -->
-      <div class="form-group-custom">
-        <label style="font-weight: 700; color: #334155; font-size: 11.5px;"><i class="fas fa-baby" style="color: var(--primary-blue);"></i> Child Age</label>
-        <select name="childAge" id="childAge" class="form-control-custom" disabled style="opacity: 0.55; cursor: not-allowed; background-color: #f1f5f9; transition: all 0.3s ease;">
-          <option value="" selected disabled>Select Age</option>
-          <option value="Below 1 Year">Below 1 Year</option>
-          <% for(let age = 1; age <= 17; age++) { %>
-            <option value="<%= age %> <%= age === 1 ? 'Year' : 'Years' %>"><%= age %> <%= age === 1 ? 'Year' : 'Years' %></option>
-          <% } %>
-        </select>
+      <!-- 6. Child Age (Dynamic per child) -->
+      <div class="form-group-custom" id="childAgeWrapper">
+        <label id="childAgeMainLabel" style="font-weight: 700; color: #334155; font-size: 11.5px;"><i class="fas fa-baby" style="color: var(--primary-blue);"></i> Child Age</label>
+        <div id="childAgeContainer">
+          <select name="childAge" id="childAge" class="form-control-custom" disabled style="opacity: 0.55; cursor: not-allowed; background-color: #f1f5f9; transition: all 0.3s ease;">
+            <option value="" selected disabled>Select Age</option>
+          </select>
+        </div>
       </div>
 
       <!-- 7. Room Category -->
@@ -90,24 +88,54 @@
 </div>
 
 <script>
+  function buildAgeSelectOptions() {
+    let opts = '<option value="" selected disabled>Select Age</option>';
+    opts += '<option value="Below 1 Year">Below 1 Year</option>';
+    for (let age = 1; age <= 17; age++) {
+      const label = age === 1 ? '1 Year' : age + ' Years';
+      opts += `<option value="${label}">${label}</option>`;
+    }
+    return opts;
+  }
+
   function toggleChildAge() {
     const numChildren = document.getElementById('numChildren');
-    const childAge = document.getElementById('childAge');
-    if (!numChildren || !childAge) return;
+    const container = document.getElementById('childAgeContainer');
+    const mainLabel = document.getElementById('childAgeMainLabel');
+    if (!numChildren || !container) return;
+
     const count = parseInt(numChildren.value, 10);
-    if (count >= 1) {
-      childAge.disabled = false;
-      childAge.style.opacity = '1';
-      childAge.style.cursor = 'pointer';
-      childAge.style.backgroundColor = '#ffffff';
-      childAge.style.borderColor = '#0284c7';
+    const optionsHtml = buildAgeSelectOptions();
+
+    if (count === 0) {
+      if (mainLabel) mainLabel.innerHTML = '<i class="fas fa-baby" style="color: var(--primary-blue);"></i> Child Age';
+      container.innerHTML = `
+        <select name="childAge" class="form-control-custom" disabled style="opacity: 0.55; cursor: not-allowed; background-color: #f1f5f9;">
+          <option value="" selected disabled>Select Age</option>
+        </select>
+      `;
+    } else if (count === 1) {
+      if (mainLabel) mainLabel.innerHTML = '<i class="fas fa-baby" style="color: var(--primary-blue);"></i> Child 1 Age';
+      container.innerHTML = `
+        <select name="childAge" class="form-control-custom" style="opacity: 1; cursor: pointer; background-color: #ffffff; border-color: #0284c7;" required>
+          ${optionsHtml}
+        </select>
+      `;
     } else {
-      childAge.disabled = true;
-      childAge.value = '';
-      childAge.style.opacity = '0.55';
-      childAge.style.cursor = 'not-allowed';
-      childAge.style.backgroundColor = '#f1f5f9';
-      childAge.style.borderColor = '#cbd5e1';
+      if (mainLabel) mainLabel.innerHTML = `<i class="fas fa-baby" style="color: var(--primary-blue);"></i> Children Ages (${count})`;
+      let html = '<div style="display: flex; flex-direction: column; gap: 8px;">';
+      for (let i = 1; i <= count; i++) {
+        html += `
+          <div>
+            <label style="font-size: 10px; font-weight: 700; color: #475569; display: block; margin-bottom: 2px;">Child ${i} Age</label>
+            <select name="childAge" class="form-control-custom" style="opacity: 1; cursor: pointer; background-color: #ffffff; border-color: #0284c7; padding: 8px 10px; font-size: 13px;" required>
+              ${optionsHtml}
+            </select>
+          </div>
+        `;
+      }
+      html += '</div>';
+      container.innerHTML = html;
     }
   }
 </script>
